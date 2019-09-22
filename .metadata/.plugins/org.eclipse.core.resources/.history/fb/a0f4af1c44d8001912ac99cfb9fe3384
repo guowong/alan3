@@ -1,0 +1,23 @@
+package paycheck;
+import java.util.Scanner;
+
+public class CountChanges {
+	public static final double QUARTER = 25; 
+	public static final double DIME = 10; 
+	public static final double NICKEL = 5; 
+	public static final double PENNY = 1; 
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.printf ("\n");
+		System.out.print ("\nAlan's Coin counting program: "); 
+		System.out.print ("\nEnter the number of quarters: "); 
+		System.out.print ("\nEnter the number of dimes: "); 
+		System.out.print ("\nEnter the number of nickels: "); 
+		System.out.print ("\nEnter the number of pennies: "); 
+		
+		
+		
+	}
+
+}

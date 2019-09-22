@@ -1,0 +1,36 @@
+package paycheck;
+import java.util.Scanner;
+
+public class CountChanges {
+	public static final double QUARTER = 0.25; 
+	public static final double DIME = 0.1; 
+	public static final double NICKEL = 0.05; 
+	public static final double PENNY = 0.01; 
+
+	public static void main(String[] args) {
+		double quarters, dimes, nickels, pennies, total;
+		
+		// create the stdin object (to use the keyboard)
+		Scanner stdin = new Scanner(System.in);		
+		
+		System.out.printf ("\n");
+		System.out.print ("\nAlan Wong's Coin counting program: "); 
+		System.out.printf ("\n");
+		System.out.print ("\nEnter the number of quarters: "); 
+		quarters = stdin.nextDouble();
+		System.out.print ("\nEnter the number of dimes: "); 
+		dimes = stdin.nextDouble();
+		System.out.print ("\nEnter the number of nickels: "); 
+		nickels = stdin.nextDouble();
+		System.out.print ("\nEnter the number of pennies: "); 
+		pennies = stdin.nextDouble();
+		
+		total = quarters * QUARTER + dimes * DIME + nickels * NICKEL + pennies * PENNY;
+		System.out.print ("\nYour Total is $%.2f\n", total); 
+		//System.out.print (total); 
+		
+		//System.out.printf ("Your gross pay is $%.2f\n", grossPay);
+		
+	}
+
+}

@@ -1,0 +1,11 @@
+package paycheck;
+import java.util.Scanner;
+
+public class CountChanges {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

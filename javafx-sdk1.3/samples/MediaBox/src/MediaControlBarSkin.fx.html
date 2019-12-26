@@ -1,0 +1,426 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+
+<head>
+	
+	<title>JavaFX Sample</title>
+	
+	<!--METAS-->
+	
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="description" content="JavaFX" />
+	<meta name="keywords" content="JavaFX Oracle" />
+	<meta name="author" content="Oracle" />
+	
+	<!--STYLESHEETS-->
+	<link rel="stylesheet" type="text/css" media="screen, projection" href="../../shared/new_style/css/reset.css" />
+	<link rel="stylesheet" type="text/css" media="screen, projection" href="../../shared/new_style/css/javafx.css" />
+	<link rel="stylesheet" type="text/css" media="screen, projection" href="../../shared/new_style/css/code.css" />
+	
+	<!-- CONDITIONAL STYLESHEETS -->
+	<!--[if IE]>
+	  <link rel="stylesheet" type="text/css" href="../../shared/new_style/css/ie.css" />
+	<![endif]-->
+	
+	<!--ADDRESS BAR ICON-->
+	<link rel="shortcut icon" type="image/ico" href="../../shared/new_style/images/favicon.ico" />
+	
+	<link rel="stylesheet" type="text/css" media="screen, projection" href="../../shared/new_style/css/samples.css" />
+    <style type="text/css">
+.code .string-literal, .code .number-literal {
+	font-style: italic;
+	color: #4b494d;
+}
+    </style>
+</head>
+<!--
+	The ID here is required to indicate the page type.
+	Changing this will affect the layout of the page.
+-->
+<body id="tutorials">
+	
+	<div id="body">
+		<!--
+			The header in the source code view doesn't have any buttons.
+			So just the <h1> tag for the site logo is included.
+			
+			The header also doesn't have an A tag with an "href" since you shouldn't be able to navigate to the
+			index pgae inside the popup.
+		-->
+        
+        
+		<ul id="popheader">
+			<li class="first">
+				<h1><a><span>FX</span></a></h1>
+			
+				<!-- Close button -->
+				<a class="close-button" title="Close"><span>Close</span></a>
+			</li>
+		</ul>
+<div class="source">
+  <div class="code-header">License text </div>
+    <pre>
+
+/*
+ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER 
+ * Copyright  2008, 2010 Oracle and/or its affiliates.  All rights reserved. 
+ * Use is subject to license terms.
+ * 
+ * This file is available and licensed under the following license:
+ * 
+ * Redistribution and use in source and binary forms, with or without 
+ * modification, are permitted provided that the following conditions are met: 
+ * 
+ *   * Redistributions of source code must retain the above copyright notice, 
+ *     this list of conditions and the following disclaimer. 
+ *
+ *   * Redistributions in binary form must reproduce the above copyright notice,
+ *     this list of conditions and the following disclaimer in the documentation
+ *     and/or other materials provided with the distribution.
+ *
+ *   * Neither the name of Oracle Corporation nor the names of its contributors 
+ *     may be used to endorse or promote products derived from this software 
+ *     without specific prior written permission. 
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS 
+ * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT 
+ * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR 
+ * A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT 
+ * OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, 
+ * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, 
+ * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; 
+ * OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, 
+ * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR 
+ * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF 
+ * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. 
+ */
+
+    </pre>
+  </div>
+<div class="code"><pre><code>
+<b>package</b> com.sun.mediabox.controls.skin.paranara;
+
+<b>import</b> javafx.animation.Timeline;
+<b>import</b> javafx.animation.Interpolator;
+<b>import</b> javafx.scene.shape.Rectangle;
+<b>import</b> javafx.scene.shape.Line;
+<b>import</b> javafx.scene.paint.LinearGradient;
+<b>import</b> javafx.scene.paint.Stop;
+<b>import</b> javafx.scene.paint.Color;
+<b>import</b> javafx.scene.Group;
+<b>import</b> javafx.scene.media.MediaPlayer;
+<b>import</b> com.sun.javafx.mediabox.controls.MediaControlBar;
+<b>import</b> com.sun.javafx.mediabox.controls.*;
+
+<i class='comment'>/**
+ * @author baechul
+ */</i>
+
+public class MediaControlBarSkin extends com.sun.mediabox.controls.skin.AbstractSkin {
+    <i class='comment'>// control</i>
+    <b class='keyword'>var</b> controlBar = bind control as MediaControlBar;
+
+    protected override function getMinWidth():Number { controlBar.width }
+    protected override function getMinHeight():Number { controlBar.height }
+
+    <b class='keyword'>var</b> mediaError = bind controlBar.mediaError on replace {
+        if(mediaError != null) {
+            bufferIndicator.stop();
+            controlBar.disable = true;
+        }
+    }
+
+    <b class='keyword'>var</b> status = bind controlBar.mediaPlayer.status on replace {
+        if(status != MediaPlayer.PAUSED) {
+            controlBar.mediaError = null;
+            controlBar.disable = false;
+        }
+    }
+
+    <i class='comment'>// skin node ///////////////////////////////////////////////////////////////</i>
+    protected override <b class='keyword'>var</b> frame = Rectangle {
+        <b>x</b>: bind controlBar.x
+        <b>y</b>: bind controlBar.y
+        <b>width</b>: bind controlBar.width
+        <b>height</b>: bind controlBar.height
+
+        <b>fill</b>: LinearGradient {
+            <b>startX</b>: <span class='number-literal'>0</span>
+            <b>startY</b>: <span class='number-literal'>0</span>
+            <b>endX</b>: <span class='number-literal'>0</span>
+            <b>endY</b>: <span class='number-literal'>1</span>.<span class='number-literal'>0</span>
+            <b>stops</b>: [
+                Stop {
+                    <b>offset</b>: <span class='number-literal'>0</span>.<span class='number-literal'>7</span>
+                    <b>color</b>: Color.rgb(<span class='number-literal'>50</span>, <span class='number-literal'>50</span>, <span class='number-literal'>50</span>)
+                },
+                Stop {
+                    <b>offset</b>: <span class='number-literal'>0</span>.<span class='number-literal'>8</span>
+                    <b>color</b>: Color.rgb(<span class='number-literal'>0</span>, <span class='number-literal'>0</span>, <span class='number-literal'>0</span>)
+                }
+            ]
+        }
+        <b>stroke</b>: Color.rgb(<span class='number-literal'>182</span>, <span class='number-literal'>185</span>, <span class='number-literal'>188</span>)
+        <b>strokeWidth</b>: <span class='number-literal'>1</span>
+        <b>opacity</b>: <span class='number-literal'>0</span>.<span class='number-literal'>6</span>
+        <b>smooth</b>: false
+    }
+
+    <b class='keyword'>var</b> paddingBegin = <span class='number-literal'>3</span>.<span class='number-literal'>0</span>;
+    <b class='keyword'>var</b> padding = <span class='number-literal'>5</span>.<span class='number-literal'>0</span>;
+    <b class='keyword'>var</b> margin = bind controlBar.height*<span class='number-literal'>0</span>.<span class='number-literal'>1</span>;
+    <b class='keyword'>var</b> controlHeight = bind controlBar.height*<span class='number-literal'>0</span>.<span class='number-literal'>8</span>;
+
+    <i class='comment'>// <span class='number-literal'>1</span>. play/pause control</i>
+    <b class='keyword'>var</b> <b>playControl</b>: PlayControl = PlayControl {
+        <b>mediaPlayer</b>: bind controlBar.mediaPlayer
+
+        <b>x</b>: bind controlBar.x+paddingBegin+margin
+        <b>y</b>: bind controlBar.y+margin
+        <b>width</b>: bind controlHeight
+        <b>height</b>: bind controlHeight
+    } on replace {
+        MediaControlBar.impl_registerControl(MediaControlType.PLAY_CONTROL, playControl);
+    }
+
+    <i class='comment'>// <span class='number-literal'>2</span> buffer indicator control</i>
+    <b class='keyword'>var</b> <b>bufferIndicator</b>: BufferIndicator = BufferIndicator {
+        <b>mediaView</b>: bind controlBar.mediaView
+        <b>blocks</b>: <span class='number-literal'>16</span>
+        <b>blockHeight</b>: <span class='number-literal'>10</span>
+        <b>buffering</b>: bind playControl.buffering and mediaError == null
+
+        <b>x</b>: bind controlBar.impl_getMediaBounds().minX+(controlBar.impl_getMediaBounds().width-bufferIndicator.width)*<span class='number-literal'>0</span>.<span class='number-literal'>5</span>
+        <b>y</b>: bind controlBar.impl_getMediaBounds().minY+(controlBar.impl_getMediaBounds().height-bufferIndicator.height)*<span class='number-literal'>0</span>.<span class='number-literal'>5</span>
+        <b>width</b>: <span class='number-literal'>86</span>
+        <b>height</b>: <span class='number-literal'>86</span>
+    } on replace {
+        MediaControlBar.impl_registerControl(MediaControlType.BUFFER_INDICATOR, bufferIndicator);
+    }
+    
+    <b class='keyword'>var</b> divider<span class='number-literal'>1</span> = bind createDivider(
+    controlBar.x+paddingBegin+controlBar.height+<span class='number-literal'>1</span>, controlBar.y,
+    controlBar.height);
+
+    <i class='comment'>// <span class='number-literal'>3</span>. media slider control</i>
+    <b class='keyword'>var</b> <b>mediaSlider</b>: MediaSlider = MediaSlider {
+        <b>mediaPlayer</b>: bind controlBar.mediaPlayer
+
+        <b>x</b>: bind controlBar.x+(paddingBegin+margin)+controlHeight+margin+<span class='number-literal'>2</span>+margin+padding
+        <b>y</b>: bind controlBar.y+margin
+        <b>width</b>: bind controlBar.width-(mediaSlider.x+<span class='number-literal'>180</span>)
+        <b>height</b>: bind controlHeight
+    } on replace {
+        MediaControlBar.impl_registerControl(MediaControlType.MEDIA_SLIDER, mediaSlider);
+    }
+
+    <i class='comment'>// <span class='number-literal'>4</span>. media time labels</i>
+    <b class='keyword'>var</b> <b>mediaTime<span class='number-literal'>1</span></b>: MediaTime = MediaTime {
+        <b>mediaPlayer</b>: bind controlBar.mediaPlayer
+        <b>type</b>: MediaTimeType.CURRENT
+
+        <b>x</b>: bind mediaSlider.x + mediaSlider.width+padding
+        <b>y</b>: bind controlBar.y+margin
+        <b>width</b>: <span class='number-literal'>80</span>
+        <b>height</b>: bind controlHeight
+    } on replace {
+        MediaControlBar.impl_registerControl(MediaControlType.CURRENT_TIME, mediaTime<span class='number-literal'>1</span>);
+    }
+
+    <i class='comment'>/*<b class='keyword'>var</b> <b>mediaTime<span class='number-literal'>2</span></b>: MediaTime = MediaTime {
+        <b>mediaPlayer</b>: bind controlBar.mediaPlayer
+        <b>type</b>: MediaTimeType.REMAINING
+    }*/</i>
+
+    <b class='keyword'>var</b> divider<span class='number-literal'>2</span> = bind createDivider(
+    <i class='comment'>//volumeControl.x-speakerControl.width-(paddingBegin+margin)*<span class='number-literal'>2</span>, controlBar.y,</i>
+    speakerControl.x-(padding+margin), controlBar.y,
+    controlBar.height);
+
+    <i class='comment'>// <span class='number-literal'>5</span>. speaker control</i>
+    <b class='keyword'>var</b> <b>speakerControl</b>: SpeakerControl = SpeakerControl {
+        <b>mediaPlayer</b>: bind controlBar.mediaPlayer
+
+        <b>x</b>: bind volumeControl.x-speakerControl.width-(padding)
+        <b>y</b>: bind controlBar.y+margin
+        <b>width</b>: bind controlHeight*<span class='number-literal'>0</span>.<span class='number-literal'>4</span>
+        <b>height</b>: bind controlHeight
+    }
+
+    <i class='comment'>// <span class='number-literal'>6</span>. volume control</i>
+    <b class='keyword'>var</b> <b>volumeControl</b>: VolumeControl = VolumeControl {
+        <b>mediaPlayer</b>: bind controlBar.mediaPlayer;
+        <b>value</b>: <span class='number-literal'>1</span>.<span class='number-literal'>0</span>
+
+        <b>x</b>: bind controlBar.x+controlBar.width-(volumeControl.width+paddingBegin)
+        <b>y</b>: bind controlBar.y+margin
+        <b>width</b>: <span class='number-literal'>60</span>
+        <b>height</b>: bind controlHeight
+    }
+
+    <b class='keyword'>var</b> divider<span class='number-literal'>3</span> = bind createDivider(
+    <i class='comment'>//volumeControl.x-speakerControl.width-(paddingBegin+margin)*<span class='number-literal'>2</span>, controlBar.y,</i>
+    speakerControl.x-(<span class='number-literal'>2</span>*padding+margin) + volumeControl.width, controlBar.y,
+    controlBar.height);
+
+<i class='comment'>//      <span class='number-literal'>7</span>. fullScreen control</i>
+    <b class='keyword'>var</b> <b>fullScreenControl</b>: FullScreenControl = FullScreenControl {
+        <b>mediaPlayer</b>: bind controlBar.mediaPlayer;
+
+        <b>x</b>: bind controlBar.x+controlBar.width-(fullScreenControl.width +paddingBegin)
+        <b>y</b>: bind controlBar.y+margin
+        <b>width</b>: bind controlHeight
+        <b>height</b>: bind controlHeight
+    }
+
+    bound function createDivider(<b>sx</b>:Number, <b>sy</b>:Number, <b>ht</b>:Number):Group {
+        Group {
+            <b>content</b>: bind [
+                Line {
+                    <b>startX</b>: bind sx
+                    <b>startY</b>: bind sy
+                    <b>endX</b>: bind sx
+                    <b>endY</b>: bind sy+(ht-<span class='number-literal'>1</span>)
+                    <b>stroke</b>: Color.rgb(<span class='number-literal'>43</span>, <span class='number-literal'>40</span>, <span class='number-literal'>41</span>)
+                    <b>strokeWidth</b>: <span class='number-literal'>1</span>
+                },
+                Line {
+                    <b>startX</b>: bind sx+<span class='number-literal'>1</span>
+                    <b>startY</b>: bind sy
+                    <b>endX</b>: bind sx+<span class='number-literal'>1</span>
+                    <b>endY</b>: bind sy+(ht-<span class='number-literal'>1</span>)
+                    <b>stroke</b>: Color.rgb(<span class='number-literal'>93</span>, <span class='number-literal'>94</span>, <span class='number-literal'>95</span>)
+                    <b>strokeWidth</b>: <span class='number-literal'>1</span>
+                }
+            ]
+        }
+    }
+
+    init {
+        node = Group {
+            <b>content</b>: bind [
+                frame,
+                playControl,
+                bufferIndicator,
+                divider<span class='number-literal'>1</span>,
+                mediaSlider,
+                mediaTime<span class='number-literal'>1</span>,
+                divider<span class='number-literal'>2</span>,
+                speakerControl,
+                volumeControl,
+                divider<span class='number-literal'>3</span>,
+                fullScreenControl,
+            ]
+        }
+    }
+
+    <i class='comment'>// animation and effects</i>
+
+    <b class='keyword'>var</b> <b>fadeIn</b>: Timeline;
+    <b class='keyword'>var</b> <b>fadeOut</b>: Timeline;
+
+    <b class='keyword'>var</b> show = bind controlBar.show on replace {
+        if(not controlBar.disabled) {
+            showWithFade(show);
+        }
+    }
+
+    function showWithFade(<b>show</b>: Boolean) {
+        def tempFrame = frame;
+        def tempPlayControl = playControl;
+        def tempMediaSlider = mediaSlider;
+        def tempMediaTime<span class='number-literal'>1</span> = mediaTime<span class='number-literal'>1</span>;
+        def tempSpeakerControl = speakerControl;
+        def tempVolumeControl = volumeControl;
+        def tempFullScreenControl = fullScreenControl;
+        def tempDivider<span class='number-literal'>1</span> = divider<span class='number-literal'>1</span>;
+        def tempDivider<span class='number-literal'>2</span> = divider<span class='number-literal'>2</span>;
+        def tempDivider<span class='number-literal'>3</span> = divider<span class='number-literal'>3</span>;
+        if(show) {
+            if(fadeIn != null and fadeIn.running) fadeIn.stop();
+            fadeIn = Timeline {
+                <b>keyFrames</b>: [
+                    at(<span class='number-literal'>0</span>ms) {
+                        tempFrame.opacity =&gt; <span class='number-literal'>0</span>.<span class='number-literal'>0</span>;
+                        tempPlayControl.opacity =&gt; <span class='number-literal'>0</span>.<span class='number-literal'>0</span>;
+                        tempMediaSlider.opacity =&gt; <span class='number-literal'>0</span>.<span class='number-literal'>0</span>;
+                        tempMediaTime<span class='number-literal'>1</span>.opacity =&gt; <span class='number-literal'>0</span>.<span class='number-literal'>0</span>;
+                        tempSpeakerControl.opacity =&gt; <span class='number-literal'>0</span>.<span class='number-literal'>0</span>;
+                        tempVolumeControl.opacity =&gt; <span class='number-literal'>0</span>.<span class='number-literal'>0</span>;
+                        tempFullScreenControl.opacity =&gt; <span class='number-literal'>0</span>.<span class='number-literal'>0</span>;
+                        tempDivider<span class='number-literal'>1</span>.opacity =&gt; <span class='number-literal'>0</span>.<span class='number-literal'>0</span>;
+                        tempDivider<span class='number-literal'>2</span>.opacity =&gt; <span class='number-literal'>0</span>.<span class='number-literal'>0</span>;
+                        tempDivider<span class='number-literal'>3</span>.opacity =&gt; <span class='number-literal'>0</span>.<span class='number-literal'>0</span>;
+                    },
+                    at(<span class='number-literal'>500</span>ms) { 
+                        tempFrame.opacity =&gt; <span class='number-literal'>1</span>.<span class='number-literal'>0</span> tween Interpolator.EASEBOTH;
+                        tempPlayControl.opacity =&gt; <span class='number-literal'>1</span>.<span class='number-literal'>0</span> tween Interpolator.EASEBOTH;
+                        tempMediaSlider.opacity =&gt; <span class='number-literal'>1</span>.<span class='number-literal'>0</span> tween Interpolator.EASEBOTH;
+                        tempMediaTime<span class='number-literal'>1</span>.opacity =&gt; <span class='number-literal'>1</span>.<span class='number-literal'>0</span> tween Interpolator.EASEBOTH;
+                        tempSpeakerControl.opacity =&gt; <span class='number-literal'>1</span>.<span class='number-literal'>0</span> tween Interpolator.EASEBOTH;
+                        tempVolumeControl.opacity =&gt; <span class='number-literal'>1</span>.<span class='number-literal'>0</span> tween Interpolator.EASEBOTH;
+                        tempFullScreenControl.opacity =&gt; <span class='number-literal'>1</span>.<span class='number-literal'>0</span> tween Interpolator.EASEBOTH;
+                        tempDivider<span class='number-literal'>1</span>.opacity =&gt; <span class='number-literal'>1</span>.<span class='number-literal'>0</span> tween Interpolator.EASEBOTH;
+                        tempDivider<span class='number-literal'>2</span>.opacity =&gt; <span class='number-literal'>1</span>.<span class='number-literal'>0</span> tween Interpolator.EASEBOTH;
+                        tempDivider<span class='number-literal'>3</span>.opacity =&gt; <span class='number-literal'>1</span>.<span class='number-literal'>0</span> tween Interpolator.EASEBOTH;
+                    }
+                ]
+            }
+            fadeIn.play();
+        } else {
+            if(fadeOut != null and fadeOut.running) fadeOut.stop();
+            fadeOut = Timeline {
+                <b>keyFrames</b>: [
+                    at(<span class='number-literal'>0</span>ms) {
+                        tempFrame.opacity =&gt; <span class='number-literal'>1</span>.<span class='number-literal'>0</span>;
+                        tempPlayControl.opacity =&gt; <span class='number-literal'>1</span>.<span class='number-literal'>0</span>;
+                        tempMediaSlider.opacity =&gt; <span class='number-literal'>1</span>.<span class='number-literal'>0</span>;
+                        tempMediaTime<span class='number-literal'>1</span>.opacity =&gt; <span class='number-literal'>1</span>.<span class='number-literal'>0</span>;
+                        tempSpeakerControl.opacity =&gt; <span class='number-literal'>1</span>.<span class='number-literal'>0</span>;
+                        tempVolumeControl.opacity =&gt; <span class='number-literal'>1</span>.<span class='number-literal'>0</span>;
+                        tempFullScreenControl.opacity =&gt; <span class='number-literal'>1</span>.<span class='number-literal'>0</span>;
+                        tempDivider<span class='number-literal'>1</span>.opacity =&gt; <span class='number-literal'>1</span>.<span class='number-literal'>0</span>;
+                        tempDivider<span class='number-literal'>2</span>.opacity =&gt; <span class='number-literal'>1</span>.<span class='number-literal'>0</span>;
+                        tempDivider<span class='number-literal'>3</span>.opacity =&gt; <span class='number-literal'>1</span>.<span class='number-literal'>0</span>;
+                    },
+                    at(<span class='number-literal'>500</span>ms) {
+                        tempFrame.opacity =&gt; <span class='number-literal'>0</span>.<span class='number-literal'>0</span> tween Interpolator.EASEBOTH;
+                        tempPlayControl.opacity =&gt; <span class='number-literal'>0</span>.<span class='number-literal'>0</span> tween Interpolator.EASEBOTH;
+                        tempMediaSlider.opacity =&gt; <span class='number-literal'>0</span>.<span class='number-literal'>0</span> tween Interpolator.EASEBOTH;
+                        tempMediaTime<span class='number-literal'>1</span>.opacity =&gt; <span class='number-literal'>0</span>.<span class='number-literal'>0</span> tween Interpolator.EASEBOTH;
+                        tempSpeakerControl.opacity =&gt; <span class='number-literal'>0</span>.<span class='number-literal'>0</span> tween Interpolator.EASEBOTH;
+                        tempVolumeControl.opacity =&gt; <span class='number-literal'>0</span>.<span class='number-literal'>0</span> tween Interpolator.EASEBOTH;
+                        tempFullScreenControl.opacity =&gt; <span class='number-literal'>0</span>.<span class='number-literal'>0</span> tween Interpolator.EASEBOTH;
+                        tempDivider<span class='number-literal'>1</span>.opacity =&gt; <span class='number-literal'>0</span>.<span class='number-literal'>0</span> tween Interpolator.EASEBOTH;
+                        tempDivider<span class='number-literal'>2</span>.opacity =&gt; <span class='number-literal'>0</span>.<span class='number-literal'>0</span> tween Interpolator.EASEBOTH;
+                        tempDivider<span class='number-literal'>3</span>.opacity =&gt; <span class='number-literal'>0</span>.<span class='number-literal'>0</span> tween Interpolator.EASEBOTH;
+                    }
+                ]
+            }
+            fadeOut.play();
+        }
+    }
+}
+</code></pre></div>
+<div id="footer">
+			<span class="copy">&copy; 2010, Oracle Corporation and/or its affiliates.</span>
+			
+		</div>
+<!--
+	JAVASCRIPT
+	At the bottom of the page so that we download and render all the visual elements, before we start handling the javascript. This provides for a faster perceived loading time.
+-->
+
+<script src="../../shared/new_style/js/omi/s_code_remote.js" type="text/javascript"></script>
+ 
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js"></script>
+<!--[if lte IE 6]>
+	<script type="text/javascript" src="../../shared/new_style/js/jquery.ifixpng.js"></script>
+<![endif]-->
+<script type="text/javascript" src="../../shared/new_style/js/jquery.history.js"></script>
+<script type="text/javascript" src="../../shared/new_style/js/javafx.js"></script>
+
+
+
+
+

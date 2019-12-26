@@ -1,0 +1,359 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+
+<head>
+	
+	<title>JavaFX Example Code | PathAnimation | JavaFX Demo</title>
+	
+	<!--METAS-->
+	
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="description" content="JavaFX" />
+	<meta name="keywords" content="JavaFX Oracle [...]" />
+	<meta name="author" content="Oracle" />
+	
+	<!--STYLESHEETS-->
+	<link rel="stylesheet" type="text/css" media="screen, projection" href="../shared/new_style/css/reset.css" />
+	<link rel="stylesheet" type="text/css" media="screen, projection" href="../shared/new_style/css/javafx.css" />
+	<link rel="stylesheet" type="text/css" media="screen, projection" href="../shared/new_style/css/samples.css" />
+	
+	<!-- CONDITIONAL STYLESHEETS -->
+	<!--[if IE]>
+		<link rel="stylesheet" type="text/css" href="../shared/new_style/css/ie.css" />
+	<![endif]-->
+	
+	<!--[if IE 6]>
+		<link rel="stylesheet" type="text/css" href="../shared/new_style/css/ie6.css" />
+	<![endif]-->
+	
+	<!--[if IE 7]>
+		<link rel="stylesheet" type="text/css" href="../shared/new_style/css/ie7.css" />
+	<![endif]-->
+	
+	<!--ADDRESS BAR ICON-->
+
+	<link rel="shortcut icon" type="image/ico" href="../shared/new_style/images/favicon.ico" />
+    
+	
+</head>
+<!--
+	The ID here is required to indicate the page type.
+	Changing this will affect the layout of the page.
+-->
+<body id="tutorials">
+	
+	<div id="body">
+		<!--
+			Header is the main navigation.
+			We are using CSS Sprites to apply images across the site, namely the header and subnav.
+			
+			This has a few implications for you guys, if you want to change the image for selected or hover states,
+			you'll find the images embedded next to the header image in the same file. This makes it slightly harder to edit, and
+			a lot more difficult to change in the styles, but allows for 1 file and download request which makes it much more performant.
+			
+			This also means some of the elements that use the sprites have id's that allow us to modify the sprite image based on each element.
+			So in header and subnav, we have an id on each LI, these can't be changed or else the image styling will be ruined.
+		-->
+		<ul id="header" class="see">
+			<li id="fx" class="first">
+				<h1><a href="http://www.javafx.com/"><span>FX</span></a></h1>
+			</li>
+			<li id="explore">
+				<a href="http://www.javafx.com/about/"><span>Explore</span></a>
+			</li>
+			<li id="see">
+				<a href="http://www.javafx.com/samples/"><span>See</span></a>
+			</li>
+			<li id="learn">
+				<a href="http://www.javafx.com/learn/"><span>Learn</span></a>
+			</li>
+			<li id="start" class="last">
+				<a href="http://www.javafx.com/downloads/"><span>Start</span></a>
+			</li>
+		</ul>
+	
+
+<script src="http://jfx.sfbay.sun.com/hudson//job/1.3.1/label=macosx-universal-soma/101/artifact/artifacts/rt-deployed/dtfx.js"></script><div id="main">
+<div class="sidebar">
+<a href="../index.html" class="back"><span>Return to See main Page</span></a>
+<div class="profile">
+<strong>Key Features</strong><em>Graphics API Animation </em><strong>Skill Level</strong><em>intermediate</em><strong>Last Updated</strong><em>October 9, 2008</em>
+</div>
+<dl class="icon-list">
+<dt>Share</dt>
+<dd>
+<a href="http://buzz.yahoo.com/article/http://javafx.com/samples/PathAnimation/"><img src="../shared/new_style/images/yahoo_buzz_icon.png" width="20" height="19" alt="Yahoo Buzz"></a>
+</dd>
+<dd>
+<a href="http://www.facebook.com/share.php?u=http://javafx.com/samples/PathAnimation/"><img src="../shared/new_style/images/facebook_icon.png" width="20" height="17" alt="Facebook"></a>
+</dd>
+<dd>
+<a href="http://www.myspace.com/index.cfm?u=http://javafx.com/samples/PathAnimation/"><img src="../shared/new_style/images/myspace_icon.png" width="20" height="18" alt="Myspace"></a>
+</dd>
+<dd>
+<a href="http://digg.com/submit?phase=3&url=http://javafx.com/samples/PathAnimation/"><img src="../shared/new_style/images/digg_icon.png" width="20" height="18" alt="Digg"></a>
+</dd>
+<dd>
+<a href="http://www.reddit.com/submit?url=http://javafx.com/samples/PathAnimation/"><img src="../shared/new_style/images/reddit_icon.png" width="20" height="18" alt="Reddit"></a>
+</dd>
+<dd>
+<a href="http://del.icio.us/post?url=http://javafx.com/samples/PathAnimation/"><img src="../shared/new_style/images/delicious_icon.png" width="20" height="18" alt="Delicious"></a>
+</dd>
+<dd>
+<a href="http://www.newsvine.com/_tools/seed?popoff=0&u=http://javafx.com/samples/PathAnimation/"><img src="../shared/new_style/images/newsvine_icon.png" width="20" height="18" alt="Newsvine"></a>
+</dd>
+</dl>
+<dl class="links-list">
+<dt>View Source Code</dt><dd><a href='src/CarScenario.fx.html' target='_blank'>CarScenario.fx</a></dd>
+<dd><a href='src/Main.fx.html' target='_blank'>Main.fx</a></dd>
+<dd><a href='src/Scenario.fx.html' target='_blank'>Scenario.fx</a></dd>
+<dd><a href='src/ScenarioButton.fx.html' target='_blank'>ScenarioButton.fx</a></dd>
+<dd><a href='src/ShipScenario.fx.html' target='_blank'>ShipScenario.fx</a></dd>
+<dd class="button">
+<a class="download-button" href="PathAnimation.zip"><span>Download Source Code</span></a>
+</dd>
+</dl>
+<div class="profile no-image">
+<h4>Profile</h4>
+<strong>Peter Zhelezniakov</strong>
+</div>
+<div id="mobile" class="sidebox">
+<img src="../shared/mobile_badge.png"></div>
+<div id="tv" class="sidebox">
+<img src="../shared/tv_badge.png"></div>
+</div>
+<div id="content">
+<div class="content-head">
+<h2>Animating Shapes Along a Path</h2>
+<div class="meta">
+                       By <a class="author">Peter Zhelezniakov</a>,
+                       <span class="date">October 9, 2008</span>
+</div>
+</div>
+<p>
+    This sample shows how to animate a shape along an arbitrary path. It has
+    two "scenarios" that the user can switch between: a car running on a
+    racetrack and a boat sailing on waves.
+</p>
+<script>
+var u10only = '';
+var webstartAllowed = '';
+
+if(u10only=='true' && !deployJava.isPlugin2()) {
+    document.write("<p class='u10warning'>");
+    document.write("This sample needs Java SE 6 Update 10 or higher with Internet Explorer 7+ or FireFox 3+");
+    document.write("");
+    if(webstartAllowed=='true') {
+        document.write(" Please <a href='webstart/PathAnimation.jnlp'>run this example with Java Webstart<a> instead");
+    }
+    document.write("</p>");
+} else {
+
+    javafx(
+        {
+            archive: "webstart/PathAnimation.jar,",
+            width: 480,
+            height: 640,
+            code: "pathanimation.Main",
+            
+            name: "appl"
+        } , { 
+                 "progress.background.url": "../desc-resources/path_animation_bg.jpg", 
+     "progress.icon.url": "../desc-resources/boat.png", 
+     "progress.icon.x": "261", 
+     "progress.icon.y": "21", 
+        "progress.bar.y": "188"
+ } 
+    );
+}
+</script>
+<P>
+   Note: This sample has customized the progress bar. Check out how, at the bottom of the page.
+</P>
+<h3>Understanding the Code</h3>
+<p>
+    Path-based animation is provided by the class
+    <var class="code-attribute">javafx.animation.transition.PathTransition</var>. It takes two
+    principal parameters: a <var class="code-attribute">Node</var> that is animated and a
+    <var class="code-attribute">Path</var> along which the node moves.
+</p>
+<p>
+    When constructing a node to be animated, keep in mind that the center of
+    the node always becomes the anchor point of the animation, i.e. the point
+    that follows the path closely. An API to control the anchor point is
+    planned in a future release, however, it is not there yet.
+</p>
+<p>
+    After both the node and the path are ready, animating is easily done. You
+    specify the duration for the transition and the interpolation method. The
+    optional <var class="code-attribute">ORTHOGONAL_TO_TANGENT</var> parameter demands that the node
+    be kept orthogonal to the tangent of the path. Otherwise, the car would
+    stick in the initial left-to-right orientation and would not turn.
+    Figure 1 shows the complete definition of the transition, taken from the
+    sailboat scenario.
+</p>
+<div class="source">
+<div class="code-header">Source Code</div>
+<pre>
+def path = Path {
+    ...
+};
+
+def anim = PathTransition {
+    <b>path</b>: AnimationPath.createFromPath(path)
+    <b>orientation</b>: OrientationType.ORTHOGONAL_TO_TANGENT
+    <b>node</b>: ship
+    <b>interpolator</b>: Interpolator.LINEAR
+    <b>duration</b>: <span class='number-literal'>8</span>s
+    <b>repeatCount</b>: Timeline.INDEFINITE
+};
+</pre>
+</div>
+<p>Figure 1: Creating the Transition Object</p>
+<p>
+    To start the transition, use the <var class="code-attribute">play()</var> method, as shown in
+    Figure 2.
+</p>
+<div class="source">
+<div class="code-header">Source Code</div>
+<pre>
+anim.play();
+</pre>
+</div>
+<p>Figure 2: Starting the Transition</p>
+<p>
+    In the sailboat scenario, not only is the sailboat animated, but the waves
+    also run from right to left. This effect is obtained with another type of
+    transition, <var class="code-attribute">javafx.animation.transition.TranslateTransition</var>.
+    This transition is set up to travel the same distance as the
+    <var class="code-attribute">PathTransition</var> does, in the same time, but in the opposite
+    direction so that the boat stays in the center of the scenario. Figure 3
+    shows the translating transition.
+</p>
+<div class="source">
+<div class="code-header">Source Code</div>
+<pre>
+def move = TranslateTransition {
+    <b>fromX</b>: <span class='number-literal'>0</span>
+    <b>fromY</b>: <span class='number-literal'>0</span>
+    <b>toX</b>: -<span class='number-literal'>335</span>*S
+    <b>toY</b>: <span class='number-literal'>0</span>
+    <b>node</b>: group
+    <b>interpolator</b>: Interpolator.LINEAR
+    <b>duration</b>: <span class='number-literal'>8</span>s
+    <b>repeatCount</b>: Timeline.INDEFINITE
+};
+</pre>
+</div>
+<p>Figure 3: Defining a Translation Transition</p>
+<p>
+    When the user switches between scenarios using the buttons in the top-left
+    corner, the new scenario fades in. This is done using yet another transition
+    class, <var class="code-attribute">javafx.animation.transition.FadeTransition</var>. Its
+    <var class="code-attribute">fromValue</var> and <var class="code-attribute">toValue</var> parameters refer to the
+    opacity of the node. So in our case, illustrated by Figure 4, the scenario
+    node is brought from its current opacity state to completely opaqueness
+    in two seconds.
+</p>
+<div class="source">
+<div class="code-header">Source Code</div>
+<pre>
+public abstract class Scenario extends Container {
+  <b class='keyword'>var</b> fadein = FadeTransition {
+    <b>node</b>: this
+    <b>fromValue</b>: bind this.opacity
+    <b>toValue</b>: <span class='number-literal'>1</span>
+    <b>duration</b>: <span class='number-literal'>2</span>s
+    <b>interpolator</b>: Interpolator.EASEOUT
+  };
+  <b class='keyword'>var</b> fadeout = FadeTransition {
+    <b>node</b>: this
+    <b>fromValue</b>: bind this.opacity
+    <b>toValue</b>: <span class='number-literal'>0</span>
+    <b>duration</b>: <span class='number-literal'>2</span>s
+    <b>interpolator</b>: Interpolator.EASEOUT
+  };
+}
+</pre>
+</div>
+<p>Figure 4: Using Fade Transition</p>
+<h3>Customizing  Progress Bar</h3>
+<p>This sample demonstrates how to customize the default progress bar. You can add the custom progress bar with the different background image, 
+the icon, and location of progress bar or icon. 
+<!--For more detail, please visit <a href="http://download.oracle.com/docs/cd/E17411_01/javafx/1.3.1/tutorial/CustomProgressBar/index.html">the custom progress bar documenations</a>
+-->
+</p>
+<p> The detault progress bar can be customized with the following attributes;</p>
+<ul>
+  
+<li> Background image: <var class="code-attribute"> progress.background.url </var>  
+</li>
+  
+<li> Icon: <var class="code-attribute">progress.icon.url</var> 
+</li>
+  
+<li> Location of an icon image: <var class="code-attribute"> progress.icon.x, progress.icon.y </var> 
+</li>
+  
+<li> Location of the progressbar: <var class="code-attribute">progress.bar.x, progress.bar.y</var> 
+</li>
+
+</ul>
+<p> In this example, the background is a relative path to <var class="code-attribute">../desc-resources/path_animation_bg.jpg</var>. 
+The custom icon is added to the relative directory <var class="code-attribute">../desc-resources/boat.png</var>, 
+and the <var class="code-attribute"> Y </var> coordinate  of the custom icon is set to <var class="code-attribute">"188"</var>.
+The location of progress bar is set to the coordinate <var class="code-attribute"> (261, 21) </var>, 
+</p>
+<div class="source">
+<div class="code-header">Source Code</div>
+<pre>
+    javafx(
+        {
+            <b>archive</b>: <span class='string-literal'>"webstart/PathAnimation.jar,"</span>,
+            <b>width</b>: <span class='number-literal'>480</span>,
+            <b>height</b>: <span class='number-literal'>640</span>,
+            <b>code</b>: <span class='string-literal'>"pathanimation.Main"</span>,
+            <b>name</b>: <span class='string-literal'>"appl"</span>
+        } , { 
+            <span class='string-literal'>"progress.background.url": "../desc-resources/path_animation_bg.jpg"</span>, 
+            <span class='string-literal'>"progress.icon.url": "../desc-resources/boat.png"</span>, 
+            <span class='string-literal'>"progress.icon.x": "<span class='number-literal'>261</span>"</span>,
+            <span class='string-literal'>"progress.icon.y": "<span class='number-literal'>21</span>"</span>,
+            <span class='string-literal'>"progress.bar.y": "<span class='number-literal'>188</span>"</span>
+        } 
+    );
+</pre>
+</div>
+</div>
+</div>		<div id="footer">
+			<span class="copy">&copy; 2010, Oracle Corporation and/or its affiliates.</span>
+            <ul>
+				<li class="first"><a href="http://javafx.com/" target="_blank">English</a></li>
+				<li><a href="http://www.sun.com/privacy/index.html" target="_blank">Privacy</a></li>
+                <li><a href="http://www.sun.com/termsofuse.jsp" target="_blank">Terms of Use</a></li>
+                <li><a href="https://openjfx.dev.java.net/legal/trademarks.txt" target="_blank">Trademarks</a></li>
+                <li><a href="http://www.sun.com/software/licensingcenter/" target="_blank">Licensing</a></li>
+            </ul>
+            <a href="http://www.sun.com/" id="footer_link"><span>Sun.com</span></a>
+		</div>
+	</div>
+    
+<!-- BEGIN G9 VARIATION 0 -->
+<script language="javascript" type="text/javascript" charset="UTF-8" src="http://www.sun.com/share/op/oo_engine.js"></script>
+<script language="javascript" type="text/javascript" charset="UTF-8" src="http://www.sun.com/share/op/oo_conf_en-US.js"></script>
+<!-- END G9 VARIATION 0 -->
+	
+<script src="../shared/new_style/js/omi/s_code_remote.js" type="text/javascript"></script>
+</body>
+
+</html>
+
+<!--
+	JAVASCRIPT
+	At the bottom of the page so that we download and render all the visual elements, before we start handling the javascript. This provides for a faster perceived loading time.
+-->
+
+<script type="text/javascript" src="../shared/new_style/js/javafx.js"></script>
+
+
+

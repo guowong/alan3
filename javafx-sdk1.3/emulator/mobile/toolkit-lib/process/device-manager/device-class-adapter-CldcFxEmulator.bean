@@ -1,0 +1,52 @@
+#
+# Copyright (c) 2009 Sun Microsystems, Inc. All rights reserved.
+# Use is subject to license terms.
+#
+
+.class: com.sun.jme.toolkit.deviceadapter.cldcemulator.CldcAdapter
+.dependencies: WorkdirHelper
+
+commandLineFileProperties: \
+        TOOLKIT_PATH=${emulator.home}, \
+        RUNTIME_PATH=${emulator.home}/runtimes/cldc-hi-javafx
+commandLineStringProperties:
+commandLine: java \
+        ${emulator.arguments} \
+	${swing.appname.parameter}="${product.shortname} Emulator" \
+        -Xmx128m \
+        -classpath "%TOOLKIT_PATH_FS%/toolkit-lib/modules/bootstrap/code/bootstrap.jar${path.separator}\
+                    %TOOLKIT_PATH_FS%/toolkit-lib/modules/bootstrap/code/log4j-1.2.15.jar" \
+        -Dcldc-hi.runtime.name=cldc-hi-javafx \
+        -Dmodules.dir="%TOOLKIT_PATH_FS%/toolkit-lib" \
+        -Dinit.module=object-server \
+        -Droot.object=ObjectServer \
+        -Ddevice="%DEVICE%" \
+        -Ddevice.name="%DEVICE_NAME%" \
+        -Ddevice.id="%DEVICE_ID%" \
+        -Ddevice.work.dir="%DEVICE_WORKDIR_PATH%" \
+        -Dprocess="devices/%DEVICE%" \
+        -Dtoolkit.home="%TOOLKIT_PATH_FS%" \
+        -Demulator.home="%TOOLKIT_PATH_FS%" \
+        -Demulator.workdir="%DEVICE_WORKDIR_PATH%" \
+        -Demulator.lib="%TOOLKIT_PATH_FS%/emulator-lib" \
+        -Djava.security.policy="%TOOLKIT_PATH_FS%/lib/security/javaemu.policy" \
+        -Dsystem.properties="%TOOLKIT_PATH_FS%/toolkit-lib/platform.properties,\
+                             %TOOLKIT_PATH_FS%/toolkit-lib/modules/bootstrap/conf/system.properties,\
+                             %TOOLKIT_PATH_FS%/toolkit-lib/devices/%DEVICE%/conf/device.properties,\
+                             %DEVICE_WORKDIR_PATH_FS%/device.properties,\
+                             %TOOLKIT_PATH_FS%/toolkit-lib/generated.properties" \
+        -Dlog4j.configuration="file:%TOOLKIT_PATH_FS%/toolkit-lib/emulator/generic/core/conf/log4j.xml" \
+        -Dobject-server.name=device-%DEVICE_ID% \
+        com.sun.jme.toolkit.bootstrap.Container \
+        %CONNECT_ARGS% \
+        -Xdeviceid:%DEVICE_ID% \
+        -stdoutport %STDOUT_PORT_NUMBER% \
+        -stderrport %STDERR_PORT_NUMBER% \
+        -XrunKDP:port=%JDWP_PORT_NUMBER% \
+        -Dsystem.storage_root="%DEVICE_WORKDIR_PATH%${file.separator}appdb" \
+        -Dsystem.default_storage="%RUNTIME_PATH%${file.separator}lib" \
+        -Dsdk_version=3.0 \
+        0
+runtimePath: ${emulator.home}/runtimes/cldc-hi-javafx
+workdirHelper: WorkdirHelper
+connectTimeout: ${emulator.connect.timeout}

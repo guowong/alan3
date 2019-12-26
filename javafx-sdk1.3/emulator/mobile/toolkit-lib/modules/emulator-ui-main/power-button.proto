@@ -1,0 +1,10 @@
+#
+# Copyright (c) 2009 Sun Microsystems, Inc. All rights reserved.
+# Use is subject to license terms.
+#
+
+.class: com.sun.kvem.PowerButton
+.parent-add-method: addControl
+
+shutdownLatch: shutdown-latch
+deviceState: $parent

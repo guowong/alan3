@@ -1,0 +1,11 @@
+#
+# Copyright (c) 2009 Sun Microsystems, Inc. All rights reserved.
+# Use is subject to license terms.
+#
+
+.class: javax.swing.JMenuItem
+.dependencies: ui-actions-Resume
+.parent: ui-menu-Application
+.parent-add-method: add
+
+action: ui-actions-Resume

@@ -1,0 +1,289 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+
+<head>
+	
+	<title>JavaFX Sample</title>
+	
+	<!--METAS-->
+	
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="description" content="JavaFX" />
+	<meta name="keywords" content="JavaFX Oracle" />
+	<meta name="author" content="Oracle" />
+	
+	<!--STYLESHEETS-->
+	<link rel="stylesheet" type="text/css" media="screen, projection" href="../../shared/new_style/css/reset.css" />
+	<link rel="stylesheet" type="text/css" media="screen, projection" href="../../shared/new_style/css/javafx.css" />
+	<link rel="stylesheet" type="text/css" media="screen, projection" href="../../shared/new_style/css/code.css" />
+	
+	<!-- CONDITIONAL STYLESHEETS -->
+	<!--[if IE]>
+	  <link rel="stylesheet" type="text/css" href="../../shared/new_style/css/ie.css" />
+	<![endif]-->
+	
+	<!--ADDRESS BAR ICON-->
+	<link rel="shortcut icon" type="image/ico" href="../../shared/new_style/images/favicon.ico" />
+	
+	<link rel="stylesheet" type="text/css" media="screen, projection" href="../../shared/new_style/css/samples.css" />
+    <style type="text/css">
+.code .string-literal, .code .number-literal {
+	font-style: italic;
+	color: #4b494d;
+}
+    </style>
+</head>
+<!--
+	The ID here is required to indicate the page type.
+	Changing this will affect the layout of the page.
+-->
+<body id="tutorials">
+	
+	<div id="body">
+		<!--
+			The header in the source code view doesn't have any buttons.
+			So just the <h1> tag for the site logo is included.
+			
+			The header also doesn't have an A tag with an "href" since you shouldn't be able to navigate to the
+			index pgae inside the popup.
+		-->
+        
+        
+		<ul id="popheader">
+			<li class="first">
+				<h1><a><span>FX</span></a></h1>
+			
+				<!-- Close button -->
+				<a class="close-button" title="Close"><span>Close</span></a>
+			</li>
+		</ul>
+<div class="source">
+  <div class="code-header">License text </div>
+    <pre>
+
+/*
+ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER 
+ * Copyright  2008, 2010 Oracle and/or its affiliates.  All rights reserved. 
+ * Use is subject to license terms.
+ * 
+ * This file is available and licensed under the following license:
+ * 
+ * Redistribution and use in source and binary forms, with or without 
+ * modification, are permitted provided that the following conditions are met: 
+ * 
+ *   * Redistributions of source code must retain the above copyright notice, 
+ *     this list of conditions and the following disclaimer. 
+ *
+ *   * Redistributions in binary form must reproduce the above copyright notice,
+ *     this list of conditions and the following disclaimer in the documentation
+ *     and/or other materials provided with the distribution.
+ *
+ *   * Neither the name of Oracle Corporation nor the names of its contributors 
+ *     may be used to endorse or promote products derived from this software 
+ *     without specific prior written permission. 
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS 
+ * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT 
+ * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR 
+ * A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT 
+ * OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, 
+ * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, 
+ * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; 
+ * OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, 
+ * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR 
+ * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF 
+ * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. 
+ */
+
+    </pre>
+  </div>
+<div class="code"><pre><code>
+<b>package</b> com.sun.mediabox.controls.skin.paranara;
+
+
+<b>import</b> javafx.animation.Timeline;
+<b>import</b> javafx.scene.Group;
+<b>import</b> javafx.scene.input.MouseEvent;
+<b>import</b> javafx.scene.paint.*;
+<b>import</b> javafx.scene.shape.Rectangle;
+<b>import</b> com.sun.mediabox.controls.*;
+<b>import</b> com.sun.javafx.mediabox.controls.*;
+<b>import</b> javafx.scene.input.KeyEvent;
+<b>import</b> javafx.scene.input.KeyCode;
+
+<i class='comment'>/**
+ * @author baechul
+ */</i>
+
+public class VolumeControlSkin extends com.sun.mediabox.controls.skin.AbstractSkin {
+    <i class='comment'>// control</i>
+    <b class='keyword'>var</b> volumeControl = bind control as VolumeControl;
+
+    <i class='comment'>// misc <b class='keyword'>var</b>iables</i>
+    <b class='keyword'>var</b> <b>barWidth</b>: Number = <span class='number-literal'>5</span>;
+    <b class='keyword'>var</b> <b>elements</b>: VolumeControlItem [];
+    
+    public <b class='keyword'>var</b> steps = bind volumeControl.tickMarks on replace {
+        if(sizeof elements != steps and steps &gt; <span class='number-literal'>0</span>) {
+            enabledCnt = steps;
+            barWidth = volumeControl.width/(steps*<span class='number-literal'>2</span>);
+
+            delete elements;
+            elements = for (i in [<span class='number-literal'>0</span>..steps]) createVolumeBar(i, i mod <span class='number-literal'>2</span> &gt; <span class='number-literal'>0</span>);
+        }
+    }
+
+    <b class='keyword'>var</b> enabledCnt = steps;
+
+    protected override function getMinWidth():Number { volumeControl.width }
+    protected override function getMinHeight():Number { volumeControl.height }
+
+    <i class='comment'>// behavior link</i>
+    override <b class='keyword'>var</b> behavior = VolumeControlBehavior {}
+    <b class='keyword'>var</b> sliderBehavior = bind behavior as VolumeControlBehavior;
+
+    <i class='comment'>// skin update based on the control status.</i>
+    <b class='keyword'>var</b> mute = bind volumeControl.mediaPlayer.mute on replace {
+        volumeControl.disable = mute;
+        for (i in [<span class='number-literal'>0</span>..(enabledCnt - <span class='number-literal'>1</span>)]) elements[i].isOn = not volumeControl.disabled;
+    }
+    
+    <i class='comment'>// skin node ///////////////////////////////////////////////////////////////</i>
+    <b class='keyword'>var</b> <b>pSize</b>: Number = bind volumeControl.height*<span class='number-literal'>0</span>.<span class='number-literal'>65</span>;
+
+    protected override <b class='keyword'>var</b> frame = Rectangle {
+        <b>x</b>: bind volumeControl.x
+        <b>y</b>: bind volumeControl.y
+        <b>width</b>: bind volumeControl.width
+        <b>height</b>: bind volumeControl.height
+        <b>fill</b>: Color.TRANSPARENT
+    }
+
+    <b class='keyword'>var</b> <b>sy</b>: Number = bind volumeControl.y + (volumeControl.height-pSize)/<span class='number-literal'>2</span>.<span class='number-literal'>0</span>;
+
+    function createVolumeBar(<b>i</b>: Integer, <b>visible</b>: Boolean): VolumeControlItem {
+        <b class='keyword'>var</b> bar : VolumeControlItem = VolumeControlItem {
+            <b>x</b>: bind volumeControl.x + (i * barWidth)
+            <b>y</b>: bind sy
+            <b>width</b>: barWidth
+            <b>height</b>: bind pSize
+            <b>isVisible</b>: visible
+            
+            <b>onMouseEntered</b>: function(<b>me</b>:MouseEvent) {
+                def tempbar = bar;
+                if (tempbar.scaleUpTimeline == null) {
+                    tempbar.scaleUpTimeline = Timeline {
+                        <b>keyFrames</b>: [
+                            at(<span class='number-literal'>0</span>ms) { 
+                                tempbar.scaleY =&gt; <span class='number-literal'>1</span>.<span class='number-literal'>0</span>
+                                },
+                            at(<span class='number-literal'>0</span>ms) { 
+                                tempbar.translateY =&gt; <span class='number-literal'>0</span>
+                                },
+                            at(<span class='number-literal'>200</span>ms) { 
+                                tempbar.scaleY =&gt; <span class='number-literal'>1</span>.<span class='number-literal'>3</span>
+                                },
+                            at(<span class='number-literal'>200</span>ms) { 
+                                tempbar.translateY =&gt; - pSize * <span class='number-literal'>0</span>.<span class='number-literal'>15</span>
+                                }
+                            ]
+                        }
+                    }
+                if (not volumeControl.disabled) tempbar.scaleUpTimeline.playFromStart();
+            }
+
+            <b>onMouseExited</b>: function(<b>me</b>:MouseEvent) {
+                def tempbar = bar;
+                if (tempbar.scaleDownTimeline == null) {
+                    tempbar.scaleDownTimeline = Timeline {
+                        <b>keyFrames</b>: [
+                            at(<span class='number-literal'>0</span>ms) { 
+                                tempbar.scaleY =&gt; <span class='number-literal'>1</span>.<span class='number-literal'>3</span>
+                                },
+                            at(<span class='number-literal'>0</span>ms) { 
+                                tempbar.translateY =&gt; - pSize * <span class='number-literal'>0</span>.<span class='number-literal'>15</span>
+                                },
+                            at(<span class='number-literal'>200</span>ms) { 
+                                tempbar.scaleY =&gt; <span class='number-literal'>1</span>.<span class='number-literal'>0</span>
+                                },
+                            at(<span class='number-literal'>200</span>ms) { 
+                                tempbar.translateY =&gt; <span class='number-literal'>0</span>
+                                }
+                            ]
+                        }
+                    }
+                if (not volumeControl.disabled) tempbar.scaleDownTimeline.playFromStart();
+            }
+
+            <b>onMouseClicked</b>: function(<b>me</b>:MouseEvent) {
+                if (volumeControl.disabled) return;
+
+                <i class='comment'>// skin</i>
+                enabledCnt = i + <span class='number-literal'>1</span>;
+                for (k in [<span class='number-literal'>0</span>..i]) {
+                    elements[k].isOn = true;
+                }
+                if (i &lt; ((steps-<span class='number-literal'>1</span>)*<span class='number-literal'>2</span> - <span class='number-literal'>1</span>)) {
+                    for(k in [(i+<span class='number-literal'>1</span>)..((steps-<span class='number-literal'>1</span>)*<span class='number-literal'>2</span> - <span class='number-literal'>1</span>)]) {
+                        elements[k].isOn = false;
+                    }
+                }
+
+                <i class='comment'>// behavior</i>
+                sliderBehavior.setValue((i+<span class='number-literal'>1</span> as Number)/steps);
+            }
+            <b>onKeyPressed</b>:function(<b>e</b>:KeyEvent):Void {
+                if(e.code == KeyCode.VK_UP)  {
+                    <i class='comment'>//println(<span class='string-literal'>"Up pressed!"</span>);</i>
+                    sliderBehavior.setValue(<span class='number-literal'>2</span>);
+                }
+                else if (e.code == KeyCode.VK_DOWN){
+                    <i class='comment'>//println(<span class='string-literal'>"Down pressed!"</span>);</i>
+                    sliderBehavior.setValue(<span class='number-literal'>1</span>)
+                }
+             }
+        }
+        return bar;
+    }
+
+    init {
+        node = Group {
+            <b>content</b>: bind [frame, elements]
+        }
+    }
+}
+
+class VolumeControlItem extends Rectangle  {
+    public <b class='keyword'>var</b> <b>scaleUpTimeline</b>: Timeline;
+    public <b class='keyword'>var</b> <b>scaleDownTimeline</b>: Timeline;
+
+    <b class='keyword'>var</b> <b>enabledColor</b>: Paint = ParanaraTheme.fillVolumeBarColor;
+    <b class='keyword'>var</b> <b>disabledColor</b>: Paint = ParanaraTheme.disabledColor<span class='number-literal'>2</span>;
+
+    public <b class='keyword'>var</b> isOn = true;
+    public <b class='keyword'>var</b> isVisible = true;
+    public override <b class='keyword'>var</b> fill = bind if (isOn and isVisible) enabledColor else disabledColor
+}
+</code></pre></div>
+<div id="footer">
+			<span class="copy">&copy; 2010, Oracle Corporation and/or its affiliates.</span>
+			
+		</div>
+<!--
+	JAVASCRIPT
+	At the bottom of the page so that we download and render all the visual elements, before we start handling the javascript. This provides for a faster perceived loading time.
+-->
+
+<script src="../../shared/new_style/js/omi/s_code_remote.js" type="text/javascript"></script>
+ 
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js"></script>
+<!--[if lte IE 6]>
+	<script type="text/javascript" src="../../shared/new_style/js/jquery.ifixpng.js"></script>
+<![endif]-->
+<script type="text/javascript" src="../../shared/new_style/js/jquery.history.js"></script>
+<script type="text/javascript" src="../../shared/new_style/js/javafx.js"></script>
+
+
+
+
+

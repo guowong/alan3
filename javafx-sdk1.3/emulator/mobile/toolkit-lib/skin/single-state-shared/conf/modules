@@ -1,0 +1,8 @@
+#
+# Copyright (c) 2009 Sun Microsystems, Inc. All rights reserved.
+# Use is subject to license terms.
+#
+
+modules/emulator-ui-window
+modules/emulator-ui-main
+emulator/generic/core

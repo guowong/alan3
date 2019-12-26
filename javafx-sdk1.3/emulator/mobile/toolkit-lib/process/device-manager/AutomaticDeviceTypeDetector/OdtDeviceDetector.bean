@@ -1,0 +1,13 @@
+#
+# Copyright (c) 2009 Sun Microsystems, Inc. All rights reserved.
+# Use is subject to license terms.
+#
+
+.class: com.sun.jme.toolkit.devicedetection.odt.OdtDeviceDetector
+.parent-add-method: addDeviceTypeDetector
+
+deviceManager: DeviceManager
+deviceStateManager: DeviceRegistrationManager
+
+connectTimeout: 500
+minOdtVersion: 1.5

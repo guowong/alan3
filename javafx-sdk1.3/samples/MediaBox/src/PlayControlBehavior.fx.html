@@ -1,0 +1,262 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+
+<head>
+	
+	<title>JavaFX Sample</title>
+	
+	<!--METAS-->
+	
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="description" content="JavaFX" />
+	<meta name="keywords" content="JavaFX Oracle" />
+	<meta name="author" content="Oracle" />
+	
+	<!--STYLESHEETS-->
+	<link rel="stylesheet" type="text/css" media="screen, projection" href="../../shared/new_style/css/reset.css" />
+	<link rel="stylesheet" type="text/css" media="screen, projection" href="../../shared/new_style/css/javafx.css" />
+	<link rel="stylesheet" type="text/css" media="screen, projection" href="../../shared/new_style/css/code.css" />
+	
+	<!-- CONDITIONAL STYLESHEETS -->
+	<!--[if IE]>
+	  <link rel="stylesheet" type="text/css" href="../../shared/new_style/css/ie.css" />
+	<![endif]-->
+	
+	<!--ADDRESS BAR ICON-->
+	<link rel="shortcut icon" type="image/ico" href="../../shared/new_style/images/favicon.ico" />
+	
+	<link rel="stylesheet" type="text/css" media="screen, projection" href="../../shared/new_style/css/samples.css" />
+    <style type="text/css">
+.code .string-literal, .code .number-literal {
+	font-style: italic;
+	color: #4b494d;
+}
+    </style>
+</head>
+<!--
+	The ID here is required to indicate the page type.
+	Changing this will affect the layout of the page.
+-->
+<body id="tutorials">
+	
+	<div id="body">
+		<!--
+			The header in the source code view doesn't have any buttons.
+			So just the <h1> tag for the site logo is included.
+			
+			The header also doesn't have an A tag with an "href" since you shouldn't be able to navigate to the
+			index pgae inside the popup.
+		-->
+        
+        
+		<ul id="popheader">
+			<li class="first">
+				<h1><a><span>FX</span></a></h1>
+			
+				<!-- Close button -->
+				<a class="close-button" title="Close"><span>Close</span></a>
+			</li>
+		</ul>
+<div class="source">
+  <div class="code-header">License text </div>
+    <pre>
+
+/*
+ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER 
+ * Copyright  2008, 2010 Oracle and/or its affiliates.  All rights reserved. 
+ * Use is subject to license terms.
+ * 
+ * This file is available and licensed under the following license:
+ * 
+ * Redistribution and use in source and binary forms, with or without 
+ * modification, are permitted provided that the following conditions are met: 
+ * 
+ *   * Redistributions of source code must retain the above copyright notice, 
+ *     this list of conditions and the following disclaimer. 
+ *
+ *   * Redistributions in binary form must reproduce the above copyright notice,
+ *     this list of conditions and the following disclaimer in the documentation
+ *     and/or other materials provided with the distribution.
+ *
+ *   * Neither the name of Oracle Corporation nor the names of its contributors 
+ *     may be used to endorse or promote products derived from this software 
+ *     without specific prior written permission. 
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS 
+ * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT 
+ * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR 
+ * A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT 
+ * OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, 
+ * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, 
+ * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; 
+ * OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, 
+ * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR 
+ * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF 
+ * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. 
+ */
+
+    </pre>
+  </div>
+<div class="code"><pre><code>
+<b>package</b> com.sun.mediabox.controls;
+
+<b>import</b> javafx.animation.*;
+<b>import</b> javafx.animation.transition.*;
+<b>import</b> javafx.scene.control.*;
+<b>import</b> javafx.scene.input.*;
+<b>import</b> javafx.scene.media.MediaPlayer;
+<b>import</b> com.sun.javafx.mediabox.controls.*;
+
+<i class='comment'>/**
+ * @author baechul
+ */</i>
+
+def <b>MIN_BUFFER_BEGINNING</b>: Duration = <span class='number-literal'>2</span>s;
+def <b>MIN_BUFFER</b>: Duration = <span class='number-literal'>1</span>s;
+def osname = FX.getProperty(<span class='string-literal'>"javafx.os.name"</span>);
+
+public class PlayControlBehavior extends Behavior {
+
+    <i class='comment'>// control</i>
+    <b class='keyword'>var</b> playControl = bind skin.control as PlayControl;
+    <b class='keyword'>var</b> <b>mediaPlayer</b>: MediaPlayer = bind playControl.mediaPlayer;
+
+    <i class='comment'>/**
+     * a flag to indicate if the play was paused by user or system
+     * @treatasprivate implementation detail
+     */</i>
+    public <b class='keyword'>var</b> <b>letPause</b>: Boolean = true;
+
+    <i class='comment'>/**
+     * A media play could be paused with <b class='keyword'>var</b>ious reasons. User may pause or an underlaying
+     * media component make the pause when when the curren time hits the buffer time.
+     * The following module will handle these cases appropriately.
+     */</i>
+    <b class='keyword'>var</b> status = bind mediaPlayer.status on replace {
+        if(status == MediaPlayer.PAUSED) {
+            if(not letPause) {
+                <i class='comment'>// when the curren time hits the buffer time.</i>
+                if(mediaPlayer.currentTime != <span class='number-literal'>0</span>s) {
+                    <i class='comment'>//println(<span class='string-literal'>"PAUSED(system, current/buffer): {mediaPlayer.currentTime.toSeconds()}/{mediaPlayer.bufferProgressTime.toSeconds()}"</span>);</i>
+                    <i class='comment'>// auto play when it's playable again.</i>
+                    playControl.impl_lock = true;
+                    playControl.impl_setBuffering(true);
+                    palyTimeline.play();
+                }
+            }
+        }
+    }
+
+    <i class='comment'>// behaviors</i>
+    <i class='comment'>/**
+     * Defines the key behavior of the speaker playControl. If disabled or locked,
+     * it doesn't do anything nor change the toggle status.
+     */</i>
+    public function mouseClicked() {
+        <i class='comment'>//println(<span class='string-literal'>"test mouse pressed"</span>);</i>
+        if(playControl.disabled or playControl.impl_lock) return;
+
+        playControl.fire();
+        if(playControl.selected) {
+            PauseTransition {
+                <b>duration</b>: <span class='number-literal'>200</span>ms
+                <b>action</b>: function() {
+                    letPause = false;
+                    playAction();
+                }
+            }.play();
+        } else {
+            PauseTransition {
+                <b>duration</b>: <span class='number-literal'>200</span>ms
+                <b>action</b>: function() {
+                    letPause = true;
+                    pauseAction();
+                }
+            }.play();
+        }
+    }
+
+    public function isPlayable(): Boolean {
+        if( playControl.mediaPlayer == null or
+            playControl.mediaPlayer.media == null or
+            playControl.mediaPlayer.media.source == null or
+            playControl.mediaPlayer.media.source.equals(<span class='string-literal'>""</span>) ) false else true;
+    }
+
+
+    function playAction() {
+        if( not isPlayable() ) return;
+
+        if(mediaPlayer.bufferProgressTime == <span class='number-literal'>0</span>s) {
+            playControl.impl_setBuffering(true);
+            playControl.impl_bufferToPlay = playControl.bufferToPlayBegin;
+        }
+
+        letPause = false;
+        palyTimeline.play();
+    }
+
+    function pauseAction() {
+        if( not isPlayable() ) return;
+        letPause = true;
+        mediaPlayer.pause();
+    }
+
+    <i class='comment'>/**
+     * Media actual size and buffer has to be checked before playing the media.
+     * Otherwise you may run into a black screen issue.
+     */</i>
+    <b class='keyword'>var</b> <b>palyTimeline</b>: Timeline = Timeline {
+        <b>repeatCount</b>: Timeline.INDEFINITE
+        <b>keyFrames</b>: KeyFrame {
+            <b>time</b>: <span class='number-literal'>100</span>ms
+            <b>action</b>: function() {
+                if( mediaPlayer.media.duration.gt(<span class='number-literal'>0</span>s) and
+                mediaPlayer.bufferProgressTime.sub(mediaPlayer.currentTime).gt(playControl.impl_bufferToPlay) ) {
+                    playControl.impl_lock = false;
+                    if(playControl.impl_bufferToPlay == playControl.bufferToPlayBegin) playControl.impl_bufferToPlay = playControl.bufferToPlay;
+                    playControl.impl_setBuffering(false);
+                    palyTimeline.stop();
+                    mediaPlayer.play();
+                } else {
+                    playControl.impl_setBuffering(true);
+                    <i class='comment'>// Temporary workaround to make buffer update(mac):</i>
+                    <i class='comment'>// <b>issue</b>: bufferProgressTime is not get updated.</i>
+                    <i class='comment'>// temporary <b>hack</b>: it was updated only when play() is called on mac.</i>
+                    if(osname == <span class='string-literal'>"Mac OS X" or {__PROFILE__} != "desktop"</span>) {
+			if (not letPause) {
+                           mediaPlayer.play();
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    <i class='comment'>// TODO</i>
+    public override function callActionForEvent(<b>e</b>:KeyEvent):Void {
+    }
+}
+</code></pre></div>
+<div id="footer">
+			<span class="copy">&copy; 2010, Oracle Corporation and/or its affiliates.</span>
+			
+		</div>
+<!--
+	JAVASCRIPT
+	At the bottom of the page so that we download and render all the visual elements, before we start handling the javascript. This provides for a faster perceived loading time.
+-->
+
+<script src="../../shared/new_style/js/omi/s_code_remote.js" type="text/javascript"></script>
+ 
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js"></script>
+<!--[if lte IE 6]>
+	<script type="text/javascript" src="../../shared/new_style/js/jquery.ifixpng.js"></script>
+<![endif]-->
+<script type="text/javascript" src="../../shared/new_style/js/jquery.history.js"></script>
+<script type="text/javascript" src="../../shared/new_style/js/javafx.js"></script>
+
+
+
+
+

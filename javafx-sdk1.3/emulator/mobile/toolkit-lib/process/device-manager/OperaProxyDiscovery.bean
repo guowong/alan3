@@ -1,0 +1,5 @@
+.class: com.sun.jme.toolkit.aut.proxy.OperaProxyDiscovery
+
+.parent: UpdateCenter
+.parent-add-method: addProxyDiscovery
+SettingsDir: Library/Preferences/Opera Preferences/operaprefs.ini

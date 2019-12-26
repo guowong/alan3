@@ -1,0 +1,12 @@
+#
+# Copyright (c) 2009 Sun Microsystems, Inc. All rights reserved.
+# Use is subject to license terms.
+#
+
+.class: com.sun.jme.toolkit.ui.actions.ExitAction
+
+actionNameProperty: MIDLET.EXIT
+mnemonicCharProperty: MIDLET.EXIT_SHORTCUT
+tooltipStringProperty: MIDLET.EXIT_TOOLTIP
+
+shutdownLatch: shutdown-latch

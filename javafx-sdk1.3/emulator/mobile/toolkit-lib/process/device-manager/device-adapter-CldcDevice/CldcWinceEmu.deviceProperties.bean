@@ -1,0 +1,21 @@
+#
+# Copyright (c) 2009 Sun Microsystems, Inc. All rights reserved.
+# Use is subject to license terms.
+#
+
+.class: com.sun.jme.toolkit.deviceadapter.api.DevicePropertiesHolder
+
+description: Windows Mobile CLDC device
+screenWidth: 240
+screenHeight: 320
+isTouch: true
+isColor: true
+bitDepth: 16
+securityDomains: minimum,maximum,trusted,untrusted
+
+configuration: CLDC-1.1
+profile: MIDP-2.0
+arguments: Xdescriptor,Xjam,Xrunjdwp,Xquery,Xdebug
+bootClassPath: cldc_1.1.jar,jsr120_1.1.jar,jsr135_1.1.jar,jsr172_1.0.jar,jsr179_1.0.jar,jsr211_1.0.jar,jsr226_1.0.jar,jsr75_1.0.jar,midp_2.0.jar
+
+skin: ExternalDevice

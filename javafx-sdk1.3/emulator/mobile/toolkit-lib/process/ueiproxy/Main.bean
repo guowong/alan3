@@ -1,0 +1,19 @@
+#
+# Copyright (c) 2009 Sun Microsystems, Inc. All rights reserved.
+# Use is subject to license terms.
+#
+
+.class: com.sun.jme.toolkit.ueiproxy.Main
+.dependencies: TaskManager, DeviceControllerManager, CdcAppManagerHelper
+
+deviceControllerManager: DeviceControllerManager
+cdcAppManagerHelper: CdcAppManagerHelper
+
+arguments: args
+defaultUEICommands: Xdevice,Xquery,Xdebug,Xrunjdwp
+returnCode: return-code
+fullName: ${product.full.name}
+defaultDevice: ${uei-proxy.default-device}
+DeviceManagerConnector: DeviceManagerConnector
+taskManager: TaskManager
+shutdownLatch: shutdown-latch

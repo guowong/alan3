@@ -1,0 +1,13 @@
+#
+# Copyright (c) 2009 Sun Microsystems, Inc. All rights reserved.
+# Use is subject to license terms.
+#
+
+.class: com.sun.jme.toolkit.traynotifications.DeviceRegistrationNotifier
+trayIconManager:TrayIconManager
+deviceManager:DeviceManager
+deviceStateManager:DeviceRegistrationManager
+registerMessage:Device is now registered
+unregisterMessage:Device has been unregistered
+availableMessage:Device became available
+unavailableMessage:Device became unavailable

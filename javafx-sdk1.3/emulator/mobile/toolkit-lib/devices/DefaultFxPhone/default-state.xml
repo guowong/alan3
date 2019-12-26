@@ -1,0 +1,67 @@
+<!--
+    Copyright (c) 2009 Sun Microsystems, Inc. All rights reserved.
+    Use is subject to license terms.
+-->
+
+<device-state
+    name="Default"
+    defaultSkin="skin-normal.png"
+    pressedSkin="skin-pressed.png"
+    highlightedSkin="skin-highlighted.png">
+
+    <button activators="VK_0 VK_NUMPAD0" vmKeyCode="0x30" keyChar="0"
+            x="123" y="610" width="77" height="36"/>
+    <button activators="VK_1 VK_NUMPAD1" vmKeyCode="0x31" keyChar="1"
+            x="35"  y="503" width="77" height="36"/>
+    <button activators="VK_2 VK_NUMPAD2" vmKeyCode="0x32" keyChar="2"
+            x="123" y="503" width="77" height="36"/>
+    <button activators="VK_3 VK_NUMPAD3" vmKeyCode="0x33" keyChar="3"
+            x="208" y="503" width="77" height="36"/>
+    <button activators="VK_4 VK_NUMPAD4" vmKeyCode="0x34" keyChar="4"
+            x="35"  y="539" width="77" height="36"/>
+    <button activators="VK_5 VK_NUMPAD5" vmKeyCode="0x35" keyChar="5"
+            x="123" y="539" width="77" height="36"/>
+    <button activators="VK_6 VK_NUMPAD6" vmKeyCode="0x36" keyChar="6"
+            x="208"  y="539" width="77" height="36"/>
+    <button activators="VK_7 VK_NUMPAD7" vmKeyCode="0x37" keyChar="7"
+            x="35" y="574" width="77" height="36"/>
+    <button activators="VK_8 VK_NUMPAD8" vmKeyCode="0x38" keyChar="8"
+            x="123" y="574" width="77" height="36"/>
+    <button activators="VK_9 VK_NUMPAD9" vmKeyCode="0x39" keyChar="9"
+            x="208" y="574" width="77" height="36"/>
+    <button activators="VK_MULTIPLY" vmKeyCode="0x0208" keyChar="#"
+            x="208" y="610" width="77" height="36"/>
+    <button activators="VK_SUBTRACT" vmKeyCode="0x97" keyChar="*"
+            x="35" y="610" width="77" height="36"/>
+
+    <button activators="VK_F1" vmKeyCode="-6"
+            x="36" y="397" width="68" height="29"/>
+    <button activators="VK_F2" vmKeyCode="-7"
+            x="219" y="397" width="68" height="29"/>
+    <!-- SOFTKEY_2 -->
+    <button vmKeyCode="-9"
+            x="36" y="426" width="68" height="29"/>
+    <!-- SOFTKEY_3 -->
+    <button vmKeyCode="0x1003"
+            x="219" y="426" width="68" height="29"/>
+
+    <button activators="VK_ENTER" vmKeyCode="-5"
+            x="135" y="425" width="53" height="38"/>
+
+
+    <button activators="VK_HOME" vmKeyCode="-10" deviceKey="true"
+            x="36" y="456" width="68" height="29"/>
+    <button activators="VK_END" vmKeyCode="-11" deviceKey="true"
+            x="219" y="456" width="68" height="29"/>
+
+
+    <orientation-sensitive-button activators="VK_LEFT VK_UP VK_RIGHT VK_DOWN" vmKeyCodes="-3,-1,-4,-2"
+                                  region="110,404, 110,483, 136,464, 136,425"/>
+    <orientation-sensitive-button activators="VK_UP VK_RIGHT VK_DOWN VK_LEFT" vmKeyCodes="-1,-4,-2,-3"
+                                  region="111,403, 214,403, 187,426, 138,426"/>
+    <orientation-sensitive-button activators="VK_RIGHT VK_DOWN VK_LEFT VK_UP" vmKeyCodes="-4,-2,-3,-1"
+                                  region="188,425, 214,404, 214,484, 188,463"/>
+    <orientation-sensitive-button activators="VK_DOWN VK_LEFT VK_UP VK_RIGHT" vmKeyCodes="-2,-3,-1,-4"
+                                  region="137,464, 187,464, 215,485, 108,485"/>
+
+</device-state>

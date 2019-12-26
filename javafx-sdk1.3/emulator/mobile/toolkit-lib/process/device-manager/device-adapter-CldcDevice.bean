@@ -1,0 +1,26 @@
+#
+# Copyright (c) 2009 Sun Microsystems, Inc. All rights reserved.
+# Use is subject to license terms.
+#
+
+.class: com.sun.jme.toolkit.deviceadapter.cldcdevice.CldcOdtDeviceAdapter
+.dependencies: DeviceManager
+
+# name MUST be the same as the name of the object (= file name)
+name: device-adapter-CldcDevice
+
+rmiRegistryHost: ${device-manager.object-registry.host}
+rmiRegistryPort: ${device-manager.object-registry.port}
+remotingPortNumber: 55123
+
+deviceManager: DeviceManager
+deviceStateManager: DeviceRegistrationManager
+deviceConnectionManager: DeviceConnectionManager
+jmeServicesBridgeFactory: cldc-JavameServicesBridgeFactory
+odtDeviceDetector: AutomaticDeviceTypeDetector.OdtDeviceDetector
+
+workdirHelper: WorkdirHelper
+midletBridgeFactory: cldc-MidletMgrBridgeFactory
+
+disableVerification: true
+verificationConnectTimeout: 0

@@ -1,0 +1,17 @@
+#
+# Copyright (c) 2009 Sun Microsystems, Inc. All rights reserved.
+# Use is subject to license terms.
+#
+
+.class: com.sun.jme.emulator.cldc.ArgumentsParser
+.dependencies: KeepAliveConnection,WorkdirHelper
+
+arguments: args
+deviceIdHolder: DeviceIdHolder
+launcher: Vm
+debugProxy: KVMDebugProxy
+workdirHelper: WorkdirHelper
+syntax: Syntax:\n\
+  \n\
+  emulator -Xdescriptor:<JAD file name>\n\
+  \u0020          The JAD file to be executed

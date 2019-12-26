@@ -1,0 +1,237 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+
+<head>
+	
+	<title>JavaFX Sample</title>
+	
+	<!--METAS-->
+	
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="description" content="JavaFX" />
+	<meta name="keywords" content="JavaFX Oracle" />
+	<meta name="author" content="Oracle" />
+	
+	<!--STYLESHEETS-->
+	<link rel="stylesheet" type="text/css" media="screen, projection" href="../../shared/new_style/css/reset.css" />
+	<link rel="stylesheet" type="text/css" media="screen, projection" href="../../shared/new_style/css/javafx.css" />
+	<link rel="stylesheet" type="text/css" media="screen, projection" href="../../shared/new_style/css/code.css" />
+	
+	<!-- CONDITIONAL STYLESHEETS -->
+	<!--[if IE]>
+	  <link rel="stylesheet" type="text/css" href="../../shared/new_style/css/ie.css" />
+	<![endif]-->
+	
+	<!--ADDRESS BAR ICON-->
+	<link rel="shortcut icon" type="image/ico" href="../../shared/new_style/images/favicon.ico" />
+	
+	<link rel="stylesheet" type="text/css" media="screen, projection" href="../../shared/new_style/css/samples.css" />
+    <style type="text/css">
+.code .string-literal, .code .number-literal {
+	font-style: italic;
+	color: #4b494d;
+}
+    </style>
+</head>
+<!--
+	The ID here is required to indicate the page type.
+	Changing this will affect the layout of the page.
+-->
+<body id="tutorials">
+	
+	<div id="body">
+		<!--
+			The header in the source code view doesn't have any buttons.
+			So just the <h1> tag for the site logo is included.
+			
+			The header also doesn't have an A tag with an "href" since you shouldn't be able to navigate to the
+			index pgae inside the popup.
+		-->
+        
+        
+		<ul id="popheader">
+			<li class="first">
+				<h1><a><span>FX</span></a></h1>
+			
+				<!-- Close button -->
+				<a class="close-button" title="Close"><span>Close</span></a>
+			</li>
+		</ul>
+<div class="source">
+  <div class="code-header">License text </div>
+    <pre>
+
+/*
+ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER 
+ * Copyright  2008, 2010 Oracle and/or its affiliates.  All rights reserved. 
+ * Use is subject to license terms.
+ * 
+ * This file is available and licensed under the following license:
+ * 
+ * Redistribution and use in source and binary forms, with or without 
+ * modification, are permitted provided that the following conditions are met: 
+ * 
+ *   * Redistributions of source code must retain the above copyright notice, 
+ *     this list of conditions and the following disclaimer. 
+ *
+ *   * Redistributions in binary form must reproduce the above copyright notice,
+ *     this list of conditions and the following disclaimer in the documentation
+ *     and/or other materials provided with the distribution.
+ *
+ *   * Neither the name of Oracle Corporation nor the names of its contributors 
+ *     may be used to endorse or promote products derived from this software 
+ *     without specific prior written permission. 
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS 
+ * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT 
+ * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR 
+ * A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT 
+ * OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, 
+ * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, 
+ * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; 
+ * OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, 
+ * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR 
+ * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF 
+ * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. 
+ */
+
+    </pre>
+  </div>
+<div class="code"><pre><code>
+<b>package</b> displayshelf;
+
+<b>import</b> javafx.animation.*;
+<b>import</b> javafx.stage.*;
+<b>import</b> javafx.scene.*;
+<b>import</b> javafx.scene.shape.*;
+<b>import</b> javafx.scene.paint.*;
+<b>import</b> javafx.scene.image.*;
+<b>import</b> javafx.scene.input.*;
+
+<i class='comment'>// width and height are updated when the screen is rotated</i>
+<b class='keyword'>var</b> <b>width</b>:Number = bind scene.width;
+<b class='keyword'>var</b> <b>height</b>:Number = bind scene.height;
+
+<i class='comment'>/* The center image will have the size of imageWidth x imageWidth, which will
+ * be adjusted as followed per device screen resolution.
+ */</i>
+<b class='keyword'>var</b> <b>imageWidth</b>: Number = bind if(width &gt; height) height * <span class='number-literal'>0</span>.<span class='number-literal'>6</span> else width * <span class='number-literal'>0</span>.<span class='number-literal'>6</span> on replace {
+    <i class='comment'>//println(<span class='string-literal'>"<b>imageWidth</b>: {imageWidth}"</span>);</i>
+}
+
+<b class='keyword'>var</b> images = [
+    <span class='string-literal'>"DSC_<span class='number-literal'>0026</span>_<span class='number-literal'>2</span>.jpg"</span>,
+    <span class='string-literal'>"DSC_<span class='number-literal'>0040</span>_<span class='number-literal'>2</span>.jpg"</span>,
+    <span class='string-literal'>"DSC_<span class='number-literal'>0068</span>_<span class='number-literal'>2</span>.jpg"</span>,
+    <span class='string-literal'>"DSC_<span class='number-literal'>0083</span>_<span class='number-literal'>2</span>.jpg"</span>,
+    <span class='string-literal'>"DSC_<span class='number-literal'>0094</span>_<span class='number-literal'>2</span>.jpg"</span>,
+    <span class='string-literal'>"DSC_<span class='number-literal'>0129</span>_<span class='number-literal'>2</span>.jpg"</span>,
+    <span class='string-literal'>"DSC_<span class='number-literal'>0152</span>_<span class='number-literal'>2</span>.jpg"</span>,
+    <span class='string-literal'>"DSC_<span class='number-literal'>0162</span>_<span class='number-literal'>2</span>.jpg"</span>,
+    <span class='string-literal'>"DSC_<span class='number-literal'>0172</span>_<span class='number-literal'>2</span>.jpg"</span>,
+    <span class='string-literal'>"DSC_<span class='number-literal'>0178</span>_<span class='number-literal'>2</span>.jpg"</span>,
+    <span class='string-literal'>"DSC_<span class='number-literal'>0199</span>_<span class='number-literal'>2</span>.jpg"</span>,
+    <span class='string-literal'>"DSC_<span class='number-literal'>0277</span>_<span class='number-literal'>2</span>.jpg"</span>,
+    <span class='string-literal'>"DSC_<span class='number-literal'>0290</span>_<span class='number-literal'>2</span>.jpg"</span>,
+    <span class='string-literal'>"DSC_<span class='number-literal'>0425</span>_<span class='number-literal'>2</span>.jpg"</span>
+    ];
+
+<b class='keyword'>var</b> half = images.size()/<span class='number-literal'>2</span>;
+
+<b class='keyword'>var</b> <b>shelf</b>:DisplayShelf;
+shelf = DisplayShelf {
+    <b>imageWidth</b>: bind imageWidth
+    <b>scaleSmall</b>: <span class='number-literal'>0</span>.<span class='number-literal'>7</span>
+    <b>items</b>: bind for(i in images) {
+        <b class='keyword'>var</b> <b>item</b>:Item = Item {
+            <b>imageWidth</b>: bind imageWidth
+            <b>angle</b>: <span class='number-literal'>45</span>
+            <b>blocksMouse</b>: true
+            <b>position</b>: indexof i - half
+
+            <i class='comment'>// load a full size image and adjust it with ImageView fitXXX based</i>
+            <i class='comment'>// on <b class='keyword'>var</b>ious screen resolutions.</i>
+            <b>image</b>:Image { <b>url</b>: <span class='string-literal'>"{__DIR__}photos/{i}"</span> }
+            <b>shelf</b>: bind shelf
+            <b>translateY</b>: bind (height-imageWidth)/<span class='number-literal'>2</span>;
+        };
+        item;
+    }
+    <b>onKeyPressed</b>:function(<b>e</b>:KeyEvent):Void {
+        if(e.code == KeyCode.VK_LEFT or e.code == KeyCode.VK_SOFTKEY_<span class='number-literal'>0</span>) {
+            shelf.shift(<span class='number-literal'>1</span>);
+        }
+        if(e.code == KeyCode.VK_RIGHT or e.code == KeyCode.VK_SOFTKEY_<span class='number-literal'>1</span>) {
+            shelf.shift(-<span class='number-literal'>1</span>);
+        }
+    }
+    <b>visible</b>: false
+}
+
+<b class='keyword'>var</b> <b>scene</b>:Scene = Scene {
+
+    <i class='comment'>// MOBL-<b><span class='number-literal'>59</span></b>: As of b<span class='number-literal'>04</span>, the gradient works on the device but not working on the</i>
+    <i class='comment'>// emulator yet.</i>
+    <b>fill</b>: LinearGradient {
+        <b>startX</b>: <span class='number-literal'>0</span> <b>startY</b>: <span class='number-literal'>0</span>
+        <b>endX</b>: <span class='number-literal'>0</span> <b>endY</b>: <span class='number-literal'>1</span>
+        <b>proportional</b>: true
+        <b>stops</b>: [
+            Stop { <b>offset</b>: <span class='number-literal'>0</span>.<span class='number-literal'>0</span> <b>color</b>: Color.rgb(<span class='number-literal'>150</span>,<span class='number-literal'>150</span>,<span class='number-literal'>150</span>) },
+            Stop { <b>offset</b>: <span class='number-literal'>0</span>.<span class='number-literal'>3</span> <b>color</b>: Color.rgb(<span class='number-literal'>0</span>,<span class='number-literal'>0</span>,<span class='number-literal'>0</span>)},
+            Stop { <b>offset</b>: <span class='number-literal'>0</span>.<span class='number-literal'>7</span> <b>color</b>: Color.rgb(<span class='number-literal'>0</span>,<span class='number-literal'>0</span>,<span class='number-literal'>0</span>)},
+            Stop { <b>offset</b>: <span class='number-literal'>1</span>.<span class='number-literal'>0</span> <b>color</b>: Color.rgb(<span class='number-literal'>150</span>,<span class='number-literal'>150</span>,<span class='number-literal'>150</span>)},
+        ]
+    }
+    <b>content</b>: [
+        shelf
+    ]
+};
+
+Stage {
+    <b>title</b>: <span class='string-literal'>"Display Shelf Mobile"</span>
+    <b>visible</b>: true
+    <b>resizable</b>: true
+    <b>scene</b>: scene
+    <b>width</b>: <span class='number-literal'>320</span>
+    <b>height</b>: <span class='number-literal'>240</span>
+}
+
+<b class='keyword'>var</b> <b>t</b>: Timeline = Timeline {
+    <b>repeatCount</b>: Timeline.INDEFINITE
+    <b>keyFrames</b>: KeyFrame {
+        <b>time</b>: <span class='number-literal'>100</span>ms
+        <b>action</b>: function() {
+            if(scene.width != <span class='number-literal'>0</span> and scene.height != <span class='number-literal'>0</span>) {
+                shelf.visible = true;
+                shelf.doLayout();
+                t.stop();
+                shelf.requestFocus();
+            }
+        }
+    }
+}
+t.play();
+</code></pre></div>
+<div id="footer">
+			<span class="copy">&copy; 2010, Oracle Corporation and/or its affiliates.</span>
+			
+		</div>
+<!--
+	JAVASCRIPT
+	At the bottom of the page so that we download and render all the visual elements, before we start handling the javascript. This provides for a faster perceived loading time.
+-->
+
+<script src="../../shared/new_style/js/omi/s_code_remote.js" type="text/javascript"></script>
+ 
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js"></script>
+<!--[if lte IE 6]>
+	<script type="text/javascript" src="../../shared/new_style/js/jquery.ifixpng.js"></script>
+<![endif]-->
+<script type="text/javascript" src="../../shared/new_style/js/jquery.history.js"></script>
+<script type="text/javascript" src="../../shared/new_style/js/javafx.js"></script>
+
+
+
+
+

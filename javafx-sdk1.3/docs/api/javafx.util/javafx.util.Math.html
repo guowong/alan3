@@ -1,0 +1,3116 @@
+
+            <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+        <html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="../general.css" rel="stylesheet">
+<style type="text/css"></style>
+<link href="../sdk.css" rel="stylesheet">
+<script type="text/javascript" src="../mootools-1.2.1-yui.js"></script><script type="text/javascript" src="../sessvars.js"></script><script type="text/javascript" src="../sdk.js"></script>
+<meta name="collection" content="api">
+<meta name="keywords" content="JavaFX, Java FX">
+<title>JavaFX 1.3.1 API | javafx.util.Math | Java FX</title>
+</head>
+<body>
+<div id="top-header">
+<h1>
+<a href="../index.html">Java<b>FX</b>: <i>Bringing Rich Experiences To All the Screens Of Your Life</i></a>
+</h1>
+<h3 id="master-index-link">
+<a href="../master-index.html">master index</a>
+</h3>
+<h3 id="collapse-expand-switcher">
+<a href="#" id="collapse-expand-link">expand all</a>
+</h3>
+<h3 id="profile-switcher">Profile: <a href="#" id="select-desktop-profile">desktop</a>, <a href="#" id="select-common-profile">common</a>
+</h3>
+</div>
+<ul id="classes-toc">
+<li>
+<h4 class="header">
+<a href="#">com.javafx.preview.control</a>
+</h4>
+<ul class="content">
+<li class="profile-common ">
+<a href="../com.javafx.preview.control/com.javafx.preview.control.CheckMenuItem.html">CheckMenuItem</a>
+</li>
+<li class="profile-common ">
+<a href="../com.javafx.preview.control/com.javafx.preview.control.CustomMenuItem.html">CustomMenuItem</a>
+</li>
+<li class="profile-common ">
+<a href="../com.javafx.preview.control/com.javafx.preview.control.Menu.html">Menu</a>
+</li>
+<li class="profile-common ">
+<a href="../com.javafx.preview.control/com.javafx.preview.control.MenuBar.html">MenuBar</a>
+</li>
+<li class="profile-common ">
+<a href="../com.javafx.preview.control/com.javafx.preview.control.MenuButton.html">MenuButton</a>
+</li>
+<li class="profile-common ">
+<a href="../com.javafx.preview.control/com.javafx.preview.control.MenuItem.html">MenuItem</a>
+</li>
+<li class="profile-common ">
+<a href="../com.javafx.preview.control/com.javafx.preview.control.MenuItemBase.html">MenuItemBase</a>
+</li>
+<li class="profile-common ">
+<a href="../com.javafx.preview.control/com.javafx.preview.control.PopupMenu.html">PopupMenu</a>
+</li>
+<li class="profile-common ">
+<a href="../com.javafx.preview.control/com.javafx.preview.control.RadioMenuItem.html">RadioMenuItem</a>
+</li>
+<li class="profile-common ">
+<a href="../com.javafx.preview.control/com.javafx.preview.control.SplitMenuButton.html">SplitMenuButton</a>
+</li>
+<li class="profile-common ">
+<a href="../com.javafx.preview.control/com.javafx.preview.control.ToolBar.html">ToolBar</a>
+</li>
+<li class="profile-common ">
+<a href="../com.javafx.preview.control/com.javafx.preview.control.TreeCell.html">TreeCell</a>
+</li>
+<li class="profile-common ">
+<a href="../com.javafx.preview.control/com.javafx.preview.control.TreeItem.html">TreeItem</a>
+</li>
+<li class="profile-common ">
+<a href="../com.javafx.preview.control/com.javafx.preview.control.TreeItemBase.html">TreeItemBase</a>
+</li>
+<li class="profile-common ">
+<a href="../com.javafx.preview.control/com.javafx.preview.control.TreeView.html">TreeView</a>
+</li>
+</ul>
+</li>
+<li>
+<h4 class="header">
+<a href="#">com.javafx.preview.layout</a>
+</h4>
+<ul class="content">
+<li class="profile-common ">
+<a href="../com.javafx.preview.layout/com.javafx.preview.layout.Grid.html">Grid</a>
+</li>
+<li class="profile-common ">
+<a href="../com.javafx.preview.layout/com.javafx.preview.layout.GridLayoutInfo.html">GridLayoutInfo</a>
+</li>
+<li class="profile-common ">
+<a href="../com.javafx.preview.layout/com.javafx.preview.layout.GridRow.html">GridRow</a>
+</li>
+</ul>
+</li>
+<li>
+<h4 class="header">
+<a href="#">javafx.animation</a>
+</h4>
+<ul class="content">
+<li class="profile-common ">
+<a href="../javafx.animation/javafx.animation.Interpolatable.html">Interpolatable</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.animation/javafx.animation.Interpolator.html">Interpolator</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.animation/javafx.animation.KeyFrame.html">KeyFrame</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.animation/javafx.animation.KeyValue.html">KeyValue</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.animation/javafx.animation.KeyValueTarget.html">KeyValueTarget</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.animation/javafx.animation.KeyValueTarget.Type.html">KeyValueTarget.Type</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.animation/javafx.animation.SimpleInterpolator.html">SimpleInterpolator</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.animation/javafx.animation.Timeline.html">Timeline</a>
+</li>
+</ul>
+</li>
+<li>
+<h4 class="header">
+<a href="#">javafx.animation.transition</a>
+</h4>
+<ul class="content">
+<li class="profile-common ">
+<a href="../javafx.animation.transition/javafx.animation.transition.AnimationPath.html">AnimationPath</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.animation.transition/javafx.animation.transition.FadeTransition.html">FadeTransition</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.animation.transition/javafx.animation.transition.OrientationType.html">OrientationType</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.animation.transition/javafx.animation.transition.ParallelTransition.html">ParallelTransition</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.animation.transition/javafx.animation.transition.PathTransition.html">PathTransition</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.animation.transition/javafx.animation.transition.PauseTransition.html">PauseTransition</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.animation.transition/javafx.animation.transition.RotateTransition.html">RotateTransition</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.animation.transition/javafx.animation.transition.ScaleTransition.html">ScaleTransition</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.animation.transition/javafx.animation.transition.SequentialTransition.html">SequentialTransition</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.animation.transition/javafx.animation.transition.Transition.html">Transition</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.animation.transition/javafx.animation.transition.TranslateTransition.html">TranslateTransition</a>
+</li>
+</ul>
+</li>
+<li>
+<h4 class="header">
+<a href="#">javafx.async</a>
+</h4>
+<ul class="content">
+<li class="profile-common ">
+<a href="../javafx.async/javafx.async.JavaTaskBase.html">JavaTaskBase</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.async/javafx.async.RunnableFuture.html">RunnableFuture</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.async/javafx.async.Task.html">Task</a>
+</li>
+</ul>
+</li>
+<li>
+<h4 class="header">
+<a href="#">javafx.data</a>
+</h4>
+<ul class="content">
+<li class="">
+<a href="../javafx.data/javafx.data.Converter.html">Converter</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.data/javafx.data.Pair.html">Pair</a>
+</li>
+</ul>
+</li>
+<li>
+<h4 class="header">
+<a href="#">javafx.data.feed</a>
+</h4>
+<ul class="content">
+<li class="profile-common ">
+<a href="../javafx.data.feed/javafx.data.feed.Base.html">Base</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.data.feed/javafx.data.feed.FeedTask.html">FeedTask</a>
+</li>
+</ul>
+</li>
+<li>
+<h4 class="header">
+<a href="#">javafx.data.feed.atom</a>
+</h4>
+<ul class="content">
+<li class="profile-common ">
+<a href="../javafx.data.feed.atom/javafx.data.feed.atom.Atom.html">Atom</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.data.feed.atom/javafx.data.feed.atom.AtomTask.html">AtomTask</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.data.feed.atom/javafx.data.feed.atom.Category.html">Category</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.data.feed.atom/javafx.data.feed.atom.Content.html">Content</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.data.feed.atom/javafx.data.feed.atom.Date.html">Date</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.data.feed.atom/javafx.data.feed.atom.Entry.html">Entry</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.data.feed.atom/javafx.data.feed.atom.Factory.html">Factory</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.data.feed.atom/javafx.data.feed.atom.Feed.html">Feed</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.data.feed.atom/javafx.data.feed.atom.Generator.html">Generator</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.data.feed.atom/javafx.data.feed.atom.Id.html">Id</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.data.feed.atom/javafx.data.feed.atom.Link.html">Link</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.data.feed.atom/javafx.data.feed.atom.Person.html">Person</a>
+</li>
+</ul>
+</li>
+<li>
+<h4 class="header">
+<a href="#">javafx.data.feed.rss</a>
+</h4>
+<ul class="content">
+<li class="profile-common ">
+<a href="../javafx.data.feed.rss/javafx.data.feed.rss.Category.html">Category</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.data.feed.rss/javafx.data.feed.rss.Channel.html">Channel</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.data.feed.rss/javafx.data.feed.rss.Enclosure.html">Enclosure</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.data.feed.rss/javafx.data.feed.rss.Factory.html">Factory</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.data.feed.rss/javafx.data.feed.rss.Guid.html">Guid</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.data.feed.rss/javafx.data.feed.rss.Image.html">Image</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.data.feed.rss/javafx.data.feed.rss.Item.html">Item</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.data.feed.rss/javafx.data.feed.rss.RSS.html">RSS</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.data.feed.rss/javafx.data.feed.rss.RssTask.html">RssTask</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.data.feed.rss/javafx.data.feed.rss.Source.html">Source</a>
+</li>
+</ul>
+</li>
+<li>
+<h4 class="header">
+<a href="#">javafx.data.pull</a>
+</h4>
+<ul class="content">
+<li class="profile-common ">
+<a href="../javafx.data.pull/javafx.data.pull.Event.html">Event</a>
+</li>
+<li class="">
+<a href="../javafx.data.pull/javafx.data.pull.ParserTask.html">ParserTask</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.data.pull/javafx.data.pull.PullParser.html">PullParser</a>
+</li>
+</ul>
+</li>
+<li>
+<h4 class="header">
+<a href="#">javafx.data.xml</a>
+</h4>
+<ul class="content">
+<li class="profile-common ">
+<a href="../javafx.data.xml/javafx.data.xml.QName.html">QName</a>
+</li>
+<li class="">
+<a href="../javafx.data.xml/javafx.data.xml.XMLConstants.html">XMLConstants</a>
+</li>
+</ul>
+</li>
+<li>
+<h4 class="header">
+<a href="#">javafx.date</a>
+</h4>
+<ul class="content">
+<li class="profile-common ">
+<a href="../javafx.date/javafx.date.DateTime.html">DateTime</a>
+</li>
+</ul>
+</li>
+<li>
+<h4 class="header">
+<a href="#">javafx.ext.swing</a>
+</h4>
+<ul class="content">
+<li class="private">
+<a href="../javafx.ext.swing/javafx.ext.swing.JTextFieldImpl.html">JTextFieldImpl</a>
+</li>
+<li class="profile-desktop conditional swing ">
+<a href="../javafx.ext.swing/javafx.ext.swing.SwingAbstractButton.html">SwingAbstractButton</a>
+</li>
+<li class="profile-desktop conditional swing ">
+<a href="../javafx.ext.swing/javafx.ext.swing.SwingButton.html">SwingButton</a>
+</li>
+<li class="profile-desktop conditional swing ">
+<a href="../javafx.ext.swing/javafx.ext.swing.SwingCheckBox.html">SwingCheckBox</a>
+</li>
+<li class="profile-desktop conditional swing ">
+<a href="../javafx.ext.swing/javafx.ext.swing.SwingComboBox.html">SwingComboBox</a>
+</li>
+<li class="profile-desktop conditional swing ">
+<a href="../javafx.ext.swing/javafx.ext.swing.SwingComboBoxItem.html">SwingComboBoxItem</a>
+</li>
+<li class="profile-desktop conditional swing ">
+<a href="../javafx.ext.swing/javafx.ext.swing.SwingComponent.html">SwingComponent</a>
+</li>
+<li class="profile-desktop conditional swing ">
+<a href="../javafx.ext.swing/javafx.ext.swing.SwingHorizontalAlignment.html">SwingHorizontalAlignment</a>
+</li>
+<li class="profile-desktop conditional swing ">
+<a href="../javafx.ext.swing/javafx.ext.swing.SwingIcon.html">SwingIcon</a>
+</li>
+<li class="profile-desktop conditional swing ">
+<a href="../javafx.ext.swing/javafx.ext.swing.SwingLabel.html">SwingLabel</a>
+</li>
+<li class="profile-desktop conditional swing ">
+<a href="../javafx.ext.swing/javafx.ext.swing.SwingList.html">SwingList</a>
+</li>
+<li class="profile-desktop conditional swing ">
+<a href="../javafx.ext.swing/javafx.ext.swing.SwingListItem.html">SwingListItem</a>
+</li>
+<li class="profile-desktop conditional swing ">
+<a href="../javafx.ext.swing/javafx.ext.swing.SwingRadioButton.html">SwingRadioButton</a>
+</li>
+<li class="profile-desktop conditional swing ">
+<a href="../javafx.ext.swing/javafx.ext.swing.SwingScrollableComponent.html">SwingScrollableComponent</a>
+</li>
+<li class="profile-desktop conditional swing ">
+<a href="../javafx.ext.swing/javafx.ext.swing.SwingScrollPane.html">SwingScrollPane</a>
+</li>
+<li class="profile-desktop conditional swing ">
+<a href="../javafx.ext.swing/javafx.ext.swing.SwingSlider.html">SwingSlider</a>
+</li>
+<li class="profile-desktop conditional swing ">
+<a href="../javafx.ext.swing/javafx.ext.swing.SwingTextField.html">SwingTextField</a>
+</li>
+<li class="profile-desktop conditional swing ">
+<a href="../javafx.ext.swing/javafx.ext.swing.SwingToggleButton.html">SwingToggleButton</a>
+</li>
+<li class="profile-desktop conditional swing ">
+<a href="../javafx.ext.swing/javafx.ext.swing.SwingToggleGroup.html">SwingToggleGroup</a>
+</li>
+<li class="profile-desktop conditional swing ">
+<a href="../javafx.ext.swing/javafx.ext.swing.SwingUtils.html">SwingUtils</a>
+</li>
+<li class="profile-desktop conditional swing ">
+<a href="../javafx.ext.swing/javafx.ext.swing.SwingVerticalAlignment.html">SwingVerticalAlignment</a>
+</li>
+</ul>
+</li>
+<li>
+<h4 class="header">
+<a href="#">javafx.fxd</a>
+</h4>
+<ul class="content">
+<li class="profile-common ">
+<a href="../javafx.fxd/javafx.fxd.Duplicator.html">Duplicator</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.fxd/javafx.fxd.FXDContent.html">FXDContent</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.fxd/javafx.fxd.FXDLoader.html">FXDLoader</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.fxd/javafx.fxd.FXDNode.html">FXDNode</a>
+</li>
+</ul>
+</li>
+<li>
+<h4 class="header">
+<a href="#">javafx.geometry</a>
+</h4>
+<ul class="content">
+<li class="profile-common ">
+<a href="../javafx.geometry/javafx.geometry.BoundingBox.html">BoundingBox</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.geometry/javafx.geometry.Bounds.html">Bounds</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.geometry/javafx.geometry.Dimension2D.html">Dimension2D</a>
+</li>
+<li class="">
+<a href="../javafx.geometry/javafx.geometry.HPos.html">HPos</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.geometry/javafx.geometry.Insets.html">Insets</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.geometry/javafx.geometry.Point2D.html">Point2D</a>
+</li>
+<li class="profile-common conditional scene3d ">
+<a href="../javafx.geometry/javafx.geometry.Point3D.html">Point3D</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.geometry/javafx.geometry.Rectangle2D.html">Rectangle2D</a>
+</li>
+<li class="">
+<a href="../javafx.geometry/javafx.geometry.VPos.html">VPos</a>
+</li>
+</ul>
+</li>
+<li>
+<h4 class="header">
+<a href="#">javafx.io</a>
+</h4>
+<ul class="content">
+<li class="profile-common ">
+<a href="../javafx.io/javafx.io.Resource.html">Resource</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.io/javafx.io.Storage.html">Storage</a>
+</li>
+</ul>
+</li>
+<li>
+<h4 class="header">
+<a href="#">javafx.io.http</a>
+</h4>
+<ul class="content">
+<li class="profile-common ">
+<a href="../javafx.io.http/javafx.io.http.HttpHeader.html">HttpHeader</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.io.http/javafx.io.http.HttpRequest.html">HttpRequest</a>
+</li>
+<li class="">
+<a href="../javafx.io.http/javafx.io.http.HttpStatus.html">HttpStatus</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.io.http/javafx.io.http.URLConverter.html">URLConverter</a>
+</li>
+</ul>
+</li>
+<li>
+<h4 class="header">
+<a href="#">javafx.lang</a>
+</h4>
+<ul class="content">
+<li class="profile-common ">
+<a href="../javafx.lang/javafx.lang.Builtins.html">Builtins</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.lang/javafx.lang.Duration.html">Duration</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.lang/javafx.lang.FX.html">FX</a>
+</li>
+</ul>
+</li>
+<li>
+<h4 class="header">
+<a href="#">javafx.reflect</a>
+</h4>
+<ul class="content">
+<li class="profile-desktop ">
+<a href="../javafx.reflect/javafx.reflect.FXBooleanValue.html">FXBooleanValue</a>
+</li>
+<li class="profile-desktop ">
+<a href="../javafx.reflect/javafx.reflect.FXChangeListener.html">FXChangeListener</a>
+</li>
+<li class="profile-desktop ">
+<a href="../javafx.reflect/javafx.reflect.FXChangeListenerID.html">FXChangeListenerID</a>
+</li>
+<li class="profile-desktop ">
+<a href="../javafx.reflect/javafx.reflect.FXClassType.html">FXClassType</a>
+</li>
+<li class="profile-desktop ">
+<a href="../javafx.reflect/javafx.reflect.FXContext.html">FXContext</a>
+</li>
+<li class="profile-desktop ">
+<a href="../javafx.reflect/javafx.reflect.FXDoubleValue.html">FXDoubleValue</a>
+</li>
+<li class="profile-desktop ">
+<a href="../javafx.reflect/javafx.reflect.FXFloatValue.html">FXFloatValue</a>
+</li>
+<li class="profile-desktop ">
+<a href="../javafx.reflect/javafx.reflect.FXFunctionMember.html">FXFunctionMember</a>
+</li>
+<li class="profile-desktop ">
+<a href="../javafx.reflect/javafx.reflect.FXFunctionType.html">FXFunctionType</a>
+</li>
+<li class="profile-desktop ">
+<a href="../javafx.reflect/javafx.reflect.FXFunctionValue.html">FXFunctionValue</a>
+</li>
+<li class="profile-desktop ">
+<a href="../javafx.reflect/javafx.reflect.FXIntegerValue.html">FXIntegerValue</a>
+</li>
+<li class="profile-desktop ">
+<a href="../javafx.reflect/javafx.reflect.FXJavaArrayType.html">FXJavaArrayType</a>
+</li>
+<li class="profile-desktop ">
+<a href="../javafx.reflect/javafx.reflect.FXLocal.html">FXLocal</a>
+</li>
+<li class="profile-desktop ">
+<a href="../javafx.reflect/javafx.reflect.FXLocal.ClassType.html">FXLocal.ClassType</a>
+</li>
+<li class="profile-desktop ">
+<a href="../javafx.reflect/javafx.reflect.FXLocal.Context.html">FXLocal.Context</a>
+</li>
+<li class="profile-desktop ">
+<a href="../javafx.reflect/javafx.reflect.FXLocal.FunctionValue.html">FXLocal.FunctionValue</a>
+</li>
+<li class="profile-desktop ">
+<a href="../javafx.reflect/javafx.reflect.FXLocal.ObjectValue.html">FXLocal.ObjectValue</a>
+</li>
+<li class="profile-desktop ">
+<a href="../javafx.reflect/javafx.reflect.FXLocal.Value.html">FXLocal.Value</a>
+</li>
+<li class="profile-desktop ">
+<a href="../javafx.reflect/javafx.reflect.FXLocal.VarMemberLocation.html">FXLocal.VarMemberLocation</a>
+</li>
+<li class="profile-desktop ">
+<a href="../javafx.reflect/javafx.reflect.FXLocation.html">FXLocation</a>
+</li>
+<li class="profile-desktop ">
+<a href="../javafx.reflect/javafx.reflect.FXLongValue.html">FXLongValue</a>
+</li>
+<li class="profile-desktop ">
+<a href="../javafx.reflect/javafx.reflect.FXMember.html">FXMember</a>
+</li>
+<li class="profile-desktop ">
+<a href="../javafx.reflect/javafx.reflect.FXMemberFilter.html">FXMemberFilter</a>
+</li>
+<li class="profile-desktop ">
+<a href="../javafx.reflect/javafx.reflect.FXObjectValue.html">FXObjectValue</a>
+</li>
+<li class="profile-desktop ">
+<a href="../javafx.reflect/javafx.reflect.FXPrimitiveType.html">FXPrimitiveType</a>
+</li>
+<li class="profile-desktop ">
+<a href="../javafx.reflect/javafx.reflect.FXPrimitiveValue.html">FXPrimitiveValue</a>
+</li>
+<li class="profile-desktop ">
+<a href="../javafx.reflect/javafx.reflect.FXSequenceBuilder.html">FXSequenceBuilder</a>
+</li>
+<li class="profile-desktop ">
+<a href="../javafx.reflect/javafx.reflect.FXSequenceType.html">FXSequenceType</a>
+</li>
+<li class="profile-desktop ">
+<a href="../javafx.reflect/javafx.reflect.FXSequenceValue.html">FXSequenceValue</a>
+</li>
+<li class="profile-desktop ">
+<a href="../javafx.reflect/javafx.reflect.FXType.html">FXType</a>
+</li>
+<li class="profile-desktop ">
+<a href="../javafx.reflect/javafx.reflect.FXValue.html">FXValue</a>
+</li>
+<li class="profile-desktop ">
+<a href="../javafx.reflect/javafx.reflect.FXVarMember.html">FXVarMember</a>
+</li>
+<li class="profile-desktop ">
+<a href="../javafx.reflect/javafx.reflect.FXVarMemberLocation.html">FXVarMemberLocation</a>
+</li>
+</ul>
+</li>
+<li>
+<h4 class="header">
+<a href="#">javafx.runtime</a>
+</h4>
+<ul class="content">
+<li class="profile-common ">
+<a href="../javafx.runtime/javafx.runtime.ConditionalFeature.html">ConditionalFeature</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.runtime/javafx.runtime.Platform.html">Platform</a>
+</li>
+</ul>
+</li>
+<li>
+<h4 class="header">
+<a href="#">javafx.scene</a>
+</h4>
+<ul class="content">
+<li class="profile-common ">
+<a href="../javafx.scene/javafx.scene.CacheHint.html">CacheHint</a>
+</li>
+<li class="profile-common conditional scene3d ">
+<a href="../javafx.scene/javafx.scene.Camera.html">Camera</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene/javafx.scene.Cursor.html">Cursor</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene/javafx.scene.CustomNode.html">CustomNode</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene/javafx.scene.Group.html">Group</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene/javafx.scene.ImageCursor.html">ImageCursor</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene/javafx.scene.Node.html">Node</a>
+</li>
+<li class="profile-common conditional scene3d ">
+<a href="../javafx.scene/javafx.scene.ParallelCamera.html">ParallelCamera</a>
+</li>
+<li class="">
+<a href="../javafx.scene/javafx.scene.Parent.html">Parent</a>
+</li>
+<li class="profile-common conditional scene3d ">
+<a href="../javafx.scene/javafx.scene.PerspectiveCamera.html">PerspectiveCamera</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene/javafx.scene.Scene.html">Scene</a>
+</li>
+</ul>
+</li>
+<li>
+<h4 class="header">
+<a href="#">javafx.scene.chart</a>
+</h4>
+<ul class="content">
+<li class="profile-common ">
+<a href="../javafx.scene.chart/javafx.scene.chart.AreaChart.html">AreaChart</a>
+</li>
+<li class="">
+<a href="../javafx.scene.chart/javafx.scene.chart.AreaChart.Data.html">AreaChart.Data</a>
+</li>
+<li class="">
+<a href="../javafx.scene.chart/javafx.scene.chart.AreaChart.Series.html">AreaChart.Series</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.chart/javafx.scene.chart.BarChart.html">BarChart</a>
+</li>
+<li class="">
+<a href="../javafx.scene.chart/javafx.scene.chart.BarChart.Data.html">BarChart.Data</a>
+</li>
+<li class="">
+<a href="../javafx.scene.chart/javafx.scene.chart.BarChart.Series.html">BarChart.Series</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.chart/javafx.scene.chart.BarChart3D.html">BarChart3D</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.chart/javafx.scene.chart.BubbleChart.html">BubbleChart</a>
+</li>
+<li class="">
+<a href="../javafx.scene.chart/javafx.scene.chart.BubbleChart.Data.html">BubbleChart.Data</a>
+</li>
+<li class="">
+<a href="../javafx.scene.chart/javafx.scene.chart.BubbleChart.Series.html">BubbleChart.Series</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.chart/javafx.scene.chart.Chart.html">Chart</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.chart/javafx.scene.chart.LineChart.html">LineChart</a>
+</li>
+<li class="">
+<a href="../javafx.scene.chart/javafx.scene.chart.LineChart.Data.html">LineChart.Data</a>
+</li>
+<li class="">
+<a href="../javafx.scene.chart/javafx.scene.chart.LineChart.Series.html">LineChart.Series</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.chart/javafx.scene.chart.PieChart.html">PieChart</a>
+</li>
+<li class="">
+<a href="../javafx.scene.chart/javafx.scene.chart.PieChart.Data.html">PieChart.Data</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.chart/javafx.scene.chart.PieChart3D.html">PieChart3D</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.chart/javafx.scene.chart.ScatterChart.html">ScatterChart</a>
+</li>
+<li class="">
+<a href="../javafx.scene.chart/javafx.scene.chart.ScatterChart.Data.html">ScatterChart.Data</a>
+</li>
+<li class="">
+<a href="../javafx.scene.chart/javafx.scene.chart.ScatterChart.Series.html">ScatterChart.Series</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.chart/javafx.scene.chart.XYChart.html">XYChart</a>
+</li>
+</ul>
+</li>
+<li>
+<h4 class="header">
+<a href="#">javafx.scene.chart.data</a>
+</h4>
+<ul class="content">
+<li class="profile-common ">
+<a href="../javafx.scene.chart.data/javafx.scene.chart.data.Data.html">Data</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.chart.data/javafx.scene.chart.data.Series.html">Series</a>
+</li>
+</ul>
+</li>
+<li>
+<h4 class="header">
+<a href="#">javafx.scene.chart.part</a>
+</h4>
+<ul class="content">
+<li class="profile-common ">
+<a href="../javafx.scene.chart.part/javafx.scene.chart.part.Axis.html">Axis</a>
+</li>
+<li class="">
+<a href="../javafx.scene.chart.part/javafx.scene.chart.part.Axis.TickMark.html">Axis.TickMark</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.chart.part/javafx.scene.chart.part.CategoryAxis.html">CategoryAxis</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.chart.part/javafx.scene.chart.part.Legend.html">Legend</a>
+</li>
+<li class="">
+<a href="../javafx.scene.chart.part/javafx.scene.chart.part.Legend.LegendItem.html">Legend.LegendItem</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.chart.part/javafx.scene.chart.part.NumberAxis.html">NumberAxis</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.chart.part/javafx.scene.chart.part.PlotSymbol.html">PlotSymbol</a>
+</li>
+<li class="">
+<a href="../javafx.scene.chart.part/javafx.scene.chart.part.PlotSymbol.Circle.html">PlotSymbol.Circle</a>
+</li>
+<li class="">
+<a href="../javafx.scene.chart.part/javafx.scene.chart.part.PlotSymbol.Cross.html">PlotSymbol.Cross</a>
+</li>
+<li class="">
+<a href="../javafx.scene.chart.part/javafx.scene.chart.part.PlotSymbol.HollowDiamond.html">PlotSymbol.HollowDiamond</a>
+</li>
+<li class="">
+<a href="../javafx.scene.chart.part/javafx.scene.chart.part.PlotSymbol.HollowTriangle.html">PlotSymbol.HollowTriangle</a>
+</li>
+<li class="">
+<a href="../javafx.scene.chart.part/javafx.scene.chart.part.PlotSymbol.Square.html">PlotSymbol.Square</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.chart.part/javafx.scene.chart.part.Side.html">Side</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.chart.part/javafx.scene.chart.part.ValueAxis.html">ValueAxis</a>
+</li>
+</ul>
+</li>
+<li>
+<h4 class="header">
+<a href="#">javafx.scene.control</a>
+</h4>
+<ul class="content">
+<li class="">
+<a href="../javafx.scene.control/javafx.scene.control.Behavior.html">Behavior</a>
+</li>
+<li class="">
+<a href="../javafx.scene.control/javafx.scene.control.Button.html">Button</a>
+</li>
+<li class="">
+<a href="../javafx.scene.control/javafx.scene.control.ButtonBase.html">ButtonBase</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.control/javafx.scene.control.Cell.html">Cell</a>
+</li>
+<li class="">
+<a href="../javafx.scene.control/javafx.scene.control.CheckBox.html">CheckBox</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.control/javafx.scene.control.ChoiceBox.html">ChoiceBox</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.control/javafx.scene.control.Control.html">Control</a>
+</li>
+<li class="">
+<a href="../javafx.scene.control/javafx.scene.control.Hyperlink.html">Hyperlink</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.control/javafx.scene.control.IndexedCell.html">IndexedCell</a>
+</li>
+<li class="">
+<a href="../javafx.scene.control/javafx.scene.control.Keystroke.html">Keystroke</a>
+</li>
+<li class="">
+<a href="../javafx.scene.control/javafx.scene.control.Label.html">Label</a>
+</li>
+<li class="">
+<a href="../javafx.scene.control/javafx.scene.control.Labeled.html">Labeled</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.control/javafx.scene.control.ListCell.html">ListCell</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.control/javafx.scene.control.ListView.html">ListView</a>
+</li>
+<li class="">
+<a href="../javafx.scene.control/javafx.scene.control.OverrunStyle.html">OverrunStyle</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.control/javafx.scene.control.PasswordBox.html">PasswordBox</a>
+</li>
+<li class="">
+<a href="../javafx.scene.control/javafx.scene.control.ProgressBar.html">ProgressBar</a>
+</li>
+<li class="">
+<a href="../javafx.scene.control/javafx.scene.control.ProgressIndicator.html">ProgressIndicator</a>
+</li>
+<li class="">
+<a href="../javafx.scene.control/javafx.scene.control.RadioButton.html">RadioButton</a>
+</li>
+<li class="">
+<a href="../javafx.scene.control/javafx.scene.control.ScrollBar.html">ScrollBar</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.control/javafx.scene.control.ScrollBarPolicy.html">ScrollBarPolicy</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.control/javafx.scene.control.ScrollView.html">ScrollView</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.control/javafx.scene.control.Separator.html">Separator</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.control/javafx.scene.control.Skin.html">Skin</a>
+</li>
+<li class="">
+<a href="../javafx.scene.control/javafx.scene.control.Slider.html">Slider</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.control/javafx.scene.control.TextBox.html">TextBox</a>
+</li>
+<li class="">
+<a href="../javafx.scene.control/javafx.scene.control.TextInputControl.html">TextInputControl</a>
+</li>
+<li class="">
+<a href="../javafx.scene.control/javafx.scene.control.Toggle.html">Toggle</a>
+</li>
+<li class="">
+<a href="../javafx.scene.control/javafx.scene.control.ToggleButton.html">ToggleButton</a>
+</li>
+<li class="">
+<a href="../javafx.scene.control/javafx.scene.control.ToggleGroup.html">ToggleGroup</a>
+</li>
+<li class="">
+<a href="../javafx.scene.control/javafx.scene.control.Tooltip.html">Tooltip</a>
+</li>
+</ul>
+</li>
+<li>
+<h4 class="header">
+<a href="#">javafx.scene.effect</a>
+</h4>
+<ul class="content">
+<li class="profile-common conditional effect ">
+<a href="../javafx.scene.effect/javafx.scene.effect.Blend.html">Blend</a>
+</li>
+<li class="profile-common conditional effect ">
+<a href="../javafx.scene.effect/javafx.scene.effect.BlendMode.html">BlendMode</a>
+</li>
+<li class="profile-common conditional effect ">
+<a href="../javafx.scene.effect/javafx.scene.effect.Bloom.html">Bloom</a>
+</li>
+<li class="profile-common conditional effect ">
+<a href="../javafx.scene.effect/javafx.scene.effect.BlurType.html">BlurType</a>
+</li>
+<li class="profile-common conditional effect ">
+<a href="../javafx.scene.effect/javafx.scene.effect.BoxBlur.html">BoxBlur</a>
+</li>
+<li class="profile-common conditional effect ">
+<a href="../javafx.scene.effect/javafx.scene.effect.ColorAdjust.html">ColorAdjust</a>
+</li>
+<li class="profile-common conditional effect ">
+<a href="../javafx.scene.effect/javafx.scene.effect.DisplacementMap.html">DisplacementMap</a>
+</li>
+<li class="profile-common conditional effect ">
+<a href="../javafx.scene.effect/javafx.scene.effect.DropShadow.html">DropShadow</a>
+</li>
+<li class="profile-common conditional effect ">
+<a href="../javafx.scene.effect/javafx.scene.effect.Effect.html">Effect</a>
+</li>
+<li class="profile-common conditional effect ">
+<a href="../javafx.scene.effect/javafx.scene.effect.FloatMap.html">FloatMap</a>
+</li>
+<li class="profile-common conditional effect ">
+<a href="../javafx.scene.effect/javafx.scene.effect.Flood.html">Flood</a>
+</li>
+<li class="profile-common conditional effect ">
+<a href="../javafx.scene.effect/javafx.scene.effect.GaussianBlur.html">GaussianBlur</a>
+</li>
+<li class="profile-common conditional effect ">
+<a href="../javafx.scene.effect/javafx.scene.effect.Glow.html">Glow</a>
+</li>
+<li class="profile-common conditional effect ">
+<a href="../javafx.scene.effect/javafx.scene.effect.Identity.html">Identity</a>
+</li>
+<li class="profile-common conditional effect ">
+<a href="../javafx.scene.effect/javafx.scene.effect.InnerShadow.html">InnerShadow</a>
+</li>
+<li class="profile-common conditional effect ">
+<a href="../javafx.scene.effect/javafx.scene.effect.InvertMask.html">InvertMask</a>
+</li>
+<li class="profile-common conditional effect ">
+<a href="../javafx.scene.effect/javafx.scene.effect.Lighting.html">Lighting</a>
+</li>
+<li class="profile-common conditional effect ">
+<a href="../javafx.scene.effect/javafx.scene.effect.MotionBlur.html">MotionBlur</a>
+</li>
+<li class="profile-common conditional effect ">
+<a href="../javafx.scene.effect/javafx.scene.effect.PerspectiveTransform.html">PerspectiveTransform</a>
+</li>
+<li class="profile-common conditional effect ">
+<a href="../javafx.scene.effect/javafx.scene.effect.Reflection.html">Reflection</a>
+</li>
+<li class="profile-common conditional effect ">
+<a href="../javafx.scene.effect/javafx.scene.effect.SepiaTone.html">SepiaTone</a>
+</li>
+<li class="profile-common conditional effect ">
+<a href="../javafx.scene.effect/javafx.scene.effect.Shadow.html">Shadow</a>
+</li>
+</ul>
+</li>
+<li>
+<h4 class="header">
+<a href="#">javafx.scene.effect.light</a>
+</h4>
+<ul class="content">
+<li class="profile-common conditional effect ">
+<a href="../javafx.scene.effect.light/javafx.scene.effect.light.DistantLight.html">DistantLight</a>
+</li>
+<li class="profile-common conditional effect ">
+<a href="../javafx.scene.effect.light/javafx.scene.effect.light.Light.html">Light</a>
+</li>
+<li class="profile-common conditional effect ">
+<a href="../javafx.scene.effect.light/javafx.scene.effect.light.PointLight.html">PointLight</a>
+</li>
+<li class="profile-common conditional effect ">
+<a href="../javafx.scene.effect.light/javafx.scene.effect.light.SpotLight.html">SpotLight</a>
+</li>
+</ul>
+</li>
+<li>
+<h4 class="header">
+<a href="#">javafx.scene.image</a>
+</h4>
+<ul class="content">
+<li class="profile-common ">
+<a href="../javafx.scene.image/javafx.scene.image.Image.html">Image</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.image/javafx.scene.image.ImageView.html">ImageView</a>
+</li>
+</ul>
+</li>
+<li>
+<h4 class="header">
+<a href="#">javafx.scene.input</a>
+</h4>
+<ul class="content">
+<li class="profile-common conditional input_method ">
+<a href="../javafx.scene.input/javafx.scene.input.InputMethodEvent.html">InputMethodEvent</a>
+</li>
+<li class="profile-common conditional input_method ">
+<a href="../javafx.scene.input/javafx.scene.input.InputMethodHighlight.html">InputMethodHighlight</a>
+</li>
+<li class="profile-common conditional input_method ">
+<a href="../javafx.scene.input/javafx.scene.input.InputMethodTextRun.html">InputMethodTextRun</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.input/javafx.scene.input.KeyCode.html">KeyCode</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.input/javafx.scene.input.KeyEvent.html">KeyEvent</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.input/javafx.scene.input.KeyEventID.html">KeyEventID</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.input/javafx.scene.input.MouseButton.html">MouseButton</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.input/javafx.scene.input.MouseEvent.html">MouseEvent</a>
+</li>
+<li class="profile-common private">
+<a href="../javafx.scene.input/javafx.scene.input.MouseEventID.html">MouseEventID</a>
+</li>
+<li class="profile-common conditional input_method ">
+<a href="../javafx.scene.input/javafx.scene.input.TextInput.html">TextInput</a>
+</li>
+<li class="private">
+<a href="../javafx.scene.input/javafx.scene.input.TextInput.impl_InputMethodEventHandler.html">TextInput.impl_InputMethodEventHandler</a>
+</li>
+</ul>
+</li>
+<li>
+<h4 class="header">
+<a href="#">javafx.scene.layout</a>
+</h4>
+<ul class="content">
+<li class="">
+<a href="../javafx.scene.layout/javafx.scene.layout.ClipView.html">ClipView</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.layout/javafx.scene.layout.Container.html">Container</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.layout/javafx.scene.layout.Flow.html">Flow</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.layout/javafx.scene.layout.HBox.html">HBox</a>
+</li>
+<li class="">
+<a href="../javafx.scene.layout/javafx.scene.layout.LayoutInfo.html">LayoutInfo</a>
+</li>
+<li class="">
+<a href="../javafx.scene.layout/javafx.scene.layout.LayoutInfoBase.html">LayoutInfoBase</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.layout/javafx.scene.layout.Panel.html">Panel</a>
+</li>
+<li class="">
+<a href="../javafx.scene.layout/javafx.scene.layout.Priority.html">Priority</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.layout/javafx.scene.layout.Resizable.html">Resizable</a>
+</li>
+<li class="">
+<a href="../javafx.scene.layout/javafx.scene.layout.Stack.html">Stack</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.layout/javafx.scene.layout.Tile.html">Tile</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.layout/javafx.scene.layout.VBox.html">VBox</a>
+</li>
+</ul>
+</li>
+<li>
+<h4 class="header">
+<a href="#">javafx.scene.media</a>
+</h4>
+<ul class="content">
+<li class="">
+<a href="../javafx.scene.media/javafx.scene.media.AudioTrack.html">AudioTrack</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.media/javafx.scene.media.Media.html">Media</a>
+</li>
+<li class="">
+<a href="../javafx.scene.media/javafx.scene.media.Media.Metadata.html">Media.Metadata</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.media/javafx.scene.media.MediaError.html">MediaError</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.media/javafx.scene.media.MediaPlayer.html">MediaPlayer</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.media/javafx.scene.media.MediaTimer.html">MediaTimer</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.media/javafx.scene.media.MediaView.html">MediaView</a>
+</li>
+<li class="">
+<a href="../javafx.scene.media/javafx.scene.media.SubtitleTrack.html">SubtitleTrack</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.media/javafx.scene.media.Track.html">Track</a>
+</li>
+<li class="">
+<a href="../javafx.scene.media/javafx.scene.media.TrackType.html">TrackType</a>
+</li>
+<li class="">
+<a href="../javafx.scene.media/javafx.scene.media.VideoTrack.html">VideoTrack</a>
+</li>
+</ul>
+</li>
+<li>
+<h4 class="header">
+<a href="#">javafx.scene.paint</a>
+</h4>
+<ul class="content">
+<li class="profile-common ">
+<a href="../javafx.scene.paint/javafx.scene.paint.Color.html">Color</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.paint/javafx.scene.paint.CycleMethod.html">CycleMethod</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.paint/javafx.scene.paint.LinearGradient.html">LinearGradient</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.paint/javafx.scene.paint.Paint.html">Paint</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.paint/javafx.scene.paint.RadialGradient.html">RadialGradient</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.paint/javafx.scene.paint.Stop.html">Stop</a>
+</li>
+</ul>
+</li>
+<li>
+<h4 class="header">
+<a href="#">javafx.scene.shape</a>
+</h4>
+<ul class="content">
+<li class="profile-common ">
+<a href="../javafx.scene.shape/javafx.scene.shape.Arc.html">Arc</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.shape/javafx.scene.shape.ArcTo.html">ArcTo</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.shape/javafx.scene.shape.ArcType.html">ArcType</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.shape/javafx.scene.shape.Circle.html">Circle</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.shape/javafx.scene.shape.ClosePath.html">ClosePath</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.shape/javafx.scene.shape.CubicCurve.html">CubicCurve</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.shape/javafx.scene.shape.CubicCurveTo.html">CubicCurveTo</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.shape/javafx.scene.shape.DelegateShape.html">DelegateShape</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.shape/javafx.scene.shape.Ellipse.html">Ellipse</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.shape/javafx.scene.shape.FillRule.html">FillRule</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.shape/javafx.scene.shape.HLineTo.html">HLineTo</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.shape/javafx.scene.shape.Line.html">Line</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.shape/javafx.scene.shape.LineTo.html">LineTo</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.shape/javafx.scene.shape.MoveTo.html">MoveTo</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.shape/javafx.scene.shape.Path.html">Path</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.shape/javafx.scene.shape.PathElement.html">PathElement</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.shape/javafx.scene.shape.Polygon.html">Polygon</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.shape/javafx.scene.shape.Polyline.html">Polyline</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.shape/javafx.scene.shape.QuadCurve.html">QuadCurve</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.shape/javafx.scene.shape.QuadCurveTo.html">QuadCurveTo</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.shape/javafx.scene.shape.Rectangle.html">Rectangle</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.shape/javafx.scene.shape.Shape.html">Shape</a>
+</li>
+<li class="profile-desktop ">
+<a href="../javafx.scene.shape/javafx.scene.shape.ShapeIntersect.html">ShapeIntersect</a>
+</li>
+<li class="profile-desktop ">
+<a href="../javafx.scene.shape/javafx.scene.shape.ShapeSubtract.html">ShapeSubtract</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.shape/javafx.scene.shape.StrokeLineCap.html">StrokeLineCap</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.shape/javafx.scene.shape.StrokeLineJoin.html">StrokeLineJoin</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.shape/javafx.scene.shape.SVGPath.html">SVGPath</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.shape/javafx.scene.shape.VLineTo.html">VLineTo</a>
+</li>
+</ul>
+</li>
+<li>
+<h4 class="header">
+<a href="#">javafx.scene.text</a>
+</h4>
+<ul class="content">
+<li class="profile-common ">
+<a href="../javafx.scene.text/javafx.scene.text.Font.html">Font</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.text/javafx.scene.text.FontPosition.html">FontPosition</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.text/javafx.scene.text.FontPosture.html">FontPosture</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.text/javafx.scene.text.FontWeight.html">FontWeight</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.text/javafx.scene.text.Text.html">Text</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.text/javafx.scene.text.TextAlignment.html">TextAlignment</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.text/javafx.scene.text.TextBoundsType.html">TextBoundsType</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.text/javafx.scene.text.TextOffsets.html">TextOffsets</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.text/javafx.scene.text.TextOrigin.html">TextOrigin</a>
+</li>
+</ul>
+</li>
+<li>
+<h4 class="header">
+<a href="#">javafx.scene.transform</a>
+</h4>
+<ul class="content">
+<li class="profile-common ">
+<a href="../javafx.scene.transform/javafx.scene.transform.Affine.html">Affine</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.transform/javafx.scene.transform.Rotate.html">Rotate</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.transform/javafx.scene.transform.Scale.html">Scale</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.transform/javafx.scene.transform.Shear.html">Shear</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.transform/javafx.scene.transform.Transform.html">Transform</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.transform/javafx.scene.transform.Translate.html">Translate</a>
+</li>
+</ul>
+</li>
+<li>
+<h4 class="header">
+<a href="#">javafx.stage</a>
+</h4>
+<ul class="content">
+<li class="profile-common ">
+<a href="../javafx.stage/javafx.stage.Alert.html">Alert</a>
+</li>
+<li class="profile-desktop ">
+<a href="../javafx.stage/javafx.stage.AppletStageExtension.html">AppletStageExtension</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.stage/javafx.stage.Screen.html">Screen</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.stage/javafx.stage.Stage.html">Stage</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.stage/javafx.stage.StageExtension.html">StageExtension</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.stage/javafx.stage.StageStyle.html">StageStyle</a>
+</li>
+</ul>
+</li>
+<li>
+<h4 class="header">
+<a href="#">javafx.util</a>
+</h4>
+<ul class="content">
+<li class="profile-common ">
+<a href="../javafx.util/javafx.util.Bits.html">Bits</a>
+</li>
+<li class="profile-desktop ">
+<a href="../javafx.util/javafx.util.FXEvaluator.html">FXEvaluator</a>
+</li>
+<li class="profile-common  selected-class">
+<a href="../javafx.util/javafx.util.Math.html">Math</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.util/javafx.util.Properties.html">Properties</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.util/javafx.util.Sequences.html">Sequences</a>
+</li>
+<li class="profile-desktop ">
+<a href="../javafx.util/javafx.util.StringLocalizer.html">StringLocalizer</a>
+</li>
+</ul>
+</li>
+<li id="copyright">
+<i>Copyright (c) 2008, 2010,</i>
+<br>
+<i>Oracle and/or its affiliates.</i>
+<br>
+<i>All rights reserved.</i>
+<br>
+<i>Use is subject to <a href="http://java.sun.com/javafx/1.3/docs/api/license.html">license terms</a>.</i>
+<br>
+</li>
+</ul>
+<div id="content">
+<div id="nav">
+<h1 class="classname">
+<i class="modifiers">public</i>
+                class
+                <a class="classname"><strong>javafx.util.</strong><b>Math</b></a>
+</h1>
+<h2>
+<span class="descriptive">Inherits from: </span><a title="com.sun.javafx.runtime.FXBase"><strong>com.sun.javafx.runtime.</strong><b>FXBase</b></a>
+            &gt;
+            <a title="javafx.util.Math" href="../javafx.util/javafx.util.Math.html"><strong>javafx.util.</strong><b>Math</b></a> 
+</h2>
+<h2>
+<span class="descriptive">Known subclasses: </span>
+</h2>
+<ul id="tabs">
+<li>Jump to Section:</li>
+<li>
+<a href="#overview">overview</a>
+</li>
+<li>
+<a href="#fields-summary">variables</a>
+</li>
+<li>
+<a href="#methods-summary">functions</a>
+</li>
+</ul>
+</div>
+<a id="overview">
+<h3>Overview</h3>
+</a>
+<div class="overview">
+<p class="comment">The class <code>Math</code> contains methods for performing basic
+ numeric operations such as the elementary exponential, logarithm,
+ square root, and trigonometric functions.</p>
+<p class="profile">Profile: <b>common</b>
+</p>
+</div>
+<div id="toc">
+<a id="fields-summary">
+<h3>Script Variable Summary</h3>
+</a>
+<table class="fields-summary fields">
+<tr>
+<th class="access">access</th><th class="name">name</th><th class="type">type</th><th><a class="tooltip" title="Indicates the variable can be read">Can Read</a></th><th><a title="Indicates the variable can only be set in the Object initializer. Any further changes will be ignored." class="tooltip">Can Init</a></th><th><a title="Indicates the varible can set at any time." class="tooltip">Can Write</a></th><th><a title="Indicates the default value of this variable" class="tooltip">Default Value</a></th><th class="description">description</th>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="E"></a><b class="name">E</b></td><td class="type"><a><i class="type">Double</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description">
+<p class="comment">The <code>double</code> value that is closer than any other to
+ <i>e</i>, the base of the natural logarithms.</p>
+</td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="PI"></a><b class="name">PI</b></td><td class="type"><a><i class="type">Double</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description">
+<p class="comment">The <code>double</code> value that is closer than any other to
+ <i>pi</i>, the ratio of the circumference of a circle to its
+ diameter.</p>
+</td>
+</tr>
+</table>
+<h3>Inherited Variables</h3>
+<a id="methods-summary">
+<h3>Script Function Summary</h3>
+</a>
+<dl class="methods-summary">
+<a id="abs(Integer)"></a>
+<dt class="method profile-common ">
+<i class="modifiers">public</i> <b>abs</b>(<i class="parameters"><b>a</b>:
+                    
+                    <a><i>Integer</i></a></i>)
+            :
+            
+            <a><i>Integer</i></a>
+</dt>
+<dd class="method profile-common ">
+<div>
+<p class="comment">Returns the absolute value of an <code>int</code> value.</p>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<p class="comment">Returns the absolute value of an <code>int</code> value.
+ If the argument is not negative, the argument is returned.
+ If the argument is negative, the negation of the argument is returned. 
+ 
+ <p>Note that if the argument is equal to the value of
+ <code>Integer.MIN_VALUE</code>, the most negative representable
+ <code>int</code> value, the result is that same value, which is
+ negative.</p>
+<p>
+<b>See Also:</b>
+<br>
+<a href="../java.lang/java.lang.Integer.html#MIN_VALUE">java.lang.Integer#MIN_VALUE</a>
+</p>
+<dl class="parameters">
+                    Parameters
+                    <dt>a</dt>
+<dd>   the argument whose absolute value is to be determined</dd>
+</dl>
+<dl class="returns">
+                    Returns
+                    <dt>Integer</dt>
+<dd>the absolute value of the argument.</dd>
+</dl>
+<p class="profile">Profile: <b>common</b>
+</p>
+                            &nbsp;
+                        </div>
+</div>
+</dd>
+<a id="abs(Long)"></a>
+<dt class="method profile-common ">
+<i class="modifiers">public</i> <b>abs</b>(<i class="parameters"><b>a</b>:
+                    
+                    <a><i>Long</i></a></i>)
+            :
+            
+            <a><i>Long</i></a>
+</dt>
+<dd class="method profile-common ">
+<div>
+<p class="comment">Returns the absolute value of a <code>long</code> value.</p>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<p class="comment">Returns the absolute value of a <code>long</code> value.
+ If the argument is not negative, the argument is returned.
+ If the argument is negative, the negation of the argument is returned. 
+ 
+ <p>Note that if the argument is equal to the value of
+ <code>Long.MIN_VALUE</code>, the most negative representable
+ <code>long</code> value, the result is that same value, which
+ is negative.</p>
+<p>
+<b>See Also:</b>
+<br>
+<a href="../java.lang/java.lang.Long.html#MIN_VALUE">java.lang.Long#MIN_VALUE</a>
+</p>
+<dl class="parameters">
+                    Parameters
+                    <dt>a</dt>
+<dd>   the argument whose absolute value is to be determined</dd>
+</dl>
+<dl class="returns">
+                    Returns
+                    <dt>Long</dt>
+<dd>the absolute value of the argument.</dd>
+</dl>
+<p class="profile">Profile: <b>common</b>
+</p>
+                            &nbsp;
+                        </div>
+</div>
+</dd>
+<a id="abs(Number)"></a>
+<dt class="method profile-common ">
+<i class="modifiers">public</i> <b>abs</b>(<i class="parameters"><b>a</b>:
+                    
+                    <a><i>Number</i></a></i>)
+            :
+            
+            <a><i>Number</i></a>
+</dt>
+<dd class="method profile-common ">
+<div>
+<p class="comment">Returns the absolute value of a <code>float</code> value.</p>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<p class="comment">Returns the absolute value of a <code>float</code> value.
+ If the argument is not negative, the argument is returned.
+ If the argument is negative, the negation of the argument is returned.
+ Special cases:
+ <ul><li>If the argument is positive zero or negative zero, the 
+ result is positive zero. 
+ <li>If the argument is infinite, the result is positive infinity. 
+ <li>If the argument is NaN, the result is NaN.</ul>
+ In other words, the result is the same as the value of the expression: 
+ <p><pre>Float.intBitsToFloat(0x7fffffff & Float.floatToIntBits(a))</pre></p>
+<dl class="parameters">
+                    Parameters
+                    <dt>a</dt>
+<dd>   the argument whose absolute value is to be determined</dd>
+</dl>
+<dl class="returns">
+                    Returns
+                    <dt>Number</dt>
+<dd>the absolute value of the argument.</dd>
+</dl>
+<p class="profile">Profile: <b>common</b>
+</p>
+                            &nbsp;
+                        </div>
+</div>
+</dd>
+<a id="abs(Double)"></a>
+<dt class="method profile-common ">
+<i class="modifiers">public</i> <b>abs</b>(<i class="parameters"><b>a</b>:
+                    
+                    <a><i>Double</i></a></i>)
+            :
+            
+            <a><i>Double</i></a>
+</dt>
+<dd class="method profile-common ">
+<div>
+<p class="comment">Returns the absolute value of a <code>double</code> value.</p>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<p class="comment">Returns the absolute value of a <code>double</code> value.
+ If the argument is not negative, the argument is returned.
+ If the argument is negative, the negation of the argument is returned.
+ Special cases:
+ <ul><li>If the argument is positive zero or negative zero, the result 
+ is positive zero. 
+ <li>If the argument is infinite, the result is positive infinity. 
+ <li>If the argument is NaN, the result is NaN.</ul>
+ In other words, the result is the same as the value of the expression: 
+ <p><code>Double.longBitsToDouble((Double.doubleToLongBits(a)&lt;&lt;1)&gt;&gt;&gt;1)</code></p>
+<dl class="parameters">
+                    Parameters
+                    <dt>a</dt>
+<dd>   the argument whose absolute value is to be determined</dd>
+</dl>
+<dl class="returns">
+                    Returns
+                    <dt>Double</dt>
+<dd>the absolute value of the argument.</dd>
+</dl>
+<p class="profile">Profile: <b>common</b>
+</p>
+                            &nbsp;
+                        </div>
+</div>
+</dd>
+<a id="acos(Double)"></a>
+<dt class="method profile-common ">
+<i class="modifiers">public</i> <b>acos</b>(<i class="parameters"><b>a</b>:
+                    
+                    <a><i>Double</i></a></i>)
+            :
+            
+            <a><i>Double</i></a>
+</dt>
+<dd class="method profile-common ">
+<div>
+<p class="comment">Returns the arc cosine of a value; the returned angle is in the
+ range 0.0 through <i>pi</i>.</p>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<p class="comment">Returns the arc cosine of a value; the returned angle is in the
+ range 0.0 through <i>pi</i>.  Special case:
+ <ul><li>If the argument is NaN or its absolute value is greater 
+ than 1, then the result is NaN.</ul></p>
+<dl class="parameters">
+                    Parameters
+                    <dt>a</dt>
+<dd>   the value whose arc cosine is to be returned.</dd>
+</dl>
+<dl class="returns">
+                    Returns
+                    <dt>Double</dt>
+<dd>the arc cosine of the argument.</dd>
+</dl>
+<p class="profile">Profile: <b>common</b>
+</p>
+                            &nbsp;
+                        </div>
+</div>
+</dd>
+<a id="asin(Double)"></a>
+<dt class="method profile-common ">
+<i class="modifiers">public</i> <b>asin</b>(<i class="parameters"><b>a</b>:
+                    
+                    <a><i>Double</i></a></i>)
+            :
+            
+            <a><i>Double</i></a>
+</dt>
+<dd class="method profile-common ">
+<div>
+<p class="comment">Returns the arc sine of a value; the returned angle is in the
+ range -<i>pi</i>/2 through <i>pi</i>/2.</p>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<p class="comment">Returns the arc sine of a value; the returned angle is in the
+ range -<i>pi</i>/2 through <i>pi</i>/2.  Special cases:
+ <ul><li>If the argument is NaN or its absolute value is greater 
+ than 1, then the result is NaN.
+ <li>If the argument is zero, then the result is a zero with the
+ same sign as the argument.</ul></p>
+<dl class="parameters">
+                    Parameters
+                    <dt>a</dt>
+<dd>   the value whose arc sine is to be returned.</dd>
+</dl>
+<dl class="returns">
+                    Returns
+                    <dt>Double</dt>
+<dd>the arc sine of the argument.</dd>
+</dl>
+<p class="profile">Profile: <b>common</b>
+</p>
+                            &nbsp;
+                        </div>
+</div>
+</dd>
+<a id="atan(Double)"></a>
+<dt class="method profile-common ">
+<i class="modifiers">public</i> <b>atan</b>(<i class="parameters"><b>a</b>:
+                    
+                    <a><i>Double</i></a></i>)
+            :
+            
+            <a><i>Double</i></a>
+</dt>
+<dd class="method profile-common ">
+<div>
+<p class="comment">Returns the arc tangent of a value; the returned angle is in the
+ range -<i>pi</i>/2 through <i>pi</i>/2.</p>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<p class="comment">Returns the arc tangent of a value; the returned angle is in the
+ range -<i>pi</i>/2 through <i>pi</i>/2.  Special cases:
+ <ul><li>If the argument is NaN, then the result is NaN.
+ <li>If the argument is zero, then the result is a zero with the
+ same sign as the argument.</ul></p>
+<dl class="parameters">
+                    Parameters
+                    <dt>a</dt>
+<dd>   the value whose arc tangent is to be returned.</dd>
+</dl>
+<dl class="returns">
+                    Returns
+                    <dt>Double</dt>
+<dd>the arc tangent of the argument.</dd>
+</dl>
+<p class="profile">Profile: <b>common</b>
+</p>
+                            &nbsp;
+                        </div>
+</div>
+</dd>
+<a id="atan2(Double,Double)"></a>
+<dt class="method profile-common ">
+<i class="modifiers">public</i> <b>atan2</b>(<i class="parameters"><b>y</b>:
+                    
+                    <a><i>Double</i></a>, <b>x</b>:
+                    
+                    <a><i>Double</i></a></i>)
+            :
+            
+            <a><i>Double</i></a>
+</dt>
+<dd class="method profile-common ">
+<div>
+<p class="comment">Returns the angle <i>theta</i> from the conversion of rectangular
+ coordinates (<code>x</code>,&nbsp;<code>y</code>) to polar
+ coordinates (r,&nbsp;<i>theta</i>).</p>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<p class="comment">Returns the angle <i>theta</i> from the conversion of rectangular
+ coordinates (<code>x</code>,&nbsp;<code>y</code>) to polar
+ coordinates (r,&nbsp;<i>theta</i>).
+ This method computes the phase <i>theta</i> by computing an arc tangent
+ of <code>y/x</code> in the range of -<i>pi</i> to <i>pi</i>. Special 
+ cases:
+ <ul><li>If either argument is NaN, then the result is NaN. 
+ <li>If the first argument is positive zero and the second argument 
+ is positive, or the first argument is positive and finite and the 
+ second argument is positive infinity, then the result is positive 
+ zero. 
+ <li>If the first argument is negative zero and the second argument 
+ is positive, or the first argument is negative and finite and the 
+ second argument is positive infinity, then the result is negative zero. 
+ <li>If the first argument is positive zero and the second argument 
+ is negative, or the first argument is positive and finite and the 
+ second argument is negative infinity, then the result is the 
+ <code>double</code> value closest to <i>pi</i>. 
+ <li>If the first argument is negative zero and the second argument 
+ is negative, or the first argument is negative and finite and the 
+ second argument is negative infinity, then the result is the 
+ <code>double</code> value closest to -<i>pi</i>. 
+ <li>If the first argument is positive and the second argument is 
+ positive zero or negative zero, or the first argument is positive 
+ infinity and the second argument is finite, then the result is the 
+ <code>double</code> value closest to <i>pi</i>/2. 
+ <li>If the first argument is negative and the second argument is 
+ positive zero or negative zero, or the first argument is negative 
+ infinity and the second argument is finite, then the result is the 
+ <code>double</code> value closest to -<i>pi</i>/2. 
+ <li>If both arguments are positive infinity, then the result is the 
+ <code>double</code> value closest to <i>pi</i>/4. 
+ <li>If the first argument is positive infinity and the second argument 
+ is negative infinity, then the result is the <code>double</code> 
+ value closest to 3*<i>pi</i>/4. 
+ <li>If the first argument is negative infinity and the second argument 
+ is positive infinity, then the result is the <code>double</code> value 
+ closest to -<i>pi</i>/4. 
+ <li>If both arguments are negative infinity, then the result is the 
+ <code>double</code> value closest to -3*<i>pi</i>/4.</ul></p>
+<dl class="parameters">
+                    Parameters
+                    <dt>y</dt>
+<dd>   the ordinate coordinate</dd>
+<dt>x</dt>
+<dd>   the abscissa coordinate</dd>
+</dl>
+<dl class="returns">
+                    Returns
+                    <dt>Double</dt>
+<dd>the theta component of the point
+          (r, theta)
+          in polar coordinates that corresponds to the point
+          (x, y) in Cartesian coordinates.</dd>
+</dl>
+<p class="profile">Profile: <b>common</b>
+</p>
+                            &nbsp;
+                        </div>
+</div>
+</dd>
+<a id="cbrt(Double)"></a>
+<dt class="method profile-common ">
+<i class="modifiers">public</i> <b>cbrt</b>(<i class="parameters"><b>a</b>:
+                    
+                    <a><i>Double</i></a></i>)
+            :
+            
+            <a><i>Double</i></a>
+</dt>
+<dd class="method profile-common ">
+<div>
+<p class="comment">Returns the cube root of a <code>double</code> value.</p>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<p class="comment">Returns the cube root of a <code>double</code> value.  For
+ positive finite <code>x</code>, <code>cbrt(-x) ==
+ -cbrt(x)</code>; that is, the cube root of a negative value is
+ the negative of the cube root of that value's magnitude.
+ 
+ Special cases: 
+
+ <ul>
+ 
+ <li>If the argument is NaN, then the result is NaN.
+
+ <li>If the argument is infinite, then the result is an infinity
+ with the same sign as the argument.
+
+ <li>If the argument is zero, then the result is a zero with the
+ same sign as the argument.
+ 
+ </ul></p>
+<dl class="parameters">
+                    Parameters
+                    <dt>a</dt>
+<dd>   a value.</dd>
+</dl>
+<dl class="returns">
+                    Returns
+                    <dt>Double</dt>
+<dd>the cube root of &lt;code&gt;a&lt;/code&gt;.</dd>
+</dl>
+<p class="profile">Profile: <b>common</b>
+</p>
+                            &nbsp;
+                        </div>
+</div>
+</dd>
+<a id="ceil(Double)"></a>
+<dt class="method profile-common ">
+<i class="modifiers">public</i> <b>ceil</b>(<i class="parameters"><b>a</b>:
+                    
+                    <a><i>Double</i></a></i>)
+            :
+            
+            <a><i>Double</i></a>
+</dt>
+<dd class="method profile-common ">
+<div>
+<p class="comment">Returns the smallest (closest to negative infinity)
+ <code>double</code> value that is greater than or equal to the
+ argument and is equal to a mathematical integer.</p>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<p class="comment">Returns the smallest (closest to negative infinity)
+ <code>double</code> value that is greater than or equal to the
+ argument and is equal to a mathematical integer. Special cases:
+ <ul><li>If the argument value is already equal to a
+ mathematical integer, then the result is the same as the
+ argument.  <li>If the argument is NaN or an infinity or
+ positive zero or negative zero, then the result is the same as
+ the argument.  <li>If the argument value is less than zero but
+ greater than -1.0, then the result is negative zero.</ul> Note
+ that the value of <code>Math.ceil(x)</code> is exactly the
+ value of <code>-Math.floor(-x)</code>.</p>
+<dl class="parameters">
+                    Parameters
+                    <dt>a</dt>
+<dd>   a value.</dd>
+</dl>
+<dl class="returns">
+                    Returns
+                    <dt>Double</dt>
+<dd>the smallest (closest to negative infinity) 
+          floating-point value that is greater than or equal to 
+          the argument and is equal to a mathematical integer.</dd>
+</dl>
+<p class="profile">Profile: <b>common</b>
+</p>
+                            &nbsp;
+                        </div>
+</div>
+</dd>
+<a id="cos(Double)"></a>
+<dt class="method profile-common ">
+<i class="modifiers">public</i> <b>cos</b>(<i class="parameters"><b>a</b>:
+                    
+                    <a><i>Double</i></a></i>)
+            :
+            
+            <a><i>Double</i></a>
+</dt>
+<dd class="method profile-common ">
+<div>
+<p class="comment">Returns the trigonometric cosine of an angle.</p>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<p class="comment">Returns the trigonometric cosine of an angle. Special cases:
+ <ul><li>If the argument is NaN or an infinity, then the 
+ result is NaN.</ul></p>
+<dl class="parameters">
+                    Parameters
+                    <dt>a</dt>
+<dd>   an angle, in radians.</dd>
+</dl>
+<dl class="returns">
+                    Returns
+                    <dt>Double</dt>
+<dd>the cosine of the argument.</dd>
+</dl>
+<p class="profile">Profile: <b>common</b>
+</p>
+                            &nbsp;
+                        </div>
+</div>
+</dd>
+<a id="cosh(Double)"></a>
+<dt class="method profile-common ">
+<i class="modifiers">public</i> <b>cosh</b>(<i class="parameters"><b>x</b>:
+                    
+                    <a><i>Double</i></a></i>)
+            :
+            
+            <a><i>Double</i></a>
+</dt>
+<dd class="method profile-common ">
+<div>
+<p class="comment">Returns the hyperbolic cosine of a <code>double</code> value.</p>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<p class="comment">Returns the hyperbolic cosine of a <code>double</code> value.
+ The hyperbolic cosine of <i>x</i> is defined to be
+ (<i>e<sup>x</sup>&nbsp;+&nbsp;e<sup>-x</sup></i>)/2
+ where <i>e</i> is <a href="">Math#E Euler's number</a>.
+
+ <p>Special cases:
+ <ul>
+
+ <li>If the argument is NaN, then the result is NaN.
+
+ <li>If the argument is infinite, then the result is positive
+ infinity.
+
+ <li>If the argument is zero, then the result is <code>1.0</code>.
+
+ </ul></p>
+<dl class="parameters">
+                    Parameters
+                    <dt>x</dt>
+<dd> The number whose hyperbolic cosine is to be returned.</dd>
+</dl>
+<dl class="returns">
+                    Returns
+                    <dt>Double</dt>
+<dd>The hyperbolic cosine of &lt;code&gt;x&lt;/code&gt;.</dd>
+</dl>
+<p class="profile">Profile: <b>common</b>
+</p>
+                            &nbsp;
+                        </div>
+</div>
+</dd>
+<a id="exp(Double)"></a>
+<dt class="method profile-common ">
+<i class="modifiers">public</i> <b>exp</b>(<i class="parameters"><b>a</b>:
+                    
+                    <a><i>Double</i></a></i>)
+            :
+            
+            <a><i>Double</i></a>
+</dt>
+<dd class="method profile-common ">
+<div>
+<p class="comment">Returns Euler's number <i>e</i> raised to the power of a
+ <code>double</code> value.</p>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<p class="comment">Returns Euler's number <i>e</i> raised to the power of a
+ <code>double</code> value.  Special cases:
+ <ul><li>If the argument is NaN, the result is NaN.
+ <li>If the argument is positive infinity, then the result is 
+ positive infinity.
+ <li>If the argument is negative infinity, then the result is 
+ positive zero.</ul></p>
+<dl class="parameters">
+                    Parameters
+                    <dt>a</dt>
+<dd>   the exponent to raise &lt;i&gt;e&lt;/i&gt; to.</dd>
+</dl>
+<dl class="returns">
+                    Returns
+                    <dt>Double</dt>
+<dd>the value &lt;i&gt;e&lt;/i&gt;&lt;sup&gt;&lt;code&gt;a&lt;/code&gt;&lt;/sup&gt;, 
+          where &lt;i&gt;e&lt;/i&gt; is the base of the natural logarithms.</dd>
+</dl>
+<p class="profile">Profile: <b>common</b>
+</p>
+                            &nbsp;
+                        </div>
+</div>
+</dd>
+<a id="floor(Double)"></a>
+<dt class="method profile-common ">
+<i class="modifiers">public</i> <b>floor</b>(<i class="parameters"><b>a</b>:
+                    
+                    <a><i>Double</i></a></i>)
+            :
+            
+            <a><i>Double</i></a>
+</dt>
+<dd class="method profile-common ">
+<div>
+<p class="comment">Returns the largest (closest to positive infinity)
+ <code>double</code> value that is less than or equal to the
+ argument and is equal to a mathematical integer.</p>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<p class="comment">Returns the largest (closest to positive infinity)
+ <code>double</code> value that is less than or equal to the
+ argument and is equal to a mathematical integer. Special cases:
+ <ul><li>If the argument value is already equal to a
+ mathematical integer, then the result is the same as the
+ argument.  <li>If the argument is NaN or an infinity or
+ positive zero or negative zero, then the result is the same as
+ the argument.</ul></p>
+<dl class="parameters">
+                    Parameters
+                    <dt>a</dt>
+<dd>   a value.</dd>
+</dl>
+<dl class="returns">
+                    Returns
+                    <dt>Double</dt>
+<dd>the largest (closest to positive infinity) 
+          floating-point value that less than or equal to the argument
+          and is equal to a mathematical integer.</dd>
+</dl>
+<p class="profile">Profile: <b>common</b>
+</p>
+                            &nbsp;
+                        </div>
+</div>
+</dd>
+<a id="log(Double)"></a>
+<dt class="method profile-common ">
+<i class="modifiers">public</i> <b>log</b>(<i class="parameters"><b>a</b>:
+                    
+                    <a><i>Double</i></a></i>)
+            :
+            
+            <a><i>Double</i></a>
+</dt>
+<dd class="method profile-common ">
+<div>
+<p class="comment">Returns the natural logarithm (base <i>e</i>) of a <code>double</code>
+ value.</p>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<p class="comment">Returns the natural logarithm (base <i>e</i>) of a <code>double</code>
+ value.  Special cases:
+ <ul><li>If the argument is NaN or less than zero, then the result 
+ is NaN.
+ <li>If the argument is positive infinity, then the result is 
+ positive infinity.
+ <li>If the argument is positive zero or negative zero, then the 
+ result is negative infinity.</ul></p>
+<dl class="parameters">
+                    Parameters
+                    <dt>a</dt>
+<dd>   a value</dd>
+</dl>
+<dl class="returns">
+                    Returns
+                    <dt>Double</dt>
+<dd>the value ln&amp;nbsp;&lt;code&gt;a&lt;/code&gt;, the natural logarithm of
+          &lt;code&gt;a&lt;/code&gt;.</dd>
+</dl>
+<p class="profile">Profile: <b>common</b>
+</p>
+                            &nbsp;
+                        </div>
+</div>
+</dd>
+<a id="log10(Double)"></a>
+<dt class="method profile-common ">
+<i class="modifiers">public</i> <b>log10</b>(<i class="parameters"><b>a</b>:
+                    
+                    <a><i>Double</i></a></i>)
+            :
+            
+            <a><i>Double</i></a>
+</dt>
+<dd class="method profile-common ">
+<div>
+<p class="comment">Returns the base 10 logarithm of a <code>double</code> value.</p>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<p class="comment">Returns the base 10 logarithm of a <code>double</code> value.
+ Special cases:
+
+ <ul><li>If the argument is NaN or less than zero, then the result 
+ is NaN.
+ <li>If the argument is positive infinity, then the result is 
+ positive infinity.
+ <li>If the argument is positive zero or negative zero, then the 
+ result is negative infinity.
+ <li> If the argument is equal to 10<sup><i>n</i></sup> for
+ integer <i>n</i>, then the result is <i>n</i>.
+ </ul></p>
+<dl class="parameters">
+                    Parameters
+                    <dt>a</dt>
+<dd>   a value</dd>
+</dl>
+<dl class="returns">
+                    Returns
+                    <dt>Double</dt>
+<dd>the base 10 logarithm of  &lt;code&gt;a&lt;/code&gt;.</dd>
+</dl>
+<p class="profile">Profile: <b>common</b>
+</p>
+                            &nbsp;
+                        </div>
+</div>
+</dd>
+<a id="max(Integer,Integer)"></a>
+<dt class="method profile-common ">
+<i class="modifiers">public</i> <b>max</b>(<i class="parameters"><b>a</b>:
+                    
+                    <a><i>Integer</i></a>, <b>b</b>:
+                    
+                    <a><i>Integer</i></a></i>)
+            :
+            
+            <a><i>Integer</i></a>
+</dt>
+<dd class="method profile-common ">
+<div>
+<p class="comment">Returns the greater of two <code>int</code> values.</p>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<p class="comment">Returns the greater of two <code>int</code> values. That is, the 
+ result is the argument closer to the value of 
+ <code>Integer.MAX_VALUE</code>. If the arguments have the same value, 
+ the result is that same value.</p>
+<p>
+<b>See Also:</b>
+<br>
+<a href="../java.lang/java.lang.Long.html#MAX_VALUE">java.lang.Long#MAX_VALUE</a>
+</p>
+<dl class="parameters">
+                    Parameters
+                    <dt>a</dt>
+<dd>   an argument.</dd>
+<dt>b</dt>
+<dd>   another argument.</dd>
+</dl>
+<dl class="returns">
+                    Returns
+                    <dt>Integer</dt>
+<dd>the larger of &lt;code&gt;a&lt;/code&gt; and &lt;code&gt;b&lt;/code&gt;.</dd>
+</dl>
+<p class="profile">Profile: <b>common</b>
+</p>
+                            &nbsp;
+                        </div>
+</div>
+</dd>
+<a id="max(Long,Long)"></a>
+<dt class="method profile-common ">
+<i class="modifiers">public</i> <b>max</b>(<i class="parameters"><b>a</b>:
+                    
+                    <a><i>Long</i></a>, <b>b</b>:
+                    
+                    <a><i>Long</i></a></i>)
+            :
+            
+            <a><i>Long</i></a>
+</dt>
+<dd class="method profile-common ">
+<div>
+<p class="comment">Returns the greater of two <code>long</code> values.</p>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<p class="comment">Returns the greater of two <code>long</code> values. That is, the 
+ result is the argument closer to the value of 
+ <code>Long.MAX_VALUE</code>. If the arguments have the same value, 
+ the result is that same value.</p>
+<p>
+<b>See Also:</b>
+<br>
+<a href="../java.lang/java.lang.Long.html#MAX_VALUE">java.lang.Long#MAX_VALUE</a>
+</p>
+<dl class="parameters">
+                    Parameters
+                    <dt>a</dt>
+<dd>   an argument.</dd>
+<dt>b</dt>
+<dd>   another argument.</dd>
+</dl>
+<dl class="returns">
+                    Returns
+                    <dt>Long</dt>
+<dd>the larger of &lt;code&gt;a&lt;/code&gt; and &lt;code&gt;b&lt;/code&gt;.</dd>
+</dl>
+<p class="profile">Profile: <b>common</b>
+</p>
+                            &nbsp;
+                        </div>
+</div>
+</dd>
+<a id="max(Number,Number)"></a>
+<dt class="method profile-common ">
+<i class="modifiers">public</i> <b>max</b>(<i class="parameters"><b>a</b>:
+                    
+                    <a><i>Number</i></a>, <b>b</b>:
+                    
+                    <a><i>Number</i></a></i>)
+            :
+            
+            <a><i>Number</i></a>
+</dt>
+<dd class="method profile-common ">
+<div>
+<p class="comment">Returns the greater of two <code>float</code> values.</p>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<p class="comment">Returns the greater of two <code>float</code> values.  That is,
+ the result is the argument closer to positive infinity. If the
+ arguments have the same value, the result is that same
+ value. If either value is NaN, then the result is NaN.  Unlike
+ the numerical comparison operators, this method considers
+ negative zero to be strictly smaller than positive zero. If one
+ argument is positive zero and the other negative zero, the
+ result is positive zero.</p>
+<dl class="parameters">
+                    Parameters
+                    <dt>a</dt>
+<dd>   an argument.</dd>
+<dt>b</dt>
+<dd>   another argument.</dd>
+</dl>
+<dl class="returns">
+                    Returns
+                    <dt>Number</dt>
+<dd>the larger of &lt;code&gt;a&lt;/code&gt; and &lt;code&gt;b&lt;/code&gt;.</dd>
+</dl>
+<p class="profile">Profile: <b>common</b>
+</p>
+                            &nbsp;
+                        </div>
+</div>
+</dd>
+<a id="max(Double,Double)"></a>
+<dt class="method profile-common ">
+<i class="modifiers">public</i> <b>max</b>(<i class="parameters"><b>a</b>:
+                    
+                    <a><i>Double</i></a>, <b>b</b>:
+                    
+                    <a><i>Double</i></a></i>)
+            :
+            
+            <a><i>Double</i></a>
+</dt>
+<dd class="method profile-common ">
+<div>
+<p class="comment">Returns the greater of two <code>double</code> values.</p>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<p class="comment">Returns the greater of two <code>double</code> values.  That
+ is, the result is the argument closer to positive infinity. If
+ the arguments have the same value, the result is that same
+ value. If either value is NaN, then the result is NaN.  Unlike
+ the numerical comparison operators, this method considers
+ negative zero to be strictly smaller than positive zero. If one
+ argument is positive zero and the other negative zero, the
+ result is positive zero.</p>
+<dl class="parameters">
+                    Parameters
+                    <dt>a</dt>
+<dd>   an argument.</dd>
+<dt>b</dt>
+<dd>   another argument.</dd>
+</dl>
+<dl class="returns">
+                    Returns
+                    <dt>Double</dt>
+<dd>the larger of &lt;code&gt;a&lt;/code&gt; and &lt;code&gt;b&lt;/code&gt;.</dd>
+</dl>
+<p class="profile">Profile: <b>common</b>
+</p>
+                            &nbsp;
+                        </div>
+</div>
+</dd>
+<a id="min(Integer,Integer)"></a>
+<dt class="method profile-common ">
+<i class="modifiers">public</i> <b>min</b>(<i class="parameters"><b>a</b>:
+                    
+                    <a><i>Integer</i></a>, <b>b</b>:
+                    
+                    <a><i>Integer</i></a></i>)
+            :
+            
+            <a><i>Integer</i></a>
+</dt>
+<dd class="method profile-common ">
+<div>
+<p class="comment">Returns the smaller of two <code>int</code> values.</p>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<p class="comment">Returns the smaller of two <code>int</code> values. That is,
+ the result the argument closer to the value of
+ <code>Integer.MIN_VALUE</code>.  If the arguments have the same
+ value, the result is that same value.</p>
+<p>
+<b>See Also:</b>
+<br>
+<a href="../java.lang/java.lang.Long.html#MIN_VALUE">java.lang.Long#MIN_VALUE</a>
+</p>
+<dl class="parameters">
+                    Parameters
+                    <dt>a</dt>
+<dd>   an argument.</dd>
+<dt>b</dt>
+<dd>   another argument.</dd>
+</dl>
+<dl class="returns">
+                    Returns
+                    <dt>Integer</dt>
+<dd>the smaller of &lt;code&gt;a&lt;/code&gt; and &lt;code&gt;b&lt;/code&gt;.</dd>
+</dl>
+<p class="profile">Profile: <b>common</b>
+</p>
+                            &nbsp;
+                        </div>
+</div>
+</dd>
+<a id="min(Long,Long)"></a>
+<dt class="method profile-common ">
+<i class="modifiers">public</i> <b>min</b>(<i class="parameters"><b>a</b>:
+                    
+                    <a><i>Long</i></a>, <b>b</b>:
+                    
+                    <a><i>Long</i></a></i>)
+            :
+            
+            <a><i>Long</i></a>
+</dt>
+<dd class="method profile-common ">
+<div>
+<p class="comment">Returns the smaller of two <code>long</code> values.</p>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<p class="comment">Returns the smaller of two <code>long</code> values. That is,
+ the result is the argument closer to the value of
+ <code>Long.MIN_VALUE</code>. If the arguments have the same
+ value, the result is that same value.</p>
+<p>
+<b>See Also:</b>
+<br>
+<a href="../java.lang/java.lang.Long.html#MIN_VALUE">java.lang.Long#MIN_VALUE</a>
+</p>
+<dl class="parameters">
+                    Parameters
+                    <dt>a</dt>
+<dd>   an argument.</dd>
+<dt>b</dt>
+<dd>   another argument.</dd>
+</dl>
+<dl class="returns">
+                    Returns
+                    <dt>Long</dt>
+<dd>the smaller of &lt;code&gt;a&lt;/code&gt; and &lt;code&gt;b&lt;/code&gt;.</dd>
+</dl>
+<p class="profile">Profile: <b>common</b>
+</p>
+                            &nbsp;
+                        </div>
+</div>
+</dd>
+<a id="min(Number,Number)"></a>
+<dt class="method profile-common ">
+<i class="modifiers">public</i> <b>min</b>(<i class="parameters"><b>a</b>:
+                    
+                    <a><i>Number</i></a>, <b>b</b>:
+                    
+                    <a><i>Number</i></a></i>)
+            :
+            
+            <a><i>Number</i></a>
+</dt>
+<dd class="method profile-common ">
+<div>
+<p class="comment">Returns the smaller of two <code>float</code> values.</p>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<p class="comment">Returns the smaller of two <code>float</code> values.  That is,
+ the result is the value closer to negative infinity. If the
+ arguments have the same value, the result is that same
+ value. If either value is NaN, then the result is NaN.  Unlike
+ the numerical comparison operators, this method considers
+ negative zero to be strictly smaller than positive zero.  If
+ one argument is positive zero and the other is negative zero,
+ the result is negative zero.</p>
+<dl class="parameters">
+                    Parameters
+                    <dt>a</dt>
+<dd>   an argument.</dd>
+<dt>b</dt>
+<dd>   another argument.</dd>
+</dl>
+<dl class="returns">
+                    Returns
+                    <dt>Number</dt>
+<dd>the smaller of &lt;code&gt;a&lt;/code&gt; and &lt;code&gt;b.&lt;/code&gt;</dd>
+</dl>
+<p class="profile">Profile: <b>common</b>
+</p>
+                            &nbsp;
+                        </div>
+</div>
+</dd>
+<a id="min(Double,Double)"></a>
+<dt class="method profile-common ">
+<i class="modifiers">public</i> <b>min</b>(<i class="parameters"><b>a</b>:
+                    
+                    <a><i>Double</i></a>, <b>b</b>:
+                    
+                    <a><i>Double</i></a></i>)
+            :
+            
+            <a><i>Double</i></a>
+</dt>
+<dd class="method profile-common ">
+<div>
+<p class="comment">Returns the smaller of two <code>double</code> values.</p>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<p class="comment">Returns the smaller of two <code>double</code> values.  That
+ is, the result is the value closer to negative infinity. If the
+ arguments have the same value, the result is that same
+ value. If either value is NaN, then the result is NaN.  Unlike
+ the numerical comparison operators, this method considers
+ negative zero to be strictly smaller than positive zero. If one
+ argument is positive zero and the other is negative zero, the
+ result is negative zero.</p>
+<dl class="parameters">
+                    Parameters
+                    <dt>a</dt>
+<dd>   an argument.</dd>
+<dt>b</dt>
+<dd>   another argument.</dd>
+</dl>
+<dl class="returns">
+                    Returns
+                    <dt>Double</dt>
+<dd>the smaller of &lt;code&gt;a&lt;/code&gt; and &lt;code&gt;b&lt;/code&gt;.</dd>
+</dl>
+<p class="profile">Profile: <b>common</b>
+</p>
+                            &nbsp;
+                        </div>
+</div>
+</dd>
+<a id="pow(Double,Double)"></a>
+<dt class="method profile-common ">
+<i class="modifiers">public</i> <b>pow</b>(<i class="parameters"><b>a</b>:
+                    
+                    <a><i>Double</i></a>, <b>b</b>:
+                    
+                    <a><i>Double</i></a></i>)
+            :
+            
+            <a><i>Double</i></a>
+</dt>
+<dd class="method profile-common ">
+<div>
+<p class="comment">Returns the value of the first argument raised to the power of the
+ second argument.</p>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<p class="comment">Returns the value of the first argument raised to the power of the
+ second argument. Special cases:
+
+ <ul><li>If the second argument is positive or negative zero, then the 
+ result is 1.0. 
+ <li>If the second argument is 1.0, then the result is the same as the 
+ first argument.
+ <li>If the second argument is NaN, then the result is NaN. 
+ <li>If the first argument is NaN and the second argument is nonzero, 
+ then the result is NaN. 
+
+ <li>If
+ <ul>
+ <li>the absolute value of the first argument is greater than 1
+ and the second argument is positive infinity, or
+ <li>the absolute value of the first argument is less than 1 and
+ the second argument is negative infinity,
+ </ul>
+ then the result is positive infinity. 
+
+ <li>If 
+ <ul>
+ <li>the absolute value of the first argument is greater than 1 and 
+ the second argument is negative infinity, or 
+ <li>the absolute value of the 
+ first argument is less than 1 and the second argument is positive 
+ infinity,
+ </ul>
+ then the result is positive zero. 
+
+ <li>If the absolute value of the first argument equals 1 and the 
+ second argument is infinite, then the result is NaN. 
+
+ <li>If 
+ <ul>
+ <li>the first argument is positive zero and the second argument
+ is greater than zero, or
+ <li>the first argument is positive infinity and the second
+ argument is less than zero,
+ </ul>
+ then the result is positive zero. 
+
+ <li>If 
+ <ul>
+ <li>the first argument is positive zero and the second argument
+ is less than zero, or
+ <li>the first argument is positive infinity and the second
+ argument is greater than zero,
+ </ul>
+ then the result is positive infinity.
+
+ <li>If 
+ <ul>
+ <li>the first argument is negative zero and the second argument
+ is greater than zero but not a finite odd integer, or
+ <li>the first argument is negative infinity and the second
+ argument is less than zero but not a finite odd integer,
+ </ul>
+ then the result is positive zero. 
+
+ <li>If 
+ <ul>
+ <li>the first argument is negative zero and the second argument
+ is a positive finite odd integer, or
+ <li>the first argument is negative infinity and the second
+ argument is a negative finite odd integer,
+ </ul>
+ then the result is negative zero. 
+
+ <li>If
+ <ul>
+ <li>the first argument is negative zero and the second argument
+ is less than zero but not a finite odd integer, or
+ <li>the first argument is negative infinity and the second
+ argument is greater than zero but not a finite odd integer,
+ </ul>
+ then the result is positive infinity. 
+
+ <li>If 
+ <ul>
+ <li>the first argument is negative zero and the second argument
+ is a negative finite odd integer, or
+ <li>the first argument is negative infinity and the second
+ argument is a positive finite odd integer,
+ </ul>
+ then the result is negative infinity. 
+
+ <li>If the first argument is finite and less than zero
+ <ul>
+ <li> if the second argument is a finite even integer, the
+ result is equal to the result of raising the absolute value of
+ the first argument to the power of the second argument
+
+ <li>if the second argument is a finite odd integer, the result
+ is equal to the negative of the result of raising the absolute
+ value of the first argument to the power of the second
+ argument
+
+ <li>if the second argument is finite and not an integer, then
+ the result is NaN.
+ </ul>
+
+ <li>If both arguments are integers, then the result is exactly equal 
+ to the mathematical result of raising the first argument to the power 
+ of the second argument if that result can in fact be represented 
+ exactly as a <code>double</code> value.</ul>
+ 
+ <p>(In the foregoing descriptions, a floating-point value is
+ considered to be an integer if and only if it is finite and a
+ fixed point of the method <a href="../javafx.util/javafx.util.Math.html#ceil(double)">&lt;tt&gt;ceil&lt;/tt&gt;</a> or,
+ equivalently, a fixed point of the method <a href="../javafx.util/javafx.util.Math.html#floor(double)">&lt;tt&gt;floor&lt;/tt&gt;</a>. A value is a fixed point of a one-argument
+ method if and only if the result of applying the method to the
+ value is equal to the value.)</p>
+<dl class="parameters">
+                    Parameters
+                    <dt>a</dt>
+<dd>   the base.</dd>
+<dt>b</dt>
+<dd>   the exponent.</dd>
+</dl>
+<dl class="returns">
+                    Returns
+                    <dt>Double</dt>
+<dd>the value &lt;code&gt;a&lt;sup&gt;b&lt;/sup&gt;&lt;/code&gt;.</dd>
+</dl>
+<p class="profile">Profile: <b>common</b>
+</p>
+                            &nbsp;
+                        </div>
+</div>
+</dd>
+<a id="random()"></a>
+<dt class="method profile-common ">
+<i class="modifiers">public</i> <b>random</b>(<i class="parameters"></i>)
+            :
+            
+            <a><i>Double</i></a>
+</dt>
+<dd class="method profile-common ">
+<div>
+<p class="comment">Returns a <code>double</code> value with a positive sign, greater 
+ than or equal to <code>0.0</code> and less than <code>1.0</code>.</p>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<p class="comment">Returns a <code>double</code> value with a positive sign, greater 
+ than or equal to <code>0.0</code> and less than <code>1.0</code>. 
+ Returned values are chosen pseudorandomly with (approximately) 
+ uniform distribution from that range. 
+ 
+ <p>When this method is first called, it creates a single new
+ pseudorandom-number generator, exactly as if by the expression
+ <blockquote><pre>new java.util.Random</pre></blockquote> This
+ new pseudorandom-number generator is used thereafter for all
+ calls to this method and is used nowhere else.
+ 
+ <p>This method is properly synchronized to allow correct use by
+ more than one thread. However, if many threads need to generate
+ pseudorandom numbers at a great rate, it may reduce contention
+ for each thread to have its own pseudorandom-number generator.</p>
+<p>
+<b>See Also:</b>
+<br>
+<a href="../java.util/java.util.Random.html#nextDouble()">java.util.Random#nextDouble()</a>
+</p>
+<dl class="returns">
+                    Returns
+                    <dt>Double</dt>
+<dd>a pseudorandom &lt;code&gt;double&lt;/code&gt; greater than or equal 
+ to &lt;code&gt;0.0&lt;/code&gt; and less than &lt;code&gt;1.0&lt;/code&gt;.</dd>
+</dl>
+<p class="profile">Profile: <b>common</b>
+</p>
+                            &nbsp;
+                        </div>
+</div>
+</dd>
+<a id="round(Double)"></a>
+<dt class="method profile-common ">
+<i class="modifiers">public</i> <b>round</b>(<i class="parameters"><b>a</b>:
+                    
+                    <a><i>Double</i></a></i>)
+            :
+            
+            <a><i>Long</i></a>
+</dt>
+<dd class="method profile-common ">
+<div>
+<p class="comment">Returns the closest <code>long</code> to the argument.</p>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<p class="comment">Returns the closest <code>long</code> to the argument. The result 
+ is rounded to an integer by adding 1/2, taking the floor of the 
+ result, and casting the result to type <code>long</code>. In other 
+ words, the result is equal to the value of the expression:
+ <p><pre>(long)Math.floor(a + 0.5d)</pre>
+ <p>
+ Special cases:
+ <ul><li>If the argument is NaN, the result is 0.
+ <li>If the argument is negative infinity or any value less than or 
+ equal to the value of <code>Long.MIN_VALUE</code>, the result is 
+ equal to the value of <code>Long.MIN_VALUE</code>. 
+ <li>If the argument is positive infinity or any value greater than or 
+ equal to the value of <code>Long.MAX_VALUE</code>, the result is 
+ equal to the value of <code>Long.MAX_VALUE</code>.</ul></p>
+<p>
+<b>See Also:</b>
+<br>
+<a href="../java.lang/java.lang.Long.html#MAX_VALUE">java.lang.Long#MAX_VALUE</a>, <a href="../java.lang/java.lang.Long.html#MIN_VALUE">java.lang.Long#MIN_VALUE</a>
+</p>
+<dl class="parameters">
+                    Parameters
+                    <dt>a</dt>
+<dd>   a floating-point value to be rounded to a 
+		&lt;code&gt;long&lt;/code&gt;.</dd>
+</dl>
+<dl class="returns">
+                    Returns
+                    <dt>Long</dt>
+<dd>the value of the argument rounded to the nearest
+          &lt;code&gt;long&lt;/code&gt; value.</dd>
+</dl>
+<p class="profile">Profile: <b>common</b>
+</p>
+                            &nbsp;
+                        </div>
+</div>
+</dd>
+<a id="round(Number)"></a>
+<dt class="method profile-common ">
+<i class="modifiers">public</i> <b>round</b>(<i class="parameters"><b>a</b>:
+                    
+                    <a><i>Number</i></a></i>)
+            :
+            
+            <a><i>Integer</i></a>
+</dt>
+<dd class="method profile-common ">
+<div>
+<p class="comment">Returns the closest <code>int</code> to the argument.</p>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<p class="comment">Returns the closest <code>int</code> to the argument. The 
+ result is rounded to an integer by adding 1/2, taking the 
+ floor of the result, and casting the result to type <code>int</code>. 
+ In other words, the result is equal to the value of the expression:
+ <p><pre>(int)Math.floor(a + 0.5f)</pre>
+ <p>
+ Special cases:
+ <ul><li>If the argument is NaN, the result is 0.
+ <li>If the argument is negative infinity or any value less than or 
+ equal to the value of <code>Integer.MIN_VALUE</code>, the result is 
+ equal to the value of <code>Integer.MIN_VALUE</code>. 
+ <li>If the argument is positive infinity or any value greater than or 
+ equal to the value of <code>Integer.MAX_VALUE</code>, the result is 
+ equal to the value of <code>Integer.MAX_VALUE</code>.</ul></p>
+<p>
+<b>See Also:</b>
+<br>
+<a href="../java.lang/java.lang.Integer.html#MAX_VALUE">java.lang.Integer#MAX_VALUE</a>, <a href="../java.lang/java.lang.Integer.html#MIN_VALUE">java.lang.Integer#MIN_VALUE</a>
+</p>
+<dl class="parameters">
+                    Parameters
+                    <dt>a</dt>
+<dd>   a floating-point value to be rounded to an integer.</dd>
+</dl>
+<dl class="returns">
+                    Returns
+                    <dt>Integer</dt>
+<dd>the value of the argument rounded to the nearest
+          &lt;code&gt;int&lt;/code&gt; value.</dd>
+</dl>
+<p class="profile">Profile: <b>common</b>
+</p>
+                            &nbsp;
+                        </div>
+</div>
+</dd>
+<a id="signum(Double)"></a>
+<dt class="method profile-common ">
+<i class="modifiers">public</i> <b>signum</b>(<i class="parameters"><b>a</b>:
+                    
+                    <a><i>Double</i></a></i>)
+            :
+            
+            <a><i>Double</i></a>
+</dt>
+<dd class="method profile-common ">
+<div>
+<p class="comment">Returns the signum function of the argument; zero if the argument
+ is zero, 1.0 if the argument is greater than zero, -1.0 if the
+ argument is less than zero.</p>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<p class="comment">Returns the signum function of the argument; zero if the argument
+ is zero, 1.0 if the argument is greater than zero, -1.0 if the
+ argument is less than zero.
+
+ <p>Special Cases:
+ <ul>
+ <li> If the argument is NaN, then the result is NaN.
+ <li> If the argument is positive zero or negative zero, then the
+      result is the same as the argument.
+ </ul></p>
+<dl class="parameters">
+                    Parameters
+                    <dt>a</dt>
+<dd> the floating-point value whose signum is to be returned</dd>
+</dl>
+<dl class="returns">
+                    Returns
+                    <dt>Double</dt>
+<dd>the signum function of the argument</dd>
+</dl>
+<p class="profile">Profile: <b>common</b>
+</p>
+                            &nbsp;
+                        </div>
+</div>
+</dd>
+<a id="signum(Number)"></a>
+<dt class="method profile-common ">
+<i class="modifiers">public</i> <b>signum</b>(<i class="parameters"><b>a</b>:
+                    
+                    <a><i>Number</i></a></i>)
+            :
+            
+            <a><i>Number</i></a>
+</dt>
+<dd class="method profile-common ">
+<div>
+<p class="comment">Returns the signum function of the argument; zero if the argument
+ is zero, 1.0f if the argument is greater than zero, -1.0f if the
+ argument is less than zero.</p>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<p class="comment">Returns the signum function of the argument; zero if the argument
+ is zero, 1.0f if the argument is greater than zero, -1.0f if the
+ argument is less than zero.
+
+ <p>Special Cases:
+ <ul>
+ <li> If the argument is NaN, then the result is NaN.
+ <li> If the argument is positive zero or negative zero, then the
+      result is the same as the argument.
+ </ul></p>
+<dl class="parameters">
+                    Parameters
+                    <dt>a</dt>
+<dd> the floating-point value whose signum is to be returned</dd>
+</dl>
+<dl class="returns">
+                    Returns
+                    <dt>Number</dt>
+<dd>the signum function of the argument</dd>
+</dl>
+<p class="profile">Profile: <b>common</b>
+</p>
+                            &nbsp;
+                        </div>
+</div>
+</dd>
+<a id="sin(Double)"></a>
+<dt class="method profile-common ">
+<i class="modifiers">public</i> <b>sin</b>(<i class="parameters"><b>a</b>:
+                    
+                    <a><i>Double</i></a></i>)
+            :
+            
+            <a><i>Double</i></a>
+</dt>
+<dd class="method profile-common ">
+<div>
+<p class="comment">Returns the trigonometric sine of an angle.</p>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<p class="comment">Returns the trigonometric sine of an angle.  Special cases:
+ <ul><li>If the argument is NaN or an infinity, then the 
+ result is NaN.
+ <li>If the argument is zero, then the result is a zero with the
+ same sign as the argument.</ul></p>
+<dl class="parameters">
+                    Parameters
+                    <dt>a</dt>
+<dd>   an angle, in radians.</dd>
+</dl>
+<dl class="returns">
+                    Returns
+                    <dt>Double</dt>
+<dd>the sine of the argument.</dd>
+</dl>
+<p class="profile">Profile: <b>common</b>
+</p>
+                            &nbsp;
+                        </div>
+</div>
+</dd>
+<a id="sinh(Double)"></a>
+<dt class="method profile-common ">
+<i class="modifiers">public</i> <b>sinh</b>(<i class="parameters"><b>x</b>:
+                    
+                    <a><i>Double</i></a></i>)
+            :
+            
+            <a><i>Double</i></a>
+</dt>
+<dd class="method profile-common ">
+<div>
+<p class="comment">Returns the hyperbolic sine of a <code>double</code> value.</p>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<p class="comment">Returns the hyperbolic sine of a <code>double</code> value.
+ The hyperbolic sine of <i>x</i> is defined to be
+ (<i>e<sup>x</sup>&nbsp;-&nbsp;e<sup>-x</sup></i>)/2
+ where <i>e</i> is <a href="">Math#E Euler's number</a>.
+
+ <p>Special cases:
+ <ul>
+
+ <li>If the argument is NaN, then the result is NaN.
+
+ <li>If the argument is infinite, then the result is an infinity
+ with the same sign as the argument.
+
+ <li>If the argument is zero, then the result is a zero with the
+ same sign as the argument.
+
+ </ul></p>
+<dl class="parameters">
+                    Parameters
+                    <dt>x</dt>
+<dd> The number whose hyperbolic sine is to be returned.</dd>
+</dl>
+<dl class="returns">
+                    Returns
+                    <dt>Double</dt>
+<dd>The hyperbolic sine of &lt;code&gt;x&lt;/code&gt;.</dd>
+</dl>
+<p class="profile">Profile: <b>common</b>
+</p>
+                            &nbsp;
+                        </div>
+</div>
+</dd>
+<a id="sqrt(Double)"></a>
+<dt class="method profile-common ">
+<i class="modifiers">public</i> <b>sqrt</b>(<i class="parameters"><b>a</b>:
+                    
+                    <a><i>Double</i></a></i>)
+            :
+            
+            <a><i>Double</i></a>
+</dt>
+<dd class="method profile-common ">
+<div>
+<p class="comment">Returns the correctly rounded positive square root of a 
+ <code>double</code> value.</p>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<p class="comment">Returns the correctly rounded positive square root of a 
+ <code>double</code> value.
+ Special cases:
+ <ul><li>If the argument is NaN or less than zero, then the result 
+ is NaN. 
+ <li>If the argument is positive infinity, then the result is positive 
+ infinity. 
+ <li>If the argument is positive zero or negative zero, then the 
+ result is the same as the argument.</ul>
+ Otherwise, the result is the <code>double</code> value closest to 
+ the true mathematical square root of the argument value.</p>
+<dl class="parameters">
+                    Parameters
+                    <dt>a</dt>
+<dd>   a value.</dd>
+</dl>
+<dl class="returns">
+                    Returns
+                    <dt>Double</dt>
+<dd>the positive square root of &lt;code&gt;a&lt;/code&gt;.
+          If the argument is NaN or less than zero, the result is NaN.</dd>
+</dl>
+<p class="profile">Profile: <b>common</b>
+</p>
+                            &nbsp;
+                        </div>
+</div>
+</dd>
+<a id="tan(Double)"></a>
+<dt class="method profile-common ">
+<i class="modifiers">public</i> <b>tan</b>(<i class="parameters"><b>a</b>:
+                    
+                    <a><i>Double</i></a></i>)
+            :
+            
+            <a><i>Double</i></a>
+</dt>
+<dd class="method profile-common ">
+<div>
+<p class="comment">Returns the trigonometric tangent of an angle.</p>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<p class="comment">Returns the trigonometric tangent of an angle.  Special cases:
+ <ul><li>If the argument is NaN or an infinity, then the result 
+ is NaN.
+ <li>If the argument is zero, then the result is a zero with the
+ same sign as the argument.</ul></p>
+<dl class="parameters">
+                    Parameters
+                    <dt>a</dt>
+<dd>   an angle, in radians.</dd>
+</dl>
+<dl class="returns">
+                    Returns
+                    <dt>Double</dt>
+<dd>the tangent of the argument.</dd>
+</dl>
+<p class="profile">Profile: <b>common</b>
+</p>
+                            &nbsp;
+                        </div>
+</div>
+</dd>
+<a id="tanh(Double)"></a>
+<dt class="method profile-common ">
+<i class="modifiers">public</i> <b>tanh</b>(<i class="parameters"><b>x</b>:
+                    
+                    <a><i>Double</i></a></i>)
+            :
+            
+            <a><i>Double</i></a>
+</dt>
+<dd class="method profile-common ">
+<div>
+<p class="comment">Returns the hyperbolic tangent of a <code>double</code> value.</p>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<p class="comment">Returns the hyperbolic tangent of a <code>double</code> value.
+ The hyperbolic tangent of <i>x</i> is defined to be
+ (<i>e<sup>x</sup>&nbsp;-&nbsp;e<sup>-x</sup></i>)/(<i>e<sup>x</sup>&nbsp;+&nbsp;e<sup>-x</sup></i>),
+ in other words, <a href="">Math#sinh
+ sinh(&lt;i&gt;x&lt;/i&gt;)</a>/<a href="">Math#cosh cosh(&lt;i&gt;x&lt;/i&gt;)</a>.  Note
+ that the absolute value of the exact tanh is always less than
+ 1.
+
+ <p>Special cases:
+ <ul>
+
+ <li>If the argument is NaN, then the result is NaN.
+
+ <li>If the argument is zero, then the result is a zero with the
+ same sign as the argument.
+
+ <li>If the argument is positive infinity, then the result is
+ <code>+1.0</code>.
+
+ <li>If the argument is negative infinity, then the result is
+ <code>-1.0</code>.
+  
+ </ul></p>
+<dl class="parameters">
+                    Parameters
+                    <dt>x</dt>
+<dd> The number whose hyperbolic tangent is to be returned.</dd>
+</dl>
+<dl class="returns">
+                    Returns
+                    <dt>Double</dt>
+<dd>The hyperbolic tangent of &lt;code&gt;x&lt;/code&gt;.</dd>
+</dl>
+<p class="profile">Profile: <b>common</b>
+</p>
+                            &nbsp;
+                        </div>
+</div>
+</dd>
+<a id="toDegrees(Double)"></a>
+<dt class="method profile-common ">
+<i class="modifiers">public</i> <b>toDegrees</b>(<i class="parameters"><b>angrad</b>:
+                    
+                    <a><i>Double</i></a></i>)
+            :
+            
+            <a><i>Double</i></a>
+</dt>
+<dd class="method profile-common ">
+<div>
+<p class="comment">Converts an angle measured in radians to an approximately
+ equivalent angle measured in degrees.</p>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<p class="comment">Converts an angle measured in radians to an approximately
+ equivalent angle measured in degrees.  The conversion from
+ radians to degrees is generally inexact; users should
+ <i>not</i> expect <code>cos(toRadians(90.0))</code> to exactly
+ equal <code>0.0</code>.</p>
+<dl class="parameters">
+                    Parameters
+                    <dt>angrad</dt>
+<dd>   an angle, in radians</dd>
+</dl>
+<dl class="returns">
+                    Returns
+                    <dt>Double</dt>
+<dd>the measurement of the angle &lt;code&gt;angrad&lt;/code&gt;
+          in degrees.</dd>
+</dl>
+<p class="profile">Profile: <b>common</b>
+</p>
+                            &nbsp;
+                        </div>
+</div>
+</dd>
+<a id="toRadians(Double)"></a>
+<dt class="method profile-common ">
+<i class="modifiers">public</i> <b>toRadians</b>(<i class="parameters"><b>angdeg</b>:
+                    
+                    <a><i>Double</i></a></i>)
+            :
+            
+            <a><i>Double</i></a>
+</dt>
+<dd class="method profile-common ">
+<div>
+<p class="comment">Converts an angle measured in degrees to an approximately
+ equivalent angle measured in radians.</p>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<p class="comment">Converts an angle measured in degrees to an approximately
+ equivalent angle measured in radians.  The conversion from
+ degrees to radians is generally inexact.</p>
+<dl class="parameters">
+                    Parameters
+                    <dt>angdeg</dt>
+<dd>   an angle, in degrees</dd>
+</dl>
+<dl class="returns">
+                    Returns
+                    <dt>Double</dt>
+<dd>the measurement of the angle &lt;code&gt;angdeg&lt;/code&gt;
+          in radians.</dd>
+</dl>
+<p class="profile">Profile: <b>common</b>
+</p>
+                            &nbsp;
+                        </div>
+</div>
+</dd>
+</dl>
+<h3>Inherited Functions</h3>
+</div>
+</div>
+</body>
+</html>

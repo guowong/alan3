@@ -1,0 +1,297 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+
+<head>
+	
+	<title>JavaFX Example Code | PhotoFlip | JavaFX Demo</title>
+	
+	<!--METAS-->
+	
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="description" content="JavaFX" />
+	<meta name="keywords" content="JavaFX Oracle [...]" />
+	<meta name="author" content="Oracle" />
+	
+	<!--STYLESHEETS-->
+	<link rel="stylesheet" type="text/css" media="screen, projection" href="../shared/new_style/css/reset.css" />
+	<link rel="stylesheet" type="text/css" media="screen, projection" href="../shared/new_style/css/javafx.css" />
+	<link rel="stylesheet" type="text/css" media="screen, projection" href="../shared/new_style/css/samples.css" />
+	
+	<!-- CONDITIONAL STYLESHEETS -->
+	<!--[if IE]>
+		<link rel="stylesheet" type="text/css" href="../shared/new_style/css/ie.css" />
+	<![endif]-->
+	
+	<!--[if IE 6]>
+		<link rel="stylesheet" type="text/css" href="../shared/new_style/css/ie6.css" />
+	<![endif]-->
+	
+	<!--[if IE 7]>
+		<link rel="stylesheet" type="text/css" href="../shared/new_style/css/ie7.css" />
+	<![endif]-->
+	
+	<!--ADDRESS BAR ICON-->
+
+	<link rel="shortcut icon" type="image/ico" href="../shared/new_style/images/favicon.ico" />
+    
+	
+</head>
+<!--
+	The ID here is required to indicate the page type.
+	Changing this will affect the layout of the page.
+-->
+<body id="tutorials">
+	
+	<div id="body">
+		<!--
+			Header is the main navigation.
+			We are using CSS Sprites to apply images across the site, namely the header and subnav.
+			
+			This has a few implications for you guys, if you want to change the image for selected or hover states,
+			you'll find the images embedded next to the header image in the same file. This makes it slightly harder to edit, and
+			a lot more difficult to change in the styles, but allows for 1 file and download request which makes it much more performant.
+			
+			This also means some of the elements that use the sprites have id's that allow us to modify the sprite image based on each element.
+			So in header and subnav, we have an id on each LI, these can't be changed or else the image styling will be ruined.
+		-->
+		<ul id="header" class="see">
+			<li id="fx" class="first">
+				<h1><a href="http://www.javafx.com/"><span>FX</span></a></h1>
+			</li>
+			<li id="explore">
+				<a href="http://www.javafx.com/about/"><span>Explore</span></a>
+			</li>
+			<li id="see">
+				<a href="http://www.javafx.com/samples/"><span>See</span></a>
+			</li>
+			<li id="learn">
+				<a href="http://www.javafx.com/learn/"><span>Learn</span></a>
+			</li>
+			<li id="start" class="last">
+				<a href="http://www.javafx.com/downloads/"><span>Start</span></a>
+			</li>
+		</ul>
+	
+
+<script src="http://jfx.sfbay.sun.com/hudson//job/1.3.1/label=macosx-universal-soma/101/artifact/artifacts/rt-deployed/dtfx.js"></script><div id="main">
+<div class="sidebar">
+<a href="../index.html" class="back"><span>Return to See main Page</span></a>
+<div class="profile">
+<strong>Key Features</strong><em>Graphics API Animation </em><strong>Skill Level</strong><em>intermediate</em><strong>Last Updated</strong><em>October 17th, 2008</em>
+</div>
+<dl class="icon-list">
+<dt>Share</dt>
+<dd>
+<a href="http://buzz.yahoo.com/article/http://javafx.com/samples/PhotoFlip/"><img src="../shared/new_style/images/yahoo_buzz_icon.png" width="20" height="19" alt="Yahoo Buzz"></a>
+</dd>
+<dd>
+<a href="http://www.facebook.com/share.php?u=http://javafx.com/samples/PhotoFlip/"><img src="../shared/new_style/images/facebook_icon.png" width="20" height="17" alt="Facebook"></a>
+</dd>
+<dd>
+<a href="http://www.myspace.com/index.cfm?u=http://javafx.com/samples/PhotoFlip/"><img src="../shared/new_style/images/myspace_icon.png" width="20" height="18" alt="Myspace"></a>
+</dd>
+<dd>
+<a href="http://digg.com/submit?phase=3&url=http://javafx.com/samples/PhotoFlip/"><img src="../shared/new_style/images/digg_icon.png" width="20" height="18" alt="Digg"></a>
+</dd>
+<dd>
+<a href="http://www.reddit.com/submit?url=http://javafx.com/samples/PhotoFlip/"><img src="../shared/new_style/images/reddit_icon.png" width="20" height="18" alt="Reddit"></a>
+</dd>
+<dd>
+<a href="http://del.icio.us/post?url=http://javafx.com/samples/PhotoFlip/"><img src="../shared/new_style/images/delicious_icon.png" width="20" height="18" alt="Delicious"></a>
+</dd>
+<dd>
+<a href="http://www.newsvine.com/_tools/seed?popoff=0&u=http://javafx.com/samples/PhotoFlip/"><img src="../shared/new_style/images/newsvine_icon.png" width="20" height="18" alt="Newsvine"></a>
+</dd>
+</dl>
+<dl class="links-list">
+<dt>View Source Code</dt><dd><a href='src/Main.fx.html' target='_blank'>Main.fx</a></dd>
+<dd class="button">
+<a class="download-button" href="PhotoFlip.zip"><span>Download Source Code</span></a>
+</dd>
+</dl>
+<div class="profile">
+<h4>Profile</h4>
+<img src="http://weblogs.java.net/images/people/joshua_marinacci.jpg"><strong>Josh Marinacci</strong>
+</div>
+<div id="tv" class="sidebox">
+<img src="../shared/tv_badge.png"></div>
+</div>
+<div id="content">
+<div class="content-head">
+<h2>Using Perspective Transform for a 3-D Flip Transition</h2>
+<div class="meta">
+                       By <a class="author">Josh Marinacci</a>,
+                       <span class="date">October 17th, 2008</span>
+</div>
+</div>
+<p>You can easily create 3-D transitions in JavaFX by using the PerspectiveTransform effect.</p>
+<p>
+<script>
+var u10only = '';
+var webstartAllowed = '';
+
+if(u10only=='true' && !deployJava.isPlugin2()) {
+    document.write("<p class='u10warning'>");
+    document.write("This sample needs Java SE 6 Update 10 or higher with Internet Explorer 7+ or FireFox 3+");
+    document.write("");
+    if(webstartAllowed=='true') {
+        document.write(" Please <a href='webstart/PhotoFlip.jnlp'>run this example with Java Webstart<a> instead");
+    }
+    document.write("</p>");
+} else {
+
+    javafx(
+        {
+            archive: "webstart/PhotoFlip.jar,",
+            width: 300,
+            height: 340,
+            code: "fliptransition.Main",
+            
+            name: "appl"
+        } 
+    );
+}
+</script>
+</p>
+<h3>Understanding the Code</h3>
+<p>All JavaFX graphics nodes have an <var class="code-attribute">effect</var> variable, which you can
+use to apply special effects to that node. The <var class="code-attribute">PerspectiveTransform</var>
+effect stretches the node to fit a four-sided polygon defined by four corner
+points. By carefully calculating these points you can create a 3-D flipping
+effect.</p>
+<p>The code in Figure 1 defines a custom node called <var class="code-attribute">FlipView</var>.
+It has two public variables for the front and back nodes and a third internal
+variable called <var class="code-attribute">time</var>. The <var class="code-attribute">create</var> function returns a
+<var class="code-attribute">Group</var> containing two other <var class="code-attribute">Groups</var>, one for the front
+and back nodes. The important part here is that the effect of each group is bound to
+the <var class="code-attribute">getPT</var> function, which takes the <var class="code-attribute">time</var> variable.
+Because it is bound, the <var class="code-attribute">getPT</var> function is called every time
+the <var class="code-attribute">time</var> variable changes. It is in the <var class="code-attribute">getPT</var> function
+where the 
+<var class="code-attribute">PerspectiveTransform</var> is actually calculated based on the current
+time.
+</p>
+<div class="source">
+<div class="code-header">Source Code</div>
+<pre>
+<b>package</b> fliptransition;
+
+<b>import</b> javafx.scene.effect.*;
+...
+
+class FlipView extends CustomNode {
+    public <b class='keyword'>var</b> <b>frontNode</b>:Node;
+    public <b class='keyword'>var</b> <b>backNode</b>:Node;
+
+    <b class='keyword'>var</b> flipped = false;
+    <b class='keyword'>var</b> time = Math.PI/<span class='number-literal'>2</span>;
+    override public function create():Node {
+        return Group {
+            <b>content</b>: [ 
+                Group { <b>content</b>: backNode <b>visible</b>: bind (time&lt;<span class='number-literal'>0</span>) <b>effect</b>: bind getPT(time) },
+                Group { <b>content</b>: frontNode  <b>visible</b>: bind (time&gt;<span class='number-literal'>0</span>) <b>effect</b>: bind getPT(time) },
+            ]
+        }
+    }
+</pre>
+</div>
+<p>
+<i>Figure 1: <var class="code-attribute">FlipView</var> class</i>
+</p>
+<p>The <var class="code-attribute">getPT</var> function uses the <var class="code-attribute">Math.sin()</var>
+and <var class="code-attribute">Math.cos()</var> methods to stretch the dimensions of the node to
+look like it is at a 3-D angle. On each flip, the side of the rectangle 
+that rotates toward the back is made slightly smaller. The side of the rectangle
+that rotates toward the front is made slightly taller. These rotations are what
+creates the illusion of a 3-D transition. The <var class="code-attribute">width</var> and
+<var class="code-attribute">height</var> constants match the size of the front and back nodes. The
+<var class="code-attribute">radius</var> and <var class="code-attribute">back</var> variables can be adjusted to customize
+the exact angle and distortion of the effect. </p>
+<div class="source">
+<div class="code-header">Source Code</div>
+<pre>
+    function getPT(<b>t</b>:Number):PerspectiveTransform {
+        <b class='keyword'>var</b> width = <span class='number-literal'>200</span>;
+        <b class='keyword'>var</b> height = <span class='number-literal'>200</span>;
+        <b class='keyword'>var</b> radius = width/<span class='number-literal'>2</span>;
+        <b class='keyword'>var</b> back = height/<span class='number-literal'>10</span>;
+        return PerspectiveTransform {
+            <b>ulx</b>: radius - Math.sin(t)*radius     <b>uly</b>: <span class='number-literal'>0</span> - Math.cos(t)*back
+            <b>urx</b>: radius + Math.sin(t)*radius     <b>ury</b>: <span class='number-literal'>0</span> + Math.cos(t)*back
+            <b>lrx</b>: radius + Math.sin(t)*radius     <b>lry</b>: height - Math.cos(t)*back
+            <b>llx</b>: radius - Math.sin(t)*radius     <b>lly</b>: height + Math.cos(t)*back
+        }
+    }
+</pre>
+</div>
+<p>
+<i>Figure 2: <var class="code-attribute">getPT</var> Function</i>
+</p>
+<p>To actually animate the transition, the <var class="code-attribute">anim</var> timeline moves the
+<var class="code-attribute">time</var> variable from negative <var class="code-attribute">3.14/2</var> (or 90 degrees in
+radians) to <var class="code-attribute">-3.14/2</var> over a single second. For details
+see Figure 3.</p>
+<var class="code-attribute">
+    public var anim = Timeline {
+        keyFrames: [ 
+            at(0s) { time=&gt; Math.PI/2 tween Interpolator.LINEAR},
+            at(1s) { time=&gt; -Math.PI/2 tween Interpolator.LINEAR},
+            KeyFrame {
+                time: 1.0s
+                action: function() { flipped = not flipped; }
+            }
+        ]
+    }
+</var>
+<p>
+<i>Figure 3: Animate the Transition</i>
+</p>
+<p>To use the <var class="code-attribute">FlipView</var> you just create it and pass in content nodes for the
+front and back, as Figure 4 shows.</p>
+<div class="source">
+<div class="code-header">Source Code</div>
+<pre>
+<b class='keyword'>var</b> flip = FlipView {
+    <b>translateX</b>: <span class='number-literal'>50</span>
+    <b>translateY</b>: <span class='number-literal'>40</span>+<span class='number-literal'>50</span>
+    <b>backNode</b>: ImageView { <b>image</b>: Image { <b>url</b>: <span class='string-literal'>"{__DIR__}lion<span class='number-literal'>1</span>.png"</span>  }  }
+    <b>frontNode</b>: ImageView { <b>image</b>: Image { <b>url</b>: <span class='string-literal'>"{__DIR__}lion<span class='number-literal'>2</span>.png"</span>  }  }
+};
+</pre>
+</div>
+<p>
+<i>Figure 4: Create a FlipView</i>
+</p>
+</div>
+</div>		<div id="footer">
+			<span class="copy">&copy; 2010, Oracle Corporation and/or its affiliates.</span>
+            <ul>
+				<li class="first"><a href="http://javafx.com/" target="_blank">English</a></li>
+				<li><a href="http://www.sun.com/privacy/index.html" target="_blank">Privacy</a></li>
+                <li><a href="http://www.sun.com/termsofuse.jsp" target="_blank">Terms of Use</a></li>
+                <li><a href="https://openjfx.dev.java.net/legal/trademarks.txt" target="_blank">Trademarks</a></li>
+                <li><a href="http://www.sun.com/software/licensingcenter/" target="_blank">Licensing</a></li>
+            </ul>
+            <a href="http://www.sun.com/" id="footer_link"><span>Sun.com</span></a>
+		</div>
+	</div>
+    
+<!-- BEGIN G9 VARIATION 0 -->
+<script language="javascript" type="text/javascript" charset="UTF-8" src="http://www.sun.com/share/op/oo_engine.js"></script>
+<script language="javascript" type="text/javascript" charset="UTF-8" src="http://www.sun.com/share/op/oo_conf_en-US.js"></script>
+<!-- END G9 VARIATION 0 -->
+	
+<script src="../shared/new_style/js/omi/s_code_remote.js" type="text/javascript"></script>
+</body>
+
+</html>
+
+<!--
+	JAVASCRIPT
+	At the bottom of the page so that we download and render all the visual elements, before we start handling the javascript. This provides for a faster perceived loading time.
+-->
+
+<script type="text/javascript" src="../shared/new_style/js/javafx.js"></script>
+
+
+

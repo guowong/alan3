@@ -1,0 +1,10 @@
+#
+# Copyright (c) 2009 Sun Microsystems, Inc. All rights reserved.
+# Use is subject to license terms.
+#
+
+modules/emulator-cldc
+modules/emulator-cldc-ui-window
+modules/emulator-ui-window
+skin/single-state-shared
+emulator/generic/ui/touch-screen-support

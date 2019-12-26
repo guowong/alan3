@@ -1,0 +1,4 @@
+.class: com.sun.jme.toolkit.aut.proxy.JavaProxyDiscovery
+
+.parent: UpdateCenter
+.parent-add-method: addProxyDiscovery

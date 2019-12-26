@@ -1,0 +1,222 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+
+<head>
+	
+	<title>JavaFX Sample</title>
+	
+	<!--METAS-->
+	
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="description" content="JavaFX" />
+	<meta name="keywords" content="JavaFX Oracle" />
+	<meta name="author" content="Oracle" />
+	
+	<!--STYLESHEETS-->
+	<link rel="stylesheet" type="text/css" media="screen, projection" href="../../shared/new_style/css/reset.css" />
+	<link rel="stylesheet" type="text/css" media="screen, projection" href="../../shared/new_style/css/javafx.css" />
+	<link rel="stylesheet" type="text/css" media="screen, projection" href="../../shared/new_style/css/code.css" />
+	
+	<!-- CONDITIONAL STYLESHEETS -->
+	<!--[if IE]>
+	  <link rel="stylesheet" type="text/css" href="../../shared/new_style/css/ie.css" />
+	<![endif]-->
+	
+	<!--ADDRESS BAR ICON-->
+	<link rel="shortcut icon" type="image/ico" href="../../shared/new_style/images/favicon.ico" />
+	
+	<link rel="stylesheet" type="text/css" media="screen, projection" href="../../shared/new_style/css/samples.css" />
+    <style type="text/css">
+.code .string-literal, .code .number-literal {
+	font-style: italic;
+	color: #4b494d;
+}
+    </style>
+</head>
+<!--
+	The ID here is required to indicate the page type.
+	Changing this will affect the layout of the page.
+-->
+<body id="tutorials">
+	
+	<div id="body">
+		<!--
+			The header in the source code view doesn't have any buttons.
+			So just the <h1> tag for the site logo is included.
+			
+			The header also doesn't have an A tag with an "href" since you shouldn't be able to navigate to the
+			index pgae inside the popup.
+		-->
+        
+        
+		<ul id="popheader">
+			<li class="first">
+				<h1><a><span>FX</span></a></h1>
+			
+				<!-- Close button -->
+				<a class="close-button" title="Close"><span>Close</span></a>
+			</li>
+		</ul>
+<div class="source">
+  <div class="code-header">License text </div>
+    <pre>
+
+/*
+ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER 
+ * Copyright  2008, 2010 Oracle and/or its affiliates.  All rights reserved. 
+ * Use is subject to license terms.
+ * 
+ * This file is available and licensed under the following license:
+ * 
+ * Redistribution and use in source and binary forms, with or without 
+ * modification, are permitted provided that the following conditions are met: 
+ * 
+ *   * Redistributions of source code must retain the above copyright notice, 
+ *     this list of conditions and the following disclaimer. 
+ *
+ *   * Redistributions in binary form must reproduce the above copyright notice,
+ *     this list of conditions and the following disclaimer in the documentation
+ *     and/or other materials provided with the distribution.
+ *
+ *   * Neither the name of Oracle Corporation nor the names of its contributors 
+ *     may be used to endorse or promote products derived from this software 
+ *     without specific prior written permission. 
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS 
+ * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT 
+ * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR 
+ * A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT 
+ * OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, 
+ * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, 
+ * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; 
+ * OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, 
+ * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR 
+ * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF 
+ * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. 
+ */
+
+    </pre>
+  </div>
+<div class="code"><pre><code>
+<b>package</b> com.sun.mediabox.controls.skin.paranara;
+
+<b>import</b> javafx.scene.control.*;
+<b>import</b> javafx.scene.paint.*;
+<b>import</b> com.sun.mediabox.controls.skin.*;
+
+
+<i class='comment'>/**
+ * @author baechul
+ */</i>
+
+public def <b>disabledColor</b>: Color = Color.rgb(<span class='number-literal'>200</span>, <span class='number-literal'>200</span>, <span class='number-literal'>200</span>); <i class='comment'>// LIGHTGRAY;</i>
+public def <b>disabledColor<span class='number-literal'>2</span></b>: Color = Color.rgb(<span class='number-literal'>59</span>, <span class='number-literal'>61</span>, <span class='number-literal'>63</span>);   <i class='comment'>// DARKGRAY;</i>
+
+public def <b>fillColor</b>: Paint = Color.rgb(<span class='number-literal'>220</span>, <span class='number-literal'>220</span>, <span class='number-literal'>220</span>);
+public def <b>fillColorOver</b>: Paint = bind LinearGradient {
+    <b>startX</b>: <span class='number-literal'>0</span>.<span class='number-literal'>0</span>
+    <b>startY</b>: <span class='number-literal'>0</span>.<span class='number-literal'>0</span>
+    <b>endX</b>: <span class='number-literal'>0</span>.<span class='number-literal'>0</span>
+    <b>endY</b>: <span class='number-literal'>1</span>.<span class='number-literal'>0</span>
+    <b>proportional</b>: true
+    <b>stops</b>: [
+        Stop {
+            <b>offset</b>: <span class='number-literal'>0</span>.<span class='number-literal'>0</span>
+            <b>color</b>: Color.rgb(<span class='number-literal'>36</span>, <span class='number-literal'>227</span>, <span class='number-literal'>253</span>)
+        },
+        Stop {
+            <b>offset</b>: <span class='number-literal'>1</span>.<span class='number-literal'>0</span>
+            <b>color</b>: Color.rgb(<span class='number-literal'>31</span>, <span class='number-literal'>101</span>, <span class='number-literal'>195</span>)
+        }
+    ]
+};
+
+public def fillVolumeBarColor = bind LinearGradient {
+    <b>startX</b>: <span class='number-literal'>0</span>.<span class='number-literal'>0</span>
+    <b>startY</b>: <span class='number-literal'>6</span>.<span class='number-literal'>5</span>
+    <b>endX</b>: <span class='number-literal'>0</span>.<span class='number-literal'>0</span>
+    <b>endY</b>: <span class='number-literal'>18</span>.<span class='number-literal'>5</span>
+    <b>proportional</b>: false
+    <b>stops</b>: [
+        Stop {
+            <b>offset</b>: <span class='number-literal'>0</span>.<span class='number-literal'>0</span>
+            <b>color</b>: Color.rgb(<span class='number-literal'>36</span>, <span class='number-literal'>227</span>, <span class='number-literal'>253</span>)
+        },
+        Stop {
+            <b>offset</b>: <span class='number-literal'>1</span>.<span class='number-literal'>0</span>
+            <b>color</b>: Color.rgb(<span class='number-literal'>31</span>, <span class='number-literal'>101</span>, <span class='number-literal'>195</span>)
+        }
+    ]
+}
+
+
+public class ParanaraTheme extends Theme {
+    
+    public override function createMediaControlBarSkin():Skin {
+        MediaControlBarSkin{}
+    }
+
+    public override function createPlayControlSkin():Skin {
+        PlayControlSkin{};
+    }
+
+    public override function createSpeakerControlSkin():Skin {
+        SpeakerControlSkin{}
+    }
+
+    public override function createMediaSliderSkin():Skin {
+        MediaSliderSkin{}
+    }
+
+    public override function createMediaTimeSkin():Skin {
+        MediaTimeSkin{}
+    }
+
+    public override function createVolumeControlSkin():Skin {
+        VolumeControlSkin{}
+    }
+
+     public override function createFullScreenControlSkin():Skin {
+        FullScreenControlSkin{}
+    }
+
+    public override function createMediaInfoSkin(): Skin {
+        MediaInfoSkin{}
+    }
+
+    public override function createBufferIndicatorSkin(): Skin {
+        BufferIndicatorSkin{}
+    }
+
+    public override function createMediaScreenSkin(): Skin {
+        MediaScreenSkin{}
+    }
+
+    public override function createErrorInfoSkin(): Skin {
+        ErrorInfoSkin{}
+    }
+
+}
+</code></pre></div>
+<div id="footer">
+			<span class="copy">&copy; 2010, Oracle Corporation and/or its affiliates.</span>
+			
+		</div>
+<!--
+	JAVASCRIPT
+	At the bottom of the page so that we download and render all the visual elements, before we start handling the javascript. This provides for a faster perceived loading time.
+-->
+
+<script src="../../shared/new_style/js/omi/s_code_remote.js" type="text/javascript"></script>
+ 
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js"></script>
+<!--[if lte IE 6]>
+	<script type="text/javascript" src="../../shared/new_style/js/jquery.ifixpng.js"></script>
+<![endif]-->
+<script type="text/javascript" src="../../shared/new_style/js/jquery.history.js"></script>
+<script type="text/javascript" src="../../shared/new_style/js/javafx.js"></script>
+
+
+
+
+

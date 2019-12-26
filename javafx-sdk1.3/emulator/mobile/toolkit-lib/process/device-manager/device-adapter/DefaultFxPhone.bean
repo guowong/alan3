@@ -1,0 +1,18 @@
+#
+# Copyright (c) 2009 Sun Microsystems, Inc. All rights reserved.
+# Use is subject to license terms.
+#
+
+.class: com.sun.jme.toolkit.deviceadapter.genericemulator.GenericEmulatorDeviceAdapter
+.dependencies: DeviceManager, RmiRegistryService, DeviceAdapterStopper
+
+# name MUST be the same as the name of the object (= name of this file)
+name: device-adapter.DefaultFxPhone
+
+deviceAdapter: device-class-adapter-CldcFxEmulator
+deviceManager: DeviceManager
+deviceRegistrationManager: DeviceRegistrationManager
+workdirHelper: WorkdirHelper
+deviceConnectionManager: DeviceConnectionManager
+registryService: RmiRegistryService
+adapterStopper: DeviceAdapterStopper

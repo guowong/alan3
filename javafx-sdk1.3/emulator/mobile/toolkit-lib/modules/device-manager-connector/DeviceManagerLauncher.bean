@@ -1,0 +1,11 @@
+#
+# Copyright (c) 2009 Sun Microsystems, Inc. All rights reserved.
+# Use is subject to license terms.
+#
+
+.class: com.sun.jme.toolkit.devicemanager.launcher.DeviceManagerLauncher
+.parent: DeviceManagerConnection
+.parent-add-method: addConnectionListener
+
+executable: ${toolkit.home}/bin/device-manager${executable.suffix}
+workingDirectory: ${toolkit.home}/bin

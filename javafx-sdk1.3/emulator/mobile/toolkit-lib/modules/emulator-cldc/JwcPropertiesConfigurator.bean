@@ -1,0 +1,12 @@
+#
+# Copyright (c) 2009 Sun Microsystems, Inc. All rights reserved.
+# Use is subject to license terms.
+#
+
+.class: com.sun.jme.emulator.cldc.JwcPropertiesConfigurator
+.dependents: Vm
+
+vm: Vm
+defaultJwcPropertiesFile: ${toolkit.home}/runtimes/${cldc-hi.runtime.name}/bin/jwc_properties.ini
+updatedJwcPropertiesFile: ${emulator.workdir}/tmp_jwc_properties.ini
+runtimePropertiesPrefix: runtime

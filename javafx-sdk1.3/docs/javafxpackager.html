@@ -1,0 +1,291 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>javafxpackager</title>
+   
+   
+<link rel="stylesheet" title="manpage" href="manpage.css" media="screen, print, projection, tv">
+
+<meta name="generator" content="DocBook XSL Stylesheets V1.73.1">
+   <style type="text/css">
+  
+dt {font-family: sans-serif;
+font-size: 120%;
+font-weight: bold;
+color: #305070;
+}
+   </style>
+   
+ 
+<link rel="start" href="javafx.html" title="javafx">
+<style type="text/css">
+<!--
+.style2 {font-weight: bold}
+-->
+</style>
+   
+<body >
+	
+<!-- **************** START HEAD/TOC **************** -->
+
+<h1><code>javafxpackager</code>&nbsp;-&nbsp;JavaFX File Packager Utility </h1> 
+<ul>
+<li class="toc"><a href=#synopsis>Synopsis</a></li>  
+ 
+<li class="toc"><a href=#description>Description</a></li>
+<li class="toc"><a href=#options>Options</a></li>
+<li class="toc"><a href=#usage>Usage</a></li>
+</ul>
+	
+	
+<!-- **************** END HEAD/TOC ****************** -->
+	
+	
+<h2 id="name">NAME</h2>
+     
+     <p><span class="style2"><code>javafxpackager</code></span> - Packages files comprising a JavaFX Script application for deployment.</p>
+     
+<h2 id="synopsis">Synopsis</h2>
+     
+     <p><code><strong>javafxpackager</strong>  [options]  class  [arguments] </code></p>
+     
+<h2 id="description">Description</h2>
+     
+<p>The <code><strong>javafxpackager</strong></code> tool creates an application in a format that is specific for a target profile, 
+either <code>desktop</code> or <code>mobile.</code> </p>
+    
+    
+<h2 id="options">Options</h2>
+<h3><a name="standard">Standard Options</a></h3>
+
+<style type="text/css">
+dd {margin-top: 8pt; margin-bottom: 12pt;}
+</style>
+<blockquote>
+<dl>
+
+<dt><code>-encoding <em>&lt;encoding&gt;</em></code></dt> 
+<dd>Optional. Specifies character encoding used by source files.</dd> 
+
+<dt><code>-paramFile <em>&lt;property file&gt;</em> </code></dt> 
+<dd>Optional. Specifies the named application parameters stored in an external property file.</dd> 
+
+<dt><code>-profile  <em>[desktop | mobile | tv]</em></code> </dt>
+<dt><code>-p <em>[desktop | mobile | tv] </em></code></dt>    
+<dd>
+Specifies the JavaFX platform.  The JavaFX SDK supports <code>desktop</code>, <code>mobile</code>, 
+and <code>tv</code> and defaults to <code>desktop</code>. </dd>
+
+<dt><code>-sourcepath <em>&lt;source root1&gt; [;&lt;source root2&gt; ...]</em> </code></dt> 
+<dt><code>-src <em>&lt;source root1&gt; [;&lt;source root2&gt; ...]</em> </code></dt> 
+<dd>Required. Specifies the root directory of the source tree holding the application to be packaged.
+
+Here is an example of a source tree that illustrates these required option settings: 
+<br>
+<pre>
+  MyApp/
+   src/
+       package1/
+           Main.fx
+       package2/
+           Class.fx
+</pre><br>
+In the example below, the <code>-src</code> option specifies <code>src</code> as the root directory.  The  <code>appClass</code> option 
+specifies the <code>Main.fx</code> file in the <code>Package1</code> source file subdirectory.<br>
+
+<pre>javafxpackager-src src -appClass package1.Main </pre>
+At least one source root is required. </dd> 
+
+<dt><code>-classpath <em>&lt;library1&gt; [;&lt;library2&gt; ...]</em> </code></dt> 
+<dt><code>-cp <em>&lt;library1&gt; [;&lt;library2&gt; ...]</em> </code></dt> 
+<dt><code>-librarypath <em>&lt;library1&gt; [;&lt;library2&gt; ...]</em> </code></dt> 
+<dd>Optional. Specifies the classpath.</dd> 
+
+<dt><code>-resourcepath <em>&lt;resource root1&gt; [;&lt;resource root2&gt; ...]</em> </code></dt> 
+<dt><code>-res <em>&lt;resource root1&gt; [;&lt;resource root2&gt; ...]</em> </code></dt> 
+<dd>Optional. Specifies the resource path.</dd>
+
+<dt><code>-destination <em>[target directory]</em> </code></dt> 
+<dt><code>-d <em>[target directory]</em> </code></dt> 
+<dd>The default target directory is <code>./dist</code>.</dd> 
+
+<dt><code>-workDir <em>&lt;working directory&gt;</em> </code></dt>
+<dd>Optional.</dd> 
+
+
+<dt><code>-verbose </code></dt>
+<dt><code>-v</code></dt>                                                                                                   
+<dd>Enables verbose output.</dd> 
+
+<dt><code>-appName <em>&lt;application name&gt;</em></code></dt>                                   
+<dd>The default application name is the application class name.</dd> 
+
+<dt><code>-appVendor <em>&lt;application vendor&gt;</em> </code></dt>                                
+<dd>The default application vendor is the <i>user.name</i> Java system property.</dd> 
+
+<dt><code>-appVersion <em>&lt;application version&gt;</em> </code></dt>                     
+<dd>The default application version is 1.0.</dd> 
+
+<dt><code>-appClass <em>&lt;application class&gt;</em></code></dt>    
+<dd>Required.  Specifies the class containing <code>main</code> for applets.</dd> 
+
+<dt><code>-appWidth <em>&lt;applet width&gt;</em> </code></dt>                                  
+<dd>The default applet width is 200 pixels.</dd> 
+
+<dt><code>-appHeight <em>&lt;applet height&gt;</em> </code></dt>                                   
+
+<dd>The default applet height is 200 pixels.</dd> 
+
+<dt><code>-appCodebase <em>&lt;application code base URL&gt;</em> </code></dt>                    
+<dd>The default code base is empty.</dd> 
+
+<dt><code>-sign</code></dt>                    
+<dd>Builds a signed application. <code>-sign</code> is used while using <code>-keystore</code>,<code>-keystorePassword</code>, and so on. 
+If <code>-sign</code> is not specified, a self-signature is not created.</dd> 
+
+<dt><code>-splash</code></dt>
+<dt><code>-splashScreenImage &lt;<em>imageURL</em>&gt; </code></dt>                    
+                    
+<dd>Specifies a custom splash screen image (PNG or JPEG) URL or classpath resource path.</dd> 
+
+<dt><code>-draggable</code></dt>                    
+<dd>Makes the application draggable from the browser.</dd> 
+
+<dt><code>-shortcut</code></dt>                    
+<dd>The application asks to create a shortcut.</dd> 
+
+<dt><code>-keystore <em>&lt;keystore for signing&gt;</em></code></dt>                               
+<dd>A temporary self-signature is created when <code>keystore </code> is not specified.</dd> 
+
+<dt><code>-keystorePassword <em>&lt;password&gt;</em> </code></dt>                                   
+<dd>Required when signing with specific <code>keystore</code>.</dd> 
+
+<dt><code>-keyalias <em>&lt;alias&gt;</em></code></dt>                                              
+<dd>Mandatory when signing with specific <code>keystore</code>.</dd> 
+
+<dt><code>-keyaliasPassword <em>&lt;password&gt;</em> </code></dt>                                   
+<dd><code> keystore <em>Password</em> </code> is used instead when not specified.</dd> 
+
+<dt><code>-pack200 </code></dt>                                                          
+<dd>Compresses an application using pack200.  This option creates a file called <code><em>MyApplication</em>.jar.pack.gz</code> 
+in the default <code>./dist</code> directory.</dd> 
+
+<dt><code>-help </code></dt>                                                          
+<dd>Prints a help screen.</dd> 
+
+<dt><code>-updatecheck <em>[background | timeout | always]</em></code></dt>                                                          
+<dd>Defines an application update model. The default option is background.</dd> 
+
+<dt><code>-version </code></dt> 
+<dd>Prints the JavaFX Toolchain version number.</dd>
+
+<dt><code>-J <em>&lt;flag&gt;</em></code></dt> 
+<dd>Passes <em>flag</em> directly to the compiler.</dd>
+<dt><code>-extpackages <em>&lt;package 1&gt;[,&lt;package 2&gt;[,</em></code><code><em>&lt;package N&gt;]]</em></code></dt> 
+<dd>Explicitly lists extra packages required by the application.</dd>
+</dl>
+
+<h3><a name="nonstandard">Non-Standard Options</a></h3>
+<dl>
+<dt><code>-XXcustomProgressJar <em>&lt;jar file&gt;</em></code></dt> 
+<dd>Specifies a custom JNLP progress indicator implementation JAR.</dd>
+
+<dt><code>-XXcustomProgressClass <em>&lt;progress class name&gt;</em></code></dt> 
+<dd>Specifies the main class of a custom JNLP progress indicator  implementation.</dd>
+
+<dt><code>-XXjnlpResourcesInclude <em>&lt;JNLP resources descriptor fragment&gt;</em></code></dt> 
+<dd>Specifies a custom descriptor fragment to be inserted into the resources  section of the application JNLP file.<br>
+To avoid command-line restrictions on   characters such as line feeds and  quotation marks, use the following character translation table: <br>
+<table border="1" cellspacing="2">
+  <tr>
+    <td>&amp;quot;</td>
+    <td>"</td>
+  </tr>
+  <tr>
+    <td>&amp;gt;</td>
+    <td>&gt;</td>
+  </tr>
+  <tr>
+    <td>&amp;lt;</td>
+    <td>&lt;</td>
+  </tr>
+  <tr>
+    <td>&amp;amp;</td>
+    <td>&amp;</td>
+  </tr>
+  <tr>
+    <td>\n</td>
+    <td>line feed</td>
+  </tr>
+  <tr>
+    <td>\r</td>
+    <td>carriage return</td>
+  </tr>
+  <tr>
+    <td>\t</td>
+    <td>tab</td>
+  </tr>
+  <tr>
+    <td>\\</td>
+    <td>\</td>
+  </tr>
+</table>
+</dd>
+
+<dt><code>-XXnoCPinManifest</code></dt> 
+<dd>Builds  an extra application JAR with no Class-Path attribute in the  application manifest.</dd>
+</dl>
+</blockquote> 
+
+      
+<h2 id="usage">Usage</h2>
+<blockquote>
+<p><code>javafxpackager -src ./mysources -appClass mypackage.MyApplication -sign -pack200 -draggable </code></p>
+
+<p>
+  Builds all JavaFX and Java sources according to the desktop profile specification into <code>./dist/MyApplication.html</code>, <code>./dist/MyApplication.jnlp</code>, <code>./dist/MyApplication.jar</code>, <code>./dist/MyApplication_browser.jnlp</code>, and <code>./dist/MyApplication.jar.pack.gz.</code></p>
+
+<p><code>javafxpackager -src ./mysources -appClass mypackage.MyApplication -p mobile</code></p>
+  
+<p>Builds all JavaFX and Java sources according to the mobile  profile specification into <code>./dist/MyApplication.jad</code> and  <code>./dist/MyApplication.jar.</code> </p>
+
+<p><code>javafxpackager -src ./mysources -appClass mypackage.MyApplication -p tv</code></p>
+  
+<p>Builds all JavaFX and Java sources according to the tv profile specification into <code>./dist/MyApplication.jar.</code> </p>
+</blockquote> 
+
+
+
+<!-- ******** START NAV FOOTER ********* -->
+
+<!-- 
+<div class="xnavfooter" style="border:0; background-color: white;">
+-->
+
+<hr noshade="noshade" size="3">
+
+<table summary="layout" border="0" width="100%">
+<tbody><tr valign="top">
+
+<td>
+<p><a href="../COPYRIGHT.html">Copyright</a> &copy; 2008, 2010, Oracle and/or its affiliates.</p>
+<p>&nbsp;</p>
+
+</td>
+
+<td align="right">
+   <br><br>
+</td>
+
+</tr>
+</tbody></table>
+
+
+
+<!-- ****** END NAV FOOTER ****** -->
+<!--  </div> -->
+
+</body>
+    
+</html>

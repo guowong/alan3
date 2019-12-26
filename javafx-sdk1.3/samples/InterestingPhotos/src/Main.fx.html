@@ -1,0 +1,707 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+
+<head>
+	
+	<title>JavaFX Sample</title>
+	
+	<!--METAS-->
+	
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="description" content="JavaFX" />
+	<meta name="keywords" content="JavaFX Oracle" />
+	<meta name="author" content="Oracle" />
+	
+	<!--STYLESHEETS-->
+	<link rel="stylesheet" type="text/css" media="screen, projection" href="../../shared/new_style/css/reset.css" />
+	<link rel="stylesheet" type="text/css" media="screen, projection" href="../../shared/new_style/css/javafx.css" />
+	<link rel="stylesheet" type="text/css" media="screen, projection" href="../../shared/new_style/css/code.css" />
+	
+	<!-- CONDITIONAL STYLESHEETS -->
+	<!--[if IE]>
+	  <link rel="stylesheet" type="text/css" href="../../shared/new_style/css/ie.css" />
+	<![endif]-->
+	
+	<!--ADDRESS BAR ICON-->
+	<link rel="shortcut icon" type="image/ico" href="../../shared/new_style/images/favicon.ico" />
+	
+	<link rel="stylesheet" type="text/css" media="screen, projection" href="../../shared/new_style/css/samples.css" />
+    <style type="text/css">
+.code .string-literal, .code .number-literal {
+	font-style: italic;
+	color: #4b494d;
+}
+    </style>
+</head>
+<!--
+	The ID here is required to indicate the page type.
+	Changing this will affect the layout of the page.
+-->
+<body id="tutorials">
+	
+	<div id="body">
+		<!--
+			The header in the source code view doesn't have any buttons.
+			So just the <h1> tag for the site logo is included.
+			
+			The header also doesn't have an A tag with an "href" since you shouldn't be able to navigate to the
+			index pgae inside the popup.
+		-->
+        
+        
+		<ul id="popheader">
+			<li class="first">
+				<h1><a><span>FX</span></a></h1>
+			
+				<!-- Close button -->
+				<a class="close-button" title="Close"><span>Close</span></a>
+			</li>
+		</ul>
+<div class="source">
+  <div class="code-header">License text </div>
+    <pre>
+
+/*
+ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER 
+ * Copyright  2008, 2010 Oracle and/or its affiliates.  All rights reserved. 
+ * Use is subject to license terms.
+ * 
+ * This file is available and licensed under the following license:
+ * 
+ * Redistribution and use in source and binary forms, with or without 
+ * modification, are permitted provided that the following conditions are met: 
+ * 
+ *   * Redistributions of source code must retain the above copyright notice, 
+ *     this list of conditions and the following disclaimer. 
+ *
+ *   * Redistributions in binary form must reproduce the above copyright notice,
+ *     this list of conditions and the following disclaimer in the documentation
+ *     and/or other materials provided with the distribution.
+ *
+ *   * Neither the name of Oracle Corporation nor the names of its contributors 
+ *     may be used to endorse or promote products derived from this software 
+ *     without specific prior written permission. 
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS 
+ * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT 
+ * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR 
+ * A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT 
+ * OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, 
+ * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, 
+ * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; 
+ * OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, 
+ * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR 
+ * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF 
+ * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. 
+ */
+
+    </pre>
+  </div>
+<div class="code"><pre><code>
+<b>package</b> interesting;
+
+<b>import</b> java.io.InputStream;
+<b>import</b> java.lang.Exception;
+<b>import</b> javafx.util.Math;
+<b>import</b> javafx.io.http.HttpRequest;
+<b>import</b> javafx.animation.Timeline;
+<b>import</b> javafx.animation.KeyFrame;
+<b>import</b> javafx.scene.Group;
+<b>import</b> javafx.scene.Node;
+<b>import</b> javafx.scene.Scene;
+<b>import</b> javafx.scene.image.Image;
+<b>import</b> javafx.scene.image.ImageView;
+<b>import</b> javafx.scene.input.MouseEvent;
+<b>import</b> javafx.scene.input.KeyEvent;
+<b>import</b> javafx.scene.input.KeyCode;
+<b>import</b> javafx.scene.paint.Color;
+<b>import</b> javafx.scene.shape.Rectangle;
+<b>import</b> javafx.stage.Stage;
+<b>import</b> javafx.stage.StageStyle;
+<b>import</b> javafx.scene.layout.HBox;
+<b>import</b> javafx.scene.layout.VBox;
+<b>import</b> javafx.scene.control.Label;
+
+<b>import</b> interesting.model.Photo;
+<b>import</b> interesting.parser.PhotoPullParser;
+<b>import</b> interesting.view.FullImageView;
+<b>import</b> interesting.view.ImageButton;
+<b>import</b> interesting.view.ThumbImageView;
+<b>import</b> interesting.view.ArrowImageButton;
+<b>import</b> interesting.view.PageImageButton;
+<b>import</b> interesting.view.ProgressBar;
+<b>import</b> interesting.view.Layout;
+<b>import</b> interesting.view.Background;
+<b>import</b> interesting.Constants.*;
+
+
+<i class='comment'>/**
+ * Sample FX Script Application for viewing some of Flickr's Interesting Photos
+ * Click on the photo to view larger photo.
+ */</i>
+
+<b class='keyword'>var</b> <b>stageDragInitialX</b>:Number;
+<b class='keyword'>var</b> <b>stageDragInitialY</b>:Number;
+
+<b class='keyword'>var</b> layout = Layout.getLayout(dimension);
+<b class='keyword'>var</b> sceneWidth  : Number = bind scene.width;
+<b class='keyword'>var</b> sceneHeight : Number = bind scene.height on replace {
+    if(sceneHeight &gt; <span class='number-literal'>0</span>) {
+        fullImageView.show = false;
+        try {
+            layout = Layout.getLayout(<span class='string-literal'>"{sceneWidth as Integer}X{sceneHeight as Integer}"</span>);
+            <b class='keyword'>var</b> lytW = Math.min(layout.width, layout.height);
+            <b class='keyword'>var</b> lytH = Math.max(layout.width, layout.height);
+            dimension = <span class='string-literal'>"{lytW}X{lytH}"</span>;
+            updateThumbImageViews();
+            updatePageButtons();
+            updateImages();
+            bgRect.requestFocus();
+            
+        }
+        catch ( exception : Exception ) {
+            alert(<span class='string-literal'>"Error", "{exception}"</span>);
+        }
+    }
+}
+
+<i class='comment'>// Photo-Grid Page Index</i>
+<b class='keyword'>var</b> focusOnBack = false;
+<b class='keyword'>var</b> focusOnNext = false;
+public <b class='keyword'>var</b> focusOnGrid = false on replace {
+    if(focusOnGrid) {
+        focusOnBack = false;
+        focusOnNext = false;
+    }
+};
+<b class='keyword'>var</b> <b>pageButtons</b>: PageImageButton[]; <i class='comment'>// Page Buttons</i>
+<b class='keyword'>var</b> <b>page</b>:Integer = <span class='number-literal'>0</span> on replace {
+    for(pb in pageButtons) {
+        pb.selected = false;
+    }
+}
+<b class='keyword'>var</b> <b>photos</b>:Photo[];                             <i class='comment'>// Information about all interesting photos</i>
+
+function getImage(imgURL : String, dimension : String) {
+    Image { <b>url</b>: <span class='string-literal'>"{__DIR__}images/{dimension}/{imgURL}"</span> };
+}
+
+<i class='comment'>// Application Background</i>
+<b class='keyword'>var</b> bgRect : Background = Background {
+    <b>width</b>: bind layout.width
+    <b>height</b>: bind layout.height
+    <b>thumbBoundsX</b>: bind layout.thumbGroupX
+    <b>thumbBoundsY</b>: bind layout.thumbGroupY
+    <b>thumbBoundsW</b>: bind layout.thumbGroupW
+    <b>thumbBoundsH</b>: bind layout.thumbGroupH
+    <b>descTextY</b>: bind layout.descTextY
+    <b>onKeyPressed</b>:function(<b>e</b>:KeyEvent) {
+        if(fullImageView.show) {
+            if(e.code == KeyCode.VK_ENTER) {
+                fullImageView.show = false; 
+            }
+        }
+        else if(e.code == KeyCode.VK_LEFT) {
+            onLeftArrowKey();
+        }
+        else if(e.code == KeyCode.VK_RIGHT) {
+            onRightArrowKey();
+        }
+        else if(e.code == KeyCode.VK_UP) {
+            onUpArrowKey();
+        }
+        else if(e.code == KeyCode.VK_DOWN) {
+            onDownArrowKey();
+        }
+        else if(e.code == KeyCode.VK_ENTER) {
+            if(focusOnGrid) {
+                showFullImage(thumbSelIndex);
+            }
+            else if(focusOnNext) {
+                onNextClick();
+            }
+            else if(focusOnBack) {
+                onBackClick();
+            }
+        }
+    }
+    <b>onMousePressed</b>:function(<b>e</b>:MouseEvent):Void {
+        bgRect.requestFocus();
+    }
+}
+
+function onLeftArrowKey() {
+    if(focusOnGrid) {
+        if(thumbSelIndex &gt; <span class='number-literal'>0</span>) { 
+            thumbSelIndex--; return;
+        }
+        onBackClick();
+    }
+    else {
+        focusOnBack = true;
+        focusOnNext = false;
+    }
+}
+
+function onUpArrowKey() {
+        if(not focusOnGrid) { 
+            focusOnGrid = true;
+            thumbSelIndex = <span class='number-literal'>0</span>;
+            return;
+        }
+        if(thumbSelIndex &lt; thumbCols) { <i class='comment'>// On first row</i>
+            focusOnGrid = false;
+            focusOnBack = true;
+        }
+        else { <i class='comment'>// On other rows</i>
+            thumbSelIndex = thumbSelIndex - thumbCols;
+        }
+}
+
+function onDownArrowKey() {
+    if(not focusOnGrid) {
+        focusOnGrid = true; 
+        thumbSelIndex = <span class='number-literal'>0</span>;
+        return; 
+    }
+    
+    if(thumbSelIndex &gt;= (thumbCols * (thumbRows - ondown_padding))) { <i class='comment'>// On last row</i>
+        focusOnGrid = false;
+        focusOnNext = true;
+    }
+    else {
+        thumbSelIndex = thumbSelIndex + thumbCols;
+    }
+}
+
+function onRightArrowKey() {
+    if(focusOnGrid) {
+        if(thumbSelIndex &lt; (sizeof thumbImageViews) - ondown_padding) {
+            thumbSelIndex++; return;
+        }
+        onNextClick();
+    }
+    else {
+        focusOnBack = false;
+        focusOnNext = true;
+    }
+}
+
+<i class='comment'>// Dispose Application</i>
+<b class='keyword'>var</b> <b>closeButton</b>:ImageView = ImageButton { 
+    <b>x</b>: bind (layout.width - closeButton.image.width - padding_closebtnXY)
+    <b>y</b>: padding_closebtnXY
+    <b>normalImage</b>: bind getImage(<span class='string-literal'>"close_n.png"</span>, dimension)
+    <b>hoverImage</b>: bind getImage(<span class='string-literal'>"close_h.png"</span>, dimension)
+    <b>visible</b>: bind (<span class='string-literal'>"{__PROFILE__}" != "browser"</span>)
+    <b>onMousePressed</b>: function(e) {
+        javafx.lang.FX.exit();
+    }
+}
+
+<i class='comment'>// Display next set of photos</i>
+<b class='keyword'>var</b> nextButton : ArrowImageButton = ArrowImageButton { 
+    <b>x</b>: bind pageButtonGroup.translateX + layout.pageGroupW - nxtbtnX
+    <b>y</b>: bind pageButtonGroup.translateY + layout.pageButtonH/padding_nxtbtn - nxtbtnY
+    <b>normalImage</b>: bind getImage(<span class='string-literal'>"next_n.png"</span>, dimension)
+    <b>hoverImage</b>: bind getImage(<span class='string-literal'>"next_h.png"</span>, dimension)
+    <b>active</b>: bind focusOnNext
+    <b>visible</b>: bind (not fullImageView.visible)
+    <b>onMousePressed</b>: function(e) {
+        nextButton.image = nextButton.hoverImage;
+        onNextClick();
+    }
+}
+function onNextClick() {
+    if(sizeof photos &lt;= <span class='number-literal'>0</span>) return;
+    fullImageView.show = false;
+    page++;
+    if(page &gt;= (sizeof pageButtons)) { page = <span class='number-literal'>0</span>; }
+    thumbSelIndex = <span class='number-literal'>0</span>;
+    updateImages();
+}
+
+<i class='comment'>// Display previous set of photos</i>
+<b class='keyword'>var</b> backButton : ArrowImageButton = ArrowImageButton { 
+    <b>x</b>: bind pageButtonGroup.translateX - backbtnX + padding_backbtnX
+    <b>y</b>: bind pageButtonGroup.translateY + layout.pageButtonH/padding_backbtnY - backbtnY/padding_backbtnY
+    <b>normalImage</b>: bind getImage(<span class='string-literal'>"back_n.png"</span>, dimension)
+    <b>hoverImage</b>: bind getImage(<span class='string-literal'>"back_h.png"</span>, dimension)
+    <b>active</b>: bind focusOnBack
+    <b>visible</b>: bind (not fullImageView.visible)
+    <b>onMousePressed</b>: function(e) {
+        backButton.image = backButton.hoverImage;
+        onBackClick();
+    }
+}
+function onBackClick() {
+    if(sizeof photos &lt;= <span class='number-literal'>0</span>) return;
+    fullImageView.show = false;
+    page--;
+    if(page &lt; <span class='number-literal'>0</span>) { page = (sizeof pageButtons) - <span class='number-literal'>1</span>; }
+    thumbSelIndex = <span class='number-literal'>8</span>;
+    updateImages();
+}
+
+public function setPage(<b>index</b>:Integer) {
+    fullImageView.show = false;
+    page = index;
+    thumbSelIndex = <span class='number-literal'>0</span>;
+    updateImages();
+}
+
+<i class='comment'>// Trim the string if length is greater than specified length</i>
+public function trimString(<b>string</b>:String, <b>length</b>:Integer) : String {
+    if(string == null) return <span class='string-literal'>""</span>;
+    if(string.length() &gt; length) { 
+        return <span class='string-literal'>"{string.substring(<span class='number-literal'>0</span>, length).trim()}..."</span>; 
+    }
+    else {
+        return string;
+    }
+}
+
+<i class='comment'>// Photo Description and Page details</i>
+<b class='keyword'>var</b> <b>desclabel</b>: Label;
+public <b class='keyword'>var</b> description = <span class='string-literal'>"Loading Photos..."</span>;
+<b class='keyword'>var</b> thumbCols = bind layout.thumbCols;
+<b class='keyword'>var</b> thumbRows = bind layout.thumbRows;
+
+<i class='comment'>// Initialize Photo-Grid</i>
+<b class='keyword'>var</b> <b>thumbImageViews</b>: ThumbImageView[]; <i class='comment'>// Thumbnail images</i>
+public <b class='keyword'>var</b> thumbSelIndex = <span class='number-literal'>0</span> on replace {
+    for(tiv in thumbImageViews) {
+        tiv.selected = false;
+    }
+    thumbImageViews[thumbSelIndex].selected = true;
+}
+<b class='keyword'>var</b> thumbImageViewGroup : VBox = VBox { 
+    <b>layoutX</b>: bind (layout.width - layout.thumbGroupW)/thumpview_padding
+    <b>layoutY</b>: bind (layout.height - layout.thumbGroupH)/thumpview_padding
+    <b>spacing</b>: <span class='number-literal'>1</span>
+};
+function updateThumbImageViews() {
+    <i class='comment'>// reset</i>
+    delete thumbImageViews;
+    delete thumbImageViewGroup.content;
+    for(row in [<span class='number-literal'>0</span>..(thumbRows - <span class='number-literal'>1</span>)]) {
+        <b class='keyword'>var</b> hBox = HBox { <b>spacing</b>: <span class='number-literal'>1</span> };
+        for(col in [<span class='number-literal'>0</span>..(thumbCols - <span class='number-literal'>1</span>)]) {
+            def thumbImageView = ThumbImageView { 
+                <b>width</b>: layout.thumbSize
+                <b>height</b>: layout.thumbSize
+                <b>index</b>: (sizeof thumbImageViews)
+            }
+            insert thumbImageView into thumbImageViews;
+            insert thumbImageView into hBox.content;
+        }
+        insert hBox into thumbImageViewGroup.content;
+    }
+    
+    if(thumbSelIndex &gt;= (sizeof thumbImageViews)) { thumbSelIndex = <span class='number-literal'>0</span>; }
+    thumbImageViews[thumbSelIndex].selected = true;
+}
+
+<b class='keyword'>var</b> pageButtonImage = bind getImage(<span class='string-literal'>"tab_n.png"</span>, dimension);
+<b class='keyword'>var</b> pageButtonHoverImage = bind getImage(<span class='string-literal'>"tab_h.png"</span>, dimension);
+<b class='keyword'>var</b> pageButtonSelectImage = bind getImage(<span class='string-literal'>"tab_s.png"</span>, dimension);
+
+function updatePageButtons() {
+    delete pageButtons;
+    for(row in [<span class='number-literal'>0</span>..layout.pageCount]) {
+        insert PageImageButton {
+            <b>normalImage</b>: pageButtonImage
+            <b>hoverImage</b>: pageButtonHoverImage
+            <b>selectImage</b>: pageButtonSelectImage
+            <b>index</b>: (sizeof pageButtons)
+        } into pageButtons;
+    }
+    if(page &gt;= (sizeof pageButtons)) {
+        page = <span class='number-literal'>0</span>;
+    }
+}
+
+function getPageButtonY(y : Number) : Number {
+    <b class='keyword'>var</b> maxY = y + layout.thumbGroupH;
+    <b class='keyword'>var</b> maxH = layout.height - maxY;
+    return maxY + maxH/padding_getpgebtnY - layout.pageButtonH/padding_getpgebtnYX;
+}
+
+
+<b class='keyword'>var</b> pageButtonGroup : HBox = HBox {
+    <b>content</b>: bind pageButtons
+    <b>spacing</b>: padding_pagebtn_spacing
+    <b>translateX</b>: bind (layout.width - layout.pageGroupW)/padding_pagebtn_transX
+    <b>translateY</b>: bind getPageButtonY(layout.thumbGroupY);
+}
+
+<i class='comment'>// Initialize fullscreen ImageView</i>
+public <b class='keyword'>var</b> fullImageView = FullImageView {
+    <b>x</b>: bind layout.thumbGroupX
+    <b>y</b>: bind layout.thumbGroupY
+    <b>width</b>: bind layout.thumbGroupW
+    <b>height</b>: bind layout.thumbGroupH
+    <b>visible</b>: false
+}
+<b class='keyword'>var</b> progressBar : ProgressBar = ProgressBar {
+    <b>layoutX</b>: bind (layout.thumbGroupX + padding_progressbar_layoutX)
+    <b>layoutY</b>: bind (layout.thumbGroupY + layout.thumbGroupH - padding_progressbar_layoutY)
+    <b>width</b>: bind (layout.thumbGroupW - padding_progressbar_width)
+    <b>visible</b>: bind progressTimeline.running
+
+}
+<b class='keyword'>var</b> <b>progressTimeline</b>:Timeline = Timeline {
+    <b>repeatCount</b>: Timeline.INDEFINITE
+    <b>keyFrames</b>: [ 
+        KeyFrame {
+            <b>time</b>: <span class='number-literal'>100</span>ms
+            <b>action</b>: function() {
+                progressBar.progress = getProgress();
+                if(fullImageView.visible) {
+                    progressBar.opacity = fullImageView.opacity;
+                }
+                else {
+                    progressBar.opacity = <span class='number-literal'>1</span>.<span class='number-literal'>0</span>;
+                }
+                if(progressBar.progress == <span class='number-literal'>100</span>.<span class='number-literal'>0</span>) {
+                    progressTimeline.stop();
+                }
+            }
+        }
+    ]
+};
+
+function getProgress() : Number {
+    if(fullImageView.visible) {
+        return fullImageView.image.progress;
+    }
+    else {
+        <b class='keyword'>var</b> totalProgress = <span class='number-literal'>0</span>.<span class='number-literal'>0</span>;
+        for(i in [<span class='number-literal'>0</span>..((sizeof thumbImageViews) - <span class='number-literal'>1</span>)]) {
+            totalProgress = totalProgress + thumbImageViews[i].image.progress;
+        }
+        if(totalProgress == <span class='number-literal'>0</span>) { return <span class='number-literal'>0</span>; }
+        return totalProgress/(sizeof thumbImageViews); 
+    }
+}
+
+public function showFullImage(<b>index</b>:Integer) {
+    <b class='keyword'>var</b> tiv = thumbImageViews[index];
+    fullImageView.image = Image {
+        <b>url</b>: <span class='string-literal'>"<b>http</b>:<i class='comment'>//farm{tiv.photo.farm}.static.flickr.com/{tiv.photo.server}/{tiv.photo.id}_{tiv.photo.secret}_m.jpg"</span></i>
+        <b>placeholder</b>: tiv.image
+        <b>backgroundLoading</b>: true
+    };
+    
+    fullImageView.show = true;
+    progressBar.progress = padding_progressbar;
+    progressTimeline.playFromStart();
+}
+
+<i class='comment'>// Load image and data specified in given Photo object</i>
+function loadImage(<b>photo</b>: Photo, <b>thumbImageView</b>: ThumbImageView): Void { 
+    thumbImageView.image = Image {
+        <b>url</b>: <span class='string-literal'>"<b>http</b>:<i class='comment'>//farm{photo.farm}.static.flickr.com/{photo.server}/{photo.id}_{photo.secret}_s.jpg"</span>;</i>
+        <b>backgroundLoading</b>: true
+        <b>placeholder</b>: thumbImageView.image
+    };
+    thumbImageView.photo = photo;
+}
+
+<i class='comment'>// Update images displayed in Photo-Grid</i>
+function updateImages() {
+    if(not loadComplete) { return; }
+    progressBar.progress = padding_progressbar;
+    progressTimeline.playFromStart();
+    for(i in [<span class='number-literal'>0</span>..(sizeof thumbImageViews) - <span class='number-literal'>1</span>]) {
+        <b class='keyword'>var</b> photoIndex = (page * (sizeof thumbImageViews)) + i;
+        loadImage(photos[photoIndex], thumbImageViews[i]);
+    }
+    
+    description = trimString(<span class='string-literal'>"{thumbImageViews[thumbSelIndex].photo.title}"</span>, padding_descrption);
+    pageButtons[page].selected = true;
+}
+
+
+<i class='comment'>// Application Title-Bar</i>
+<b class='keyword'>var</b> titleBar = Rectangle {
+    <b>width</b>: bind layout.width
+    <b>height</b>: bind layout.thumbGroupY
+    <b>fill</b>: Color.TRANSPARENT
+    <b>visible</b>: bind (<span class='string-literal'>"{__PROFILE__}" != "browser"</span>)
+    <b>onMousePressed</b>: function(e) {
+        stageDragInitialX = e.screenX - stage.x;
+        stageDragInitialY = e.screenY - stage.y;
+    }
+    <b>onMouseDragged</b>: function(e) {
+        stage.x = e.screenX - stageDragInitialX;
+        stage.y = e.screenY - stageDragInitialY;
+    }
+
+}
+<b class='keyword'>var</b> <b>stageContent</b>:Node[];                       <i class='comment'>// Set stage content based on status of api-key</i>
+
+function initErrorUI() {
+    desclabel = Label {
+        <b>layoutX</b>: bind layout.thumbGroupX + initerrorui_padding
+        <b>layoutY</b>: bind layout.thumbGroupY + initerrorui_padding
+        <b>font</b>: bind layout.descFont
+        <b>text</b>: <span class='string-literal'>"This application requires an api key from Flickr.\nGet yours from \<b>nhttp</b>:<i class='comment'>//developer.yahoo.com/flickr"</span></i>
+        <b>textFill</b>: Color.WHITE
+    }
+    stageContent = [
+        bgRect,
+        titleBar,
+        closeButton,
+        desclabel
+    ];
+}
+
+function initDefaultUI() {
+    desclabel = Label {
+        <b>layoutX</b>: bind layout.thumbGroupX
+        <b>layoutY</b>: bind layout.descTextY - padding_label
+        <b>font</b>: bind layout.descFont
+        <b>text</b>: bind description
+        <b>textFill</b>: Color.WHITE
+        <b>clip</b>: Rectangle {
+            <b>layoutX</b>: bind desclabel.layoutX - padding_rect_layoutY
+            <b>layoutY</b>: bind (desclabel.layoutY - padding_rect_layoutY)
+            <b>width</b>: bind (layout.width - padding_rectwidth)
+            <b>height</b>: bind ( layout.thumbGroupY - desclabel.layoutY - padding_rectheight)
+        }
+    }
+    
+    stageContent = [
+        bgRect, titleBar, nextButton, backButton, closeButton,
+        desclabel, thumbImageViewGroup, pageButtonGroup,
+        fullImageView, progressBar
+    ];
+    loadImageMetadata();
+}
+
+<b class='keyword'>var</b> loadComplete = false;
+function loadImageMetadata() {
+    println(<span class='string-literal'>"Loading image metadata..."</span>);   
+    description = <span class='string-literal'>"Loading Photos..."</span>;
+    <b class='keyword'>var</b> <b>httpRequestError</b>: Boolean = false;
+    <i class='comment'>// Submit HttpRequest</i>
+    <b class='keyword'>var</b> <b>request</b>: HttpRequest = HttpRequest {
+        <b>location</b>: <span class='string-literal'>"<b>http</b>:<i class='comment'>//api.flickr.com/services/rest/?method="</span></i>
+        <span class='string-literal'>"flickr.interestingness.getList&amp;api_key={apiKey}&amp;per_page={layout.imageCount}"</span>
+        <b>method</b>: HttpRequest.GET
+       
+        <b>onRead</b>: function(<b>bytes</b>: Long) {
+            <i class='comment'>// The toread <b class='keyword'>var</b>iable is non negative only if the server provides the content length</i>
+            def loadProgress = if (request.toread &gt; <span class='number-literal'>0</span>) <span class='string-literal'>"{(bytes * <span class='number-literal'>100</span> / request.toread)}%" else ""</span>;
+            description = <span class='string-literal'>"Loading Photos... ({loadProgress})"</span>;
+        }
+        
+        <b>onException</b>: function(<b>exception</b>: Exception) {
+            exception.printStackTrace();
+            alert(<span class='string-literal'>"Error", "{exception}"</span>);
+            httpRequestError = true;
+        }
+            
+        <b>onResponseCode</b>: function(<b>responseCode</b>:Integer) {
+            if (responseCode != <span class='number-literal'>200</span>) {
+                println(<span class='string-literal'>"failed, <b>response</b>: {responseCode} {request.responseMessage}"</span>);
+            }
+        }
+                        
+        <b>onInput</b>: function(<b>input</b>: java.io.InputStream) {
+            try {
+                <b class='keyword'>var</b> parser = PhotoPullParser {
+                    <b>onDone</b>: function( <b>data</b>:Photo[] ) {
+                        photos = data;
+                        if(not httpRequestError) {
+                            loadComplete = true;
+                            updateImages(); 
+                            focusOnGrid = true;
+                        }
+                    } 
+                };
+                parser.parse(input);
+                if(parser.errorMessage.length() &gt; <span class='number-literal'>0</span>) { 
+                    alert(<span class='string-literal'>"Error"</span>, parser.errorMessage);
+                    httpRequestError = true; 
+                }
+                
+            }
+            finally {
+                input.close();
+            }
+        }
+    }
+    request.start();
+}
+
+function alert(<b>alertTitle</b>:String, <b>msg</b>:String): Void {
+    println(msg);
+    description = trimString(<span class='string-literal'>"{alertTitle}: {msg}"</span>, padding_alert);
+}
+
+function initUI() {    
+    <i class='comment'>// If API-Key is empty, display error</i>
+    if (apiKey == null) {
+        initErrorUI();
+    }
+    else {
+        initDefaultUI();                        <i class='comment'>// Retrieve photo information and display</i>
+    }
+}
+
+<b class='keyword'>var</b> scene : Scene = Scene {
+    <b>width</b>: stage_widht
+    <b>height</b>: stage_height
+    <b>content</b>: Group {
+        <b>content</b>: bind stageContent
+        <b>clip</b>: Rectangle {
+            <b>width</b>: bind layout.width
+            <b>height</b>: bind layout.height
+            <b>arcWidth</b>: arcwidhtheight_padding
+            <b>arcHeight</b>: arcwidhtheight_padding
+        }
+    }
+    <b>fill</b>: Color.TRANSPARENT
+};
+
+<i class='comment'>// Application User Interface</i>
+<b class='keyword'>var</b> stage = Stage {
+    <b>title</b>: <span class='string-literal'>"Interesting Photos"</span>
+    <b>resizable</b>: false
+    <b>width</b>: stage_widht
+    <b>height</b>: stage_height
+    <b>visible</b>: false
+    <b>style</b>: StageStyle.TRANSPARENT
+    <b>scene</b>: bind scene
+}
+
+function run() {
+    initUI();    
+    stage.visible = true;
+    bgRect.requestFocus();                      <i class='comment'>// Set focus to background by default</i>
+}
+</code></pre></div>
+<div id="footer">
+			<span class="copy">&copy; 2010, Oracle Corporation and/or its affiliates.</span>
+			
+		</div>
+<!--
+	JAVASCRIPT
+	At the bottom of the page so that we download and render all the visual elements, before we start handling the javascript. This provides for a faster perceived loading time.
+-->
+
+<script src="../../shared/new_style/js/omi/s_code_remote.js" type="text/javascript"></script>
+ 
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js"></script>
+<!--[if lte IE 6]>
+	<script type="text/javascript" src="../../shared/new_style/js/jquery.ifixpng.js"></script>
+<![endif]-->
+<script type="text/javascript" src="../../shared/new_style/js/jquery.history.js"></script>
+<script type="text/javascript" src="../../shared/new_style/js/javafx.js"></script>
+
+
+
+
+

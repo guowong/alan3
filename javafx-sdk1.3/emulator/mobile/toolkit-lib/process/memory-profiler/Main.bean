@@ -1,0 +1,10 @@
+#
+# Copyright (c) 2009 Sun Microsystems, Inc. All rights reserved.
+# Use is subject to license terms.
+#
+
+.class: com.sun.jme.toolkit.memprof.MemoryProfilerLoader
+
+shutdownFinishedLatch: shutdown-finished
+arguments: args
+jar: ${toolkit.home}/runtimes/cldc-hi-javafx/wtklib/memprof_client.jar

@@ -1,0 +1,4120 @@
+
+            <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+        <html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="../general.css" rel="stylesheet">
+<style type="text/css"></style>
+<link href="../sdk.css" rel="stylesheet">
+<script type="text/javascript" src="../mootools-1.2.1-yui.js"></script><script type="text/javascript" src="../sessvars.js"></script><script type="text/javascript" src="../sdk.js"></script>
+<meta name="collection" content="api">
+<meta name="keywords" content="JavaFX, Java FX">
+<title>JavaFX 1.3.1 API | javafx.scene.control.ProgressIndicator | Java FX</title>
+</head>
+<body>
+<div id="top-header">
+<h1>
+<a href="../index.html">Java<b>FX</b>: <i>Bringing Rich Experiences To All the Screens Of Your Life</i></a>
+</h1>
+<h3 id="master-index-link">
+<a href="../master-index.html">master index</a>
+</h3>
+<h3 id="collapse-expand-switcher">
+<a href="#" id="collapse-expand-link">expand all</a>
+</h3>
+<h3 id="profile-switcher">Profile: <a href="#" id="select-desktop-profile">desktop</a>, <a href="#" id="select-common-profile">common</a>
+</h3>
+</div>
+<ul id="classes-toc">
+<li>
+<h4 class="header">
+<a href="#">com.javafx.preview.control</a>
+</h4>
+<ul class="content">
+<li class="profile-common ">
+<a href="../com.javafx.preview.control/com.javafx.preview.control.CheckMenuItem.html">CheckMenuItem</a>
+</li>
+<li class="profile-common ">
+<a href="../com.javafx.preview.control/com.javafx.preview.control.CustomMenuItem.html">CustomMenuItem</a>
+</li>
+<li class="profile-common ">
+<a href="../com.javafx.preview.control/com.javafx.preview.control.Menu.html">Menu</a>
+</li>
+<li class="profile-common ">
+<a href="../com.javafx.preview.control/com.javafx.preview.control.MenuBar.html">MenuBar</a>
+</li>
+<li class="profile-common ">
+<a href="../com.javafx.preview.control/com.javafx.preview.control.MenuButton.html">MenuButton</a>
+</li>
+<li class="profile-common ">
+<a href="../com.javafx.preview.control/com.javafx.preview.control.MenuItem.html">MenuItem</a>
+</li>
+<li class="profile-common ">
+<a href="../com.javafx.preview.control/com.javafx.preview.control.MenuItemBase.html">MenuItemBase</a>
+</li>
+<li class="profile-common ">
+<a href="../com.javafx.preview.control/com.javafx.preview.control.PopupMenu.html">PopupMenu</a>
+</li>
+<li class="profile-common ">
+<a href="../com.javafx.preview.control/com.javafx.preview.control.RadioMenuItem.html">RadioMenuItem</a>
+</li>
+<li class="profile-common ">
+<a href="../com.javafx.preview.control/com.javafx.preview.control.SplitMenuButton.html">SplitMenuButton</a>
+</li>
+<li class="profile-common ">
+<a href="../com.javafx.preview.control/com.javafx.preview.control.ToolBar.html">ToolBar</a>
+</li>
+<li class="profile-common ">
+<a href="../com.javafx.preview.control/com.javafx.preview.control.TreeCell.html">TreeCell</a>
+</li>
+<li class="profile-common ">
+<a href="../com.javafx.preview.control/com.javafx.preview.control.TreeItem.html">TreeItem</a>
+</li>
+<li class="profile-common ">
+<a href="../com.javafx.preview.control/com.javafx.preview.control.TreeItemBase.html">TreeItemBase</a>
+</li>
+<li class="profile-common ">
+<a href="../com.javafx.preview.control/com.javafx.preview.control.TreeView.html">TreeView</a>
+</li>
+</ul>
+</li>
+<li>
+<h4 class="header">
+<a href="#">com.javafx.preview.layout</a>
+</h4>
+<ul class="content">
+<li class="profile-common ">
+<a href="../com.javafx.preview.layout/com.javafx.preview.layout.Grid.html">Grid</a>
+</li>
+<li class="profile-common ">
+<a href="../com.javafx.preview.layout/com.javafx.preview.layout.GridLayoutInfo.html">GridLayoutInfo</a>
+</li>
+<li class="profile-common ">
+<a href="../com.javafx.preview.layout/com.javafx.preview.layout.GridRow.html">GridRow</a>
+</li>
+</ul>
+</li>
+<li>
+<h4 class="header">
+<a href="#">javafx.animation</a>
+</h4>
+<ul class="content">
+<li class="profile-common ">
+<a href="../javafx.animation/javafx.animation.Interpolatable.html">Interpolatable</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.animation/javafx.animation.Interpolator.html">Interpolator</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.animation/javafx.animation.KeyFrame.html">KeyFrame</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.animation/javafx.animation.KeyValue.html">KeyValue</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.animation/javafx.animation.KeyValueTarget.html">KeyValueTarget</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.animation/javafx.animation.KeyValueTarget.Type.html">KeyValueTarget.Type</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.animation/javafx.animation.SimpleInterpolator.html">SimpleInterpolator</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.animation/javafx.animation.Timeline.html">Timeline</a>
+</li>
+</ul>
+</li>
+<li>
+<h4 class="header">
+<a href="#">javafx.animation.transition</a>
+</h4>
+<ul class="content">
+<li class="profile-common ">
+<a href="../javafx.animation.transition/javafx.animation.transition.AnimationPath.html">AnimationPath</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.animation.transition/javafx.animation.transition.FadeTransition.html">FadeTransition</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.animation.transition/javafx.animation.transition.OrientationType.html">OrientationType</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.animation.transition/javafx.animation.transition.ParallelTransition.html">ParallelTransition</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.animation.transition/javafx.animation.transition.PathTransition.html">PathTransition</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.animation.transition/javafx.animation.transition.PauseTransition.html">PauseTransition</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.animation.transition/javafx.animation.transition.RotateTransition.html">RotateTransition</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.animation.transition/javafx.animation.transition.ScaleTransition.html">ScaleTransition</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.animation.transition/javafx.animation.transition.SequentialTransition.html">SequentialTransition</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.animation.transition/javafx.animation.transition.Transition.html">Transition</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.animation.transition/javafx.animation.transition.TranslateTransition.html">TranslateTransition</a>
+</li>
+</ul>
+</li>
+<li>
+<h4 class="header">
+<a href="#">javafx.async</a>
+</h4>
+<ul class="content">
+<li class="profile-common ">
+<a href="../javafx.async/javafx.async.JavaTaskBase.html">JavaTaskBase</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.async/javafx.async.RunnableFuture.html">RunnableFuture</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.async/javafx.async.Task.html">Task</a>
+</li>
+</ul>
+</li>
+<li>
+<h4 class="header">
+<a href="#">javafx.data</a>
+</h4>
+<ul class="content">
+<li class="">
+<a href="../javafx.data/javafx.data.Converter.html">Converter</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.data/javafx.data.Pair.html">Pair</a>
+</li>
+</ul>
+</li>
+<li>
+<h4 class="header">
+<a href="#">javafx.data.feed</a>
+</h4>
+<ul class="content">
+<li class="profile-common ">
+<a href="../javafx.data.feed/javafx.data.feed.Base.html">Base</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.data.feed/javafx.data.feed.FeedTask.html">FeedTask</a>
+</li>
+</ul>
+</li>
+<li>
+<h4 class="header">
+<a href="#">javafx.data.feed.atom</a>
+</h4>
+<ul class="content">
+<li class="profile-common ">
+<a href="../javafx.data.feed.atom/javafx.data.feed.atom.Atom.html">Atom</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.data.feed.atom/javafx.data.feed.atom.AtomTask.html">AtomTask</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.data.feed.atom/javafx.data.feed.atom.Category.html">Category</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.data.feed.atom/javafx.data.feed.atom.Content.html">Content</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.data.feed.atom/javafx.data.feed.atom.Date.html">Date</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.data.feed.atom/javafx.data.feed.atom.Entry.html">Entry</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.data.feed.atom/javafx.data.feed.atom.Factory.html">Factory</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.data.feed.atom/javafx.data.feed.atom.Feed.html">Feed</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.data.feed.atom/javafx.data.feed.atom.Generator.html">Generator</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.data.feed.atom/javafx.data.feed.atom.Id.html">Id</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.data.feed.atom/javafx.data.feed.atom.Link.html">Link</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.data.feed.atom/javafx.data.feed.atom.Person.html">Person</a>
+</li>
+</ul>
+</li>
+<li>
+<h4 class="header">
+<a href="#">javafx.data.feed.rss</a>
+</h4>
+<ul class="content">
+<li class="profile-common ">
+<a href="../javafx.data.feed.rss/javafx.data.feed.rss.Category.html">Category</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.data.feed.rss/javafx.data.feed.rss.Channel.html">Channel</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.data.feed.rss/javafx.data.feed.rss.Enclosure.html">Enclosure</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.data.feed.rss/javafx.data.feed.rss.Factory.html">Factory</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.data.feed.rss/javafx.data.feed.rss.Guid.html">Guid</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.data.feed.rss/javafx.data.feed.rss.Image.html">Image</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.data.feed.rss/javafx.data.feed.rss.Item.html">Item</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.data.feed.rss/javafx.data.feed.rss.RSS.html">RSS</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.data.feed.rss/javafx.data.feed.rss.RssTask.html">RssTask</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.data.feed.rss/javafx.data.feed.rss.Source.html">Source</a>
+</li>
+</ul>
+</li>
+<li>
+<h4 class="header">
+<a href="#">javafx.data.pull</a>
+</h4>
+<ul class="content">
+<li class="profile-common ">
+<a href="../javafx.data.pull/javafx.data.pull.Event.html">Event</a>
+</li>
+<li class="">
+<a href="../javafx.data.pull/javafx.data.pull.ParserTask.html">ParserTask</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.data.pull/javafx.data.pull.PullParser.html">PullParser</a>
+</li>
+</ul>
+</li>
+<li>
+<h4 class="header">
+<a href="#">javafx.data.xml</a>
+</h4>
+<ul class="content">
+<li class="profile-common ">
+<a href="../javafx.data.xml/javafx.data.xml.QName.html">QName</a>
+</li>
+<li class="">
+<a href="../javafx.data.xml/javafx.data.xml.XMLConstants.html">XMLConstants</a>
+</li>
+</ul>
+</li>
+<li>
+<h4 class="header">
+<a href="#">javafx.date</a>
+</h4>
+<ul class="content">
+<li class="profile-common ">
+<a href="../javafx.date/javafx.date.DateTime.html">DateTime</a>
+</li>
+</ul>
+</li>
+<li>
+<h4 class="header">
+<a href="#">javafx.ext.swing</a>
+</h4>
+<ul class="content">
+<li class="private">
+<a href="../javafx.ext.swing/javafx.ext.swing.JTextFieldImpl.html">JTextFieldImpl</a>
+</li>
+<li class="profile-desktop conditional swing ">
+<a href="../javafx.ext.swing/javafx.ext.swing.SwingAbstractButton.html">SwingAbstractButton</a>
+</li>
+<li class="profile-desktop conditional swing ">
+<a href="../javafx.ext.swing/javafx.ext.swing.SwingButton.html">SwingButton</a>
+</li>
+<li class="profile-desktop conditional swing ">
+<a href="../javafx.ext.swing/javafx.ext.swing.SwingCheckBox.html">SwingCheckBox</a>
+</li>
+<li class="profile-desktop conditional swing ">
+<a href="../javafx.ext.swing/javafx.ext.swing.SwingComboBox.html">SwingComboBox</a>
+</li>
+<li class="profile-desktop conditional swing ">
+<a href="../javafx.ext.swing/javafx.ext.swing.SwingComboBoxItem.html">SwingComboBoxItem</a>
+</li>
+<li class="profile-desktop conditional swing ">
+<a href="../javafx.ext.swing/javafx.ext.swing.SwingComponent.html">SwingComponent</a>
+</li>
+<li class="profile-desktop conditional swing ">
+<a href="../javafx.ext.swing/javafx.ext.swing.SwingHorizontalAlignment.html">SwingHorizontalAlignment</a>
+</li>
+<li class="profile-desktop conditional swing ">
+<a href="../javafx.ext.swing/javafx.ext.swing.SwingIcon.html">SwingIcon</a>
+</li>
+<li class="profile-desktop conditional swing ">
+<a href="../javafx.ext.swing/javafx.ext.swing.SwingLabel.html">SwingLabel</a>
+</li>
+<li class="profile-desktop conditional swing ">
+<a href="../javafx.ext.swing/javafx.ext.swing.SwingList.html">SwingList</a>
+</li>
+<li class="profile-desktop conditional swing ">
+<a href="../javafx.ext.swing/javafx.ext.swing.SwingListItem.html">SwingListItem</a>
+</li>
+<li class="profile-desktop conditional swing ">
+<a href="../javafx.ext.swing/javafx.ext.swing.SwingRadioButton.html">SwingRadioButton</a>
+</li>
+<li class="profile-desktop conditional swing ">
+<a href="../javafx.ext.swing/javafx.ext.swing.SwingScrollableComponent.html">SwingScrollableComponent</a>
+</li>
+<li class="profile-desktop conditional swing ">
+<a href="../javafx.ext.swing/javafx.ext.swing.SwingScrollPane.html">SwingScrollPane</a>
+</li>
+<li class="profile-desktop conditional swing ">
+<a href="../javafx.ext.swing/javafx.ext.swing.SwingSlider.html">SwingSlider</a>
+</li>
+<li class="profile-desktop conditional swing ">
+<a href="../javafx.ext.swing/javafx.ext.swing.SwingTextField.html">SwingTextField</a>
+</li>
+<li class="profile-desktop conditional swing ">
+<a href="../javafx.ext.swing/javafx.ext.swing.SwingToggleButton.html">SwingToggleButton</a>
+</li>
+<li class="profile-desktop conditional swing ">
+<a href="../javafx.ext.swing/javafx.ext.swing.SwingToggleGroup.html">SwingToggleGroup</a>
+</li>
+<li class="profile-desktop conditional swing ">
+<a href="../javafx.ext.swing/javafx.ext.swing.SwingUtils.html">SwingUtils</a>
+</li>
+<li class="profile-desktop conditional swing ">
+<a href="../javafx.ext.swing/javafx.ext.swing.SwingVerticalAlignment.html">SwingVerticalAlignment</a>
+</li>
+</ul>
+</li>
+<li>
+<h4 class="header">
+<a href="#">javafx.fxd</a>
+</h4>
+<ul class="content">
+<li class="profile-common ">
+<a href="../javafx.fxd/javafx.fxd.Duplicator.html">Duplicator</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.fxd/javafx.fxd.FXDContent.html">FXDContent</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.fxd/javafx.fxd.FXDLoader.html">FXDLoader</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.fxd/javafx.fxd.FXDNode.html">FXDNode</a>
+</li>
+</ul>
+</li>
+<li>
+<h4 class="header">
+<a href="#">javafx.geometry</a>
+</h4>
+<ul class="content">
+<li class="profile-common ">
+<a href="../javafx.geometry/javafx.geometry.BoundingBox.html">BoundingBox</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.geometry/javafx.geometry.Bounds.html">Bounds</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.geometry/javafx.geometry.Dimension2D.html">Dimension2D</a>
+</li>
+<li class="">
+<a href="../javafx.geometry/javafx.geometry.HPos.html">HPos</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.geometry/javafx.geometry.Insets.html">Insets</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.geometry/javafx.geometry.Point2D.html">Point2D</a>
+</li>
+<li class="profile-common conditional scene3d ">
+<a href="../javafx.geometry/javafx.geometry.Point3D.html">Point3D</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.geometry/javafx.geometry.Rectangle2D.html">Rectangle2D</a>
+</li>
+<li class="">
+<a href="../javafx.geometry/javafx.geometry.VPos.html">VPos</a>
+</li>
+</ul>
+</li>
+<li>
+<h4 class="header">
+<a href="#">javafx.io</a>
+</h4>
+<ul class="content">
+<li class="profile-common ">
+<a href="../javafx.io/javafx.io.Resource.html">Resource</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.io/javafx.io.Storage.html">Storage</a>
+</li>
+</ul>
+</li>
+<li>
+<h4 class="header">
+<a href="#">javafx.io.http</a>
+</h4>
+<ul class="content">
+<li class="profile-common ">
+<a href="../javafx.io.http/javafx.io.http.HttpHeader.html">HttpHeader</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.io.http/javafx.io.http.HttpRequest.html">HttpRequest</a>
+</li>
+<li class="">
+<a href="../javafx.io.http/javafx.io.http.HttpStatus.html">HttpStatus</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.io.http/javafx.io.http.URLConverter.html">URLConverter</a>
+</li>
+</ul>
+</li>
+<li>
+<h4 class="header">
+<a href="#">javafx.lang</a>
+</h4>
+<ul class="content">
+<li class="profile-common ">
+<a href="../javafx.lang/javafx.lang.Builtins.html">Builtins</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.lang/javafx.lang.Duration.html">Duration</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.lang/javafx.lang.FX.html">FX</a>
+</li>
+</ul>
+</li>
+<li>
+<h4 class="header">
+<a href="#">javafx.reflect</a>
+</h4>
+<ul class="content">
+<li class="profile-desktop ">
+<a href="../javafx.reflect/javafx.reflect.FXBooleanValue.html">FXBooleanValue</a>
+</li>
+<li class="profile-desktop ">
+<a href="../javafx.reflect/javafx.reflect.FXChangeListener.html">FXChangeListener</a>
+</li>
+<li class="profile-desktop ">
+<a href="../javafx.reflect/javafx.reflect.FXChangeListenerID.html">FXChangeListenerID</a>
+</li>
+<li class="profile-desktop ">
+<a href="../javafx.reflect/javafx.reflect.FXClassType.html">FXClassType</a>
+</li>
+<li class="profile-desktop ">
+<a href="../javafx.reflect/javafx.reflect.FXContext.html">FXContext</a>
+</li>
+<li class="profile-desktop ">
+<a href="../javafx.reflect/javafx.reflect.FXDoubleValue.html">FXDoubleValue</a>
+</li>
+<li class="profile-desktop ">
+<a href="../javafx.reflect/javafx.reflect.FXFloatValue.html">FXFloatValue</a>
+</li>
+<li class="profile-desktop ">
+<a href="../javafx.reflect/javafx.reflect.FXFunctionMember.html">FXFunctionMember</a>
+</li>
+<li class="profile-desktop ">
+<a href="../javafx.reflect/javafx.reflect.FXFunctionType.html">FXFunctionType</a>
+</li>
+<li class="profile-desktop ">
+<a href="../javafx.reflect/javafx.reflect.FXFunctionValue.html">FXFunctionValue</a>
+</li>
+<li class="profile-desktop ">
+<a href="../javafx.reflect/javafx.reflect.FXIntegerValue.html">FXIntegerValue</a>
+</li>
+<li class="profile-desktop ">
+<a href="../javafx.reflect/javafx.reflect.FXJavaArrayType.html">FXJavaArrayType</a>
+</li>
+<li class="profile-desktop ">
+<a href="../javafx.reflect/javafx.reflect.FXLocal.html">FXLocal</a>
+</li>
+<li class="profile-desktop ">
+<a href="../javafx.reflect/javafx.reflect.FXLocal.ClassType.html">FXLocal.ClassType</a>
+</li>
+<li class="profile-desktop ">
+<a href="../javafx.reflect/javafx.reflect.FXLocal.Context.html">FXLocal.Context</a>
+</li>
+<li class="profile-desktop ">
+<a href="../javafx.reflect/javafx.reflect.FXLocal.FunctionValue.html">FXLocal.FunctionValue</a>
+</li>
+<li class="profile-desktop ">
+<a href="../javafx.reflect/javafx.reflect.FXLocal.ObjectValue.html">FXLocal.ObjectValue</a>
+</li>
+<li class="profile-desktop ">
+<a href="../javafx.reflect/javafx.reflect.FXLocal.Value.html">FXLocal.Value</a>
+</li>
+<li class="profile-desktop ">
+<a href="../javafx.reflect/javafx.reflect.FXLocal.VarMemberLocation.html">FXLocal.VarMemberLocation</a>
+</li>
+<li class="profile-desktop ">
+<a href="../javafx.reflect/javafx.reflect.FXLocation.html">FXLocation</a>
+</li>
+<li class="profile-desktop ">
+<a href="../javafx.reflect/javafx.reflect.FXLongValue.html">FXLongValue</a>
+</li>
+<li class="profile-desktop ">
+<a href="../javafx.reflect/javafx.reflect.FXMember.html">FXMember</a>
+</li>
+<li class="profile-desktop ">
+<a href="../javafx.reflect/javafx.reflect.FXMemberFilter.html">FXMemberFilter</a>
+</li>
+<li class="profile-desktop ">
+<a href="../javafx.reflect/javafx.reflect.FXObjectValue.html">FXObjectValue</a>
+</li>
+<li class="profile-desktop ">
+<a href="../javafx.reflect/javafx.reflect.FXPrimitiveType.html">FXPrimitiveType</a>
+</li>
+<li class="profile-desktop ">
+<a href="../javafx.reflect/javafx.reflect.FXPrimitiveValue.html">FXPrimitiveValue</a>
+</li>
+<li class="profile-desktop ">
+<a href="../javafx.reflect/javafx.reflect.FXSequenceBuilder.html">FXSequenceBuilder</a>
+</li>
+<li class="profile-desktop ">
+<a href="../javafx.reflect/javafx.reflect.FXSequenceType.html">FXSequenceType</a>
+</li>
+<li class="profile-desktop ">
+<a href="../javafx.reflect/javafx.reflect.FXSequenceValue.html">FXSequenceValue</a>
+</li>
+<li class="profile-desktop ">
+<a href="../javafx.reflect/javafx.reflect.FXType.html">FXType</a>
+</li>
+<li class="profile-desktop ">
+<a href="../javafx.reflect/javafx.reflect.FXValue.html">FXValue</a>
+</li>
+<li class="profile-desktop ">
+<a href="../javafx.reflect/javafx.reflect.FXVarMember.html">FXVarMember</a>
+</li>
+<li class="profile-desktop ">
+<a href="../javafx.reflect/javafx.reflect.FXVarMemberLocation.html">FXVarMemberLocation</a>
+</li>
+</ul>
+</li>
+<li>
+<h4 class="header">
+<a href="#">javafx.runtime</a>
+</h4>
+<ul class="content">
+<li class="profile-common ">
+<a href="../javafx.runtime/javafx.runtime.ConditionalFeature.html">ConditionalFeature</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.runtime/javafx.runtime.Platform.html">Platform</a>
+</li>
+</ul>
+</li>
+<li>
+<h4 class="header">
+<a href="#">javafx.scene</a>
+</h4>
+<ul class="content">
+<li class="profile-common ">
+<a href="../javafx.scene/javafx.scene.CacheHint.html">CacheHint</a>
+</li>
+<li class="profile-common conditional scene3d ">
+<a href="../javafx.scene/javafx.scene.Camera.html">Camera</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene/javafx.scene.Cursor.html">Cursor</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene/javafx.scene.CustomNode.html">CustomNode</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene/javafx.scene.Group.html">Group</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene/javafx.scene.ImageCursor.html">ImageCursor</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene/javafx.scene.Node.html">Node</a>
+</li>
+<li class="profile-common conditional scene3d ">
+<a href="../javafx.scene/javafx.scene.ParallelCamera.html">ParallelCamera</a>
+</li>
+<li class="">
+<a href="../javafx.scene/javafx.scene.Parent.html">Parent</a>
+</li>
+<li class="profile-common conditional scene3d ">
+<a href="../javafx.scene/javafx.scene.PerspectiveCamera.html">PerspectiveCamera</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene/javafx.scene.Scene.html">Scene</a>
+</li>
+</ul>
+</li>
+<li>
+<h4 class="header">
+<a href="#">javafx.scene.chart</a>
+</h4>
+<ul class="content">
+<li class="profile-common ">
+<a href="../javafx.scene.chart/javafx.scene.chart.AreaChart.html">AreaChart</a>
+</li>
+<li class="">
+<a href="../javafx.scene.chart/javafx.scene.chart.AreaChart.Data.html">AreaChart.Data</a>
+</li>
+<li class="">
+<a href="../javafx.scene.chart/javafx.scene.chart.AreaChart.Series.html">AreaChart.Series</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.chart/javafx.scene.chart.BarChart.html">BarChart</a>
+</li>
+<li class="">
+<a href="../javafx.scene.chart/javafx.scene.chart.BarChart.Data.html">BarChart.Data</a>
+</li>
+<li class="">
+<a href="../javafx.scene.chart/javafx.scene.chart.BarChart.Series.html">BarChart.Series</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.chart/javafx.scene.chart.BarChart3D.html">BarChart3D</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.chart/javafx.scene.chart.BubbleChart.html">BubbleChart</a>
+</li>
+<li class="">
+<a href="../javafx.scene.chart/javafx.scene.chart.BubbleChart.Data.html">BubbleChart.Data</a>
+</li>
+<li class="">
+<a href="../javafx.scene.chart/javafx.scene.chart.BubbleChart.Series.html">BubbleChart.Series</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.chart/javafx.scene.chart.Chart.html">Chart</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.chart/javafx.scene.chart.LineChart.html">LineChart</a>
+</li>
+<li class="">
+<a href="../javafx.scene.chart/javafx.scene.chart.LineChart.Data.html">LineChart.Data</a>
+</li>
+<li class="">
+<a href="../javafx.scene.chart/javafx.scene.chart.LineChart.Series.html">LineChart.Series</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.chart/javafx.scene.chart.PieChart.html">PieChart</a>
+</li>
+<li class="">
+<a href="../javafx.scene.chart/javafx.scene.chart.PieChart.Data.html">PieChart.Data</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.chart/javafx.scene.chart.PieChart3D.html">PieChart3D</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.chart/javafx.scene.chart.ScatterChart.html">ScatterChart</a>
+</li>
+<li class="">
+<a href="../javafx.scene.chart/javafx.scene.chart.ScatterChart.Data.html">ScatterChart.Data</a>
+</li>
+<li class="">
+<a href="../javafx.scene.chart/javafx.scene.chart.ScatterChart.Series.html">ScatterChart.Series</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.chart/javafx.scene.chart.XYChart.html">XYChart</a>
+</li>
+</ul>
+</li>
+<li>
+<h4 class="header">
+<a href="#">javafx.scene.chart.data</a>
+</h4>
+<ul class="content">
+<li class="profile-common ">
+<a href="../javafx.scene.chart.data/javafx.scene.chart.data.Data.html">Data</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.chart.data/javafx.scene.chart.data.Series.html">Series</a>
+</li>
+</ul>
+</li>
+<li>
+<h4 class="header">
+<a href="#">javafx.scene.chart.part</a>
+</h4>
+<ul class="content">
+<li class="profile-common ">
+<a href="../javafx.scene.chart.part/javafx.scene.chart.part.Axis.html">Axis</a>
+</li>
+<li class="">
+<a href="../javafx.scene.chart.part/javafx.scene.chart.part.Axis.TickMark.html">Axis.TickMark</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.chart.part/javafx.scene.chart.part.CategoryAxis.html">CategoryAxis</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.chart.part/javafx.scene.chart.part.Legend.html">Legend</a>
+</li>
+<li class="">
+<a href="../javafx.scene.chart.part/javafx.scene.chart.part.Legend.LegendItem.html">Legend.LegendItem</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.chart.part/javafx.scene.chart.part.NumberAxis.html">NumberAxis</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.chart.part/javafx.scene.chart.part.PlotSymbol.html">PlotSymbol</a>
+</li>
+<li class="">
+<a href="../javafx.scene.chart.part/javafx.scene.chart.part.PlotSymbol.Circle.html">PlotSymbol.Circle</a>
+</li>
+<li class="">
+<a href="../javafx.scene.chart.part/javafx.scene.chart.part.PlotSymbol.Cross.html">PlotSymbol.Cross</a>
+</li>
+<li class="">
+<a href="../javafx.scene.chart.part/javafx.scene.chart.part.PlotSymbol.HollowDiamond.html">PlotSymbol.HollowDiamond</a>
+</li>
+<li class="">
+<a href="../javafx.scene.chart.part/javafx.scene.chart.part.PlotSymbol.HollowTriangle.html">PlotSymbol.HollowTriangle</a>
+</li>
+<li class="">
+<a href="../javafx.scene.chart.part/javafx.scene.chart.part.PlotSymbol.Square.html">PlotSymbol.Square</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.chart.part/javafx.scene.chart.part.Side.html">Side</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.chart.part/javafx.scene.chart.part.ValueAxis.html">ValueAxis</a>
+</li>
+</ul>
+</li>
+<li>
+<h4 class="header">
+<a href="#">javafx.scene.control</a>
+</h4>
+<ul class="content">
+<li class="">
+<a href="../javafx.scene.control/javafx.scene.control.Behavior.html">Behavior</a>
+</li>
+<li class="">
+<a href="../javafx.scene.control/javafx.scene.control.Button.html">Button</a>
+</li>
+<li class="">
+<a href="../javafx.scene.control/javafx.scene.control.ButtonBase.html">ButtonBase</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.control/javafx.scene.control.Cell.html">Cell</a>
+</li>
+<li class="">
+<a href="../javafx.scene.control/javafx.scene.control.CheckBox.html">CheckBox</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.control/javafx.scene.control.ChoiceBox.html">ChoiceBox</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.control/javafx.scene.control.Control.html">Control</a>
+</li>
+<li class="">
+<a href="../javafx.scene.control/javafx.scene.control.Hyperlink.html">Hyperlink</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.control/javafx.scene.control.IndexedCell.html">IndexedCell</a>
+</li>
+<li class="">
+<a href="../javafx.scene.control/javafx.scene.control.Keystroke.html">Keystroke</a>
+</li>
+<li class="">
+<a href="../javafx.scene.control/javafx.scene.control.Label.html">Label</a>
+</li>
+<li class="">
+<a href="../javafx.scene.control/javafx.scene.control.Labeled.html">Labeled</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.control/javafx.scene.control.ListCell.html">ListCell</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.control/javafx.scene.control.ListView.html">ListView</a>
+</li>
+<li class="">
+<a href="../javafx.scene.control/javafx.scene.control.OverrunStyle.html">OverrunStyle</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.control/javafx.scene.control.PasswordBox.html">PasswordBox</a>
+</li>
+<li class="">
+<a href="../javafx.scene.control/javafx.scene.control.ProgressBar.html">ProgressBar</a>
+</li>
+<li class=" selected-class">
+<a href="../javafx.scene.control/javafx.scene.control.ProgressIndicator.html">ProgressIndicator</a>
+</li>
+<li class="">
+<a href="../javafx.scene.control/javafx.scene.control.RadioButton.html">RadioButton</a>
+</li>
+<li class="">
+<a href="../javafx.scene.control/javafx.scene.control.ScrollBar.html">ScrollBar</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.control/javafx.scene.control.ScrollBarPolicy.html">ScrollBarPolicy</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.control/javafx.scene.control.ScrollView.html">ScrollView</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.control/javafx.scene.control.Separator.html">Separator</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.control/javafx.scene.control.Skin.html">Skin</a>
+</li>
+<li class="">
+<a href="../javafx.scene.control/javafx.scene.control.Slider.html">Slider</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.control/javafx.scene.control.TextBox.html">TextBox</a>
+</li>
+<li class="">
+<a href="../javafx.scene.control/javafx.scene.control.TextInputControl.html">TextInputControl</a>
+</li>
+<li class="">
+<a href="../javafx.scene.control/javafx.scene.control.Toggle.html">Toggle</a>
+</li>
+<li class="">
+<a href="../javafx.scene.control/javafx.scene.control.ToggleButton.html">ToggleButton</a>
+</li>
+<li class="">
+<a href="../javafx.scene.control/javafx.scene.control.ToggleGroup.html">ToggleGroup</a>
+</li>
+<li class="">
+<a href="../javafx.scene.control/javafx.scene.control.Tooltip.html">Tooltip</a>
+</li>
+</ul>
+</li>
+<li>
+<h4 class="header">
+<a href="#">javafx.scene.effect</a>
+</h4>
+<ul class="content">
+<li class="profile-common conditional effect ">
+<a href="../javafx.scene.effect/javafx.scene.effect.Blend.html">Blend</a>
+</li>
+<li class="profile-common conditional effect ">
+<a href="../javafx.scene.effect/javafx.scene.effect.BlendMode.html">BlendMode</a>
+</li>
+<li class="profile-common conditional effect ">
+<a href="../javafx.scene.effect/javafx.scene.effect.Bloom.html">Bloom</a>
+</li>
+<li class="profile-common conditional effect ">
+<a href="../javafx.scene.effect/javafx.scene.effect.BlurType.html">BlurType</a>
+</li>
+<li class="profile-common conditional effect ">
+<a href="../javafx.scene.effect/javafx.scene.effect.BoxBlur.html">BoxBlur</a>
+</li>
+<li class="profile-common conditional effect ">
+<a href="../javafx.scene.effect/javafx.scene.effect.ColorAdjust.html">ColorAdjust</a>
+</li>
+<li class="profile-common conditional effect ">
+<a href="../javafx.scene.effect/javafx.scene.effect.DisplacementMap.html">DisplacementMap</a>
+</li>
+<li class="profile-common conditional effect ">
+<a href="../javafx.scene.effect/javafx.scene.effect.DropShadow.html">DropShadow</a>
+</li>
+<li class="profile-common conditional effect ">
+<a href="../javafx.scene.effect/javafx.scene.effect.Effect.html">Effect</a>
+</li>
+<li class="profile-common conditional effect ">
+<a href="../javafx.scene.effect/javafx.scene.effect.FloatMap.html">FloatMap</a>
+</li>
+<li class="profile-common conditional effect ">
+<a href="../javafx.scene.effect/javafx.scene.effect.Flood.html">Flood</a>
+</li>
+<li class="profile-common conditional effect ">
+<a href="../javafx.scene.effect/javafx.scene.effect.GaussianBlur.html">GaussianBlur</a>
+</li>
+<li class="profile-common conditional effect ">
+<a href="../javafx.scene.effect/javafx.scene.effect.Glow.html">Glow</a>
+</li>
+<li class="profile-common conditional effect ">
+<a href="../javafx.scene.effect/javafx.scene.effect.Identity.html">Identity</a>
+</li>
+<li class="profile-common conditional effect ">
+<a href="../javafx.scene.effect/javafx.scene.effect.InnerShadow.html">InnerShadow</a>
+</li>
+<li class="profile-common conditional effect ">
+<a href="../javafx.scene.effect/javafx.scene.effect.InvertMask.html">InvertMask</a>
+</li>
+<li class="profile-common conditional effect ">
+<a href="../javafx.scene.effect/javafx.scene.effect.Lighting.html">Lighting</a>
+</li>
+<li class="profile-common conditional effect ">
+<a href="../javafx.scene.effect/javafx.scene.effect.MotionBlur.html">MotionBlur</a>
+</li>
+<li class="profile-common conditional effect ">
+<a href="../javafx.scene.effect/javafx.scene.effect.PerspectiveTransform.html">PerspectiveTransform</a>
+</li>
+<li class="profile-common conditional effect ">
+<a href="../javafx.scene.effect/javafx.scene.effect.Reflection.html">Reflection</a>
+</li>
+<li class="profile-common conditional effect ">
+<a href="../javafx.scene.effect/javafx.scene.effect.SepiaTone.html">SepiaTone</a>
+</li>
+<li class="profile-common conditional effect ">
+<a href="../javafx.scene.effect/javafx.scene.effect.Shadow.html">Shadow</a>
+</li>
+</ul>
+</li>
+<li>
+<h4 class="header">
+<a href="#">javafx.scene.effect.light</a>
+</h4>
+<ul class="content">
+<li class="profile-common conditional effect ">
+<a href="../javafx.scene.effect.light/javafx.scene.effect.light.DistantLight.html">DistantLight</a>
+</li>
+<li class="profile-common conditional effect ">
+<a href="../javafx.scene.effect.light/javafx.scene.effect.light.Light.html">Light</a>
+</li>
+<li class="profile-common conditional effect ">
+<a href="../javafx.scene.effect.light/javafx.scene.effect.light.PointLight.html">PointLight</a>
+</li>
+<li class="profile-common conditional effect ">
+<a href="../javafx.scene.effect.light/javafx.scene.effect.light.SpotLight.html">SpotLight</a>
+</li>
+</ul>
+</li>
+<li>
+<h4 class="header">
+<a href="#">javafx.scene.image</a>
+</h4>
+<ul class="content">
+<li class="profile-common ">
+<a href="../javafx.scene.image/javafx.scene.image.Image.html">Image</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.image/javafx.scene.image.ImageView.html">ImageView</a>
+</li>
+</ul>
+</li>
+<li>
+<h4 class="header">
+<a href="#">javafx.scene.input</a>
+</h4>
+<ul class="content">
+<li class="profile-common conditional input_method ">
+<a href="../javafx.scene.input/javafx.scene.input.InputMethodEvent.html">InputMethodEvent</a>
+</li>
+<li class="profile-common conditional input_method ">
+<a href="../javafx.scene.input/javafx.scene.input.InputMethodHighlight.html">InputMethodHighlight</a>
+</li>
+<li class="profile-common conditional input_method ">
+<a href="../javafx.scene.input/javafx.scene.input.InputMethodTextRun.html">InputMethodTextRun</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.input/javafx.scene.input.KeyCode.html">KeyCode</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.input/javafx.scene.input.KeyEvent.html">KeyEvent</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.input/javafx.scene.input.KeyEventID.html">KeyEventID</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.input/javafx.scene.input.MouseButton.html">MouseButton</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.input/javafx.scene.input.MouseEvent.html">MouseEvent</a>
+</li>
+<li class="profile-common private">
+<a href="../javafx.scene.input/javafx.scene.input.MouseEventID.html">MouseEventID</a>
+</li>
+<li class="profile-common conditional input_method ">
+<a href="../javafx.scene.input/javafx.scene.input.TextInput.html">TextInput</a>
+</li>
+<li class="private">
+<a href="../javafx.scene.input/javafx.scene.input.TextInput.impl_InputMethodEventHandler.html">TextInput.impl_InputMethodEventHandler</a>
+</li>
+</ul>
+</li>
+<li>
+<h4 class="header">
+<a href="#">javafx.scene.layout</a>
+</h4>
+<ul class="content">
+<li class="">
+<a href="../javafx.scene.layout/javafx.scene.layout.ClipView.html">ClipView</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.layout/javafx.scene.layout.Container.html">Container</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.layout/javafx.scene.layout.Flow.html">Flow</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.layout/javafx.scene.layout.HBox.html">HBox</a>
+</li>
+<li class="">
+<a href="../javafx.scene.layout/javafx.scene.layout.LayoutInfo.html">LayoutInfo</a>
+</li>
+<li class="">
+<a href="../javafx.scene.layout/javafx.scene.layout.LayoutInfoBase.html">LayoutInfoBase</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.layout/javafx.scene.layout.Panel.html">Panel</a>
+</li>
+<li class="">
+<a href="../javafx.scene.layout/javafx.scene.layout.Priority.html">Priority</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.layout/javafx.scene.layout.Resizable.html">Resizable</a>
+</li>
+<li class="">
+<a href="../javafx.scene.layout/javafx.scene.layout.Stack.html">Stack</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.layout/javafx.scene.layout.Tile.html">Tile</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.layout/javafx.scene.layout.VBox.html">VBox</a>
+</li>
+</ul>
+</li>
+<li>
+<h4 class="header">
+<a href="#">javafx.scene.media</a>
+</h4>
+<ul class="content">
+<li class="">
+<a href="../javafx.scene.media/javafx.scene.media.AudioTrack.html">AudioTrack</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.media/javafx.scene.media.Media.html">Media</a>
+</li>
+<li class="">
+<a href="../javafx.scene.media/javafx.scene.media.Media.Metadata.html">Media.Metadata</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.media/javafx.scene.media.MediaError.html">MediaError</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.media/javafx.scene.media.MediaPlayer.html">MediaPlayer</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.media/javafx.scene.media.MediaTimer.html">MediaTimer</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.media/javafx.scene.media.MediaView.html">MediaView</a>
+</li>
+<li class="">
+<a href="../javafx.scene.media/javafx.scene.media.SubtitleTrack.html">SubtitleTrack</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.media/javafx.scene.media.Track.html">Track</a>
+</li>
+<li class="">
+<a href="../javafx.scene.media/javafx.scene.media.TrackType.html">TrackType</a>
+</li>
+<li class="">
+<a href="../javafx.scene.media/javafx.scene.media.VideoTrack.html">VideoTrack</a>
+</li>
+</ul>
+</li>
+<li>
+<h4 class="header">
+<a href="#">javafx.scene.paint</a>
+</h4>
+<ul class="content">
+<li class="profile-common ">
+<a href="../javafx.scene.paint/javafx.scene.paint.Color.html">Color</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.paint/javafx.scene.paint.CycleMethod.html">CycleMethod</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.paint/javafx.scene.paint.LinearGradient.html">LinearGradient</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.paint/javafx.scene.paint.Paint.html">Paint</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.paint/javafx.scene.paint.RadialGradient.html">RadialGradient</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.paint/javafx.scene.paint.Stop.html">Stop</a>
+</li>
+</ul>
+</li>
+<li>
+<h4 class="header">
+<a href="#">javafx.scene.shape</a>
+</h4>
+<ul class="content">
+<li class="profile-common ">
+<a href="../javafx.scene.shape/javafx.scene.shape.Arc.html">Arc</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.shape/javafx.scene.shape.ArcTo.html">ArcTo</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.shape/javafx.scene.shape.ArcType.html">ArcType</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.shape/javafx.scene.shape.Circle.html">Circle</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.shape/javafx.scene.shape.ClosePath.html">ClosePath</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.shape/javafx.scene.shape.CubicCurve.html">CubicCurve</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.shape/javafx.scene.shape.CubicCurveTo.html">CubicCurveTo</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.shape/javafx.scene.shape.DelegateShape.html">DelegateShape</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.shape/javafx.scene.shape.Ellipse.html">Ellipse</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.shape/javafx.scene.shape.FillRule.html">FillRule</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.shape/javafx.scene.shape.HLineTo.html">HLineTo</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.shape/javafx.scene.shape.Line.html">Line</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.shape/javafx.scene.shape.LineTo.html">LineTo</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.shape/javafx.scene.shape.MoveTo.html">MoveTo</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.shape/javafx.scene.shape.Path.html">Path</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.shape/javafx.scene.shape.PathElement.html">PathElement</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.shape/javafx.scene.shape.Polygon.html">Polygon</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.shape/javafx.scene.shape.Polyline.html">Polyline</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.shape/javafx.scene.shape.QuadCurve.html">QuadCurve</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.shape/javafx.scene.shape.QuadCurveTo.html">QuadCurveTo</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.shape/javafx.scene.shape.Rectangle.html">Rectangle</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.shape/javafx.scene.shape.Shape.html">Shape</a>
+</li>
+<li class="profile-desktop ">
+<a href="../javafx.scene.shape/javafx.scene.shape.ShapeIntersect.html">ShapeIntersect</a>
+</li>
+<li class="profile-desktop ">
+<a href="../javafx.scene.shape/javafx.scene.shape.ShapeSubtract.html">ShapeSubtract</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.shape/javafx.scene.shape.StrokeLineCap.html">StrokeLineCap</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.shape/javafx.scene.shape.StrokeLineJoin.html">StrokeLineJoin</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.shape/javafx.scene.shape.SVGPath.html">SVGPath</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.shape/javafx.scene.shape.VLineTo.html">VLineTo</a>
+</li>
+</ul>
+</li>
+<li>
+<h4 class="header">
+<a href="#">javafx.scene.text</a>
+</h4>
+<ul class="content">
+<li class="profile-common ">
+<a href="../javafx.scene.text/javafx.scene.text.Font.html">Font</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.text/javafx.scene.text.FontPosition.html">FontPosition</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.text/javafx.scene.text.FontPosture.html">FontPosture</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.text/javafx.scene.text.FontWeight.html">FontWeight</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.text/javafx.scene.text.Text.html">Text</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.text/javafx.scene.text.TextAlignment.html">TextAlignment</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.text/javafx.scene.text.TextBoundsType.html">TextBoundsType</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.text/javafx.scene.text.TextOffsets.html">TextOffsets</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.text/javafx.scene.text.TextOrigin.html">TextOrigin</a>
+</li>
+</ul>
+</li>
+<li>
+<h4 class="header">
+<a href="#">javafx.scene.transform</a>
+</h4>
+<ul class="content">
+<li class="profile-common ">
+<a href="../javafx.scene.transform/javafx.scene.transform.Affine.html">Affine</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.transform/javafx.scene.transform.Rotate.html">Rotate</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.transform/javafx.scene.transform.Scale.html">Scale</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.transform/javafx.scene.transform.Shear.html">Shear</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.transform/javafx.scene.transform.Transform.html">Transform</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.transform/javafx.scene.transform.Translate.html">Translate</a>
+</li>
+</ul>
+</li>
+<li>
+<h4 class="header">
+<a href="#">javafx.stage</a>
+</h4>
+<ul class="content">
+<li class="profile-common ">
+<a href="../javafx.stage/javafx.stage.Alert.html">Alert</a>
+</li>
+<li class="profile-desktop ">
+<a href="../javafx.stage/javafx.stage.AppletStageExtension.html">AppletStageExtension</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.stage/javafx.stage.Screen.html">Screen</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.stage/javafx.stage.Stage.html">Stage</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.stage/javafx.stage.StageExtension.html">StageExtension</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.stage/javafx.stage.StageStyle.html">StageStyle</a>
+</li>
+</ul>
+</li>
+<li>
+<h4 class="header">
+<a href="#">javafx.util</a>
+</h4>
+<ul class="content">
+<li class="profile-common ">
+<a href="../javafx.util/javafx.util.Bits.html">Bits</a>
+</li>
+<li class="profile-desktop ">
+<a href="../javafx.util/javafx.util.FXEvaluator.html">FXEvaluator</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.util/javafx.util.Math.html">Math</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.util/javafx.util.Properties.html">Properties</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.util/javafx.util.Sequences.html">Sequences</a>
+</li>
+<li class="profile-desktop ">
+<a href="../javafx.util/javafx.util.StringLocalizer.html">StringLocalizer</a>
+</li>
+</ul>
+</li>
+<li id="copyright">
+<i>Copyright (c) 2008, 2010,</i>
+<br>
+<i>Oracle and/or its affiliates.</i>
+<br>
+<i>All rights reserved.</i>
+<br>
+<i>Use is subject to <a href="http://java.sun.com/javafx/1.3/docs/api/license.html">license terms</a>.</i>
+<br>
+</li>
+</ul>
+<div id="content">
+<div id="nav">
+<h1 class="classname">
+<i class="modifiers">public</i>
+                class
+                <a class="classname"><strong>javafx.scene.control.</strong><b>ProgressIndicator</b></a>
+</h1>
+<h2>
+<span class="descriptive">Inherits from: </span><a title="com.sun.javafx.runtime.FXBase"><strong>com.sun.javafx.runtime.</strong><b>FXBase</b></a>
+            &gt;
+            <a title="javafx.scene.Node" href="../javafx.scene/javafx.scene.Node.html"><strong>javafx.scene.</strong><b>Node</b></a> 
+            &gt;
+            <a title="javafx.scene.Parent" href="../javafx.scene/javafx.scene.Parent.html"><strong>javafx.scene.</strong><b>Parent</b></a> 
+            &gt;
+            <a title="javafx.scene.control.Control" href="../javafx.scene.control/javafx.scene.control.Control.html"><strong>javafx.scene.control.</strong><b>Control</b></a> 
+            &gt;
+            <a title="javafx.scene.control.ProgressIndicator" href="../javafx.scene.control/javafx.scene.control.ProgressIndicator.html"><strong>javafx.scene.control.</strong><b>ProgressIndicator</b></a> <a title="javafx.scene.control.Control" href="../javafx.scene.control/javafx.scene.control.Control.html"><strong>javafx.scene.control.</strong><b>Control</b></a>, <a title="javafx.scene.Parent" href="../javafx.scene/javafx.scene.Parent.html"><strong>javafx.scene.</strong><b>Parent</b></a>, <a title="javafx.scene.Node" href="../javafx.scene/javafx.scene.Node.html"><strong>javafx.scene.</strong><b>Node</b></a>, <a title="javafx.scene.layout.Resizable" href="../javafx.scene.layout/javafx.scene.layout.Resizable.html"><strong>javafx.scene.layout.</strong><b>Resizable</b></a>, <a title="javafx.scene.text.TextOffsets" href="../javafx.scene.text/javafx.scene.text.TextOffsets.html"><strong>javafx.scene.text.</strong><b>TextOffsets</b></a>, </h2>
+<h2>
+<span class="descriptive">Known subclasses: </span><a title="javafx.scene.control.ProgressBar" href="../javafx.scene.control/javafx.scene.control.ProgressBar.html"><strong>javafx.scene.control.</strong><b>ProgressBar</b></a>, </h2>
+<ul id="tabs">
+<li>Jump to Section:</li>
+<li>
+<a href="#overview">overview</a>
+</li>
+<li>
+<a href="#fields-summary">variables</a>
+</li>
+<li>
+<a href="#methods-summary">functions</a>
+</li>
+</ul>
+</div>
+<a id="overview">
+<h3>Overview</h3>
+</a>
+<div class="overview">
+<p class="comment"><code><pre>
+var n:Number = 0;
+var pb = ProgressIndicator {
+    progress: bind ProgressIndicator.computeProgress(10000, n)
+}
+n = 4000;
+</pre></code></p>
+</div>
+<div id="toc">
+<a id="fields-summary">
+<h3>Script Variable Summary</h3>
+</a>
+<table class="fields-summary fields">
+<tr>
+<th class="access">access</th><th class="name">name</th><th class="type">type</th><th><a class="tooltip" title="Indicates the variable can be read">Can Read</a></th><th><a title="Indicates the variable can only be set in the Object initializer. Any further changes will be ignored." class="tooltip">Can Init</a></th><th><a title="Indicates the varible can set at any time." class="tooltip">Can Write</a></th><th><a title="Indicates the default value of this variable" class="tooltip">Default Value</a></th><th class="description">description</th>
+</tr>
+</table>
+<a id="fields-summary">
+<h3>Variable Summary</h3>
+</a>
+<table class="fields-summary fields">
+<tr>
+<th class="access">access</th><th class="name">name</th><th class="type">type</th><th><a class="tooltip" title="Indicates the variable can be read">Can Read</a></th><th><a title="Indicates the variable can only be set in the Object initializer. Any further changes will be ignored." class="tooltip">Can Init</a></th><th><a title="Indicates the varible can set at any time." class="tooltip">Can Write</a></th><th><a title="Indicates the default value of this variable" class="tooltip">Default Value</a></th><th class="description">description</th>
+</tr>
+<tr class="var ">
+<td class="access">public-read</td><td class="name"><a name="indeterminate"></a><b class="name">indeterminate</b></td><td class="type"><a><i class="type">Boolean</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description">
+<p class="comment">A flag indicating whether it is possible to determine the progress
+ of the ProgressIndicator.</p>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<p class="comment">A flag indicating whether it is possible to determine the progress
+ of the ProgressIndicator. Typically indeterminate progress bars are
+ rendered with some form of animation indicating potentially "infinite"
+ progress.</p>
+                                &nbsp;
+                            </div>
+</td>
+</tr>
+<tr class="var ">
+<td class="access">public</td><td class="name"><a name="progress"></a><b class="name">progress</b></td><td class="type"><a><i class="type">Number</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"><img src="..//images/JFX_highlight_dot.png"></td><td class="canwrite"><img src="..//images/JFX_highlight_dot.png"></td><td class="defaultvalue"></td><td class="description">
+<p class="comment">The actual progress of the ProgressIndicator.</p>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<p class="comment">The actual progress of the ProgressIndicator. A negative value for
+ progress indicates that the progress is indeterminate. A positive value
+ between 0 and 1 indicates the percentage of progress where 0 is 0% and 1
+ is 100%. Any value greater than 1 is interpreted as 100%.</p>
+                                &nbsp;
+                            </div>
+</td>
+</tr>
+</table>
+<h3>Inherited Variables</h3>
+<h4>javafx.scene.control.Control</h4>
+<table class="inherited-field fields">
+<tr>
+<th class="access">access</th><th class="name">name</th><th class="type">type</th><th><a class="tooltip" title="Indicates the variable can be read">Can Read</a></th><th><a title="Indicates the variable can only be set in the Object initializer. Any further changes will be ignored." class="tooltip">Can Init</a></th><th><a title="Indicates the varible can set at any time." class="tooltip">Can Write</a></th><th><a title="Indicates the default value of this variable" class="tooltip">Default Value</a></th><th class="description">description</th>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="skin"></a><b class="name">skin</b></td><td class="type"><a href="../javafx.scene.control/javafx.scene.control.Skin.html"><i class="type">Skin</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"><img src="..//images/JFX_highlight_dot.png"></td><td class="canwrite"><img src="..//images/JFX_highlight_dot.png"></td><td class="defaultvalue"></td><td class="description">
+<p class="comment">Skin responsible for rendering this <code>Control</code>.</p>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<p class="comment">Skin responsible for rendering this <code>Control</code>. From the
+ perspective of the <code>Control</code>, the <code>Skin</code> is a black box.
+ It listens and responds to changes in state in a <code>Control</code>.
+ <p>
+ There is a one-to-one relationship between a <code>Control</code> and its
+ <code>Skin</code>. Every <code>Skin</code> maintains a back reference to the
+ <code>Control</code>.
+ <p>
+ A skin may be null.</p>
+<p class="profile">Profile: <b>common</b>
+</p>
+                                &nbsp;
+                            </div>
+</td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="tooltip"></a><b class="name">tooltip</b></td><td class="type"><a href="../javafx.scene.control/javafx.scene.control.Tooltip.html"><i class="type">Tooltip</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"><img src="..//images/JFX_highlight_dot.png"></td><td class="canwrite"><img src="..//images/JFX_highlight_dot.png"></td><td class="defaultvalue"></td><td class="description">
+<p class="comment">Set ToolTip for this control</p>
+</td>
+</tr>
+</table>
+<h4>javafx.scene.Parent</h4>
+<table class="inherited-field fields">
+<tr>
+<th class="access">access</th><th class="name">name</th><th class="type">type</th><th><a class="tooltip" title="Indicates the variable can be read">Can Read</a></th><th><a title="Indicates the variable can only be set in the Object initializer. Any further changes will be ignored." class="tooltip">Can Init</a></th><th><a title="Indicates the varible can set at any time." class="tooltip">Can Write</a></th><th><a title="Indicates the default value of this variable" class="tooltip">Default Value</a></th><th class="description">description</th>
+</tr>
+<tr class="var profile-common ">
+<td class="access">protected</td><td class="name"><a name="children"></a><b class="name">children</b></td><td class="type"><a href="../javafx.scene/javafx.scene.Node.html"><i class="type">Node[]</i></a></td><td class="canread">subclass</td><td class="caninit">subclass</td><td class="canwrite">subclass</td><td class="defaultvalue">empty</td><td class="description">
+<p class="comment">A sequence of child <code>Node</code>s.</p>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<p class="comment">A sequence of child <code>Node</code>s.
+ A CustomNode subclass may override or bind to this sequence as needed.
+ <p>
+ See the class documentation for <a href="../javafx.scene/javafx.scene.Node.html">Node</a> for scene graph structure
+ restrictions on setting a <a href="../javafx.scene/javafx.scene.Parent.html">Parent</a>'s children sequence.
+ If these restrictions are violated by a change to the children sequence,
+ the change is ignored and the previous value of the child sequence is
+ restored.
+
+ <p>Throws: <code>AssignToBoundException</code> if the same node
+ appears in two different bound sequences.</p>empty<p class="profile">Profile: <b>common</b>
+</p>
+                                &nbsp;
+                            </div>
+</td>
+</tr>
+<tr class="var ">
+<td class="access">public-read protected</td><td class="name"><a name="needsLayout"></a><b class="name">needsLayout</b></td><td class="type"><a><i class="type">Boolean</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit">subclass</td><td class="canwrite">subclass</td><td class="defaultvalue"></td><td class="description">
+<p class="comment">Indicates that this Node and its subnodes requires a layout pass on
+ the next pulse.</p>
+</td>
+</tr>
+</table>
+<h4>javafx.scene.Node</h4>
+<table class="inherited-field fields">
+<tr>
+<th class="access">access</th><th class="name">name</th><th class="type">type</th><th><a class="tooltip" title="Indicates the variable can be read">Can Read</a></th><th><a title="Indicates the variable can only be set in the Object initializer. Any further changes will be ignored." class="tooltip">Can Init</a></th><th><a title="Indicates the varible can set at any time." class="tooltip">Can Write</a></th><th><a title="Indicates the default value of this variable" class="tooltip">Default Value</a></th><th class="description">description</th>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="blocksMouse"></a><b class="name">blocksMouse</b></td><td class="type"><a><i class="type">Boolean</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"><img src="..//images/JFX_highlight_dot.png"></td><td class="canwrite"><img src="..//images/JFX_highlight_dot.png"></td><td class="defaultvalue">false</td><td class="description">
+<p class="comment">If <code>true</code>, consumes mouse events in this <code>Node</code> and does not send
+ them to other nodes further up the scene graph.</p>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<p class="comment">If <code>true</code>, consumes mouse events in this <code>Node</code> and does not send
+ them to other nodes further up the scene graph.  If
+ a Node wants to block mouse events from going to nodes which are visually
+ obscured by this <code>Node</code>, then set blocksMouse to true.</p>false<p class="profile">Profile: <b>common</b>
+</p>
+                                &nbsp;
+                            </div>
+</td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public-read</td><td class="name"><a name="boundsInLocal"></a><b class="name">boundsInLocal</b></td><td class="type"><a href="../javafx.geometry/javafx.geometry.Bounds.html"><i class="type">Bounds</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description">
+<p class="comment">The rectangular bounds of this <code>Node</code> in the node's
+ untransformed local coordinate space.</p>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<p class="comment">The rectangular bounds of this <code>Node</code> in the node's
+ untransformed local coordinate space.  For nodes that extend
+ <a href="../javafx.scene.shape/javafx.scene.shape.Shape.html">javafx.scene.shape.Shape</a>, the local bounds will also include
+ space required for a non-zero stroke that may fall outside the shape's
+ geometry that is defined by position and size attributes.
+ The local bounds will also include any clipping set with <a href="../javafx.scene/javafx.scene.Node.html#clip">clip</a>
+ as well as effects set with <a href="../javafx.scene/javafx.scene.Node.html#effect">effect</a>.
+
+ <p>
+ Note that this method does not take the node's visibility into account;
+ the test is based on the geometry of this <code>Node</code> only.
+ <p>
+ This variable will always be a non-null value.
+ <p>
+ Note that boundsInLocal is automatically recomputed whenever the
+ geometry of a node changes. For this reason, it is an error to bind any
+ of these values in a node to an expression that depends upon this variable.
+ For example, the "x" or "y" variables of a shape should never be bound
+ to boundsInLocal for the purpose of positioning the node.</p>
+<p class="profile">Profile: <b>common</b>
+</p>
+                                &nbsp;
+                            </div>
+</td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public-read</td><td class="name"><a name="boundsInParent"></a><b class="name">boundsInParent</b></td><td class="type"><a href="../javafx.geometry/javafx.geometry.Bounds.html"><i class="type">Bounds</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description">
+<p class="comment">The rectangular bounds of this <code>Node</code> which include its transforms.</p>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<p class="comment">The rectangular bounds of this <code>Node</code> which include its transforms.
+ <code>boundsInParent</code> is calculated by
+ taking its local bounds (defined by <a href="../javafx.scene/javafx.scene.Node.html#boundsInLocal">boundsInLocal</a>) and applying
+ the transform created by setting the following additional variables:
+ <ol>
+ <li><a href="../javafx.scene/javafx.scene.Node.html#transforms">transforms</a>[] sequence</li>
+ <li><a href="../javafx.scene/javafx.scene.Node.html#scaleX">scaleX</a>, <a href="../javafx.scene/javafx.scene.Node.html#scaleY">scaleY</a></li>
+ <li><a href="../javafx.scene/javafx.scene.Node.html#rotate">rotate</a></li>
+ <li><a href="../javafx.scene/javafx.scene.Node.html#layoutX">layoutX</a>, <a href="../javafx.scene/javafx.scene.Node.html#layoutY">layoutY</a></li>
+ <li><a href="../javafx.scene/javafx.scene.Node.html#translateX">translateX</a>, <a href="../javafx.scene/javafx.scene.Node.html#translateY">translateY</a></li>
+ </ol>
+ <p>
+ The resulting bounds will be conceptually in the coordinate space of the
+ <code>Node</code>'s parent, however the node need not have a parent to calculate
+ these bounds.
+ <p>
+ Note that this method does not take the node's visibility into account;
+ the test is based on the geometry of this <code>Node</code> only.
+ <p>
+ This variable will always be a non-null value.
+ <p>
+ Note that boundsInParent is automatically recomputed whenever the
+ geometry of a node changes, or when any of the following change: the
+ transforms sequence, the translateX, translateY, layoutX, layoutY,
+ scaleX, scaleY, or rotate variable. For this reason, it is an error to
+ bind any of these values in a node to an expression that depends upon
+ this variable. For example, the "x" or "y" variables of a shape, or
+ translateX, translateY  should never be bound to boundsInParent
+ for the purpose of positioning the node.</p>
+<p class="profile">Profile: <b>common</b>
+</p>
+                                &nbsp;
+                            </div>
+</td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="cache"></a><b class="name">cache</b></td><td class="type"><a><i class="type">Boolean</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"><img src="..//images/JFX_highlight_dot.png"></td><td class="canwrite"><img src="..//images/JFX_highlight_dot.png"></td><td class="defaultvalue">false</td><td class="description">
+<p class="comment">A performance hint to the system to indicate that this <code>Node</code>
+ should be cached as a bitmap.</p>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<p class="comment">A performance hint to the system to indicate that this <code>Node</code>
+ should be cached as a bitmap. Rendering a bitmap representation of a node
+ will be faster than rendering primitives in many cases, especially in the
+ case of primitives with effects applied (such as a blur). However, it
+ also increases memory usage. This hint indicates whether that trade-off
+ (increased memory usage for increased performance) is worthwhile. Also
+ note that on some platforms such as GPU accelerated platforms there is
+ little benefit to caching Nodes as bitmaps when blurs and other effects
+ are used since they are very fast to render on the GPU.
+
+ The <code>cacheHint</code> variable provides additional options for enabling
+ more aggressive bitmap caching.</p>false<p>
+<b>See Also:</b>
+<br>
+<a href="Node.cacheHint">Node.cacheHint</a>
+</p>
+<p class="profile">Profile: <b>common</b>
+</p>
+                                &nbsp;
+                            </div>
+</td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="cacheHint"></a><b class="name">cacheHint</b></td><td class="type"><a href="../javafx.scene/javafx.scene.CacheHint.html"><i class="type">CacheHint</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"><img src="..//images/JFX_highlight_dot.png"></td><td class="canwrite"><img src="..//images/JFX_highlight_dot.png"></td><td class="defaultvalue">CacheHint.DEFAULT</td><td class="description">
+<p class="comment">Additional hint for controlling bitmap caching.</p>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<p class="comment">Additional hint for controlling bitmap caching.
+ <p>
+ Under certain circumstances, such as animating nodes that are very
+ expensive to render, it is desirable to be able to perform
+ transformations on the node without having to regenerate the cached
+ bitmap.  An option in such cases is to perform the transforms on the
+ cached bitmap itself.
+ <p>
+ This technique can provide a dramatic improvement to animation
+ performance, though may also result in a reduction in visual quality.
+ The <code>cacheHint</code> variable provides a hint to the system about how
+ and when that trade-off (visual quality for animation performance) is
+ acceptable.
+ <p>
+ It is possible to enable the cacheHint only at times when your node is
+ animating.  In this way, expensive nodes can appear on screen with full
+ visual quality, yet still animate smoothly.
+ <p>
+ Example:
+ <pre><code>
+ expensiveNode.cache = true;
+ expensiveNode.cacheHint = CacheHint.QUALITY;
+ ...
+ // Do an animation
+ expensiveNode.cacheHint = CacheHint.SPEED;
+ Timeline {
+     keyFrames: [
+         KeyFrame {
+             time: 2s
+             values: [
+                 expensiveNode.scaleX => 2.0,
+                 expensiveNode.scaleY => 2.0,
+                 expensiveNode.rotate=> 360,
+                 expensiveNode.cacheHint => CacheHint.QUALITY
+             ]
+        }
+     ]
+ }.play();
+ </code></pre>
+
+ Note that <code>cacheHint</code> is only a hint to the system.  Depending on
+ the details of the node or the transform, this hint may be ignored.
+ <p>
+ If <code>Node.cache</code> is false, cacheHint is ignored.</p>CacheHint.DEFAULT<p>
+<b>See Also:</b>
+<br>
+<a href="Node.cache">Node.cache</a>
+</p>
+<p class="profile">Profile: <b>common</b>
+</p>
+                                &nbsp;
+                            </div>
+</td>
+</tr>
+<tr class="var profile-common conditional shape_clip ">
+<td class="access">public</td><td class="name"><a name="clip"></a><b class="name">clip</b></td><td class="type"><a href="../javafx.scene/javafx.scene.Node.html"><i class="type">Node</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"><img src="..//images/JFX_highlight_dot.png"></td><td class="canwrite"><img src="..//images/JFX_highlight_dot.png"></td><td class="defaultvalue">null</td><td class="description">
+<p class="comment">Specifies a <code>Node</code> to use to define the the clipping shape for this
+ Node.</p>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<p class="comment">Specifies a <code>Node</code> to use to define the the clipping shape for this
+ Node. This clipping Node is not a child of this <code>Node</code> in the scene
+ graph sense. Rather, it is used to define the clip for this <code>Node</code>.
+ <p>
+ For example, you can use an <a href="../javafx.scene.image/javafx.scene.image.ImageView.html">javafx.scene.image.ImageView</a> Node as
+ a mask to represent the Clip. Or you could use one of the geometric shape
+ Nodes such as <a href="../javafx.scene.shape/javafx.scene.shape.Rectangle.html">javafx.scene.shape.Rectangle</a> or
+ <a href="../javafx.scene.shape/javafx.scene.shape.Circle.html">javafx.scene.shape.Circle</a>. Or you could use a
+ <a href="../javafx.scene.text/javafx.scene.text.Text.html">javafx.scene.text.Text</a> node to represent the Clip.
+ <p>
+ See the class documentation for <a href="../javafx.scene/javafx.scene.Node.html">Node</a> for scene graph structure
+ restrictions on setting the clip. If these restrictions are violated by
+ a change to the clip variable, the change is ignored and the
+ previous value of the clip variable is restored.
+ <p>
+ Note: this is a conditional feature. See
+ <a href="../javafx.runtime/javafx.runtime.ConditionalFeature.html#SHAPE_CLIP">ConditionalFeature.SHAPE_CLIP</a>
+ for more information.</p>null<p class="profile">Profile: <b>common conditional shape_clip</b>
+</p>
+                                &nbsp;
+                            </div>
+</td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="cursor"></a><b class="name">cursor</b></td><td class="type"><a href="../javafx.scene/javafx.scene.Cursor.html"><i class="type">Cursor</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"><img src="..//images/JFX_highlight_dot.png"></td><td class="canwrite"><img src="..//images/JFX_highlight_dot.png"></td><td class="defaultvalue">null</td><td class="description">
+<p class="comment">Defines the mouse cursor for this <code>Node</code> and subnodes.</p>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<p class="comment">Defines the mouse cursor for this <code>Node</code> and subnodes. If null,
+ then the cursor of the first parent node with a non-null cursor will be
+ used. If no Node in the scene graph defines a cursor, then the cursor
+ of the <code>Scene</code> will be used.</p>null<p class="profile">Profile: <b>common</b>
+</p>
+                                &nbsp;
+                            </div>
+</td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="disable"></a><b class="name">disable</b></td><td class="type"><a><i class="type">Boolean</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"><img src="..//images/JFX_highlight_dot.png"></td><td class="canwrite"><img src="..//images/JFX_highlight_dot.png"></td><td class="defaultvalue">false</td><td class="description">
+<p class="comment">Sets the individual disabled state of this <code>Node</code>.</p>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<p class="comment">Sets the individual disabled state of this <code>Node</code>. Setting
+ <code>disable</code> to true will cause this <code>Node</code> and any subnodes to
+ become disabled. This variable should be used only to set the disabled
+ state of a <code>Node</code>.  For querying the disabled state of a
+ <code>Node</code>, the <a href="../javafx.scene/javafx.scene.Node.html#disabled">disabled</a> variable should instead be used,
+ since it is possible that a <code>Node</code> was disabled as a result of an
+ ancestor being disabled even if the individual <code>disable</code> state on
+ this <code>Node</code> is <code>false</code>.</p>false<p class="profile">Profile: <b>common</b>
+</p>
+                                &nbsp;
+                            </div>
+</td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public-read</td><td class="name"><a name="disabled"></a><b class="name">disabled</b></td><td class="type"><a><i class="type">Boolean</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue">false</td><td class="description">
+<p class="comment">Indicates whether or not this <code>Node</code> is disabled.</p>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<p class="comment">Indicates whether or not this <code>Node</code> is disabled.  A <code>Node</code>
+ will become disabled if <a href="../javafx.scene/javafx.scene.Node.html#disable">disable</a> is set to <code>true</code> on either
+ itself or one of its ancestors in the scene graph.
+ <p>
+ A disabled <code>Node</code> should render itself differently to indicate its
+ disabled state to the user.
+ Such disabled rendering is dependent on the implementation of the
+ <code>Node</code>. The shape classes contained in <code>javafx.scene.shape</code>
+ do not implement such rendering by default, therefore applications using
+ shapes for handling input must implement appropriate disabled rendering
+ themselves. The user-interface controls defined in
+ <code>javafx.scene.control</code> will implement disabled-sensitive rendering,
+ however.
+ <p>
+ A disabled <code>Node</code> does not receive mouse or key events.</p>false<p class="profile">Profile: <b>common</b>
+</p>
+                                &nbsp;
+                            </div>
+</td>
+</tr>
+<tr class="var profile-common conditional effect ">
+<td class="access">public</td><td class="name"><a name="effect"></a><b class="name">effect</b></td><td class="type"><a href="../javafx.scene.effect/javafx.scene.effect.Effect.html"><i class="type">Effect</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"><img src="..//images/JFX_highlight_dot.png"></td><td class="canwrite"><img src="..//images/JFX_highlight_dot.png"></td><td class="defaultvalue">null</td><td class="description">
+<p class="comment">Specifies an effect to apply to this <code>Node</code>.</p>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<p class="comment">Specifies an effect to apply to this <code>Node</code>.
+ <p>
+ Note: this is a conditional feature. See
+ <a href="../javafx.runtime/javafx.runtime.ConditionalFeature.html#EFFECT">ConditionalFeature.EFFECT</a>
+ for more information.</p>null<p class="profile">Profile: <b>common conditional effect</b>
+</p>
+                                &nbsp;
+                            </div>
+</td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public-read protected</td><td class="name"><a name="focused"></a><b class="name">focused</b></td><td class="type"><a><i class="type">Boolean</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit">subclass</td><td class="canwrite">subclass</td><td class="defaultvalue">false</td><td class="description">
+<p class="comment">Indicates whether this <code>Node</code> currently has the input focus.</p>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<p class="comment">Indicates whether this <code>Node</code> currently has the input focus.
+ To have the input focus, a node must be the <code>Scene</code>'s focus
+ owner, and the scene must be in a <code>Stage</code> that is visible
+ and active. See <code>requestFocus()</code> for more information.</p>false<p class="profile">Profile: <b>common</b>
+</p>
+                                &nbsp;
+                            </div>
+</td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="focusTraversable"></a><b class="name">focusTraversable</b></td><td class="type"><a><i class="type">Boolean</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"><img src="..//images/JFX_highlight_dot.png"></td><td class="canwrite"><img src="..//images/JFX_highlight_dot.png"></td><td class="defaultvalue">false</td><td class="description">
+<p class="comment">Specifies whether this <code>Node</code> should be a part of focus traversal
+ cycle.</p>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<p class="comment">Specifies whether this <code>Node</code> should be a part of focus traversal
+ cycle. When this property is <code>true</code> focus can be moved to this
+ <code>Node</code> and from this <code>Node</code> using regular focus traversal
+ keys. On a desktop such keys are usually <code>TAB</code> for moving focus
+ forward and <code>SHIFT+TAB</code> for moving focus backward.
+
+ When a <code>Scene</code> is created, the system gives focus to a
+ <code>Node</code> whose <code>focusTraversable</code> variable is true
+ and that is eligible to receive the focus,
+ unless the focus had been set explicitly via a call
+ to <code>requestFocus()</code>.</p>false<p class="profile">Profile: <b>common</b>
+</p>
+                                &nbsp;
+                            </div>
+</td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public-read protected</td><td class="name"><a name="hover"></a><b class="name">hover</b></td><td class="type"><a><i class="type">Boolean</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit">subclass</td><td class="canwrite">subclass</td><td class="defaultvalue">false</td><td class="description">
+<p class="comment">Whether or not this <code>Node</code> is being hovered over.</p>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<p class="comment">Whether or not this <code>Node</code> is being hovered over. Typically this is
+ due to the mouse being over the node, though it could be due to a pen
+ hovering on a graphics tablet or other form of input.
+
+ <p>NOTE: the current implementation of hover relies on mouse enter and
+ exit events to determine whether this Node is in the hover state; this
+ means that this feature is currently supported only on systems that
+ have a mouse. Future implementations may provide alternative means of
+ supporting hover.</p>false<p class="profile">Profile: <b>common</b>
+</p>
+                                &nbsp;
+                            </div>
+</td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="id"></a><b class="name">id</b></td><td class="type"><a><i class="type">String</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"><img src="..//images/JFX_highlight_dot.png"></td><td class="canwrite"><img src="..//images/JFX_highlight_dot.png"></td><td class="defaultvalue">empty string</td><td class="description">
+<p class="comment">The id of this <code>Node</code>.</p>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<p class="comment">The id of this <code>Node</code>. This simple string identifier is useful for
+ finding a specific Node within the scene graph. While the id of a Node
+ should be unique within the scene graph, this uniqueness is not enforced.
+ This is analogous to the "id" attribute on an HTML element.</p>empty string<p class="profile">Profile: <b>common</b>
+</p>
+                                &nbsp;
+                            </div>
+</td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public-read protected</td><td class="name"><a name="layoutBounds"></a><b class="name">layoutBounds</b></td><td class="type"><a href="../javafx.geometry/javafx.geometry.Bounds.html"><i class="type">Bounds</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit">subclass</td><td class="canwrite">subclass</td><td class="defaultvalue"></td><td class="description">
+<p class="comment">The rectangular bounds that should be used for layout calculations on
+ this <code>Node</code>.</p>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<p class="comment">The rectangular bounds that should be used for layout calculations on
+ this <code>Node</code>. <code>layoutBounds</code> may differ from the visual bounds
+ of the node and is computed differently depending on the node type.
+ <p>
+ See <a href="../javafx.scene.shape/javafx.scene.shape.Shape.html">javafx.scene.shape.Shape</a>, <a href="../javafx.scene.text/javafx.scene.text.Text.html">javafx.scene.text.Text</a>,
+ <a href="../javafx.scene/javafx.scene.Group.html">Group</a>, and <a href="../javafx.scene.layout/javafx.scene.layout.Resizable.html">javafx.scene.layout.Resizable</a> for detailed
+ descriptions on how <code>layoutBounds</code> are computed.
+ <p>
+ Note that the <a href="../javafx.scene/javafx.scene.Node.html#layoutX">layoutX</a>, <a href="../javafx.scene/javafx.scene.Node.html#layoutY">layoutY</a>, <a href="../javafx.scene/javafx.scene.Node.html#translateX">translateX</a>, and
+ <a href="../javafx.scene/javafx.scene.Node.html#translateY">translateY</a> variables are not included in the layoutBounds.
+ This is important because layout code must first determine the current
+ size and location of the <code>Node</code> (using layoutBounds) and then set
+ <code>layoutX</code> and <code>layoutY</code> to adjust the translation of the
+ <code>Node</code> so that it will have the desired layout position.
+ <p>
+ Because the computation of layoutBounds is often tied to a node's
+ geometric variables, it is an error to bind any such variables to an
+ expression that depends upon <code>layoutBounds</code>. For example, the
+ "x" or "y" variables of a shape should never be bound to layoutBounds
+ for the purpose of positioning the node.</p>
+<p class="profile">Profile: <b>common</b>
+</p>
+                                &nbsp;
+                            </div>
+</td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="layoutInfo"></a><b class="name">layoutInfo</b></td><td class="type"><a href="../javafx.scene.layout/javafx.scene.layout.LayoutInfoBase.html"><i class="type">LayoutInfoBase</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"><img src="..//images/JFX_highlight_dot.png"></td><td class="canwrite"><img src="..//images/JFX_highlight_dot.png"></td><td class="defaultvalue"></td><td class="description">
+<p class="comment">Hook for node-specific layout information used by layout containers.</p>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<p class="comment">Hook for node-specific layout information used by layout containers.
+ If the node is not a child of a container which supports layout info,
+ this variable will be ignored.
+ <p>
+ Note that layoutInfo object literals may be shared across nodes, which
+ means altering the vars on a <code>LayoutInfo</code> will affect all such nodes.</p>
+                                &nbsp;
+                            </div>
+</td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="layoutX"></a><b class="name">layoutX</b></td><td class="type"><a><i class="type">Number</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"><img src="..//images/JFX_highlight_dot.png"></td><td class="canwrite"><img src="..//images/JFX_highlight_dot.png"></td><td class="defaultvalue">0</td><td class="description">
+<p class="comment">Defines the x coordinate of the translation that is added to this <code>Node</code>'s
+ transform for the purpose of layout.</p>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<p class="comment">Defines the x coordinate of the translation that is added to this <code>Node</code>'s
+ transform for the purpose of layout.  The value should be computed as the
+ offset required to adjust the position of the node from its current
+ <code>layoutBounds.minX</code> position (which might not be 0) to the desired location.
+
+ <p>For example, if <code>textnode</code> should be positioned at <code>finalX</code>:
+ <code><pre>
+     textnode.layoutX = finalX - textnode.layoutBounds.minX;
+ </pre></code>
+ <p>
+ Failure to subtract <code>layoutBounds.minX</code> may result in misplacement
+ of the node.
+ <p>
+ The node's final translation will be computed as <code>layoutX</code> + <a href="../javafx.scene/javafx.scene.Node.html#translateX">translateX</a>,
+ where <code>layoutX</code> establishes the node's stable position
+ and <code>translateX</code> optionally makes dynamic adjustments to that
+ position.
+ <p>
+ If the node is managed and has a <a href="../javafx.scene.layout/javafx.scene.layout.Container.html">javafx.scene.layout.Container</a>
+ as its parent, then the container will set <code>layoutX</code> according to its
+ own layout policy.   If the node is unmanaged or parented by a <a href="../javafx.scene/javafx.scene.Group.html">Group</a>
+ or <code>Scene</code>, then the application may set <code>layoutX</code> directly to
+ position it.</p>0<p class="profile">Profile: <b>common</b>
+</p>
+                                &nbsp;
+                            </div>
+</td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="layoutY"></a><b class="name">layoutY</b></td><td class="type"><a><i class="type">Number</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"><img src="..//images/JFX_highlight_dot.png"></td><td class="canwrite"><img src="..//images/JFX_highlight_dot.png"></td><td class="defaultvalue">0</td><td class="description">
+<p class="comment">Defines the y coordinate of the translation that is added to this <code>Node</code>'s
+ transform for the purpose of layout.</p>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<p class="comment">Defines the y coordinate of the translation that is added to this <code>Node</code>'s
+ transform for the purpose of layout.  The value should be computed as the
+ offset required to adjust the position of the node from its current
+ <code>layoutBounds.minY</code> position (which might not be 0) to the desired location.
+
+ <p>For example, if <code>textnode</code> should be positioned at <code>finalY</code>:
+ <code><pre>
+     textnode.layoutY = finalY - textnode.layoutBounds.minY;
+ </pre></code>
+ <p>
+ Failure to subtract <code>layoutBounds.minY</code> may result in misplacement
+ of the node.
+ <p>
+ The node's final translation will be computed as <code>layoutY</code> + <a href="../javafx.scene/javafx.scene.Node.html#translateY">translateY</a>,
+ where <code>layoutY</code> establishes the node's stable position
+ and <code>translateY</code> optionally makes dynamic adjustments to that
+ position.
+ <p>
+ If the node is managed and has a <a href="../javafx.scene.layout/javafx.scene.layout.Container.html">javafx.scene.layout.Container</a>
+ as its parent, then the container will set <code>layoutY</code> according to its
+ own layout policy.   If the node is unmanaged or parented by a <a href="../javafx.scene/javafx.scene.Group.html">Group</a>
+ or <code>Scene</code>, then the application may set <code>layoutY</code> directly to
+ position it.</p>0<p class="profile">Profile: <b>common</b>
+</p>
+                                &nbsp;
+                            </div>
+</td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="managed"></a><b class="name">managed</b></td><td class="type"><a><i class="type">Boolean</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"><img src="..//images/JFX_highlight_dot.png"></td><td class="canwrite"><img src="..//images/JFX_highlight_dot.png"></td><td class="defaultvalue">true</td><td class="description">
+<p class="comment">Defines whether or not this node's layout will be managed by it's parent.</p>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<p class="comment">Defines whether or not this node's layout will be managed by it's parent.
+ Each parent class follows a strategy for laying out <i>managed</i> children
+ during the scene's layout pass:
+ <ul>
+ <li><a href="../javafx.scene/javafx.scene.Group.html">Group</a>: sets the size of any <code>Resizable</code> children to their
+ preferred size; does not alter the size of non-Resizable children;
+ does not position children.</li>
+ <li><a href="../javafx.scene.layout/javafx.scene.layout.Container.html">javafx.scene.layout.Container</a> classes: set the size of any
+ <a href="../javafx.scene.layout/javafx.scene.layout.Resizable.html">javafx.scene.layout.Resizable</a> content according to its layout rules
+ and each Resizable's sizing preferences; does not alter the size
+ of non-Resizable content; will position nodes (setting <code>layoutX/layoutY</code>)
+ according to its layout rules.</li>
+ <li><a href="../javafx.scene/javafx.scene.CustomNode.html">CustomNode</a>: by default it behaves like Group, however its layout
+ behavior may be overridden by a subclass.</li>
+ </ul>
+ Parents will ignore unmanaged children for the purposes of layout and it
+ is the application's responsibility to set the size and position of an
+ unmanaged node. By default all nodes are managed.
+ <p>
+ If a <a href="../javafx.scene/javafx.scene.Parent.html">Parent</a> node is unmanaged, then it will act as a root for
+ layout, which means that layout requests beneath it will cause only the
+ branch rooted by the parent node to be relayed out.</p>true
+                                &nbsp;
+                            </div>
+</td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="onKeyPressed"></a><b class="name">onKeyPressed</b></td><td class="type"><a><i class="type">function(:KeyEvent):Void</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"><img src="..//images/JFX_highlight_dot.png"></td><td class="canwrite"><img src="..//images/JFX_highlight_dot.png"></td><td class="defaultvalue"></td><td class="description">
+<p class="comment">Defines a function to be called when this <code>Node</code> has input focus and
+ a key has been pressed.</p>
+</td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="onKeyReleased"></a><b class="name">onKeyReleased</b></td><td class="type"><a><i class="type">function(:KeyEvent):Void</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"><img src="..//images/JFX_highlight_dot.png"></td><td class="canwrite"><img src="..//images/JFX_highlight_dot.png"></td><td class="defaultvalue"></td><td class="description">
+<p class="comment">Defines a function to be called when this <code>Node</code> has input focus and
+ a key has been released.</p>
+</td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="onKeyTyped"></a><b class="name">onKeyTyped</b></td><td class="type"><a><i class="type">function(:KeyEvent):Void</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"><img src="..//images/JFX_highlight_dot.png"></td><td class="canwrite"><img src="..//images/JFX_highlight_dot.png"></td><td class="defaultvalue"></td><td class="description">
+<p class="comment">Defines a function to be called when this <code>Node</code> has input focus and
+ a key has been typed.</p>
+</td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="onMouseClicked"></a><b class="name">onMouseClicked</b></td><td class="type"><a><i class="type">function(:MouseEvent):Void</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"><img src="..//images/JFX_highlight_dot.png"></td><td class="canwrite"><img src="..//images/JFX_highlight_dot.png"></td><td class="defaultvalue"></td><td class="description">
+<p class="comment">Defines a function to be called when a mouse button has been clicked
+ (pressed and released) on this <code>Node</code>.</p>
+</td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="onMouseDragged"></a><b class="name">onMouseDragged</b></td><td class="type"><a><i class="type">function(:MouseEvent):Void</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"><img src="..//images/JFX_highlight_dot.png"></td><td class="canwrite"><img src="..//images/JFX_highlight_dot.png"></td><td class="defaultvalue"></td><td class="description">
+<p class="comment">Defines a function to be called when a mouse button is pressed
+ on this <code>Node</code> and then dragged.</p>
+</td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="onMouseEntered"></a><b class="name">onMouseEntered</b></td><td class="type"><a><i class="type">function(:MouseEvent):Void</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"><img src="..//images/JFX_highlight_dot.png"></td><td class="canwrite"><img src="..//images/JFX_highlight_dot.png"></td><td class="defaultvalue"></td><td class="description">
+<p class="comment">Defines a function to be called when the mouse enters this <code>Node</code>.</p>
+</td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="onMouseExited"></a><b class="name">onMouseExited</b></td><td class="type"><a><i class="type">function(:MouseEvent):Void</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"><img src="..//images/JFX_highlight_dot.png"></td><td class="canwrite"><img src="..//images/JFX_highlight_dot.png"></td><td class="defaultvalue"></td><td class="description">
+<p class="comment">Defines a function to be called when the mouse exits this <code>Node</code>.</p>
+</td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="onMouseMoved"></a><b class="name">onMouseMoved</b></td><td class="type"><a><i class="type">function(:MouseEvent):Void</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"><img src="..//images/JFX_highlight_dot.png"></td><td class="canwrite"><img src="..//images/JFX_highlight_dot.png"></td><td class="defaultvalue"></td><td class="description">
+<p class="comment">Defines a function to be called when mouse cursor moves within
+ this <code>Node</code> but no buttons have been pushed.</p>
+</td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="onMousePressed"></a><b class="name">onMousePressed</b></td><td class="type"><a><i class="type">function(:MouseEvent):Void</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"><img src="..//images/JFX_highlight_dot.png"></td><td class="canwrite"><img src="..//images/JFX_highlight_dot.png"></td><td class="defaultvalue"></td><td class="description">
+<p class="comment">Defines a function to be called when a mouse button
+ has been pressed on this <code>Node</code>.</p>
+</td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="onMouseReleased"></a><b class="name">onMouseReleased</b></td><td class="type"><a><i class="type">function(:MouseEvent):Void</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"><img src="..//images/JFX_highlight_dot.png"></td><td class="canwrite"><img src="..//images/JFX_highlight_dot.png"></td><td class="defaultvalue"></td><td class="description">
+<p class="comment">Defines a function to be called when a mouse button
+ has been released on this <code>Node</code>.</p>
+</td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="onMouseWheelMoved"></a><b class="name">onMouseWheelMoved</b></td><td class="type"><a><i class="type">function(:MouseEvent):Void</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"><img src="..//images/JFX_highlight_dot.png"></td><td class="canwrite"><img src="..//images/JFX_highlight_dot.png"></td><td class="defaultvalue"></td><td class="description">
+<p class="comment">Defines a function to be called when the mouse scroll wheel has moved.</p>
+</td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="opacity"></a><b class="name">opacity</b></td><td class="type"><a><i class="type">Number</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"><img src="..//images/JFX_highlight_dot.png"></td><td class="canwrite"><img src="..//images/JFX_highlight_dot.png"></td><td class="defaultvalue">1.0</td><td class="description">
+<p class="comment">Specifies how opaque (that is, solid) the <code>Node</code> appears.</p>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<p class="comment">Specifies how opaque (that is, solid) the <code>Node</code> appears. A Node
+ with 0% opacity is fully translucent. That is, while it is still
+ <a href="../javafx.scene/javafx.scene.Node.html#visible">visible</a> and rendered, you generally won't be able to see it. The
+ exception to this rule is when the Z<code>Node</code> is combined with a
+ blending mode and blend effect in which case a translucent Node may still
+ have an impact in rendering. An opacity of 50% will render the node as
+ being 50% transparent.
+ <p>
+ A <a href="../javafx.scene/javafx.scene.Node.html#visible">visible</a> node with any opacity setting still receives mouse
+ events and can receive keyboard focus. For example, if you want to have
+ a large invisible rectangle overlay all Nodes in the scene graph in order
+ to intercept mouse events but not be visible to the user, you could
+ create a large Rectangle that had an opacity of 0%.
+ <p>
+ Opacity is specified as a value between 0 and 1. Values less than 0 or
+ greater than 1 are clipped to 0 and 1 respectively.
+ <p>
+ On some platforms ImageView might not support opacity variable.</p>1.0<p class="profile">Profile: <b>common</b>
+</p>
+                                &nbsp;
+                            </div>
+</td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public-read package</td><td class="name"><a name="parent"></a><b class="name">parent</b></td><td class="type"><a href="../javafx.scene/javafx.scene.Parent.html"><i class="type">Parent</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue">null</td><td class="description">
+<p class="comment">The parent of this <code>Node</code>.</p>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<p class="comment">The parent of this <code>Node</code>. If this <code>Node</code> has not been added
+ to a scene graph, then parent will be null.</p>null<p class="profile">Profile: <b>common</b>
+</p>
+                                &nbsp;
+                            </div>
+</td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="pickOnBounds"></a><b class="name">pickOnBounds</b></td><td class="type"><a><i class="type">Boolean</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"><img src="..//images/JFX_highlight_dot.png"></td><td class="canwrite"><img src="..//images/JFX_highlight_dot.png"></td><td class="defaultvalue">false</td><td class="description">
+<p class="comment">Defines how the picking computation is done for this node when
+ triggered by a <code>MouseEvent</code> or a <code>contains</code> function call.</p>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<p class="comment">Defines how the picking computation is done for this node when
+ triggered by a <code>MouseEvent</code> or a <code>contains</code> function call.
+
+ If <code>pickOnBounds</code> is true, then picking is computed by
+ intersecting with the bounds of this node, else picking is computed
+ by intersecting with the geometric shape of this node.</p>false<p class="profile">Profile: <b>common</b>
+</p>
+                                &nbsp;
+                            </div>
+</td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public-read protected</td><td class="name"><a name="pressed"></a><b class="name">pressed</b></td><td class="type"><a><i class="type">Boolean</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit">subclass</td><td class="canwrite">subclass</td><td class="defaultvalue">false</td><td class="description">
+<p class="comment">Whether or not the <code>Node</code> is pressed.</p>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<p class="comment">Whether or not the <code>Node</code> is pressed. Typically this is true when
+ the primary mouse button is down, though subclasses may define other
+ mouse button state or key state to cause the node to be "pressed".</p>false<p class="profile">Profile: <b>common</b>
+</p>
+                                &nbsp;
+                            </div>
+</td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="rotate"></a><b class="name">rotate</b></td><td class="type"><a><i class="type">Number</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"><img src="..//images/JFX_highlight_dot.png"></td><td class="canwrite"><img src="..//images/JFX_highlight_dot.png"></td><td class="defaultvalue">0.0</td><td class="description">
+<p class="comment">Defines the angle of rotation about the <code>Node</code>'s center, measured in
+ degrees.</p>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<p class="comment">Defines the angle of rotation about the <code>Node</code>'s center, measured in
+ degrees. This is used to rotate the <code>Node</code>.
+ <p>
+ This rotation factor is not included in <a href="../javafx.scene/javafx.scene.Node.html#layoutBounds">layoutBounds</a> by
+ default, which makes it ideal for rotating the entire node after
+ all effects and transforms have been taken into account.
+ <p>
+ The pivot point about which the rotation occurs is the center of the
+ untransformed <a href="../javafx.scene/javafx.scene.Node.html#layoutBounds">layoutBounds</a>.
+ <p>
+ Note that because the pivot point is computed as the center of this
+ <code>Node</code>'s layout bounds, any change to the layout bounds will cause
+ the pivot point to change, which can move the object. For a leaf node,
+ any change to the geometry will cause the layout bounds to change.
+ For a group node, any change to any of its children, including a
+ change in a child's geometry, clip, effect, position, orientation, or
+ scale, will cause the group's layout bounds to change. If this movement
+ of the pivot point is not
+ desired, applications should instead use the Node's <a href="../javafx.scene/javafx.scene.Node.html#transforms">transforms</a>[]
+ sequence, and add a <a href="../javafx.scene.transform/javafx.scene.transform.Rotate.html">javafx.scene.transform.Rotate</a> transform,
+ which has a user-specifiable pivot point.</p>0.0<p class="profile">Profile: <b>common</b>
+</p>
+                                &nbsp;
+                            </div>
+</td>
+</tr>
+<tr class="var profile-common conditional scene3d ">
+<td class="access">public</td><td class="name"><a name="rotationAxis"></a><b class="name">rotationAxis</b></td><td class="type"><a href="../javafx.geometry/javafx.geometry.Point3D.html"><i class="type">Point3D</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"><img src="..//images/JFX_highlight_dot.png"></td><td class="canwrite"><img src="..//images/JFX_highlight_dot.png"></td><td class="defaultvalue">Rotate.Z_AXIS</td><td class="description">
+<p class="comment">Defines the axis of rotation of this <code>Node</code>.</p>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<p class="comment">Defines the axis of rotation of this <code>Node</code>.
+ <p>
+ Note: this is a conditional feature. See
+ <a href="../javafx.runtime/javafx.runtime.ConditionalFeature.html#SCENE3D">ConditionalFeature.SCENE3D</a>
+ for more information.</p>Rotate.Z_AXIS<p class="profile">Profile: <b>common conditional scene3d</b>
+</p>
+                                &nbsp;
+                            </div>
+</td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="scaleX"></a><b class="name">scaleX</b></td><td class="type"><a><i class="type">Number</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"><img src="..//images/JFX_highlight_dot.png"></td><td class="canwrite"><img src="..//images/JFX_highlight_dot.png"></td><td class="defaultvalue">1.0</td><td class="description">
+<p class="comment">Defines the factor by which coordinates are scaled about the center of the
+ object along the X axis of this <code>Node</code>.</p>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<p class="comment">Defines the factor by which coordinates are scaled about the center of the
+ object along the X axis of this <code>Node</code>. This is used to stretch or
+ animate the node either manually or by using an animation.
+ <p>
+ This scale factor is not included in <a href="../javafx.scene/javafx.scene.Node.html#layoutBounds">layoutBounds</a> by
+ default, which makes it ideal for scaling the entire node after
+ all effects and transforms have been taken into account.
+ <p>
+ The pivot point about which the scale occurs is the center of the
+ untransformed <a href="../javafx.scene/javafx.scene.Node.html#layoutBounds">layoutBounds</a>.</p>1.0<p class="profile">Profile: <b>common</b>
+</p>
+                                &nbsp;
+                            </div>
+</td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="scaleY"></a><b class="name">scaleY</b></td><td class="type"><a><i class="type">Number</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"><img src="..//images/JFX_highlight_dot.png"></td><td class="canwrite"><img src="..//images/JFX_highlight_dot.png"></td><td class="defaultvalue">1.0</td><td class="description">
+<p class="comment">Defines the factor by which coordinates are scaled about the center of the
+ object along the Y axis of this <code>Node</code>.</p>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<p class="comment">Defines the factor by which coordinates are scaled about the center of the
+ object along the Y axis of this <code>Node</code>. This is used to stretch or
+ animate the node either manually or by using an animation.
+ <p>
+ This scale factor is not included in <a href="../javafx.scene/javafx.scene.Node.html#layoutBounds">layoutBounds</a> by
+ default, which makes it ideal for scaling the entire node after
+ all effects and transforms have been taken into account.
+ <p>
+ The pivot point about which the scale occurs is the center of the
+ untransformed <a href="../javafx.scene/javafx.scene.Node.html#layoutBounds">layoutBounds</a>.</p>1.0<p class="profile">Profile: <b>common</b>
+</p>
+                                &nbsp;
+                            </div>
+</td>
+</tr>
+<tr class="var profile-common conditional scene3d ">
+<td class="access">public</td><td class="name"><a name="scaleZ"></a><b class="name">scaleZ</b></td><td class="type"><a><i class="type">Number</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"><img src="..//images/JFX_highlight_dot.png"></td><td class="canwrite"><img src="..//images/JFX_highlight_dot.png"></td><td class="defaultvalue">1.0</td><td class="description">
+<p class="comment">Defines the factor by which coordinates are scaled about the center of the
+ object along the Z axis of this <code>Node</code>.</p>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<p class="comment">Defines the factor by which coordinates are scaled about the center of the
+ object along the Z axis of this <code>Node</code>. This is used to stretch or
+ animate the node either manually or by using an animation.
+ <p>
+ This scale factor is not included in <a href="../javafx.scene/javafx.scene.Node.html#layoutBounds">layoutBounds</a> by
+ default, which makes it ideal for scaling the entire node after
+ all effects and transforms have been taken into account.
+ <p>
+ The pivot point about which the scale occurs is the center of the
+ rectangular bounds formed by taking <a href="../javafx.scene/javafx.scene.Node.html#boundsInLocal">boundsInLocal</a> and applying
+ all the transforms in the <a href="../javafx.scene/javafx.scene.Node.html#transforms">transforms</a>[] sequence.
+ <p>
+ Note: this is a conditional feature. See
+ <a href="../javafx.runtime/javafx.runtime.ConditionalFeature.html#SCENE3D">ConditionalFeature.SCENE3D</a>
+ for more information.</p>1.0<p class="profile">Profile: <b>common conditional scene3d</b>
+</p>
+                                &nbsp;
+                            </div>
+</td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public-read package</td><td class="name"><a name="scene"></a><b class="name">scene</b></td><td class="type"><a href="../javafx.scene/javafx.scene.Scene.html"><i class="type">Scene</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue">null</td><td class="description">
+<p class="comment">The <a href="../javafx.scene/javafx.scene.Scene.html">Scene</a> that this <code>Node</code> is part of.</p>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<p class="comment">The <a href="../javafx.scene/javafx.scene.Scene.html">Scene</a> that this <code>Node</code> is part of. If the Node is not
+ part of a scene, then this variable will be null.</p>null<p class="profile">Profile: <b>common</b>
+</p>
+                                &nbsp;
+                            </div>
+</td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="style"></a><b class="name">style</b></td><td class="type"><a><i class="type">String</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"><img src="..//images/JFX_highlight_dot.png"></td><td class="canwrite"><img src="..//images/JFX_highlight_dot.png"></td><td class="defaultvalue">empty string</td><td class="description">
+<p class="comment">A string representation of the CSS style associated with this
+ specific Node.</p>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<p class="comment">A string representation of the CSS style associated with this
+ specific Node. This is analogous to the "style" attribute of an
+ HTML element. Note that, like the HTML style attribute, this
+ variable contains style properties and values and not the
+ selector portion of a style rule.
+ <p>
+ Parsing this style might not be supported on some limited
+ platforms. It is recommended to use a standalone CSS file instead.</p>empty string<p class="profile">Profile: <b>common</b>
+</p>
+                                &nbsp;
+                            </div>
+</td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="styleClass"></a><b class="name">styleClass</b></td><td class="type"><a><i class="type">String</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"><img src="..//images/JFX_highlight_dot.png"></td><td class="canwrite"><img src="..//images/JFX_highlight_dot.png"></td><td class="defaultvalue">empty string</td><td class="description">
+<p class="comment">A String identifier which can be used to logically group Nodes,
+ specifically for an external style engine.</p>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<p class="comment">A String identifier which can be used to logically group Nodes,
+ specifically for an external style engine. This variable is
+ analogous to the "class" attribute on an HTML element.</p>empty string<p class="profile">Profile: <b>common</b>
+</p>
+                                &nbsp;
+                            </div>
+</td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="transforms"></a><b class="name">transforms</b></td><td class="type"><a href="../javafx.scene.transform/javafx.scene.transform.Transform.html"><i class="type">Transform[]</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"><img src="..//images/JFX_highlight_dot.png"></td><td class="canwrite"><img src="..//images/JFX_highlight_dot.png"></td><td class="defaultvalue">empty</td><td class="description">
+<p class="comment">Defines the sequence of <a href="../javafx.scene.transform/javafx.scene.transform.Transform.html">javafx.scene.transform.Transform</a> objects
+ to be applied to this <code>Node</code>.</p>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<p class="comment">Defines the sequence of <a href="../javafx.scene.transform/javafx.scene.transform.Transform.html">javafx.scene.transform.Transform</a> objects
+ to be applied to this <code>Node</code>. This sequence of transforms is applied
+ before <a href="../javafx.scene/javafx.scene.Node.html#translateX">translateX</a>, <a href="../javafx.scene/javafx.scene.Node.html#translateY">translateY</a>, <a href="../javafx.scene/javafx.scene.Node.html#scaleX">scaleX</a>, and
+ <a href="../javafx.scene/javafx.scene.Node.html#scaleY">scaleY</a>, <a href="../javafx.scene/javafx.scene.Node.html#rotate">rotate</a> transforms.</p>empty<p class="profile">Profile: <b>common</b>
+</p>
+                                &nbsp;
+                            </div>
+</td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="translateX"></a><b class="name">translateX</b></td><td class="type"><a><i class="type">Number</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"><img src="..//images/JFX_highlight_dot.png"></td><td class="canwrite"><img src="..//images/JFX_highlight_dot.png"></td><td class="defaultvalue">0</td><td class="description">
+<p class="comment">Defines the x coordinate of the translation that is added to this <code>Node</code>'s
+ transform.</p>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<p class="comment">Defines the x coordinate of the translation that is added to this <code>Node</code>'s
+ transform.
+ <p>
+ The node's final translation will be computed as <a href="../javafx.scene/javafx.scene.Node.html#layoutX">layoutX</a> + <code>translateX</code>,
+ where <code>layoutX</code> establishes the node's stable position and <code>translateX</code>
+ optionally makes dynamic adjustments to that position.
+<p>
+ This variable can be used to alter the location of a node without disturbing
+ its <a href="../javafx.scene/javafx.scene.Node.html#layoutBounds">layoutBounds</a>, which makes it useful for animating a node's location.</p>0<p class="profile">Profile: <b>common</b>
+</p>
+                                &nbsp;
+                            </div>
+</td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="translateY"></a><b class="name">translateY</b></td><td class="type"><a><i class="type">Number</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"><img src="..//images/JFX_highlight_dot.png"></td><td class="canwrite"><img src="..//images/JFX_highlight_dot.png"></td><td class="defaultvalue">0</td><td class="description">
+<p class="comment">Defines the y coordinate of the translation that is added to this <code>Node</code>'s
+ transform.</p>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<p class="comment">Defines the y coordinate of the translation that is added to this <code>Node</code>'s
+ transform.
+ <p>
+ The node's final translation will be computed as <a href="../javafx.scene/javafx.scene.Node.html#layoutY">layoutY</a> + <code>translateY</code>,
+ where <code>layoutY</code> establishes the node's stable position and <code>translateY</code>
+ optionally makes dynamic adjustments to that position.
+<p>
+ This variable can be used to alter the location of a node without disturbing
+ its <a href="../javafx.scene/javafx.scene.Node.html#layoutBounds">layoutBounds</a>, which makes it useful for animating a node's location.</p>0<p class="profile">Profile: <b>common</b>
+</p>
+                                &nbsp;
+                            </div>
+</td>
+</tr>
+<tr class="var profile-common conditional scene3d ">
+<td class="access">public</td><td class="name"><a name="translateZ"></a><b class="name">translateZ</b></td><td class="type"><a><i class="type">Number</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"><img src="..//images/JFX_highlight_dot.png"></td><td class="canwrite"><img src="..//images/JFX_highlight_dot.png"></td><td class="defaultvalue">0</td><td class="description">
+<p class="comment">Defines the Z coordinate of the translation that is added to the
+ transformed coordinates of this <code>Node</code>.</p>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<p class="comment">Defines the Z coordinate of the translation that is added to the
+ transformed coordinates of this <code>Node</code>.  This value will be added
+ to any translation defined by the <code>transforms</code> sequence and
+ <code>layoutZ</code>.
+<p>
+ This variable can be used to alter the location of a Node without
+ disturbing its layout bounds, which makes it useful for animating a
+ node's location.
+ <p>
+ Note: this is a conditional feature. See
+ <a href="../javafx.runtime/javafx.runtime.ConditionalFeature.html#SCENE3D">ConditionalFeature.SCENE3D</a>
+ for more information.</p>0<p class="profile">Profile: <b>common conditional scene3d</b>
+</p>
+                                &nbsp;
+                            </div>
+</td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="visible"></a><b class="name">visible</b></td><td class="type"><a><i class="type">Boolean</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"><img src="..//images/JFX_highlight_dot.png"></td><td class="canwrite"><img src="..//images/JFX_highlight_dot.png"></td><td class="defaultvalue">true</td><td class="description">
+<p class="comment">Specifies whether this <code>Node</code> and any subnodes should be rendered
+ as part of the scene graph.</p>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<p class="comment">Specifies whether this <code>Node</code> and any subnodes should be rendered
+ as part of the scene graph. A node may be visible and yet not be shown
+ in the rendered scene if, for instance, it is off the screen or obscured
+ by another Node. Invisible nodes never receive mouse events or
+ keyboard focus, and never maintain keyboard focus when they become
+ invisible.</p>true<p class="profile">Profile: <b>common</b>
+</p>
+                                &nbsp;
+                            </div>
+</td>
+</tr>
+</table>
+<h4>javafx.scene.layout.Resizable</h4>
+<table class="inherited-field fields">
+<tr>
+<th class="access">access</th><th class="name">name</th><th class="type">type</th><th><a class="tooltip" title="Indicates the variable can be read">Can Read</a></th><th><a title="Indicates the variable can only be set in the Object initializer. Any further changes will be ignored." class="tooltip">Can Init</a></th><th><a title="Indicates the varible can set at any time." class="tooltip">Can Write</a></th><th><a title="Indicates the default value of this variable" class="tooltip">Default Value</a></th><th class="description">description</th>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="height"></a><b class="name">height</b></td><td class="type"><a><i class="type">Number</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"><img src="..//images/JFX_highlight_dot.png"></td><td class="canwrite"><img src="..//images/JFX_highlight_dot.png"></td><td class="defaultvalue"></td><td class="description">
+<p class="comment">The <code>Resizable</code>'s layout height, which is set by the it's parent
+ during layout and should not be set directly by the application.</p>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<p class="comment">The <code>Resizable</code>'s layout height, which is set by the it's parent
+ during layout and should not be set directly by the application.
+ Any value set by the application will be overridden by the parent
+ when it lays out the Resizable in accordance with the Resizable's sizing
+ preferences and the parent's layout policy.
+ <p>
+ If an application needs to control the height of a Resizable node, it
+ should override its <b>preferred</b> height using <code>LayoutInfo</code>:
+ <pre><code>
+      Label {
+          layoutInfo: LayoutInfo { height: 100 }
+      }
+ </code></pre></p>
+<p class="profile">Profile: <b>common</b>
+</p>
+                                &nbsp;
+                            </div>
+</td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="width"></a><b class="name">width</b></td><td class="type"><a><i class="type">Number</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"><img src="..//images/JFX_highlight_dot.png"></td><td class="canwrite"><img src="..//images/JFX_highlight_dot.png"></td><td class="defaultvalue"></td><td class="description">
+<p class="comment">The <code>Resizable</code>'s layout width, which is set by the it's parent
+ during layout and should not be set directly by the application.</p>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<p class="comment">The <code>Resizable</code>'s layout width, which is set by the it's parent
+ during layout and should not be set directly by the application.
+ Any value set by the application will be overridden by the parent
+ when it lays out the Resizable in accordance with the Resizable's sizing
+ preferences and the parent's layout policy.
+ <p>
+ If an application needs to control the width of a Resizable node, it
+ should override its <b>preferred</b> width using <code>LayoutInfo</code>:
+ <pre><code>
+      Label {
+          layoutInfo: LayoutInfo { width: 100 }
+      }
+ </code></pre></p>
+<p class="profile">Profile: <b>common</b>
+</p>
+                                &nbsp;
+                            </div>
+</td>
+</tr>
+</table>
+<h4>javafx.scene.text.TextOffsets</h4>
+<table class="inherited-field fields">
+<tr>
+<th class="access">access</th><th class="name">name</th><th class="type">type</th><th><a class="tooltip" title="Indicates the variable can be read">Can Read</a></th><th><a title="Indicates the variable can only be set in the Object initializer. Any further changes will be ignored." class="tooltip">Can Init</a></th><th><a title="Indicates the varible can set at any time." class="tooltip">Can Write</a></th><th><a title="Indicates the default value of this variable" class="tooltip">Default Value</a></th><th class="description">description</th>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public-read protected</td><td class="name"><a name="baselineOffset"></a><b class="name">baselineOffset</b></td><td class="type"><a><i class="type">Number</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit">subclass</td><td class="canwrite">subclass</td><td class="defaultvalue"></td><td class="description">
+<p class="comment">The 'alphabetic' (or 'roman') baseline offset from the node's layoutBounds.minY location.</p>
+</td>
+</tr>
+</table>
+<a id="methods-summary">
+<h3>Script Function Summary</h3>
+</a>
+<dl class="methods-summary">
+<a id="computeProgress(Number,Number)"></a>
+<dt class="method ">
+<i class="modifiers">public</i> <b>computeProgress</b>(<i class="parameters"><b>max</b>:
+                    
+                    <a><i>Number</i></a>, <b>current</b>:
+                    
+                    <a><i>Number</i></a></i>)
+            :
+            
+            <a><i>Number</i></a>
+</dt>
+<dd class="method ">
+<div>
+<p class="comment">A convenience function which helps compute the appropriate progress value
+ for a ProgressIndicator.</p>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<p class="comment">A convenience function which helps compute the appropriate progress value
+ for a ProgressIndicator. Pass in the maximum value as well as the current
+ value. If current is a negative value, then a negative number will be
+ returned for the progress indicating indeterminate progress.
+ <p></p>
+<dl class="parameters">
+                    Parameters
+                    <dt>max</dt>
+<dd></dd>
+<dt>current</dt>
+<dd></dd>
+</dl>
+<dl class="returns">
+                    Returns
+                    <dt>Number</dt>
+<dd></dd>
+</dl>
+                            &nbsp;
+                        </div>
+</div>
+</dd>
+</dl>
+<h3>Inherited Functions</h3>
+<h4>javafx.scene.control.Control</h4>
+<dl class="inherited-method">
+<a id="getHFill()"></a>
+<dt class="method profile-common ">
+<i class="modifiers">public</i> <b>getHFill</b>(<i class="parameters"></i>)
+            :
+            
+            <a><i>Boolean</i></a>
+</dt>
+<dd class="method profile-common ">
+<div>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<dl class="returns">
+                    Returns
+                    <dt>Boolean</dt>
+<dd></dd>
+</dl>
+                            &nbsp;
+                        </div>
+</div>
+</dd>
+<a id="getHGrow()"></a>
+<dt class="method profile-common ">
+<i class="modifiers">public</i> <b>getHGrow</b>(<i class="parameters"></i>)
+            :
+            
+            <a href="../javafx.scene.layout/javafx.scene.layout.Priority.html"><i>Priority</i></a>
+</dt>
+<dd class="method profile-common ">
+<div>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<dl class="returns">
+                    Returns
+                    <dt>Priority</dt>
+<dd></dd>
+</dl>
+                            &nbsp;
+                        </div>
+</div>
+</dd>
+<a id="getHShrink()"></a>
+<dt class="method profile-common ">
+<i class="modifiers">public</i> <b>getHShrink</b>(<i class="parameters"></i>)
+            :
+            
+            <a href="../javafx.scene.layout/javafx.scene.layout.Priority.html"><i>Priority</i></a>
+</dt>
+<dd class="method profile-common ">
+<div>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<dl class="returns">
+                    Returns
+                    <dt>Priority</dt>
+<dd></dd>
+</dl>
+                            &nbsp;
+                        </div>
+</div>
+</dd>
+<a id="getMaxHeight()"></a>
+<dt class="method profile-common ">
+<i class="modifiers">public</i> <b>getMaxHeight</b>(<i class="parameters"></i>)
+            :
+            
+            <a><i>Number</i></a>
+</dt>
+<dd class="method profile-common ">
+<div>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<dl class="returns">
+                    Returns
+                    <dt>Number</dt>
+<dd></dd>
+</dl>
+                            &nbsp;
+                        </div>
+</div>
+</dd>
+<a id="getMaxWidth()"></a>
+<dt class="method profile-common ">
+<i class="modifiers">public</i> <b>getMaxWidth</b>(<i class="parameters"></i>)
+            :
+            
+            <a><i>Number</i></a>
+</dt>
+<dd class="method profile-common ">
+<div>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<dl class="returns">
+                    Returns
+                    <dt>Number</dt>
+<dd></dd>
+</dl>
+                            &nbsp;
+                        </div>
+</div>
+</dd>
+<a id="getMinHeight()"></a>
+<dt class="method profile-common ">
+<i class="modifiers">public</i> <b>getMinHeight</b>(<i class="parameters"></i>)
+            :
+            
+            <a><i>Number</i></a>
+</dt>
+<dd class="method profile-common ">
+<div>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<dl class="returns">
+                    Returns
+                    <dt>Number</dt>
+<dd></dd>
+</dl>
+                            &nbsp;
+                        </div>
+</div>
+</dd>
+<a id="getMinWidth()"></a>
+<dt class="method profile-common ">
+<i class="modifiers">public</i> <b>getMinWidth</b>(<i class="parameters"></i>)
+            :
+            
+            <a><i>Number</i></a>
+</dt>
+<dd class="method profile-common ">
+<div>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<dl class="returns">
+                    Returns
+                    <dt>Number</dt>
+<dd></dd>
+</dl>
+                            &nbsp;
+                        </div>
+</div>
+</dd>
+<a id="getPrefHeight(Number)"></a>
+<dt class="method profile-common ">
+<i class="modifiers">public</i> <b>getPrefHeight</b>(<i class="parameters"><b>width</b>:
+                    
+                    <a><i>Number</i></a></i>)
+            :
+            
+            <a><i>Number</i></a>
+</dt>
+<dd class="method profile-common ">
+<div>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<dl class="parameters">
+                    Parameters
+                    <dt>width</dt>
+<dd></dd>
+</dl>
+<dl class="returns">
+                    Returns
+                    <dt>Number</dt>
+<dd></dd>
+</dl>
+                            &nbsp;
+                        </div>
+</div>
+</dd>
+<a id="getPrefWidth(Number)"></a>
+<dt class="method profile-common ">
+<i class="modifiers">public</i> <b>getPrefWidth</b>(<i class="parameters"><b>height</b>:
+                    
+                    <a><i>Number</i></a></i>)
+            :
+            
+            <a><i>Number</i></a>
+</dt>
+<dd class="method profile-common ">
+<div>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<dl class="parameters">
+                    Parameters
+                    <dt>height</dt>
+<dd></dd>
+</dl>
+<dl class="returns">
+                    Returns
+                    <dt>Number</dt>
+<dd></dd>
+</dl>
+                            &nbsp;
+                        </div>
+</div>
+</dd>
+<a id="getVFill()"></a>
+<dt class="method profile-common ">
+<i class="modifiers">public</i> <b>getVFill</b>(<i class="parameters"></i>)
+            :
+            
+            <a><i>Boolean</i></a>
+</dt>
+<dd class="method profile-common ">
+<div>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<dl class="returns">
+                    Returns
+                    <dt>Boolean</dt>
+<dd></dd>
+</dl>
+                            &nbsp;
+                        </div>
+</div>
+</dd>
+<a id="getVGrow()"></a>
+<dt class="method profile-common ">
+<i class="modifiers">public</i> <b>getVGrow</b>(<i class="parameters"></i>)
+            :
+            
+            <a href="../javafx.scene.layout/javafx.scene.layout.Priority.html"><i>Priority</i></a>
+</dt>
+<dd class="method profile-common ">
+<div>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<dl class="returns">
+                    Returns
+                    <dt>Priority</dt>
+<dd></dd>
+</dl>
+                            &nbsp;
+                        </div>
+</div>
+</dd>
+<a id="getVShrink()"></a>
+<dt class="method profile-common ">
+<i class="modifiers">public</i> <b>getVShrink</b>(<i class="parameters"></i>)
+            :
+            
+            <a href="../javafx.scene.layout/javafx.scene.layout.Priority.html"><i>Priority</i></a>
+</dt>
+<dd class="method profile-common ">
+<div>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<dl class="returns">
+                    Returns
+                    <dt>Priority</dt>
+<dd></dd>
+</dl>
+                            &nbsp;
+                        </div>
+</div>
+</dd>
+</dl>
+<h4>javafx.scene.Parent</h4>
+<dl class="inherited-method">
+<a id="layout()"></a>
+<dt class="method ">
+<i class="modifiers">public</i> <b>layout</b>(<i class="parameters"></i>)
+            :
+            
+            <i>Void</i>
+</dt>
+<dd class="method ">
+<div>
+<p class="comment">Executes a top-down layout pass on the scene graph under this parent.</p>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<p class="comment">Executes a top-down layout pass on the scene graph under this parent.</p>
+                            &nbsp;
+                        </div>
+</div>
+</dd>
+<a id="lookup(java.lang.String)"></a>
+<dt class="method ">
+<i class="modifiers">public</i> <b>lookup</b>(<i class="parameters"><b>id</b>:
+                    
+                    <a><i>java.lang.String</i></a></i>)
+            :
+            
+            <a href="../javafx.scene/javafx.scene.Node.html"><i>Node</i></a>
+</dt>
+<dd class="method ">
+<div>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<dl class="parameters">
+                    Parameters
+                    <dt>id</dt>
+<dd></dd>
+</dl>
+<dl class="returns">
+                    Returns
+                    <dt>Node</dt>
+<dd></dd>
+</dl>
+                            &nbsp;
+                        </div>
+</div>
+</dd>
+<a id="requestLayout()"></a>
+<dt class="method ">
+<i class="modifiers">public</i> <b>requestLayout</b>(<i class="parameters"></i>)
+            :
+            
+            <i>Void</i>
+</dt>
+<dd class="method ">
+<div>
+<p class="comment">Requests a layout pass to be performed before the next scene is
+ rendered.</p>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<p class="comment">Requests a layout pass to be performed before the next scene is
+ rendered. This is batched up asynchronously to happen once per
+ "pulse", or frame of animation.
+ <p>
+ If this parent is either a layout root or unmanaged, then it will be
+ added directly to the scene's dirty layout list, otherwise requestLayout
+ will be invoked on its parent.</p>
+                            &nbsp;
+                        </div>
+</div>
+</dd>
+</dl>
+<h4>javafx.scene.Node</h4>
+<dl class="inherited-method">
+<a id="contains(Number,Number)"></a>
+<dt class="method profile-common ">
+<i class="modifiers">public</i> <b>contains</b>(<i class="parameters"><b>localX</b>:
+                    
+                    <a><i>Number</i></a>, <b>localY</b>:
+                    
+                    <a><i>Number</i></a></i>)
+            :
+            
+            <a><i>Boolean</i></a>
+</dt>
+<dd class="method profile-common ">
+<div>
+<p class="comment">Returns <code>true</code> if the given point (specified in the local
+ coordinate space of this <code>Node</code>) is contained within the shape of
+ this <code>Node</code>.</p>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<p class="comment">Returns <code>true</code> if the given point (specified in the local
+ coordinate space of this <code>Node</code>) is contained within the shape of
+ this <code>Node</code>. Note that this method does not take visibility into
+ account; the test is based on the geometry of this <code>Node</code> only.</p>
+<dl class="parameters">
+                    Parameters
+                    <dt>localX</dt>
+<dd></dd>
+<dt>localY</dt>
+<dd></dd>
+</dl>
+<dl class="returns">
+                    Returns
+                    <dt>Boolean</dt>
+<dd></dd>
+</dl>
+<p class="profile">Profile: <b>common</b>
+</p>
+                            &nbsp;
+                        </div>
+</div>
+</dd>
+<a id="contains(javafx.geometry.Point2D)"></a>
+<dt class="method profile-common ">
+<i class="modifiers">public</i> <b>contains</b>(<i class="parameters"><b>localPoint</b>:
+                    
+                    <a href="../javafx.geometry/javafx.geometry.Point2D.html"><i>Point2D</i></a></i>)
+            :
+            
+            <a><i>Boolean</i></a>
+</dt>
+<dd class="method profile-common ">
+<div>
+<p class="comment">Returns <code>true</code> if the given point (specified in the local
+ coordinate space of this <code>Node</code>) is contained within the shape of
+ this <code>Node</code>.</p>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<p class="comment">Returns <code>true</code> if the given point (specified in the local
+ coordinate space of this <code>Node</code>) is contained within the shape of
+ this <code>Node</code>. Note that this method does not take visibility into
+ account; the test is based on the geometry of this <code>Node</code> only.</p>
+<dl class="parameters">
+                    Parameters
+                    <dt>localPoint</dt>
+<dd></dd>
+</dl>
+<dl class="returns">
+                    Returns
+                    <dt>Boolean</dt>
+<dd></dd>
+</dl>
+<p class="profile">Profile: <b>common</b>
+</p>
+                            &nbsp;
+                        </div>
+</div>
+</dd>
+<a id="intersects(Number,Number,Number,Number)"></a>
+<dt class="method profile-common ">
+<i class="modifiers">public</i> <b>intersects</b>(<i class="parameters"><b>localX</b>:
+                    
+                    <a><i>Number</i></a>, <b>localY</b>:
+                    
+                    <a><i>Number</i></a>, <b>localWidth</b>:
+                    
+                    <a><i>Number</i></a>, <b>localHeight</b>:
+                    
+                    <a><i>Number</i></a></i>)
+            :
+            
+            <a><i>Boolean</i></a>
+</dt>
+<dd class="method profile-common ">
+<div>
+<p class="comment">Returns <code>true</code> if the given rectangle (specified in the local
+ coordinate space of this <code>Node</code>) intersects the shape of this
+ <code>Node</code>.</p>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<p class="comment">Returns <code>true</code> if the given rectangle (specified in the local
+ coordinate space of this <code>Node</code>) intersects the shape of this
+ <code>Node</code>. Note that this method does not take visibility into
+ account; the test is based on the geometry of this <code>Node</code> only.
+ The default behavior of this function is simply to check if the
+ given coordinates intersect with the local bounds.</p>
+<dl class="parameters">
+                    Parameters
+                    <dt>localX</dt>
+<dd></dd>
+<dt>localY</dt>
+<dd></dd>
+<dt>localWidth</dt>
+<dd></dd>
+<dt>localHeight</dt>
+<dd></dd>
+</dl>
+<dl class="returns">
+                    Returns
+                    <dt>Boolean</dt>
+<dd></dd>
+</dl>
+<p class="profile">Profile: <b>common</b>
+</p>
+                            &nbsp;
+                        </div>
+</div>
+</dd>
+<a id="intersects(javafx.geometry.Bounds)"></a>
+<dt class="method profile-common ">
+<i class="modifiers">public</i> <b>intersects</b>(<i class="parameters"><b>localBounds</b>:
+                    
+                    <a href="../javafx.geometry/javafx.geometry.Bounds.html"><i>Bounds</i></a></i>)
+            :
+            
+            <a><i>Boolean</i></a>
+</dt>
+<dd class="method profile-common ">
+<div>
+<p class="comment">Returns <code>true</code> if the given bounds (specified in the local
+ coordinate space of this <code>Node</code>) intersects the shape of this
+ <code>Node</code>.</p>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<p class="comment">Returns <code>true</code> if the given bounds (specified in the local
+ coordinate space of this <code>Node</code>) intersects the shape of this
+ <code>Node</code>. Note that this method does not take visibility into
+ account; the test is based on the geometry of this <code>Node</code> only.
+ The default behavior of this function is simply to check if the
+ given coordinates intersect with the local bounds.</p>
+<dl class="parameters">
+                    Parameters
+                    <dt>localBounds</dt>
+<dd></dd>
+</dl>
+<dl class="returns">
+                    Returns
+                    <dt>Boolean</dt>
+<dd></dd>
+</dl>
+<p class="profile">Profile: <b>common</b>
+</p>
+                            &nbsp;
+                        </div>
+</div>
+</dd>
+<a id="localToParent(Number,Number)"></a>
+<dt class="method profile-common ">
+<i class="modifiers">public</i> <b>localToParent</b>(<i class="parameters"><b>localX</b>:
+                    
+                    <a><i>Number</i></a>, <b>localY</b>:
+                    
+                    <a><i>Number</i></a></i>)
+            :
+            
+            <a href="../javafx.geometry/javafx.geometry.Point2D.html"><i>Point2D</i></a>
+</dt>
+<dd class="method profile-common ">
+<div>
+<p class="comment">Transforms a point from the local coordinate space of this <code>Node</code>
+ into the coordinate space of its parent.</p>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<p class="comment">Transforms a point from the local coordinate space of this <code>Node</code>
+ into the coordinate space of its parent.</p>
+<dl class="parameters">
+                    Parameters
+                    <dt>localX</dt>
+<dd></dd>
+<dt>localY</dt>
+<dd></dd>
+</dl>
+<dl class="returns">
+                    Returns
+                    <dt>Point2D</dt>
+<dd></dd>
+</dl>
+<p class="profile">Profile: <b>common</b>
+</p>
+                            &nbsp;
+                        </div>
+</div>
+</dd>
+<a id="localToParent(javafx.geometry.Point2D)"></a>
+<dt class="method profile-common ">
+<i class="modifiers">public</i> <b>localToParent</b>(<i class="parameters"><b>localPoint</b>:
+                    
+                    <a href="../javafx.geometry/javafx.geometry.Point2D.html"><i>Point2D</i></a></i>)
+            :
+            
+            <a href="../javafx.geometry/javafx.geometry.Point2D.html"><i>Point2D</i></a>
+</dt>
+<dd class="method profile-common ">
+<div>
+<p class="comment">Transforms a point from the local coordinate space of this <code>Node</code>
+ into the coordinate space of its parent.</p>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<p class="comment">Transforms a point from the local coordinate space of this <code>Node</code>
+ into the coordinate space of its parent.</p>
+<dl class="parameters">
+                    Parameters
+                    <dt>localPoint</dt>
+<dd></dd>
+</dl>
+<dl class="returns">
+                    Returns
+                    <dt>Point2D</dt>
+<dd></dd>
+</dl>
+<p class="profile">Profile: <b>common</b>
+</p>
+                            &nbsp;
+                        </div>
+</div>
+</dd>
+<a id="localToParent(javafx.geometry.Bounds)"></a>
+<dt class="method profile-common ">
+<i class="modifiers">public</i> <b>localToParent</b>(<i class="parameters"><b>localBounds</b>:
+                    
+                    <a href="../javafx.geometry/javafx.geometry.Bounds.html"><i>Bounds</i></a></i>)
+            :
+            
+            <a href="../javafx.geometry/javafx.geometry.Bounds.html"><i>Bounds</i></a>
+</dt>
+<dd class="method profile-common ">
+<div>
+<p class="comment">Transforms a bounds from the local coordinate space of this
+ <code>Node</code> into the coordinate space of its parent.</p>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<p class="comment">Transforms a bounds from the local coordinate space of this
+ <code>Node</code> into the coordinate space of its parent.</p>
+<dl class="parameters">
+                    Parameters
+                    <dt>localBounds</dt>
+<dd></dd>
+</dl>
+<dl class="returns">
+                    Returns
+                    <dt>Bounds</dt>
+<dd></dd>
+</dl>
+<p class="profile">Profile: <b>common</b>
+</p>
+                            &nbsp;
+                        </div>
+</div>
+</dd>
+<a id="localToScene(Number,Number)"></a>
+<dt class="method profile-common ">
+<i class="modifiers">public</i> <b>localToScene</b>(<i class="parameters"><b>localX</b>:
+                    
+                    <a><i>Number</i></a>, <b>localY</b>:
+                    
+                    <a><i>Number</i></a></i>)
+            :
+            
+            <a href="../javafx.geometry/javafx.geometry.Point2D.html"><i>Point2D</i></a>
+</dt>
+<dd class="method profile-common ">
+<div>
+<p class="comment">Transforms a point from the local coordinate space of this <code>Node</code>
+ into the coordinate space of its <a href="../javafx.scene/javafx.scene.Scene.html">javafx.scene.Scene</a>.</p>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<p class="comment">Transforms a point from the local coordinate space of this <code>Node</code>
+ into the coordinate space of its <a href="../javafx.scene/javafx.scene.Scene.html">javafx.scene.Scene</a>.</p>
+<dl class="parameters">
+                    Parameters
+                    <dt>localX</dt>
+<dd></dd>
+<dt>localY</dt>
+<dd></dd>
+</dl>
+<dl class="returns">
+                    Returns
+                    <dt>Point2D</dt>
+<dd></dd>
+</dl>
+<p class="profile">Profile: <b>common</b>
+</p>
+                            &nbsp;
+                        </div>
+</div>
+</dd>
+<a id="localToScene(javafx.geometry.Point2D)"></a>
+<dt class="method profile-common ">
+<i class="modifiers">public</i> <b>localToScene</b>(<i class="parameters"><b>localPoint</b>:
+                    
+                    <a href="../javafx.geometry/javafx.geometry.Point2D.html"><i>Point2D</i></a></i>)
+            :
+            
+            <a href="../javafx.geometry/javafx.geometry.Point2D.html"><i>Point2D</i></a>
+</dt>
+<dd class="method profile-common ">
+<div>
+<p class="comment">Transforms a point from the local coordinate space of this <code>Node</code>
+ into the coordinate space of its <a href="../javafx.scene/javafx.scene.Scene.html">javafx.scene.Scene</a>.</p>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<p class="comment">Transforms a point from the local coordinate space of this <code>Node</code>
+ into the coordinate space of its <a href="../javafx.scene/javafx.scene.Scene.html">javafx.scene.Scene</a>.</p>
+<dl class="parameters">
+                    Parameters
+                    <dt>localPoint</dt>
+<dd></dd>
+</dl>
+<dl class="returns">
+                    Returns
+                    <dt>Point2D</dt>
+<dd></dd>
+</dl>
+<p class="profile">Profile: <b>common</b>
+</p>
+                            &nbsp;
+                        </div>
+</div>
+</dd>
+<a id="localToScene(javafx.geometry.Bounds)"></a>
+<dt class="method profile-common ">
+<i class="modifiers">public</i> <b>localToScene</b>(<i class="parameters"><b>localBounds</b>:
+                    
+                    <a href="../javafx.geometry/javafx.geometry.Bounds.html"><i>Bounds</i></a></i>)
+            :
+            
+            <a href="../javafx.geometry/javafx.geometry.Bounds.html"><i>Bounds</i></a>
+</dt>
+<dd class="method profile-common ">
+<div>
+<p class="comment">Transforms a bounds from the local coordinate space of this
+ <code>Node</code> into the coordinate space of its <a href="../javafx.scene/javafx.scene.Scene.html">javafx.scene.Scene</a>.</p>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<p class="comment">Transforms a bounds from the local coordinate space of this
+ <code>Node</code> into the coordinate space of its <a href="../javafx.scene/javafx.scene.Scene.html">javafx.scene.Scene</a>.</p>
+<dl class="parameters">
+                    Parameters
+                    <dt>localBounds</dt>
+<dd></dd>
+</dl>
+<dl class="returns">
+                    Returns
+                    <dt>Bounds</dt>
+<dd></dd>
+</dl>
+<p class="profile">Profile: <b>common</b>
+</p>
+                            &nbsp;
+                        </div>
+</div>
+</dd>
+<a id="lookup(java.lang.String)"></a>
+<dt class="method profile-common ">
+<i class="modifiers">public</i> <b>lookup</b>(<i class="parameters"><b>id</b>:
+                    
+                    <a><i>java.lang.String</i></a></i>)
+            :
+            
+            <a href="../javafx.scene/javafx.scene.Node.html"><i>Node</i></a>
+</dt>
+<dd class="method profile-common ">
+<div>
+<p class="comment">Finds this <code>Node</code>, or the first subnode, with the given id.</p>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<p class="comment">Finds this <code>Node</code>, or the first subnode, with the given id.
+ If this node is a <code>Parent</code>, then this function will traverse down
+ into the branch until it finds a match.  If more than one subnode has the
+ specified id, this function returns one of them. Which node it returns in
+ that case is unspecified.</p>
+<dl class="parameters">
+                    Parameters
+                    <dt>id</dt>
+<dd> The id of the node to find</dd>
+</dl>
+<dl class="returns">
+                    Returns
+                    <dt>Node</dt>
+<dd>
+                     
+                        The first node, starting from this 
+                        <code>Node</code>
+                        , which has an id
+         of 
+                        <code>id</code>
+                        .
+                     
+                  </dd>
+</dl>
+<p class="profile">Profile: <b>common</b>
+</p>
+                            &nbsp;
+                        </div>
+</div>
+</dd>
+<a id="parentToLocal(Number,Number)"></a>
+<dt class="method profile-common ">
+<i class="modifiers">public</i> <b>parentToLocal</b>(<i class="parameters"><b>parentX</b>:
+                    
+                    <a><i>Number</i></a>, <b>parentY</b>:
+                    
+                    <a><i>Number</i></a></i>)
+            :
+            
+            <a href="../javafx.geometry/javafx.geometry.Point2D.html"><i>Point2D</i></a>
+</dt>
+<dd class="method profile-common ">
+<div>
+<p class="comment">Transforms a point from the coordinate space of the parent into the
+ local coordinate space of this <code>Node</code>.</p>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<p class="comment">Transforms a point from the coordinate space of the parent into the
+ local coordinate space of this <code>Node</code>.</p>
+<dl class="parameters">
+                    Parameters
+                    <dt>parentX</dt>
+<dd></dd>
+<dt>parentY</dt>
+<dd></dd>
+</dl>
+<dl class="returns">
+                    Returns
+                    <dt>Point2D</dt>
+<dd></dd>
+</dl>
+<p class="profile">Profile: <b>common</b>
+</p>
+                            &nbsp;
+                        </div>
+</div>
+</dd>
+<a id="parentToLocal(javafx.geometry.Point2D)"></a>
+<dt class="method profile-common ">
+<i class="modifiers">public</i> <b>parentToLocal</b>(<i class="parameters"><b>parentPoint</b>:
+                    
+                    <a href="../javafx.geometry/javafx.geometry.Point2D.html"><i>Point2D</i></a></i>)
+            :
+            
+            <a href="../javafx.geometry/javafx.geometry.Point2D.html"><i>Point2D</i></a>
+</dt>
+<dd class="method profile-common ">
+<div>
+<p class="comment">Transforms a point from the coordinate space of the parent into the
+ local coordinate space of this <code>Node</code>.</p>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<p class="comment">Transforms a point from the coordinate space of the parent into the
+ local coordinate space of this <code>Node</code>.</p>
+<dl class="parameters">
+                    Parameters
+                    <dt>parentPoint</dt>
+<dd></dd>
+</dl>
+<dl class="returns">
+                    Returns
+                    <dt>Point2D</dt>
+<dd></dd>
+</dl>
+<p class="profile">Profile: <b>common</b>
+</p>
+                            &nbsp;
+                        </div>
+</div>
+</dd>
+<a id="parentToLocal(javafx.geometry.Bounds)"></a>
+<dt class="method profile-common ">
+<i class="modifiers">public</i> <b>parentToLocal</b>(<i class="parameters"><b>parentBounds</b>:
+                    
+                    <a href="../javafx.geometry/javafx.geometry.Bounds.html"><i>Bounds</i></a></i>)
+            :
+            
+            <a href="../javafx.geometry/javafx.geometry.Bounds.html"><i>Bounds</i></a>
+</dt>
+<dd class="method profile-common ">
+<div>
+<p class="comment">Transforms a rectangle from the coordinate space of the parent into the
+ local coordinate space of this <code>Node</code>.</p>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<p class="comment">Transforms a rectangle from the coordinate space of the parent into the
+ local coordinate space of this <code>Node</code>.</p>
+<dl class="parameters">
+                    Parameters
+                    <dt>parentBounds</dt>
+<dd></dd>
+</dl>
+<dl class="returns">
+                    Returns
+                    <dt>Bounds</dt>
+<dd></dd>
+</dl>
+<p class="profile">Profile: <b>common</b>
+</p>
+                            &nbsp;
+                        </div>
+</div>
+</dd>
+<a id="requestFocus()"></a>
+<dt class="method profile-common ">
+<i class="modifiers">public</i> <b>requestFocus</b>(<i class="parameters"></i>)
+            :
+            
+            <i>Void</i>
+</dt>
+<dd class="method profile-common ">
+<div>
+<p class="comment">Requests that this <code>Node</code> get the input focus, and that this
+ <code>Node</code>'s top-level ancestor become the focused window.</p>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<p class="comment">Requests that this <code>Node</code> get the input focus, and that this
+ <code>Node</code>'s top-level ancestor become the focused window. To be
+ eligible to receive the focus, the node must be part of a scene, it and
+ all of its ancestors must be visible, and it must not be disabled.
+ If this node is eligible, this function will cause it to become this
+ <code>Scene</code>'s "focus owner". Each scene has at most one focus owner
+ node. The focus owner will not actually have the input focus, however,
+ unless the scene belongs to a <code>Stage</code> that is both visible
+ and active.</p>
+<p class="profile">Profile: <b>common</b>
+</p>
+                            &nbsp;
+                        </div>
+</div>
+</dd>
+<a id="sceneToLocal(Number,Number)"></a>
+<dt class="method profile-common ">
+<i class="modifiers">public</i> <b>sceneToLocal</b>(<i class="parameters"><b>sceneX</b>:
+                    
+                    <a><i>Number</i></a>, <b>sceneY</b>:
+                    
+                    <a><i>Number</i></a></i>)
+            :
+            
+            <a href="../javafx.geometry/javafx.geometry.Point2D.html"><i>Point2D</i></a>
+</dt>
+<dd class="method profile-common ">
+<div>
+<p class="comment">Transforms a point from the coordinate space of the <a href="../javafx.scene/javafx.scene.Scene.html">Scene</a>
+ into the local coordinate space of this <code>Node</code>.</p>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<p class="comment">Transforms a point from the coordinate space of the <a href="../javafx.scene/javafx.scene.Scene.html">Scene</a>
+ into the local coordinate space of this <code>Node</code>.</p>
+<dl class="parameters">
+                    Parameters
+                    <dt>sceneX</dt>
+<dd></dd>
+<dt>sceneY</dt>
+<dd></dd>
+</dl>
+<dl class="returns">
+                    Returns
+                    <dt>Point2D</dt>
+<dd></dd>
+</dl>
+<p class="profile">Profile: <b>common</b>
+</p>
+                            &nbsp;
+                        </div>
+</div>
+</dd>
+<a id="sceneToLocal(javafx.geometry.Point2D)"></a>
+<dt class="method profile-common ">
+<i class="modifiers">public</i> <b>sceneToLocal</b>(<i class="parameters"><b>scenePoint</b>:
+                    
+                    <a href="../javafx.geometry/javafx.geometry.Point2D.html"><i>Point2D</i></a></i>)
+            :
+            
+            <a href="../javafx.geometry/javafx.geometry.Point2D.html"><i>Point2D</i></a>
+</dt>
+<dd class="method profile-common ">
+<div>
+<p class="comment">Transforms a point from the coordinate space of the <a href="../javafx.scene/javafx.scene.Scene.html">javafx.scene.Scene</a>
+ into the local coordinate space of this <code>Node</code>.</p>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<p class="comment">Transforms a point from the coordinate space of the <a href="../javafx.scene/javafx.scene.Scene.html">javafx.scene.Scene</a>
+ into the local coordinate space of this <code>Node</code>.</p>
+<dl class="parameters">
+                    Parameters
+                    <dt>scenePoint</dt>
+<dd></dd>
+</dl>
+<dl class="returns">
+                    Returns
+                    <dt>Point2D</dt>
+<dd></dd>
+</dl>
+<p class="profile">Profile: <b>common</b>
+</p>
+                            &nbsp;
+                        </div>
+</div>
+</dd>
+<a id="sceneToLocal(javafx.geometry.Bounds)"></a>
+<dt class="method profile-common ">
+<i class="modifiers">public</i> <b>sceneToLocal</b>(<i class="parameters"><b>sceneBounds</b>:
+                    
+                    <a href="../javafx.geometry/javafx.geometry.Bounds.html"><i>Bounds</i></a></i>)
+            :
+            
+            <a href="../javafx.geometry/javafx.geometry.Bounds.html"><i>Bounds</i></a>
+</dt>
+<dd class="method profile-common ">
+<div>
+<p class="comment">Transforms a rectangle from the coordinate space of the
+ <a href="../javafx.scene/javafx.scene.Scene.html">javafx.scene.Scene</a> into the local coordinate space of this
+ <code>Node</code>.</p>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<p class="comment">Transforms a rectangle from the coordinate space of the
+ <a href="../javafx.scene/javafx.scene.Scene.html">javafx.scene.Scene</a> into the local coordinate space of this
+ <code>Node</code>.</p>
+<dl class="parameters">
+                    Parameters
+                    <dt>sceneBounds</dt>
+<dd></dd>
+</dl>
+<dl class="returns">
+                    Returns
+                    <dt>Bounds</dt>
+<dd></dd>
+</dl>
+<p class="profile">Profile: <b>common</b>
+</p>
+                            &nbsp;
+                        </div>
+</div>
+</dd>
+<a id="toBack()"></a>
+<dt class="method profile-common ">
+<i class="modifiers">public</i> <b>toBack</b>(<i class="parameters"></i>)
+            :
+            
+            <i>Void</i>
+</dt>
+<dd class="method profile-common ">
+<div>
+<p class="comment">Moves this <code>Node</code> to the back of its sibling nodes in terms of
+ z-order.</p>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<p class="comment">Moves this <code>Node</code> to the back of its sibling nodes in terms of
+ z-order.  This is accomplished by moving this <code>Node</code> to the
+ first position in its parent's <code>content</code> sequence.
+ This function has no effect if this <code>Node</code> is not part of a group.</p>
+<p class="profile">Profile: <b>common</b>
+</p>
+                            &nbsp;
+                        </div>
+</div>
+</dd>
+<a id="toFront()"></a>
+<dt class="method profile-common ">
+<i class="modifiers">public</i> <b>toFront</b>(<i class="parameters"></i>)
+            :
+            
+            <i>Void</i>
+</dt>
+<dd class="method profile-common ">
+<div>
+<p class="comment">Moves this <code>Node</code> to the front of its sibling nodes in terms of
+ z-order.</p>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<p class="comment">Moves this <code>Node</code> to the front of its sibling nodes in terms of
+ z-order.  This is accomplished by moving this <code>Node</code> to the
+ last position in its parent's <code>content</code> sequence.
+ This function has no effect if this <code>Node</code> is not part of a group.</p>
+<p class="profile">Profile: <b>common</b>
+</p>
+                            &nbsp;
+                        </div>
+</div>
+</dd>
+<a id="toString()"></a>
+<dt class="method profile-common ">
+<i class="modifiers">public</i> <b>toString</b>(<i class="parameters"></i>)
+            :
+            
+            <a><i>java.lang.String</i></a>
+</dt>
+<dd class="method profile-common ">
+<div>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<dl class="returns">
+                    Returns
+                    <dt>String</dt>
+<dd></dd>
+</dl>
+                            &nbsp;
+                        </div>
+</div>
+</dd>
+</dl>
+<h4>javafx.scene.layout.Resizable</h4>
+<dl class="inherited-method">
+<a id="getHFill()"></a>
+<dt class="method profile-common ">
+<i class="modifiers">public</i> <b>getHFill</b>(<i class="parameters"></i>)
+            :
+            
+            <a><i>Boolean</i></a>
+</dt>
+<dd class="method profile-common ">
+<div>
+<p class="comment">Returns the <code>Resizable</code>'s horizontal fill preference, which indicates
+ whether or not the Resizable's width should be resized beyond its preferred
+ width (up to its maximum) to fill it's allocated layout area.</p>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<p class="comment">Returns the <code>Resizable</code>'s horizontal fill preference, which indicates
+ whether or not the Resizable's width should be resized beyond its preferred
+ width (up to its maximum) to fill it's allocated layout area.
+ <p>
+ All container classes (<a href="../javafx.scene.layout/javafx.scene.layout.HBox.html">HBox</a>, <a href="../javafx.scene.layout/javafx.scene.layout.VBox.html">VBox</a>, <a href="../javafx.scene.layout/javafx.scene.layout.Stack.html">Stack</a>,
+ <a href="../javafx.scene.layout/javafx.scene.layout.Flow.html">Flow</a>(vertical), <a href="../javafx.scene.layout/javafx.scene.layout.Tile.html">Tile</a>) consult this preference when resizing
+ Resizable children.
+ <p>
+ An application may override the horizontal fill of a Resizable node using
+ <a href="../javafx.scene.layout/javafx.scene.layout.LayoutInfo.html">LayoutInfo</a>:
+ <pre><code>
+      Label {
+          layoutInfo: LayoutInfo { hfill: true }
+      }
+ </code></pre>
+ <p>
+ This function returns <code>false</code> by default;
+ Resizable subclasses should override this function to return an appropriate value.</p>
+<dl class="returns">
+                    Returns
+                    <dt>Boolean</dt>
+<dd></dd>
+</dl>
+                            &nbsp;
+                        </div>
+</div>
+</dd>
+<a id="getHGrow()"></a>
+<dt class="method profile-common ">
+<i class="modifiers">public</i> <b>getHGrow</b>(<i class="parameters"></i>)
+            :
+            
+            <a href="../javafx.scene.layout/javafx.scene.layout.Priority.html"><i>Priority</i></a>
+</dt>
+<dd class="method profile-common ">
+<div>
+<p class="comment">Returns the <code>Resizable</code>'s horizontal grow priority which determines
+ whether it's layout area is given more horizontal space if its available.</p>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<p class="comment">Returns the <code>Resizable</code>'s horizontal grow priority which determines
+ whether it's layout area is given more horizontal space if its available.
+ <p>
+ The horizontal grow priority is only used if the parent container is resized
+ larger than its preferred width and multiple nodes are <i>competing</i> for extra
+ horizontal space, which for the concrete containers is only applicable to <a href="../javafx.scene.layout/javafx.scene.layout.HBox.html">HBox</a>.
+ Note that growing applies only to the layout area assigned to the Resizable;
+ how the Resizable is sized with respect to that area is determined separately
+ by its size and fill preferences (see <a href="../javafx.scene.layout/javafx.scene.layout.Resizable.html#getPrefWidth(float)">getPrefWidth</a> and <a href="../javafx.scene.layout/javafx.scene.layout.Resizable.html#getHFill()">getHFill</a>).
+ <p>
+ If <code>ALWAYS</code>, the Resizable's layout area will always grow horizontally
+ if there is additional space, sharing the increase with other nodes that have
+ an hgrow of ALWAYS. The Resizable's layout area will never be grown beyond
+ the Resizable's maximum width.
+ <p>
+ If <code>SOMETIMES</code>, the Resizable's layout area will only grow horizontally
+ if either no other node has specified ALWAYS, or the additional space was
+ not completely allocated to nodes specifying ALWAYS because of their maximum
+ size limits.
+ <p>
+ If <code>NEVER</code>, the Resizable's layout area will never be grown horizontally 
+ if there is additional space.
+ <p>
+ If the Resizable returns ALWAYS or SOMETIMES, then <a href="../javafx.scene.layout/javafx.scene.layout.Resizable.html#getHFill()">getHFill</a> should
+ typically return <code>true</code> to ensure the node will be resized beyond its
+ preferred to take advantage of its larger layout area.
+ <p>
+ An application may override the horizontal grow priority of a Resizable node using
+ <a href="../javafx.scene.layout/javafx.scene.layout.LayoutInfo.html">LayoutInfo</a>:
+ <pre><code>
+      Label {
+          layoutInfo: LayoutInfo { hgrow: Priority.ALWAYS }
+      }
+ </code></pre>
+ <p>
+ This function returns <code>Priority.NEVER</code> by default;
+ Resizable subclasses should override this function to return an appropriate value.</p>
+<dl class="returns">
+                    Returns
+                    <dt>Priority</dt>
+<dd></dd>
+</dl>
+                            &nbsp;
+                        </div>
+</div>
+</dd>
+<a id="getHShrink()"></a>
+<dt class="method profile-common ">
+<i class="modifiers">public</i> <b>getHShrink</b>(<i class="parameters"></i>)
+            :
+            
+            <a href="../javafx.scene.layout/javafx.scene.layout.Priority.html"><i>Priority</i></a>
+</dt>
+<dd class="method profile-common ">
+<div>
+<p class="comment">Returns the <code>Resizable</code>'s horizontal shrink priority, which determines
+ whether it's layout area is given less horizontal space if its parent is
+ resized smaller than its preferred width.</p>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<p class="comment">Returns the <code>Resizable</code>'s horizontal shrink priority, which determines
+ whether it's layout area is given less horizontal space if its parent is
+ resized smaller than its preferred width.
+ <p>
+ The horizontal shrink priority is only used if the parent container is resized
+ smaller than its preferred width and multiple nodes are <i>competing</i> for
+ horizontal space, which for the concrete containers is only applicable to <a href="../javafx.scene.layout/javafx.scene.layout.HBox.html">HBox</a>.
+ <p>
+ If <code>ALWAYS</code>, the Resizable's layout area will always shrink horizontally
+ if there is less space, sharing the decrease with other nodes that have an
+ hshrink of ALWAYS. The Resizable's layout area will never be sized smaller
+ than the node's minimum width.
+ <p>
+ If <code>SOMETIMES</code>, the Resizable's layout area will only shrink horizontally
+ if either no other node has specified ALWAYS, or the reduced space was not
+ completely distributed to nodes specifying ALWAYS because of their minimum
+ size limits.
+ <p>
+ If <code>NEVER</code>, the Resizable's layout area will never be shrunken
+ horizontally if there is reduced space.
+ <p>
+ An application may override the horizontal shrink priority of a Resizable node using
+ <a href="../javafx.scene.layout/javafx.scene.layout.LayoutInfo.html">LayoutInfo</a>:
+ <pre><code>
+      Label {
+          layoutInfo: LayoutInfo { hshrink: Priority.ALWAYS }
+      }
+ </code></pre>
+ <p>
+ This function returns <code>Priority.NEVER</code> by default;
+ Resizable subclasses should override this function to return an appropriate value.</p>
+<dl class="returns">
+                    Returns
+                    <dt>Priority</dt>
+<dd></dd>
+</dl>
+                            &nbsp;
+                        </div>
+</div>
+</dd>
+<a id="getMaxHeight()"></a>
+<dt class="method profile-common ">
+<i class="modifiers">public</i> <b>getMaxHeight</b>(<i class="parameters"></i>)
+            :
+            
+            <a><i>Number</i></a>
+</dt>
+<dd class="method profile-common ">
+<div>
+<p class="comment">Returns the <code>Resizable</code>'s maximum height.</p>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<p class="comment">Returns the <code>Resizable</code>'s maximum height.
+ Layout containers should strive not to set the Resizable's <code>height</code> larger
+ than this value.  This value is computed by the node subclass using
+ applicable state and variable settings and is not directly settable
+ by applications.
+ <p>
+ An application may override the maximum height of a Resizable node using
+ <a href="../javafx.scene.layout/javafx.scene.layout.LayoutInfo.html">LayoutInfo</a>:
+ <pre><code>
+      Label {
+          layoutInfo: LayoutInfo { maxHeight: 30 }
+      }
+ </code></pre>
+ <p>
+ This function returns <code>Integer.MAX_VALUE</code> by default;
+ Resizable subclasses should override this function to return an appropriate value.</p>
+<dl class="returns">
+                    Returns
+                    <dt>Number</dt>
+<dd></dd>
+</dl>
+<p class="profile">Profile: <b>common</b>
+</p>
+                            &nbsp;
+                        </div>
+</div>
+</dd>
+<a id="getMaxWidth()"></a>
+<dt class="method profile-common ">
+<i class="modifiers">public</i> <b>getMaxWidth</b>(<i class="parameters"></i>)
+            :
+            
+            <a><i>Number</i></a>
+</dt>
+<dd class="method profile-common ">
+<div>
+<p class="comment">Returns the <code>Resizable</code>'s maximum width.</p>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<p class="comment">Returns the <code>Resizable</code>'s maximum width.
+ Layout containers should strive not to set the Resizable's <code>width</code> larger
+ than this value.  This value is computed by the node subclass using
+ applicable state and variable settings and is not directly settable
+ by applications.
+ <p>
+ An application may override the maximum width of a Resizable node using
+ <a href="../javafx.scene.layout/javafx.scene.layout.LayoutInfo.html">LayoutInfo</a>:
+ <pre><code>
+      Label {
+          layoutInfo: LayoutInfo { maxWidth: 30 }
+      }
+ </code></pre>
+ <p>
+ This function returns <code>Integer.MAX_VALUE</code> by default;
+ Resizable subclasses should override this function to return an appropriate value.</p>
+<dl class="returns">
+                    Returns
+                    <dt>Number</dt>
+<dd></dd>
+</dl>
+<p class="profile">Profile: <b>common</b>
+</p>
+                            &nbsp;
+                        </div>
+</div>
+</dd>
+<a id="getMinHeight()"></a>
+<dt class="method profile-common ">
+<i class="modifiers">public</i> <b>getMinHeight</b>(<i class="parameters"></i>)
+            :
+            
+            <a><i>Number</i></a>
+</dt>
+<dd class="method profile-common ">
+<div>
+<p class="comment">Returns the <code>Resizable</code>'s minimum height.</p>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<p class="comment">Returns the <code>Resizable</code>'s minimum height.
+ Layout containers should strive not to set the Resizable's height smaller
+ than this value.  This value is computed by the node subclass using
+ applicable state and variable settings and is not directly settable
+ by applications.
+ <p>
+ An application may override the minimum height of a Resizable node using
+ <a href="../javafx.scene.layout/javafx.scene.layout.LayoutInfo.html">LayoutInfo</a>:
+ <pre><code>
+      Label {
+          layoutInfo: LayoutInfo { minHeight: 30 }
+      }
+ </code></pre>
+ <p>
+ This function returns 0 by default; Resizable subclasses should override
+ this function to return an appropriate value.</p>
+<dl class="returns">
+                    Returns
+                    <dt>Number</dt>
+<dd></dd>
+</dl>
+<p class="profile">Profile: <b>common</b>
+</p>
+                            &nbsp;
+                        </div>
+</div>
+</dd>
+<a id="getMinWidth()"></a>
+<dt class="method profile-common ">
+<i class="modifiers">public</i> <b>getMinWidth</b>(<i class="parameters"></i>)
+            :
+            
+            <a><i>Number</i></a>
+</dt>
+<dd class="method profile-common ">
+<div>
+<p class="comment">Returns the <code>Resizable</code>'s minimum width.</p>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<p class="comment">Returns the <code>Resizable</code>'s minimum width.
+ Layout containers should strive not to set the Resizable's width smaller
+ than this value.  This value is calculated by the node subclass using
+ applicable state and variable settings and is not directly settable
+ by applications.
+ <p>
+ An application may override the minimum width of a Resizable node using
+ <a href="../javafx.scene.layout/javafx.scene.layout.LayoutInfo.html">LayoutInfo</a>:
+ <pre><code>
+      Label {
+          layoutInfo: LayoutInfo { minWidth: 50 }
+      }
+ </code></pre>
+ <p>
+ This function returns 0 by default; Resizable subclasses should override
+ this function to return an appropriate value.</p>
+<dl class="returns">
+                    Returns
+                    <dt>Number</dt>
+<dd></dd>
+</dl>
+<p class="profile">Profile: <b>common</b>
+</p>
+                            &nbsp;
+                        </div>
+</div>
+</dd>
+<a id="getPrefHeight(Number)"></a>
+<dt class="method profile-common ">
+<i class="modifiers">public abstract</i> <b>getPrefHeight</b>(<i class="parameters"><b>width</b>:
+                    
+                    <a><i>Number</i></a></i>)
+            :
+            
+            <a><i>Number</i></a>
+</dt>
+<dd class="method profile-common ">
+<div>
+<p class="comment">Returns the <code>Resizable</code>'s preferred height, given the specified width.</p>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<p class="comment">Returns the <code>Resizable</code>'s preferred height, given the specified width.
+ If a particular width need not be factored into the result, -1 may be
+ passed in as the <code>width</code> parameter.   Implementations of this
+ function may also choose to ignore <code>width</code> if it does not
+ impact the result.
+ <p>
+ Layout containers should set the Resizable's <code>height</code> to this value
+ whenever possible.  This value is computed by the node subclass using
+ applicable state and variable settings and is not directly settable
+ by applications.
+ <p>
+ <p>
+ An application may override the preferred height of a Resizable node using
+ <a href="../javafx.scene.layout/javafx.scene.layout.LayoutInfo.html">LayoutInfo</a>:
+ <pre><code>
+      Label {
+          layoutInfo: LayoutInfo { height: 80 }
+      }
+ </code></pre>
+ <p>
+ Resizable subclasses must override this function to return an appropriate value.</p>
+<dl class="parameters">
+                    Parameters
+                    <dt>width</dt>
+<dd></dd>
+</dl>
+<dl class="returns">
+                    Returns
+                    <dt>Number</dt>
+<dd></dd>
+</dl>
+<p class="profile">Profile: <b>common</b>
+</p>
+                            &nbsp;
+                        </div>
+</div>
+</dd>
+<a id="getPrefWidth(Number)"></a>
+<dt class="method profile-common ">
+<i class="modifiers">public abstract</i> <b>getPrefWidth</b>(<i class="parameters"><b>height</b>:
+                    
+                    <a><i>Number</i></a></i>)
+            :
+            
+            <a><i>Number</i></a>
+</dt>
+<dd class="method profile-common ">
+<div>
+<p class="comment">Returns the <code>Resizable</code>'s preferred width, given the specified height.</p>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<p class="comment">Returns the <code>Resizable</code>'s preferred width, given the specified height.
+ If a particular height need not be factored into the result, -1 may be
+ passed in as the <code>height</code> parameter.   Implementations of this
+ function may also choose to ignore <code>height</code> if it does not
+ impact the result.
+ <p>
+ Layout containers should set the Resizable's <code>width</code> to this value
+ whenever possible.  This value is computed by the node subclass using
+ applicable state and variable settings and is not directly settable
+ by applications.
+ <p>
+ An application may override the preferred width of a Resizable node using
+ <a href="../javafx.scene.layout/javafx.scene.layout.LayoutInfo.html">LayoutInfo</a>:
+ <pre><code>
+      Label {
+          layoutInfo: LayoutInfo { width: 50 }
+      }
+ </code></pre>
+ <p>
+ Resizable subclasses must override this function to return an appropriate value.</p>
+<dl class="parameters">
+                    Parameters
+                    <dt>height</dt>
+<dd></dd>
+</dl>
+<dl class="returns">
+                    Returns
+                    <dt>Number</dt>
+<dd></dd>
+</dl>
+<p class="profile">Profile: <b>common</b>
+</p>
+                            &nbsp;
+                        </div>
+</div>
+</dd>
+<a id="getVFill()"></a>
+<dt class="method profile-common ">
+<i class="modifiers">public</i> <b>getVFill</b>(<i class="parameters"></i>)
+            :
+            
+            <a><i>Boolean</i></a>
+</dt>
+<dd class="method profile-common ">
+<div>
+<p class="comment">Returns the <code>Resizable</code>'s vertical fill preference, which indicates
+ whether or not the Resizable's height should be resized beyond its preferred
+ height (up to its maximum) to fill it's allocated layout area.</p>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<p class="comment">Returns the <code>Resizable</code>'s vertical fill preference, which indicates
+ whether or not the Resizable's height should be resized beyond its preferred
+ height (up to its maximum) to fill it's allocated layout area.
+ <p>
+ All container classes (<a href="../javafx.scene.layout/javafx.scene.layout.HBox.html">HBox</a>, <a href="../javafx.scene.layout/javafx.scene.layout.VBox.html">VBox</a>, <a href="../javafx.scene.layout/javafx.scene.layout.Stack.html">Stack</a>,
+ <a href="../javafx.scene.layout/javafx.scene.layout.Flow.html">Flow</a>(horizontal), <a href="../javafx.scene.layout/javafx.scene.layout.Tile.html">Tile</a>) consult this preference when resizing
+ Resizable children.
+ <p>
+ An application may override the vertical fill of a Resizable node using
+ <a href="../javafx.scene.layout/javafx.scene.layout.LayoutInfo.html">LayoutInfo</a>:
+ <pre><code>
+      Label {
+          layoutInfo: LayoutInfo { vfill: true }
+      }
+ </code></pre>
+ <p>
+ This function returns <code>false</code> by default;
+ Resizable subclasses should override this function to return an appropriate value.</p>
+<dl class="returns">
+                    Returns
+                    <dt>Boolean</dt>
+<dd></dd>
+</dl>
+                            &nbsp;
+                        </div>
+</div>
+</dd>
+<a id="getVGrow()"></a>
+<dt class="method profile-common ">
+<i class="modifiers">public</i> <b>getVGrow</b>(<i class="parameters"></i>)
+            :
+            
+            <a href="../javafx.scene.layout/javafx.scene.layout.Priority.html"><i>Priority</i></a>
+</dt>
+<dd class="method profile-common ">
+<div>
+<p class="comment">Returns the <code>Resizable</code>'s vertical grow priority, which determines
+ whether it's layout area is given more vertical space if its available.</p>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<p class="comment">Returns the <code>Resizable</code>'s vertical grow priority, which determines
+ whether it's layout area is given more vertical space if its available.
+ <p>
+ The vertical grow priority is only used if the parent container is resized
+ larger than its preferred height and multiple nodes are <i>competing</i> for extra
+ vertical space, which for the concrete containers is only applicable to <a href="../javafx.scene.layout/javafx.scene.layout.VBox.html">VBox</a>.
+ Note that growing applies only to the layout area assigned to the Resizable;
+ how the Resizable is sized with respect to that area is determined separately
+ by its size and fill preferences (see <a href="../javafx.scene.layout/javafx.scene.layout.Resizable.html#getPrefHeight(float)">getPrefHeight</a> and <a href="../javafx.scene.layout/javafx.scene.layout.Resizable.html#getVFill()">getVFill</a>).
+ <p>
+ If <code>ALWAYS</code>, the Resizable's layout area will always grow vertically
+ if there is additional space, sharing the increase with other nodes that have
+ an vgrow of ALWAYS. The Resizable's layout area will never be grown beyond
+ the Resizable's maximum height.
+ <p>
+ If <code>SOMETIMES</code>, the Resizable's layout area will only grow vertically
+ if either no other node has specified ALWAYS, or the additional space was
+ not completely allocated to nodes specifying ALWAYS because of their maximum
+ size limits.
+ <p>
+ If <code>NEVER</code>, the Resizable's layout area will never be grown vertically
+ if there is additional space.
+ <p>
+ If the Resizable returns ALWAYS or SOMETIMES, then <a href="../javafx.scene.layout/javafx.scene.layout.Resizable.html#getVFill()">getVFill</a> should
+ typically return <code>true</code> to ensure the node will be resized beyond its
+ preferred to take advantage of its larger layout area.
+ <p>
+ An application may override the vertical grow priority of a Resizable node using
+ <a href="../javafx.scene.layout/javafx.scene.layout.LayoutInfo.html">LayoutInfo</a>:
+ <pre><code>
+      Label {
+          layoutInfo: LayoutInfo { vgrow: Priority.ALWAYS }
+      }
+ </code></pre>
+ <p>
+ This function returns <code>Priority.NEVER</code> by default;
+ Resizable subclasses should override this function to return an appropriate value.</p>
+<dl class="returns">
+                    Returns
+                    <dt>Priority</dt>
+<dd></dd>
+</dl>
+                            &nbsp;
+                        </div>
+</div>
+</dd>
+<a id="getVShrink()"></a>
+<dt class="method profile-common ">
+<i class="modifiers">public</i> <b>getVShrink</b>(<i class="parameters"></i>)
+            :
+            
+            <a href="../javafx.scene.layout/javafx.scene.layout.Priority.html"><i>Priority</i></a>
+</dt>
+<dd class="method profile-common ">
+<div>
+<p class="comment">Returns the <code>Resizable</code>'s vertical shrink priority, which determines
+ whether it's layout area is given less vertical space if its parent is
+ resized smaller than its preferred height.</p>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<p class="comment">Returns the <code>Resizable</code>'s vertical shrink priority, which determines
+ whether it's layout area is given less vertical space if its parent is
+ resized smaller than its preferred height.
+ <p>
+ The vertical shrink priority is only used if the parent container is resized
+ smaller than its preferred height and multiple nodes are <i>competing</i> for
+ vertical space, which for the concrete containers is only applicable to <a href="../javafx.scene.layout/javafx.scene.layout.VBox.html">VBox</a>.
+ <p>
+ If <code>ALWAYS</code>, the Resizable's layout area will always shrink vertically
+ if there is less space, sharing the decrease with other nodes that have an
+ vshrink of ALWAYS. The Resizable's layout area will never be sized smaller
+ than the node's minimum height.
+ <p>
+ If <code>SOMETIMES</code>, the Resizable's layout area will only shrink vertically
+ if either no other node has specified ALWAYS, or the reduced space was not
+ completely distributed to nodes specifying ALWAYS because of their minimum
+ size limits.
+ <p>
+ If <code>NEVER</code>, the Resizable's layout area will never be shrunken
+ vertically if there is reduced space.
+ <p>
+ An application may override the vertical shrink priority of a Resizable node using
+ <a href="../javafx.scene.layout/javafx.scene.layout.LayoutInfo.html">LayoutInfo</a>:
+ <pre><code>
+      Label {
+          layoutInfo: LayoutInfo { vshrink: Priority.ALWAYS }
+      }
+ </code></pre>
+ <p>
+ This function returns <code>Priority.NEVER</code> by default;
+ Resizable subclasses should override this function to return an appropriate value.</p>
+<dl class="returns">
+                    Returns
+                    <dt>Priority</dt>
+<dd></dd>
+</dl>
+                            &nbsp;
+                        </div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+</body>
+</html>

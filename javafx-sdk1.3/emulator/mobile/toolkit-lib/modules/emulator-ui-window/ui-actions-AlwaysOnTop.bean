@@ -1,0 +1,13 @@
+#
+# Copyright (c) 2009 Sun Microsystems, Inc. All rights reserved.
+# Use is subject to license terms.
+#
+
+.class=com.sun.jme.toolkit.ui.actions.AlwaysOnTopAction
+
+
+actionNameProperty=VIEW.ALWAYS_ON_TOP
+mnemonicCharProperty=VIEW.ALWAYS_ON_TOP_SHORTCUT
+tooltipStringProperty=VIEW.ALWAYS_ON_TOP_TOOLTIP
+
+frame=DeviceFrame

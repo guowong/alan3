@@ -1,0 +1,31 @@
+#!/bin/sh
+KVEM_HOME=$(dirname "$0")
+KVEM_HOME=$(cd "$KVEM_HOME" 2> /dev/null 1>&2  && pwd -P)
+KVEM_HOME=${KVEM_HOME%%/bin}
+
+if [ -f "$KVEM_HOME/.org.opensolaris,pkg/nextInstall" ]
+then
+	last_known_reboot=`cat "$KVEM_HOME/.org.opensolaris,pkg/lastBoot"`
+	last_reboot=`who -b`
+
+	if [[ "$last_reboot" != "$last_known_reboot" ]] 
+	then
+    	open -W "$KVEM_HOME/Updater.app"
+		if [ -f "$KVEM_HOME/.org.opensolaris,pkg/nextInstall" ]
+		then
+			#installation failed
+			exit 1
+		fi
+
+	fi
+fi
+
+function stop_child {
+    kill ${CHILD_PID}
+    wait ${CHILD_PID}
+}
+
+DYLD_LIBRARY_PATH=${DYLD_LIBRARY_PATH}:${KVEM_HOME}/bin java -ea -classpath "$KVEM_HOME/toolkit-lib/modules/bootstrap/code/bootstrap.jar:$KVEM_HOME/toolkit-lib/modules/bootstrap/code/log4j-1.2.15.jar" -Dlog4j.configuration="file:$KVEM_HOME/toolkit-lib/process/memory-profiler/conf/log4j.xml" -Dmodules.dir="$KVEM_HOME/toolkit-lib" -Dprocess=process/memory-profiler -Dtoolkit.home="$KVEM_HOME" -Demulator.home="$KVEM_HOME" -Demulator.lib="$KVEM_HOME/emulator-lib" -Dsystem.properties="$KVEM_HOME/toolkit-lib/platform.properties,$KVEM_HOME/toolkit-lib/modules/bootstrap/conf/system.properties,$KVEM_HOME/toolkit-lib/generated.properties" -D -Dfile.encoding=UTF8 -Xdock:name="Java Heap Memory Observe Tool" com.sun.jme.toolkit.bootstrap.Container  "$@" </dev/stdin &
+CHILD_PID=$!
+trap stop_child HUP INT QUIT ABRT KILL TERM
+wait ${CHILD_PID}

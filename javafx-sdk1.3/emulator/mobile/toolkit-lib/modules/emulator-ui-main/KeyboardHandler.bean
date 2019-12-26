@@ -1,0 +1,11 @@
+#
+# Copyright (c) 2009 Sun Microsystems, Inc. All rights reserved.
+# Use is subject to license terms.
+#
+
+.class: com.sun.kvem.cdc.DefaultKeyboardHandler
+
+eventManager: EventBridge
+
+initialKeyRepeatDelay: 1000
+keyRepeatDelay: 500

@@ -1,0 +1,10 @@
+#
+# Copyright (c) 2009 Sun Microsystems, Inc. All rights reserved.
+# Use is subject to license terms.
+#
+
+.class: javax.swing.JSeparator
+.parent: ui-menu-Application
+.parent-add-method: add
+.dependencies: ui-menu-Application-SwitchRunningMidlet
+.dependents: ui-menu-Application-Exit

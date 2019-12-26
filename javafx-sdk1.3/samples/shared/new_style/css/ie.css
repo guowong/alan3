@@ -1,0 +1,24 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*
+
+This file will apply to ALL Internet Explorer versions ONLY
+
+*/
+
+
+a.download-button,
+a.button {
+	float: left;
+	padding-top: 0;
+	padding-bottom: 2px;
+}
+
+a.download-button span,
+a.button span {  }
+
+a.button span {  }
+
+a.download-button span {  }
+

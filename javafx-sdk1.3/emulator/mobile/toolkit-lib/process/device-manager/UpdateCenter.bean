@@ -1,0 +1,17 @@
+#
+# Copyright (c) 2009 Sun Microsystems, Inc. All rights reserved.
+# Use is subject to license terms.
+#
+
+.class: com.sun.jme.toolkit.aut.UpdateCenter
+
+workdirHelper: WorkdirHelper
+version:${product.shortname}
+timestampFileName: .stmp
+updateTimeout: 30000
+connectionTimeout: 10000
+period: 10
+enabled: ${uc.enabled}
+url: http://cds.cmsg.sun.com/update/update.properties?uid=%s&ver=%s
+UIDAccessor: UIDAccessor
+TrayIconManager: TrayIconManager    

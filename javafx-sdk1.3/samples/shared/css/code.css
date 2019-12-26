@@ -1,0 +1,32 @@
+.code {
+    white-space: pre;
+	margin: 1em;
+}
+
+.comment {
+	color: #f26a27;
+}
+
+#nav {
+	padding: 0.5em;
+	margin: 0px;
+	background-color: #3e3c3f;
+}
+
+
+#nav a {
+	color: #f26a27;
+}
+
+#nav li {
+	padding: 1em;
+	display: inline;
+}
+
+
+.string-literal, .number-literal {
+	font-style: italic;
+	color: #4b494d;
+}
+
+

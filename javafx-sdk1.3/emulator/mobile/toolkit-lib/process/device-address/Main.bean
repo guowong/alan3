@@ -1,0 +1,28 @@
+#
+# Copyright (c) 2009 Sun Microsystems, Inc. All rights reserved.
+# Use is subject to license terms.
+#
+
+.class: com.sun.jme.toolkit.devaddr.Main
+.dependencies: DeviceManagerConnector
+
+args: args
+returnCode: return-code
+shutdownLatch: shutdown-latch
+
+deviceManagerConnector: DeviceManagerConnector
+
+usage: device-address <command> [args...]\n\
+\n\
+possible commands are:\n\
+\    add <addr type> <address>\n\
+\                  add the specified address\n\
+\    del <addr type> <address>\n\
+\                  remove the specified address\n\
+\    list\n\
+\                  list all addresses\n\
+\    list <addr type>\n\
+\                  list addresses of the specified type\n\
+\n\
+supported address types:\n\
+\    ip            ip address

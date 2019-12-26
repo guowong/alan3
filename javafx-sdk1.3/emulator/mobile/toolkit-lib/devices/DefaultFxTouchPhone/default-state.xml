@@ -1,0 +1,22 @@
+<!--
+    Copyright (c) 2009 Sun Microsystems, Inc. All rights reserved.
+    Use is subject to license terms.
+-->
+
+<device-state name="Default" defaultSkin="skin.png">
+
+    <!-- these are "virtual" buttons, not pressable by mouse -->
+
+    <button activators="VK_F1" vmKeyCode="-6"/>
+    <button activators="VK_F2" vmKeyCode="-7"/>
+
+    <button activators="VK_END" vmKeyCode="-11" deviceKey="true" />
+    <button activators="VK_BACK_SPACE" vmKeyCode="-8"/>
+    <button activators="VK_HOME" vmKeyCode="-10" deviceKey="true"/>
+    <button activators="VK_END" vmKeyCode="-11" />
+    <button activators="VK_ENTER" vmKeyCode="-5" />
+    <button activators="VK_LEFT" vmKeyCode="-3" />
+    <button activators="VK_UP" vmKeyCode="-1" />
+    <button activators="VK_RIGHT" vmKeyCode="-4"/>
+    <button activators="VK_DOWN" vmKeyCode="-2"/>
+</device-state>

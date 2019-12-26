@@ -1,0 +1,287 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+
+<head>
+	
+	<title>JavaFX Sample</title>
+	
+	<!--METAS-->
+	
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="description" content="JavaFX" />
+	<meta name="keywords" content="JavaFX Oracle" />
+	<meta name="author" content="Oracle" />
+	
+	<!--STYLESHEETS-->
+	<link rel="stylesheet" type="text/css" media="screen, projection" href="../../shared/new_style/css/reset.css" />
+	<link rel="stylesheet" type="text/css" media="screen, projection" href="../../shared/new_style/css/javafx.css" />
+	<link rel="stylesheet" type="text/css" media="screen, projection" href="../../shared/new_style/css/code.css" />
+	
+	<!-- CONDITIONAL STYLESHEETS -->
+	<!--[if IE]>
+	  <link rel="stylesheet" type="text/css" href="../../shared/new_style/css/ie.css" />
+	<![endif]-->
+	
+	<!--ADDRESS BAR ICON-->
+	<link rel="shortcut icon" type="image/ico" href="../../shared/new_style/images/favicon.ico" />
+	
+	<link rel="stylesheet" type="text/css" media="screen, projection" href="../../shared/new_style/css/samples.css" />
+    <style type="text/css">
+.code .string-literal, .code .number-literal {
+	font-style: italic;
+	color: #4b494d;
+}
+    </style>
+</head>
+<!--
+	The ID here is required to indicate the page type.
+	Changing this will affect the layout of the page.
+-->
+<body id="tutorials">
+	
+	<div id="body">
+		<!--
+			The header in the source code view doesn't have any buttons.
+			So just the <h1> tag for the site logo is included.
+			
+			The header also doesn't have an A tag with an "href" since you shouldn't be able to navigate to the
+			index pgae inside the popup.
+		-->
+        
+        
+		<ul id="popheader">
+			<li class="first">
+				<h1><a><span>FX</span></a></h1>
+			
+				<!-- Close button -->
+				<a class="close-button" title="Close"><span>Close</span></a>
+			</li>
+		</ul>
+<div class="source">
+  <div class="code-header">License text </div>
+    <pre>
+
+/*
+ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER 
+ * Copyright  2008, 2010 Oracle and/or its affiliates.  All rights reserved. 
+ * Use is subject to license terms.
+ * 
+ * This file is available and licensed under the following license:
+ * 
+ * Redistribution and use in source and binary forms, with or without 
+ * modification, are permitted provided that the following conditions are met: 
+ * 
+ *   * Redistributions of source code must retain the above copyright notice, 
+ *     this list of conditions and the following disclaimer. 
+ *
+ *   * Redistributions in binary form must reproduce the above copyright notice,
+ *     this list of conditions and the following disclaimer in the documentation
+ *     and/or other materials provided with the distribution.
+ *
+ *   * Neither the name of Oracle Corporation nor the names of its contributors 
+ *     may be used to endorse or promote products derived from this software 
+ *     without specific prior written permission. 
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS 
+ * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT 
+ * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR 
+ * A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT 
+ * OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, 
+ * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, 
+ * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; 
+ * OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, 
+ * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR 
+ * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF 
+ * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. 
+ */
+
+    </pre>
+  </div>
+<div class="code"><pre><code>
+<b>package</b> com.sun.javafx.mediabox;
+
+<b>import</b> javafx.stage.*;
+<b>import</b> javafx.scene.*;
+<b>import</b> com.sun.javafx.mediabox.MediaBox;
+<b>import</b> javafx.scene.input.KeyCode;
+<b>import</b> javafx.scene.input.KeyEvent;
+
+<i class='comment'>/**
+ * @author baechul
+ */</i>
+
+<b class='keyword'>var</b> index = <span class='number-literal'>0</span>;
+<b class='keyword'>var</b> media = [
+    <span class='string-literal'>"<b>http</b>:<i class='comment'>//sun.edgeboss.net/download/sun/media/<span class='number-literal'>1460825906</span>/<span class='number-literal'>1460825906</span>_<span class='number-literal'>2956241001</span>_big-buck-bunny-<span class='number-literal'>640</span>x<span class='number-literal'>360</span>.flv"</span>,</i>
+    <span class='string-literal'>"<b>http</b>:<i class='comment'>//sun.edgeboss.net/download/sun/media/<span class='number-literal'>1460825906</span>/<span class='number-literal'>1460825906</span>_<span class='number-literal'>11657401001</span>_<span class='number-literal'>09</span>b<span class='number-literal'>01828</span>-<span class='number-literal'>11</span>.flv"</span>,</i>
+    <span class='string-literal'>"<b>http</b>:<i class='comment'>//sun.edgeboss.net/download/sun/media/<span class='number-literal'>1460825906</span>/<span class='number-literal'>1460825906</span>_<span class='number-literal'>11810873001</span>_<span class='number-literal'>09</span>c<span class='number-literal'>01923</span>-<span class='number-literal'>00</span>.flv"</span></i>
+];
+<b class='keyword'>var</b> mediaTitles = [
+    <span class='string-literal'>"Big Buck Bunny"</span>,
+    <span class='string-literal'>"JavaFX"</span>,
+    <span class='string-literal'>"JavaFX Mobile"</span>
+];
+<b class='keyword'>var</b> mediaDescriptions = [
+    <span class='string-literal'>"A well-tempered rabbit finds his day spoiled by the rude actions of the..."</span>,
+    <span class='string-literal'>"Getting Started with JavaFX"</span>,
+    <span class='string-literal'>"What is JavaFX Mobile?"</span>
+];
+<b class='keyword'>var</b> theme = getFXArgString(<span class='string-literal'>"theme", "paranara"</span>);
+<b class='keyword'>var</b> mediaUrl = getFXArgString(<span class='string-literal'>"mediaURL"</span>, media[<span class='number-literal'>0</span>]);
+<b class='keyword'>var</b> mediaViewWidth = getFXArgInt(<span class='string-literal'>"mediaViewWidth"</span>, <span class='number-literal'>640</span>);
+<b class='keyword'>var</b> mediaViewHeight = getFXArgInt(<span class='string-literal'>"mediaViewHeight"</span>, <span class='number-literal'>360</span>);
+<b class='keyword'>var</b> mediaTitle = getFXArgString(<span class='string-literal'>"mediaTitle", ""</span>);
+<b class='keyword'>var</b> mediaDescription = getFXArgString(<span class='string-literal'>"mediaDescription", ""</span>);
+
+
+<b class='keyword'>var</b> <b>mediaBox</b>:MediaBox = MediaBox {
+
+    <i class='comment'>// set the current profile</i>
+ 
+    <i class='comment'>// media and play <b class='keyword'>var</b>iables</i>
+    <b>mediaSource</b>:mediaUrl
+    <b>mediaTitle</b>: mediaTitles[<span class='number-literal'>0</span>]
+    <b>mediaDescription</b>: mediaDescriptions[<span class='number-literal'>0</span>]
+    <b>autoPlay</b>: true             <i class='comment'>// <b>default</b>: false</i>
+    <b>preserveRatio</b>: true        <i class='comment'>// <b>default</b>: true</i>
+    
+    <i class='comment'>// size and layout position</i>
+    <b>width</b>: bind mediaBox.scene.width
+    <i class='comment'>//<b>width</b>: bind if({__PROFILE__} == <span class='string-literal'>"desktop"</span>) <span class='number-literal'>640</span> else <span class='number-literal'>1024</span>;</i>
+    
+    <b>height</b>: bind mediaBox.scene.height
+    <i class='comment'>//<b>height</b>: bind if({__PROFILE__} == <span class='string-literal'>"desktop"</span>) <span class='number-literal'>360</span> else <span class='number-literal'>1024</span>;</i>
+    <b>layoutX</b>: <span class='number-literal'>0</span>;
+    <b>layoutY</b>: <span class='number-literal'>0</span>;
+
+    <i class='comment'>// view</i>
+    <b>themeStr</b>: theme             <i class='comment'>// <b>default</b>: <span class='string-literal'>"paranara"</span></i>
+    <b>mediaControlBarHeight</b>: <span class='number-literal'>25</span>   <i class='comment'>// <b>default</b>: <span class='number-literal'>25</span>, possible <b>values</b>: <span class='number-literal'>20</span>~<span class='number-literal'>50</span></i>
+    <b>showMediaInfo</b>: true         <i class='comment'>// <b>default</b>: true</i>
+
+    <i class='comment'>// function <b class='keyword'>var</b>iables</i>
+    <b>onEndOfMedia</b>: function() {
+        index++;
+        index = index mod sizeof media;
+        mediaBox.mediaSource = media[index];
+        mediaBox.mediaTitle = mediaTitles[index];
+        mediaBox.mediaDescription = mediaDescriptions[index];
+    }
+    <b>onMouseClicked</b>: function(me) {
+        index++;
+        index = index mod sizeof media;
+        mediaBox.mediaSource = media[index];
+        mediaBox.mediaTitle = mediaTitles[index];
+        mediaBox.mediaDescription = mediaDescriptions[index];
+    }
+
+     <b>onKeyPressed</b>:function(<b>e</b>:KeyEvent):Void {
+        if((e.code == KeyCode.VK_RIGHT) or (e.code == KeyCode.VK_TRACK_NEXT)) {
+            index++;
+            index = index mod sizeof media;
+            mediaBox.mediaSource = media[index];
+            mediaBox.mediaTitle = mediaTitles[index];
+            mediaBox.mediaDescription = mediaDescriptions[index];
+            mediaBox.showMediaInfo = true;
+        }
+        else if((e.code == KeyCode.VK_LEFT) or (e.code == KeyCode.VK_TRACK_PREV)) {
+            index--;
+            if (index &lt; <span class='number-literal'>0</span>) index = sizeof media - <span class='number-literal'>1</span>;
+            index = index mod sizeof media;
+            mediaBox.mediaSource = media[index];
+            mediaBox.mediaTitle = mediaTitles[index];
+            mediaBox.mediaDescription = mediaDescriptions[index];
+        }
+	else if (e.code == KeyCode.VK_POWER) { FX.exit(); }
+        else if (e.code == KeyCode.VK_UP) {
+            mediaBox.mediaControlBar.show = true;
+            mediaBox.showMediaInfo = true;
+        }
+        else if (e.code == KeyCode.VK_DOWN) {
+            mediaBox.mediaControlBar.show = false;
+            mediaBox.showMediaInfo = false;
+        }
+	else if ((e.code == KeyCode.VK_BACK_SPACE) or
+                 (e.code == KeyCode.VK_Q) or
+                 (e.code == KeyCode.VK_POWER))
+        {
+            FX.exit();
+        }
+    }
+}
+
+Stage {
+    <b>title</b>: <span class='string-literal'>"MediaBox Player"</span>
+    <b>resizable</b>: true
+
+    <b>scene</b>:Scene {
+        <i class='comment'>//<b>width</b>: getFXArgInt(<span class='string-literal'>"mediaViewWidth"</span>, <span class='number-literal'>640</span>)</i>
+        <b>width</b>: getWidth()
+        <i class='comment'>//<b>height</b>: getFXArgInt(<span class='string-literal'>"mediaViewHeight"</span>, <span class='number-literal'>360</span>)</i>
+        <b>height</b>: getHeight()
+        <b>content</b>: mediaBox
+    }
+}
+
+mediaBox.requestFocus();
+
+<i class='comment'>// helper functions</i>
+
+function getWidth(): Number {
+
+        if ({__PROFILE__} == <span class='string-literal'>"desktop"</span>)
+            return <span class='number-literal'>640</span>
+        else
+            return <span class='number-literal'>1280</span>
+ }
+
+function getHeight(): Number {
+
+        if ({__PROFILE__} == <span class='string-literal'>"desktop"</span>)
+            return <span class='number-literal'>360</span>
+        else
+            return <span class='number-literal'>720</span>
+ }
+
+function getFXArgString(<b>arg</b>:String, <b>defaultValue</b>:String): String {
+    <b class='keyword'>var</b> val = FX.getArgument(arg);
+    if (val == null) {
+        return defaultValue;
+    }
+    return val as String;
+}
+
+function getFXArgInt(<b>arg</b>:String, <b>defaultValue</b>:Integer): Integer {
+    <b class='keyword'>var</b> val = FX.getArgument(arg);
+    if (val == null) {
+        return defaultValue;
+    }
+    try {
+        return Integer.parseInt(val as String);
+    } catch (<b>nfe</b>: java.lang.NumberFormatException) {
+        return defaultValue;
+    }
+}
+</code></pre></div>
+<div id="footer">
+			<span class="copy">&copy; 2010, Oracle Corporation and/or its affiliates.</span>
+			
+		</div>
+<!--
+	JAVASCRIPT
+	At the bottom of the page so that we download and render all the visual elements, before we start handling the javascript. This provides for a faster perceived loading time.
+-->
+
+<script src="../../shared/new_style/js/omi/s_code_remote.js" type="text/javascript"></script>
+ 
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js"></script>
+<!--[if lte IE 6]>
+	<script type="text/javascript" src="../../shared/new_style/js/jquery.ifixpng.js"></script>
+<![endif]-->
+<script type="text/javascript" src="../../shared/new_style/js/jquery.history.js"></script>
+<script type="text/javascript" src="../../shared/new_style/js/javafx.js"></script>
+
+
+
+
+

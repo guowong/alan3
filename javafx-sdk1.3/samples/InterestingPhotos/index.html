@@ -1,0 +1,286 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+
+<head>
+	
+	<title>JavaFX Example Code | InterestingPhotos | JavaFX Demo</title>
+	
+	<!--METAS-->
+	
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="description" content="JavaFX" />
+	<meta name="keywords" content="JavaFX Oracle [...]" />
+	<meta name="author" content="Oracle" />
+	
+	<!--STYLESHEETS-->
+	<link rel="stylesheet" type="text/css" media="screen, projection" href="../shared/new_style/css/reset.css" />
+	<link rel="stylesheet" type="text/css" media="screen, projection" href="../shared/new_style/css/javafx.css" />
+	<link rel="stylesheet" type="text/css" media="screen, projection" href="../shared/new_style/css/samples.css" />
+	
+	<!-- CONDITIONAL STYLESHEETS -->
+	<!--[if IE]>
+		<link rel="stylesheet" type="text/css" href="../shared/new_style/css/ie.css" />
+	<![endif]-->
+	
+	<!--[if IE 6]>
+		<link rel="stylesheet" type="text/css" href="../shared/new_style/css/ie6.css" />
+	<![endif]-->
+	
+	<!--[if IE 7]>
+		<link rel="stylesheet" type="text/css" href="../shared/new_style/css/ie7.css" />
+	<![endif]-->
+	
+	<!--ADDRESS BAR ICON-->
+
+	<link rel="shortcut icon" type="image/ico" href="../shared/new_style/images/favicon.ico" />
+    
+	
+</head>
+<!--
+	The ID here is required to indicate the page type.
+	Changing this will affect the layout of the page.
+-->
+<body id="tutorials">
+	
+	<div id="body">
+		<!--
+			Header is the main navigation.
+			We are using CSS Sprites to apply images across the site, namely the header and subnav.
+			
+			This has a few implications for you guys, if you want to change the image for selected or hover states,
+			you'll find the images embedded next to the header image in the same file. This makes it slightly harder to edit, and
+			a lot more difficult to change in the styles, but allows for 1 file and download request which makes it much more performant.
+			
+			This also means some of the elements that use the sprites have id's that allow us to modify the sprite image based on each element.
+			So in header and subnav, we have an id on each LI, these can't be changed or else the image styling will be ruined.
+		-->
+		<ul id="header" class="see">
+			<li id="fx" class="first">
+				<h1><a href="http://www.javafx.com/"><span>FX</span></a></h1>
+			</li>
+			<li id="explore">
+				<a href="http://www.javafx.com/about/"><span>Explore</span></a>
+			</li>
+			<li id="see">
+				<a href="http://www.javafx.com/samples/"><span>See</span></a>
+			</li>
+			<li id="learn">
+				<a href="http://www.javafx.com/learn/"><span>Learn</span></a>
+			</li>
+			<li id="start" class="last">
+				<a href="http://www.javafx.com/downloads/"><span>Start</span></a>
+			</li>
+		</ul>
+	
+
+<script src="http://jfx.sfbay.sun.com/hudson//job/1.3.1/label=macosx-universal-soma/101/artifact/artifacts/rt-deployed/dtfx.js"></script><div id="main">
+<div class="sidebar">
+<a href="../index.html" class="back"><span>Return to See main Page</span></a>
+<div class="profile">
+<strong>Key Features</strong><em>Web Services Graphics API Animation </em><strong>Skill Level</strong><em>intermediate</em><strong>Last Updated</strong><em>November 6, 2008</em>
+</div>
+<dl class="icon-list">
+<dt>Share</dt>
+<dd>
+<a href="http://buzz.yahoo.com/article/http://javafx.com/samples/InterestingPhotos/"><img src="../shared/new_style/images/yahoo_buzz_icon.png" width="20" height="19" alt="Yahoo Buzz"></a>
+</dd>
+<dd>
+<a href="http://www.facebook.com/share.php?u=http://javafx.com/samples/InterestingPhotos/"><img src="../shared/new_style/images/facebook_icon.png" width="20" height="17" alt="Facebook"></a>
+</dd>
+<dd>
+<a href="http://www.myspace.com/index.cfm?u=http://javafx.com/samples/InterestingPhotos/"><img src="../shared/new_style/images/myspace_icon.png" width="20" height="18" alt="Myspace"></a>
+</dd>
+<dd>
+<a href="http://digg.com/submit?phase=3&url=http://javafx.com/samples/InterestingPhotos/"><img src="../shared/new_style/images/digg_icon.png" width="20" height="18" alt="Digg"></a>
+</dd>
+<dd>
+<a href="http://www.reddit.com/submit?url=http://javafx.com/samples/InterestingPhotos/"><img src="../shared/new_style/images/reddit_icon.png" width="20" height="18" alt="Reddit"></a>
+</dd>
+<dd>
+<a href="http://del.icio.us/post?url=http://javafx.com/samples/InterestingPhotos/"><img src="../shared/new_style/images/delicious_icon.png" width="20" height="18" alt="Delicious"></a>
+</dd>
+<dd>
+<a href="http://www.newsvine.com/_tools/seed?popoff=0&u=http://javafx.com/samples/InterestingPhotos/"><img src="../shared/new_style/images/newsvine_icon.png" width="20" height="18" alt="Newsvine"></a>
+</dd>
+</dl>
+<dl class="links-list">
+<dt>View Source Code</dt><dd><a href='src/Constants.fx.html' target='_blank'>Constants.fx</a></dd>
+<dd><a href='src/Main.fx.html' target='_blank'>Main.fx</a></dd>
+<dd><a href='src/Photo.fx.html' target='_blank'>Photo.fx</a></dd>
+<dd><a href='src/PhotoPullParser.fx.html' target='_blank'>PhotoPullParser.fx</a></dd>
+<dd><a href='src/ArrowImageButton.fx.html' target='_blank'>ArrowImageButton.fx</a></dd>
+<dd><a href='src/Background.fx.html' target='_blank'>Background.fx</a></dd>
+<dd><a href='src/FullImageView.fx.html' target='_blank'>FullImageView.fx</a></dd>
+<dd><a href='src/ImageButton.fx.html' target='_blank'>ImageButton.fx</a></dd>
+<dd><a href='src/Layout.fx.html' target='_blank'>Layout.fx</a></dd>
+<dd><a href='src/PageImageButton.fx.html' target='_blank'>PageImageButton.fx</a></dd>
+<dd><a href='src/ProgressBar.fx.html' target='_blank'>ProgressBar.fx</a></dd>
+<dd><a href='src/ThumbImageView.fx.html' target='_blank'>ThumbImageView.fx</a></dd>
+<dd class="button">
+<a class="download-button" href="InterestingPhotos.zip"><span>Download Source Code</span></a>
+</dd>
+</dl>
+<div class="profile">
+<h4>Profile</h4>
+<img src="http://blogs.sun.com/rakeshmenonp/resource/images/photo.jpg"><strong>Rakesh Menon</strong>
+</div>
+<div id="mobile" class="sidebox">
+<img src="../shared/mobile_badge.png"></div>
+<div id="tv" class="sidebox">
+<img src="../shared/tv_badge.png"></div>
+</div>
+<div id="content">
+<div class="content-head">
+<h2>Accessing Flickr's REST API From JavaFX</h2>
+<div class="meta">
+                       By <a class="author">Rakesh Menon</a>,
+                       <span class="date">November 6, 2008</span>
+</div>
+</div>
+<p>InterestingPhotos is a simple JavaFX application that displays 
+"interesting" photos retrieved from <a href="http://flickr.com">Flickr</a> 
+using <a href="http://developer.yahoo.com/flickr/">Flickr's REST API</a>.
+</p>
+<p>Information about "interesting" photos is obtained by performing an 
+HTTP GET request on Flickr's <var class="code-attribute">flickr.interestingness.getList</var> API call 
+by using the JavaFX asynchronous HTTP API
+(<var class="code-attribute">javafx.io.http.HttpRequest</var>). The response document is
+parsed by using the JavaFX XML pull parser
+(<var class="code-attribute">javafx.data.pull.PullParser</var>) to extract information about
+the photos. The photos are then fetched and displayed in Stage as a grid. The user
+can click the thumb image to load the normal image. Clicking the
+normal image again returns the UI to thumb image view.
+</p>
+<script>
+var u10only = '';
+var webstartAllowed = '';
+
+if(u10only=='true' && !deployJava.isPlugin2()) {
+    document.write("<p class='u10warning'>");
+    document.write("This sample needs Java SE 6 Update 10 or higher with Internet Explorer 7+ or FireFox 3+");
+    document.write("");
+    if(webstartAllowed=='true') {
+        document.write(" Please <a href='webstart/InterestingPhotos.jnlp'>run this example with Java Webstart<a> instead");
+    }
+    document.write("</p>");
+} else {
+
+    javafx(
+        {
+            archive: "webstart/InterestingPhotos.jar,",
+            width: 240,
+            height: 320,
+            code: "interesting.Main",
+            draggable: true,
+            name: "appl"
+        } , { 
+                    "flickr_apikey": "c383a2f8d22a3e3788568cb1c64386fc"
+ } 
+    );
+}
+</script>
+<p>Do not use the api-key used by this sample. Obtain your own key from 
+<a href="http://www.flickr.com/services/api/misc.api_keys.html">flickr.com</a>
+
+</p>
+<p>The response XML document contains a list of
+information about available photos.  The document
+contains the following information about each photo:
+</p>
+<ul>
+    
+<li>id</li>   
+    
+<li>owner</li>   
+    
+<li>secret</li>   
+    
+<li>server</li>   
+    
+<li>farm</li>   
+    
+<li>title</li>   
+
+</ul>
+<p>This information is used to construct a URL to retrieve and
+then display each photo.  The <var class="code-attribute">ImageView</var> class knows how to
+retrieve and display an image using a URL.  Once the photo is retrieved,
+it is displayed in <var class="code-attribute">Scene</var> of <var class="code-attribute">Stage</var> through the use
+of data binding.  
+</p>
+<p>A sequence of photo objects is constructed by parsing the response XML. 
+A grid of <var class="code-attribute">ImageView</var> is added to <var class="code-attribute">Scene</var> of <var class="code-attribute">Stage</var>.  
+If the user clicks this thumb photo, the normal photo is loaded and shown.
+Clicking the normal photo restores the thumb photo grid. The user can navigate to the 
+next or previous set of photos by clicking &lt;&lt; and &gt;&gt; arrow buttons.
+</p>
+<h5>Flickr Web Services and Key Requirement</h5>
+<p>Anyone who wants to use Flickr Web Services must register with Flickr
+to receive a key. A key is an opaque string that must be included in all 
+communication to Flickr's web servers when using this API.
+</p>
+<p>At the top of the <var class="code-attribute">Main.fx</var> file, a constant
+<var class="code-attribute">apiKey</var> is declared that is initialized with value returned by FX argument <var class="code-attribute">"flickr_apikey"</var>.  
+Go to <a href="http://developer.yahoo.com/flickr">http://developer.yahoo.com/flickr</a>
+to register and receive App ID. Use the key value to initialize the constant 
+<var class="code-attribute">apiKey</var> before running the program. The App ID can be passed as argument to application.
+</p>
+<div class="source">
+<div class="code-header">Source Code</div>
+<pre>
+ <i class='comment'>// <b>TODO</b>: get an apiKey from <b>http</b>://developer.yahoo.com/flickr</i>
+ def apiKey = FX.getArgument(<span class='string-literal'>"flickr_apikey"</span>);
+</pre>
+</div>
+<p>You can also directly assign the API-Key string as shown below and rebuild the application</p>
+<div class="source">
+<div class="code-header">Source Code</div>
+<pre>def apiKey = <span class='string-literal'>"&lt;your flickr api key&gt;"</span>;</pre>
+</div>
+<p>If you are using proxy-server for connecting to internet, please follow setup as specified in 
+"<a href="http://java.sun.com/javase/6/docs/technotes/guides/net/proxies.html">Java Networking and Proxies</a>".</p>
+<h3>References</h3>
+<ul class="references">
+
+<li>
+<a href="http://developer.yahoo.com/flickr/">Flickr Web Services Documentation</a>
+</li>
+
+<li>
+<a href="http://java.sun.com/javase/6/docs/technotes/guides/net/proxies.html">Java Networking and Proxies</a>
+</li>
+
+</ul>
+</div>
+</div>		<div id="footer">
+			<span class="copy">&copy; 2010, Oracle Corporation and/or its affiliates.</span>
+            <ul>
+				<li class="first"><a href="http://javafx.com/" target="_blank">English</a></li>
+				<li><a href="http://www.sun.com/privacy/index.html" target="_blank">Privacy</a></li>
+                <li><a href="http://www.sun.com/termsofuse.jsp" target="_blank">Terms of Use</a></li>
+                <li><a href="https://openjfx.dev.java.net/legal/trademarks.txt" target="_blank">Trademarks</a></li>
+                <li><a href="http://www.sun.com/software/licensingcenter/" target="_blank">Licensing</a></li>
+            </ul>
+            <a href="http://www.sun.com/" id="footer_link"><span>Sun.com</span></a>
+		</div>
+	</div>
+    
+<!-- BEGIN G9 VARIATION 0 -->
+<script language="javascript" type="text/javascript" charset="UTF-8" src="http://www.sun.com/share/op/oo_engine.js"></script>
+<script language="javascript" type="text/javascript" charset="UTF-8" src="http://www.sun.com/share/op/oo_conf_en-US.js"></script>
+<!-- END G9 VARIATION 0 -->
+	
+<script src="../shared/new_style/js/omi/s_code_remote.js" type="text/javascript"></script>
+</body>
+
+</html>
+
+<!--
+	JAVASCRIPT
+	At the bottom of the page so that we download and render all the visual elements, before we start handling the javascript. This provides for a faster perceived loading time.
+-->
+
+<script type="text/javascript" src="../shared/new_style/js/javafx.js"></script>
+
+
+

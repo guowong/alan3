@@ -1,0 +1,13 @@
+#
+# Copyright (c) 2009 Sun Microsystems, Inc. All rights reserved.
+# Use is subject to license terms.
+#
+
+.class: com.sun.jme.toolkit.deviceadapter.genericdevice.ProductParams
+.parent-add-method: addProductParams
+
+productDescriptor: VID_0430&PID_2190&VER_0102
+productName: JavaFXWinceDevice
+productStdoutPort: 51235
+productStderrPort: 51236
+productJdwpPort: 2800

@@ -1,0 +1,677 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+
+<head>
+	
+	<title>JavaFX Sample</title>
+	
+	<!--METAS-->
+	
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="description" content="JavaFX" />
+	<meta name="keywords" content="JavaFX Oracle" />
+	<meta name="author" content="Oracle" />
+	
+	<!--STYLESHEETS-->
+	<link rel="stylesheet" type="text/css" media="screen, projection" href="../../shared/new_style/css/reset.css" />
+	<link rel="stylesheet" type="text/css" media="screen, projection" href="../../shared/new_style/css/javafx.css" />
+	<link rel="stylesheet" type="text/css" media="screen, projection" href="../../shared/new_style/css/code.css" />
+	
+	<!-- CONDITIONAL STYLESHEETS -->
+	<!--[if IE]>
+	  <link rel="stylesheet" type="text/css" href="../../shared/new_style/css/ie.css" />
+	<![endif]-->
+	
+	<!--ADDRESS BAR ICON-->
+	<link rel="shortcut icon" type="image/ico" href="../../shared/new_style/images/favicon.ico" />
+	
+	<link rel="stylesheet" type="text/css" media="screen, projection" href="../../shared/new_style/css/samples.css" />
+    <style type="text/css">
+.code .string-literal, .code .number-literal {
+	font-style: italic;
+	color: #4b494d;
+}
+    </style>
+</head>
+<!--
+	The ID here is required to indicate the page type.
+	Changing this will affect the layout of the page.
+-->
+<body id="tutorials">
+	
+	<div id="body">
+		<!--
+			The header in the source code view doesn't have any buttons.
+			So just the <h1> tag for the site logo is included.
+			
+			The header also doesn't have an A tag with an "href" since you shouldn't be able to navigate to the
+			index pgae inside the popup.
+		-->
+        
+        
+		<ul id="popheader">
+			<li class="first">
+				<h1><a><span>FX</span></a></h1>
+			
+				<!-- Close button -->
+				<a class="close-button" title="Close"><span>Close</span></a>
+			</li>
+		</ul>
+<div class="source">
+  <div class="code-header">License text </div>
+    <pre>
+
+/*
+ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER 
+ * Copyright  2008, 2010 Oracle and/or its affiliates.  All rights reserved. 
+ * Use is subject to license terms.
+ * 
+ * This file is available and licensed under the following license:
+ * 
+ * Redistribution and use in source and binary forms, with or without 
+ * modification, are permitted provided that the following conditions are met: 
+ * 
+ *   * Redistributions of source code must retain the above copyright notice, 
+ *     this list of conditions and the following disclaimer. 
+ *
+ *   * Redistributions in binary form must reproduce the above copyright notice,
+ *     this list of conditions and the following disclaimer in the documentation
+ *     and/or other materials provided with the distribution.
+ *
+ *   * Neither the name of Oracle Corporation nor the names of its contributors 
+ *     may be used to endorse or promote products derived from this software 
+ *     without specific prior written permission. 
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS 
+ * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT 
+ * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR 
+ * A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT 
+ * OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, 
+ * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, 
+ * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; 
+ * OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, 
+ * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR 
+ * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF 
+ * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. 
+ */
+
+    </pre>
+  </div>
+<div class="code"><pre><code>
+<b>package</b> localsearch;
+
+<b>import</b> java.io.InputStream;
+<b>import</b> java.lang.Exception;
+<b>import</b> javafx.animation.Interpolator;
+<b>import</b> javafx.animation.KeyFrame;
+<b>import</b> javafx.animation.Timeline;
+<b>import</b> javafx.io.http.HttpRequest;
+<b>import</b> javafx.lang.FX;
+<b>import</b> javafx.scene.control.TextBox;
+<b>import</b> javafx.scene.Group;
+<b>import</b> javafx.scene.image.Image;
+<b>import</b> javafx.scene.image.ImageView;
+<b>import</b> javafx.scene.input.KeyCode;
+<b>import</b> javafx.scene.input.KeyEvent;
+<b>import</b> javafx.scene.input.MouseEvent;
+<b>import</b> javafx.scene.layout.HBox;
+<b>import</b> javafx.scene.layout.LayoutInfo;
+<b>import</b> javafx.scene.paint.Color;
+<b>import</b> javafx.scene.Scene;
+<b>import</b> javafx.scene.shape.Line;
+<b>import</b> javafx.scene.shape.Rectangle;
+<b>import</b> javafx.scene.text.Font;
+<b>import</b> javafx.stage.Stage;
+<b>import</b> javafx.stage.StageStyle;
+<b>import</b> javafx.scene.control.ScrollView;
+<b>import</b> javafx.scene.layout.VBox;
+<b>import</b> javafx.geometry.HPos;
+<b>import</b> javafx.geometry.VPos;
+<b>import</b> javafx.scene.control.Label;
+
+<b>import</b> localsearch.model.Restaurant;
+<b>import</b> localsearch.parser.JSONPullParser;
+<b>import</b> localsearch.parser.XMLPullParser;
+<b>import</b> localsearch.RequestHandler;
+<b>import</b> localsearch.view.ImageButton;
+
+<b>import</b> localsearch.Constants.*;
+
+<b class='keyword'>var</b> _stylesheets = <span class='string-literal'>"{__DIR__}LocalSearch.css"</span>;
+<i class='comment'>// Data type to be used in trasaction</i>
+def dataType = <span class='string-literal'>"xml"</span>; <i class='comment'>// set to xml or json</i>
+
+<b class='keyword'>var</b> <b>stageDragInitialX</b>:Number;
+<b class='keyword'>var</b> <b>stageDragInitialY</b>:Number;
+
+<i class='comment'>// <b>TODO</b>: get an appid from <b>http</b>://developer.yahoo.com/search/</i>
+def appid = FX.getArgument(<span class='string-literal'>"yahoo_appid"</span>);
+
+<i class='comment'>// Application Bounds</i>
+<b class='keyword'>var</b> <b>sceneWidth</b>:Number = bind scene.width;
+<b class='keyword'>var</b> <b>sceneHeight</b>:Number = bind scene.height;
+
+<i class='comment'>// Restaurant Details Index</i>
+<b class='keyword'>var</b> <b>index</b>:Integer = <span class='number-literal'>0</span>;
+
+<i class='comment'>// Information about all relevant restaurants</i>
+public <b class='keyword'>var</b> <b>restaurants</b>: Restaurant[];
+
+<i class='comment'>// Search and load restaurant details</i>
+public function searchCoffeeShops(<b>zipcode</b>:String):Void {
+    index = <span class='number-literal'>0</span>;
+    delete restaurants;
+    resetRestaurantDetails();
+    <i class='comment'>// Perform some basic validation on zipcode</i>
+    if(not validateZipCode(zipcode)) { 
+        alert(<span class='string-literal'>"Error", "Zip Code {zipcode} is not valid. Enter valid zip code."</span>);
+        return; 
+    }
+    
+    def query = <span class='string-literal'>"coffee"</span>;
+    def results = <span class='number-literal'>5</span>;
+    def location = <span class='string-literal'>"<b>http</b>:<i class='comment'>//local.yahooapis.com/LocalSearchService/V<span class='number-literal'>3</span>/localSearch?appid={appid}&amp;query={query}&amp;zip={zipcode}&amp;results={results}&amp;output={dataType}"</span>;</i>
+            
+    <b class='keyword'>var</b> <b>resultsProcessor</b>:function(<b>is</b>:InputStream):Void;
+    if(<span class='string-literal'>"xml"</span>.equalsIgnoreCase(dataType)) {
+        resultsProcessor = XMLPullParser.processResults;
+    } else {
+        resultsProcessor = JSONPullParser.processResults;
+    }
+        
+    println(<span class='string-literal'>"Loading {dataType} data from {location}...\""</span>);
+    alert(<span class='string-literal'>"Please wait...", "Searching for Coffee Shops near zip <b>code</b>: {zipcode}..."</span>);
+
+    try {
+        <b class='keyword'>var</b> request = RequestHandler {
+            <b>location</b>: location
+            <b>method</b>: HttpRequest.GET
+            <b>processResults</b>: resultsProcessor
+        }
+        request.start();
+    } catch (<b>e</b>:Exception) {
+        println(<span class='string-literal'>"<b>WARNING</b>: {e}"</span>);
+        alert(<span class='string-literal'>"Error", "Could not search... Please try again later."</span>);
+    }
+}
+
+<i class='comment'>// Basic validation for Zip Code</i>
+function validateZipCode(<b>zipcode</b>:String): Boolean {
+    
+    <i class='comment'>// Zip Code Format -&gt; <span class='number-literal'>12345</span> or <span class='number-literal'>12345</span>-<span class='number-literal'>1234</span></i>
+    try {
+        if(zipcode.length() == <span class='number-literal'>5</span>) {
+            <b class='keyword'>var</b> zipCodeInt = java.lang.Integer.valueOf(zipcode).intValue();
+            return (zipCodeInt &gt; <span class='number-literal'>0</span>);
+        } else if (zipcode.length() == <span class='number-literal'>10</span>) {
+            <b class='keyword'>var</b> dashIndex = zipcode.indexOf(<span class='string-literal'>"-"</span>);
+            if (dashIndex != <span class='number-literal'>5</span>)
+                return false;
+            <b class='keyword'>var</b> firstPart = zipcode.substring(<span class='number-literal'>0</span>, dashIndex);
+            <b class='keyword'>var</b> zipCodeInt = java.lang.Integer.valueOf(firstPart).intValue();
+            if (zipCodeInt &lt;= <span class='number-literal'>0</span>) {
+                return false;
+            }
+            <b class='keyword'>var</b> secondPart = zipcode.substring(<span class='number-literal'>0</span>, dashIndex);
+            zipCodeInt = java.lang.Integer.valueOf(secondPart).intValue();
+            return (zipCodeInt &gt; <span class='number-literal'>0</span>);
+        }
+        
+    } catch (<b>e</b>:Exception) { }
+    
+    return false;
+}
+<i class='comment'>// Background Image</i>
+function getBGImage(<b>width</b>:Integer, <b>height</b>:Integer):Image {
+    <b class='keyword'>var</b> <b>url</b>:String;
+    if( width &lt; height ) {
+        url = <span class='string-literal'>"{__DIR__}images/background_<span class='number-literal'>240</span>X<span class='number-literal'>320</span>.png"</span>;
+    } else {
+        url = <span class='string-literal'>"{__DIR__}images/background_<span class='number-literal'>320</span>X<span class='number-literal'>240</span>.png"</span>;
+    }
+    return Image {
+        <b>url</b>: url
+    }
+}
+
+<b class='keyword'>var</b> <b>bgImage</b>:ImageView = ImageView { 
+    <b>fitWidth</b>: bind stage.width
+    <b>fitHeight</b>: bind stage.height
+    <b>image</b>: getBGImage(sceneWidth, sceneHeight)
+    <b>onKeyPressed</b>:function(<b>e</b>:KeyEvent) {
+        if(e.code == KeyCode.VK_LEFT) {
+            onBack();
+        } else if(e.code == KeyCode.VK_RIGHT) {
+            onNext();
+        } else if(e.code == KeyCode.VK_DOWN) {
+            zipCodeText.requestFocus();
+        }
+    }
+    <b>onMouseClicked</b>:function(<b>e</b>:MouseEvent) {
+        bgImage.requestFocus();
+    }
+}
+
+<i class='comment'>// Display details of previous restaurant in list</i>
+<b class='keyword'>var</b> backButton = ImageButton { 
+    <b>x</b>: _backBtnX
+    <b>y</b>: bind (sceneHeight/<span class='number-literal'>2</span>.<span class='number-literal'>0</span> + _BackNextBtnYPadding)
+    <b>normalImage</b>: Image { <b>url</b>: <span class='string-literal'>"{__DIR__}images/arrow_left_normal.png"</span> }
+    <b>overImage</b>: Image { <b>url</b>: <span class='string-literal'>"{__DIR__}images/arrow_left_over.png"</span> }
+    <b>onMouseClicked</b>: function(e) {
+        onBack();
+    }
+}
+
+function onBack():Void {
+    if ((sizeof restaurants) == <span class='number-literal'>0</span>) {
+        return ;
+    }
+    index--;
+    if (index &lt; <span class='number-literal'>0</span>) {
+        index = ((sizeof restaurants) - <span class='number-literal'>1</span>);
+    }
+    showRestaurantDetails(index, false);
+}
+
+<i class='comment'>// Display details of next restaurant in list</i>
+<b class='keyword'>var</b> nextButton = ImageButton {
+    <b>x</b>: bind (sceneWidth - _nextBtnXPadding)
+    <b>y</b>: bind (sceneHeight/<span class='number-literal'>2</span>.<span class='number-literal'>0</span> + _BackNextBtnYPadding)
+    <b>normalImage</b>: Image { <b>url</b>: <span class='string-literal'>"{__DIR__}images/arrow_right_normal.png"</span> }
+    <b>overImage</b>: Image { <b>url</b>: <span class='string-literal'>"{__DIR__}images/arrow_right_over.png"</span> }
+    <b>onMouseClicked</b>: function(e) {
+        onNext();
+    }
+}
+
+function onNext():Void {
+    if ((sizeof restaurants) == <span class='number-literal'>0</span>) {
+        return ;
+    }
+    index++;
+    if (index &gt;= (sizeof restaurants)) {
+        index = <span class='number-literal'>0</span>;
+    }
+    showRestaurantDetails(index, true);
+}
+
+<i class='comment'>// Dispose Application</i>
+<b class='keyword'>var</b> closeButton = ImageButton { 
+    <b>x</b>: bind (sceneWidth - _closeBtnXPadding)
+    <b>y</b>: _closeBtnY
+    <b>normalImage</b>: Image { <b>url</b>: <span class='string-literal'>"{__DIR__}images/x_normal.png"</span> }
+    <b>overImage</b>: Image { <b>url</b>: <span class='string-literal'>"{__DIR__}images/x_over.png"</span> }
+    <b>visible</b>: bind (<span class='string-literal'>"{__PROFILE__}" != "browser"</span>)
+    <b>onMouseClicked</b>: function(e) {
+        javafx.lang.FX.exit();
+    }
+}
+
+<i class='comment'>// Reset Restaurant Details</i>
+public function resetRestaurantDetails():Void {
+    shopName = <span class='string-literal'>""</span>;
+    address = <span class='string-literal'>""</span>;
+    city = <span class='string-literal'>""</span>;
+    phone = <span class='string-literal'>""</span>;
+    star.visible = false;
+    comments = <span class='string-literal'>""</span>;
+    title = <span class='string-literal'>"Nearest Coffee Shops"</span>;
+}
+
+<i class='comment'>// Display details of restaurant at specified index in list</i>
+public function showRestaurantDetails(<b>index</b>:Integer, <b>scrollLeft</b>:Boolean):Void {
+    if (index &gt;= (sizeof restaurants)) {
+        return ;
+    }
+    <b class='keyword'>var</b> scrollXVal = <span class='number-literal'>1</span>; <i class='comment'>// Scroll Right</i>
+    if(scrollLeft) { scrollXVal = -<span class='number-literal'>1</span>; }
+    shopDetailsX = <span class='number-literal'>0</span>;
+    
+    <i class='comment'>// Slide restaurant details animation</i>
+    <b class='keyword'>var</b> <b>timeline</b>:Timeline = Timeline {
+       <b>repeatCount</b>:<span class='number-literal'>1</span>
+       <b>autoReverse</b>: false
+       <b>rate</b>: <span class='number-literal'>1</span>.<span class='number-literal'>0</span>
+       <b>keyFrames</b>: [ 
+            KeyFrame {
+                <b>time</b>: <span class='number-literal'>250</span>ms
+                <b>values</b>: [
+                    shopDetailsX =&gt; scrollXVal * sceneWidth tween Interpolator.LINEAR
+                ]
+                <b>action</b>: function () {
+                    shopDetailsX = scrollXVal * -sceneWidth;
+                    <b class='keyword'>var</b> result = restaurants[index];
+                    shopName = trimString(result.title, <span class='number-literal'>25</span>);
+                    address = trimString(result.address, <span class='number-literal'>30</span>);
+                    city = trimString(<span class='string-literal'>"{result.city} {result.state}"</span>, <span class='number-literal'>30</span>);
+                    phone = <span class='string-literal'>"{result.phone}"</span>;
+                    setStars(result.rating.averageRating);
+                    <b class='keyword'>var</b> lastReview = <span class='string-literal'>"{result.rating.lastReviewIntro}"</span>;
+                    comments = lastReview; <i class='comment'>//trimString(<span class='string-literal'>"{lastReview}"</span>, <span class='number-literal'>300</span>);</i>
+                    title = <span class='string-literal'>"Coffee Shops ({index + <span class='number-literal'>1</span>} of {sizeof restaurants})"</span>;
+                    bgImage.requestFocus();
+                }
+          },
+          KeyFrame {
+              <b>time</b>: <span class='number-literal'>250</span>ms
+              <b>values</b>: [
+                shopDetailsX =&gt; scrollXVal * -sceneWidth tween Interpolator.DISCRETE
+              ]
+          },
+          KeyFrame {
+              <b>time</b>: <span class='number-literal'>500</span>ms
+              <b>values</b>: [
+                  shopDetailsX =&gt; <span class='number-literal'>0</span> tween Interpolator.LINEAR
+              ]
+         }
+     ]
+  };
+  timeline.playFromStart();    
+}
+
+<i class='comment'>// Trim the string if length is greater than specified length</i>
+function trimString(<b>string</b>:String, <b>length</b>:Integer):String {
+    if (string == null)
+    return <span class='string-literal'>""</span>;
+    if (string.length() &gt; length) {
+        return <span class='string-literal'>"{string.substring(<span class='number-literal'>0</span>, length).trim()}..."</span>;
+    } else {
+        return string;
+    }
+}
+
+<i class='comment'>// Star Rating Images</i>
+<b class='keyword'>var</b> defaultStarImage = Image {
+    <b>url</b>: <span class='string-literal'>"{__DIR__}images/star<span class='number-literal'>0</span>.png"</span>
+}
+
+<b class='keyword'>var</b> star = ImageView { 
+    <b>x</b>: _starX
+    <b>y</b>: _starY
+    <b>image</b>: defaultStarImage
+    <b>visible</b>: false
+}
+
+<i class='comment'>// Convert specified star rating in string to</i>
+<i class='comment'>// Integer and display as many number of star images</i>
+function setStars(<b>starCount</b>:String):Void {
+    <b class='keyword'>var</b> imageSuffix = <span class='string-literal'>"<span class='number-literal'>0</span>"</span>;
+    try {
+        <b class='keyword'>var</b> starIntCount = java.lang.Float.valueOf(starCount).intValue();
+        imageSuffix = <span class='string-literal'>"{starIntCount}"</span>;
+        if(starIntCount &gt; <span class='number-literal'>5</span>) {
+            imageSuffix = <span class='string-literal'>"<span class='number-literal'>5</span>"</span>; 
+        } else if(starCount.indexOf(<span class='string-literal'>"."</span>) &gt; <span class='number-literal'>0</span>) {
+            imageSuffix = <span class='string-literal'>"{imageSuffix}.<span class='number-literal'>5</span>"</span>; 
+        }
+    }
+    catch (<b>e</b>:java.lang.Exception) {
+    }
+    
+    star.image = Image {
+        <b>url</b>: <span class='string-literal'>"{__DIR__}images/star{imageSuffix}.png"</span>
+        <b>placeholder</b>: defaultStarImage
+    }
+    star.visible = true;
+}
+
+<i class='comment'>// Application Title</i>
+<b class='keyword'>var</b> titleBar = Rectangle {
+    <b>width</b>: bind sceneWidth
+    <b>height</b>: _titleBarHeight
+    <b>fill</b>: Color.TRANSPARENT
+    <b>visible</b>: bind (<span class='string-literal'>"{__PROFILE__}" != "browser"</span>)
+    <b>onMousePressed</b>: function(e) {
+        stageDragInitialX = e.screenX - stage.x;
+        stageDragInitialY = e.screenY - stage.y;
+    }
+     <b>onMouseDragged</b>: function(e) {
+        stage.x = e.screenX - stageDragInitialX;
+        stage.y = e.screenY - stageDragInitialY;
+     }
+}
+
+<b class='keyword'>var</b> title = <span class='string-literal'>"Nearest Coffee Shops"</span>;
+<b class='keyword'>var</b> <b>titleText</b>:Label = Label {
+    <b>layoutX</b>: bind (sceneWidth - titleText.boundsInLocal.width)/<span class='number-literal'>2</span>.<span class='number-literal'>0</span>
+    <b>layoutY</b>: _titleTextY
+    <b>font</b>: Font { <b>name</b>:<span class='string-literal'>"sansserif"</span>, <b>size</b>: <span class='number-literal'>14</span> }
+    <b>styleClass</b>:<span class='string-literal'>"textColor"</span>
+    <b>text</b>: bind title
+}
+<i class='comment'>// Divider</i>
+<b class='keyword'>var</b> divider = Line {
+    <b>startX</b>: _dividerStartX
+    <b>startY</b>: _dividerStartEndY
+    <b>endX</b>: bind sceneWidth
+    <b>endY</b>: _dividerStartEndY
+    <b>stroke</b>: Color.rgb(<span class='number-literal'>138</span>, <span class='number-literal'>110</span>, <span class='number-literal'>72</span>)
+}
+<i class='comment'>// Restaurant Name</i>
+<b class='keyword'>var</b> shopName = <span class='string-literal'>""</span>;
+<b class='keyword'>var</b> shopNameText = Label {
+    <b>layoutX</b>: _shopNameTextX
+    <b>layoutY</b>: _shopNameTextY
+    <b>font</b>: Font { <b>name</b>:<span class='string-literal'>"sansserif"</span>, <b>size</b>: <span class='number-literal'>13</span> }
+    <b>styleClass</b>:<span class='string-literal'>"textColor"</span>
+    <b>text</b>: bind shopName
+}
+
+<i class='comment'>// Street Address</i>
+<b class='keyword'>var</b> address = <span class='string-literal'>""</span>;
+<b class='keyword'>var</b> addressText = Label {
+    <b>layoutX</b>: _addressTextX
+    <b>layoutY</b>: _addressTextY
+    <b>font</b>: Font { <b>name</b>:<span class='string-literal'>"sansserif"</span>, <b>size</b>: _fontSize }
+    <b>styleClass</b>:<span class='string-literal'>"textColor"</span>
+    <b>text</b>: bind address
+}
+
+<i class='comment'>// City and State</i>
+<b class='keyword'>var</b> city = <span class='string-literal'>""</span>;
+<b class='keyword'>var</b> cityText = Label {
+    <b>layoutX</b>: _cityTextX
+    <b>layoutY</b>: _cityTextY
+    <b>font</b>: Font { <b>name</b>:<span class='string-literal'>"sansserif"</span>, <b>size</b>: _fontSize }
+    <b>styleClass</b>:<span class='string-literal'>"textColor"</span>
+    <b>text</b>: bind city
+}
+
+<i class='comment'>// Phone Number</i>
+<b class='keyword'>var</b> phone = <span class='string-literal'>""</span>;
+<b class='keyword'>var</b> phoneText = Label {
+    <b>layoutX</b>: _phoneTextX
+    <b>layoutY</b>: _phoneTextY
+    <b>font</b>: Font { <b>name</b>:<span class='string-literal'>"sansserif"</span>, <b>size</b>: _fontSize }
+    <b>styleClass</b>:<span class='string-literal'>"textColor"</span>
+    <b>text</b>: bind phone
+}
+
+<i class='comment'>// Latest review comments</i>
+<b class='keyword'>var</b> comments = <span class='string-literal'>""</span>;
+<b class='keyword'>var</b> commentsText = Label {
+    <b>layoutX</b>: _commentsTextX
+    <b>font</b>:Font {
+        <b>name</b>:<span class='string-literal'>"sansserif"</span>,
+        <b>size</b>: <span class='number-literal'>11</span>
+    }
+    <b>styleClass</b>:<span class='string-literal'>"textColor"</span>
+    <b>text</b>: bind comments
+    <b>textWrap</b>: true
+    <b>width</b>:bind (sceneWidth - _commentsWdthPadding)
+};
+<b class='keyword'>var</b> <b>scrollText</b>:ScrollView = ScrollView {
+    <b>layoutX</b>: _scrollTextX
+    <b>layoutY</b>: _scrollTextY
+    <b>node</b>: commentsText
+    <b>width</b>: bind (sceneWidth - _scrollTextWdth)
+    <b>height</b>: bind (vbox.translateY - _scrollTextHgt)
+    <b>style</b>: <span class='string-literal'>"-fx-background-<b>color</b>: transparent;"</span>
+}
+
+
+<i class='comment'>// Shop Details Group</i>
+<b class='keyword'>var</b> shopDetailsDisplay = Group {
+    <b>content</b>: bind [
+        shopNameText,
+        addressText,
+        cityText,
+        phoneText,
+        scrollText,
+        star
+    ]
+    <b>translateX</b>: bind shopDetailsX
+}
+<b class='keyword'>var</b> shopDetailsGroup = Group {
+    <b>content</b>: [ shopDetailsDisplay ]
+    <b>clip</b>: Rectangle {
+        <b>x</b>: _shopDetailX
+        <b>y</b>: _shopDetailY
+        <b>width</b>: bind (sceneWidth - _shopDetailWdth)
+        <b>height</b>: bind (sceneHeight - _shopDetailHgt)
+    }
+}
+<i class='comment'>// ZipCode</i>
+<b class='keyword'>var</b> zipCodeLabel = Label {
+    <b>font</b>: Font { <b>name</b>:<span class='string-literal'>"sansserif"</span>, <b>size</b>: _fontSize }
+    <b>styleClass</b>:<span class='string-literal'>"textColor"</span>
+    <b>text</b>: <span class='string-literal'>"zip <b>code</b>:"</span>
+    <b>layoutInfo</b>: LayoutInfo { 
+        <b>vpos</b>: javafx.geometry.VPos.CENTER
+    }
+}
+<b class='keyword'>var</b> <b>zipCodeText</b>: TextBox = TextBox {
+    <b>blocksMouse</b>: true
+    <b>columns</b>: <span class='number-literal'>7</span>
+    <b>selectOnFocus</b>: false
+    <b>text</b>: <span class='string-literal'>"<span class='number-literal'>95054</span>"</span>
+    <b>action</b>: function() {
+        zipCodeText.commit();
+        searchCoffeeShops(zipCodeText.text.trim());
+    }
+    <b>onKeyPressed</b>:function(<b>e</b>:KeyEvent) {
+        if(e.code == KeyCode.VK_UP) {
+            bgImage.requestFocus();
+<i class='comment'>//        } else if(e.code == KeyCode.VK_RIGHT) {</i>
+        } else if(e.code == KeyCode.VK_DOWN) {
+            if(<span class='string-literal'>"{__PROFILE__}" == "mobile"</span>) {
+                searchButton.requestFocus();
+            }
+        }
+    }
+}
+
+<i class='comment'>// Search for restaurants with in range of specified ZipCode</i>
+<b class='keyword'>var</b> searchButton = ImageButton { 
+    <b>layoutY</b>: _searchBtnY
+    <b>normalImage</b>: Image { <b>url</b>: <span class='string-literal'>"{__DIR__}images/search_normal.png"</span> };
+    <b>overImage</b>: Image { <b>url</b>: <span class='string-literal'>"{__DIR__}images/search_over.png"</span> };
+    <b>focusImage</b>: Image { <b>url</b>: <span class='string-literal'>"{__DIR__}images/search_focus.png"</span> };
+    
+    <b>onMouseClicked</b>: function(e) {
+        zipCodeText.commit();
+        searchCoffeeShops(zipCodeText.text.trim());
+    }
+
+    <b>onKeyPressed</b>:function(<b>e</b>:KeyEvent) {
+        if(e.code == KeyCode.VK_ENTER) {
+            zipCodeText.commit();
+            searchCoffeeShops(zipCodeText.text.trim());
+        } else if(e.code == KeyCode.VK_UP) {
+            bgImage.requestFocus();
+        } else if(e.code == KeyCode.VK_LEFT) {
+            zipCodeText.requestFocus();
+        }
+    }
+}
+<b class='keyword'>var</b> <b>zipSearchPanel</b>:HBox = HBox {
+    <b>nodeVPos</b>:VPos.CENTER
+    <b>content</b>: [
+        zipCodeLabel,
+        zipCodeText,
+        searchButton
+    ]
+    <b>spacing</b>: _searchSpacing
+};
+
+<i class='comment'>// Service Provider Information</i>
+<b class='keyword'>var</b> <b>serviceProviderText</b>:Label = Label {
+    <b>font</b>: Font { <b>name</b>:<span class='string-literal'>"sansserif"</span>, <b>size</b>: <span class='number-literal'>11</span> }
+    <b>textFill</b>: Color.rgb(<span class='number-literal'>96</span>, <span class='number-literal'>78</span>, <span class='number-literal'>51</span>)
+    <b>text</b>: <span class='string-literal'>"Web Services by Yahoo!"</span>
+}
+
+def <b>vbox</b>:VBox = VBox {
+    <b>translateX</b>: bind (sceneWidth - zipSearchPanel.boundsInLocal.width) / <span class='number-literal'>2</span>.<span class='number-literal'>0</span>
+    <b>translateY</b>: bind (sceneHeight - vbox.boundsInLocal.height - <span class='number-literal'>4</span>)  
+    content : [zipSearchPanel, serviceProviderText];
+    <b>nodeHPos</b>: HPos.CENTER;
+}
+
+<b class='keyword'>var</b> <b>scene</b>:Scene = Scene {
+    <b>stylesheets</b>: bind _stylesheets
+    <b>content</b>: Group {
+        <b>content</b>: bind [
+            bgImage,
+            titleBar,
+            titleText,
+            divider,
+            shopDetailsGroup,
+            backButton,
+            nextButton,
+            closeButton,
+            vbox
+        ]
+        <b>clip</b>: Rectangle {
+            <b>width</b>: bind sceneWidth
+            <b>height</b>: bind sceneHeight
+            <b>arcWidth</b>: _rectArcWidth
+            <b>arcHeight</b>: _rectArcWidth
+        }
+    }
+    <b>fill</b>: Color.TRANSPARENT
+}
+
+<i class='comment'>// Application User Interface</i>
+<b class='keyword'>var</b> <b>stage</b>:Stage = Stage {
+    <b>title</b>: <span class='string-literal'>"Coffee Shop Search"</span>
+    <b>resizable</b>: false
+    <b>style</b>: StageStyle.TRANSPARENT
+    <b>scene</b>: bind scene
+    <b>width</b>: if(__PROFILE__ == <span class='string-literal'>"tv"</span>) <span class='number-literal'>640</span> else <span class='number-literal'>240</span>
+    <b>height</b>: if( __PROFILE__ == <span class='string-literal'>"tv"</span>) <span class='number-literal'>480</span> else <span class='number-literal'>320</span>
+}
+
+public function alert(<b>alertTitle</b>:String, <b>msg</b>:String): Void {
+    println(msg);
+    phone = alertTitle;
+    comments = trimString(msg, <span class='number-literal'>240</span>);
+}
+
+function run() {
+    searchCoffeeShops(<span class='string-literal'>"<span class='number-literal'>95054</span>"</span>);
+}
+</code></pre></div>
+<div id="footer">
+			<span class="copy">&copy; 2010, Oracle Corporation and/or its affiliates.</span>
+			
+		</div>
+<!--
+	JAVASCRIPT
+	At the bottom of the page so that we download and render all the visual elements, before we start handling the javascript. This provides for a faster perceived loading time.
+-->
+
+<script src="../../shared/new_style/js/omi/s_code_remote.js" type="text/javascript"></script>
+ 
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js"></script>
+<!--[if lte IE 6]>
+	<script type="text/javascript" src="../../shared/new_style/js/jquery.ifixpng.js"></script>
+<![endif]-->
+<script type="text/javascript" src="../../shared/new_style/js/jquery.history.js"></script>
+<script type="text/javascript" src="../../shared/new_style/js/javafx.js"></script>
+
+
+
+
+

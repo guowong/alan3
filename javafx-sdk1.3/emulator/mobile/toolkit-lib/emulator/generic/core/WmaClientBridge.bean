@@ -1,0 +1,11 @@
+#
+# Copyright (c) 2009 Sun Microsystems, Inc. All rights reserved.
+# Use is subject to license terms.
+#
+
+.class: com.sun.kvem.midp.io.j2se.wma.client.WMAClientBridge
+.dependencies: DeviceManagerConnection
+
+deviceManagerConnection: DeviceManagerConnection
+serverPort: ${jsr120.server.port}
+phoneNumber: ${phone.number}

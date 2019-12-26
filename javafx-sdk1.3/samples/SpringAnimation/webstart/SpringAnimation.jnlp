@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jnlp spec="1.0+" codebase="http://jfx.sfbay.sun.com/hudson//job/1.3.1/label=macosx-universal-soma/101/artifact/artifacts/samples/SpringAnimation/webstart/" href="SpringAnimation.jnlp">
+<information>
+<title>SpringAnimation</title>
+<vendor>Oracle Corporation</vendor>
+<description>${subproject.application.desc}</description>
+<description kind="short">SpringAnimation</description>
+<icon kind="splash" href="http://jfx.sfbay.sun.com/hudson//job/1.3.1/label=macosx-universal-soma/101/artifact/artifacts/rt-deployed/splash.gif"/>
+<offline-allowed/>
+</information>
+<resources>
+<j2se version="1.5+"/>
+<jar href="SpringAnimation.jar" main="true" download="eager"/>
+<extension name="JavaFX Runtime" href="http://jfx.sfbay.sun.com/hudson//job/1.3.1/label=macosx-universal-soma/101/artifact/artifacts/rt-deployed/javafx-rt.jnlp"/>
+</resources>
+<application-desc main-class="com.sun.javafx.runtime.main.Main" progress-class="com.javafx.progressbar.ProgressManager">
+<argument>MainJavaFXScript=custominterpolator.SpringDemo</argument>
+</application-desc>
+<update check="background"/>
+</jnlp>

@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='ISO-8859-1' ?>
+<!--
+    Copyright (c) 2009 Sun Microsystems, Inc. All rights reserved.
+    Use is subject to license terms.
+-->
+
+<!DOCTYPE log4j:configuration SYSTEM "file:./log4j.dtd">
+<log4j:configuration>
+
+    <appender name="CONSOLE-ALL" class="org.apache.log4j.ConsoleAppender">
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="[%7r] %6p - %30.30c - %m \n"/>
+        </layout>
+    </appender>
+
+    <appender name="FILE" class="org.apache.log4j.FileAppender">
+        <param name="file" value="${log.dir}/device-manager.log"/>
+        <param name="append" value="false"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="[%7r] %6p - %30.30c - %m \n"/>
+        </layout>
+    </appender>
+
+    <category name="com.sun">
+        <priority value="DEBUG"/>
+        <appender-ref ref="CONSOLE-ALL"/>
+        <appender-ref ref="FILE"/>
+    </category>
+
+    <category name="VM">
+        <priority value="INFO"/>
+        <appender-ref ref="CONSOLE-ALL"/>
+        <appender-ref ref="FILE"/>
+    </category>
+
+    <category name="kdp">
+        <priority value="INFO"/>
+        <appender-ref ref="CONSOLE-ALL"/>
+        <appender-ref ref="FILE"/>
+    </category>
+
+</log4j:configuration>

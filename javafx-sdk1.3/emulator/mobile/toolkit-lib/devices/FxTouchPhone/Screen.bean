@@ -1,0 +1,19 @@
+#
+# Copyright (c) 2009 Sun Microsystems, Inc. All rights reserved.
+# Use is subject to license terms.
+#
+
+.class: com.sun.kvem.ScreenImpl
+.parent: default-state
+.parent-add-method: addScreen
+.dependencies: ScreenGraphics
+
+component: EMDevice
+updatePolicy: ScreenUpdatePolicy
+screenComponent: ScreenComponent 
+screenGraphics: ScreenGraphics
+
+position: 121,174
+colorCount: 0x1000000
+
+borderColor: 255,255,255

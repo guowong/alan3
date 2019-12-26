@@ -1,0 +1,12 @@
+#
+# Copyright (c) 2009 Sun Microsystems, Inc. All rights reserved.
+# Use is subject to license terms.
+#
+
+.class: com.sun.jme.toolkit.ui.util.PropertyLabel
+.dependencies: WmaClientBridge, ui-frame-PhoneNumberLabel0
+.parent: ui-frame-TopComponent
+.parent-add-method: add
+
+object: WmaClientBridge
+property: phoneNumber

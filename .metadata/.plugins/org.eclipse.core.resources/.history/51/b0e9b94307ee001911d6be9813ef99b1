@@ -1,0 +1,236 @@
+/*
+ * JavaPaycheckSwing.java
+ *    INPUT:      Hours, Pay Rate
+ *    PROCESSING: Compute paycheck with overtime
+ *    OUTPUT:     Display gross pay, taxes and net pay
+ */
+//guo package javapaycheckswing;
+
+import java.awt.*;
+import java.awt.event.*;
+import java.awt.Container;
+import javax.swing.*;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+import javax.swing.JTextArea;
+import javax.swing.JFrame;
+
+public class JavaPaycheckSwing extends JPanel {
+    // define the constants
+    private static final double OVERTIME_RATE = 1.5;   // time and a half
+    private static final double TAX_RATE = 0.17;       // 0.17 is 17%
+
+    // list of controls on the panel
+    private static JLabel lblTitle;
+    private static JLabel lblHours;
+    private static JLabel lblPayRate;
+    private static JButton btnCompute;
+    
+    //Alan define new buttons
+    private static JButton btnClear;
+    private static JButton btnExit;
+    
+    private static JTextField txtHours;
+    private static JTextField txtPayRate;
+    private static JTextArea txtPaycheck;              
+
+    /**
+     * Constructor creates a mouse listener object and sets it to listen 
+     * for mouse events and mouse motion events on the panel.
+     */
+    public JavaPaycheckSwing() { 
+        // arrange for the panel to listen for mouse events.
+        MouseHandler listener = new MouseHandler();
+        addMouseListener(listener);        // Register mouse listener.
+        addMouseMotionListener(listener);  // Register mouse motion listener. 
+    }
+    
+    public static void main(String[] args) {
+        //Schedule a job for the event-dispatching thread:
+        //creating and showing this application's GUI.
+        JFrame window = new JFrame("Java Swing - Paycheck Project");
+        JavaPaycheckSwing content = new JavaPaycheckSwing();
+        window.setContentPane(content);       
+        window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        createControls(window.getContentPane());
+        window.setSize(480, 420);
+        window.setVisible(true);
+        window.setResizable(false);
+    }
+
+    /**
+     * process the Compute button click event
+     */
+    public static void btnComputeClick() {
+        double hours;
+        double payRate;
+        double regHours, overtimeHours;
+        double regPay, overtimePay;
+        double grossPay, taxes, netPay;
+        
+        // input the hours and payRate from the TextFields
+        try {
+            hours = Double.valueOf(txtHours.getText());
+            payRate = Double.valueOf(txtPayRate.getText());
+            if (hours < 0 || payRate < 0)
+                throw new IllegalArgumentException ("Inputs must be positive");
+        }
+        catch (NumberFormatException e) {
+            txtPaycheck.setText("Values for hours and pay rate must be numeric"); 
+            return; // no more processing
+        }  
+        catch (IllegalArgumentException e) {
+            txtPaycheck.setText(e.getMessage()); 
+            return; // no more processing
+        }
+         
+    
+        // compute the regHours and overtimeHours
+        if (hours <= 40) {              // Less or = to 40 hours, then
+            regHours = hours;           //   all hours are regular
+            overtimeHours = 0.0;        //   with no overtime
+        }
+        else {                          // Over 40 hours, then
+            regHours = 40.0;            //    first 40 at regular pay
+            overtimeHours = hours-40.0; //    anything over 40
+        }
+        // compute the paycheck
+        regPay = regHours * payRate;
+        overtimePay = overtimeHours * payRate * OVERTIME_RATE;
+        grossPay = regPay + overtimePay;
+        taxes = grossPay * TAX_RATE;
+        netPay = grossPay - taxes;
+        
+        // display the paycheck, formatted with 2 digits past the decimal
+        txtPaycheck.setText( 
+                String.format("Your gross pay is $%.2f\n", grossPay) +
+                String.format("Your taxes are $%.2f\n", taxes) +
+                String.format("Your net pay is $%.2f", netPay) );
+        
+    } // end of btnCompute_Click
+    
+    
+    public static void btnClearClick() {
+    	txtHours.setText("");
+    	txtPayRate.setText("");
+    	txtPaycheck.setText("");
+    
+    } // end of btnCompute_Click    
+    
+    
+    public static void btnExitClick() {
+    	System.exit(0);
+    
+    } // end of btnExit_Click      
+    
+    
+    
+    /**
+     * create all of the controls that are to be placed on the pane
+     * @param pane
+     */
+    public static void createControls(Container pane) {
+        pane.setLayout(null);
+        Insets insets = pane.getInsets();
+        
+        Font font36B = new Font(Font.SANS_SERIF, Font.BOLD,  34);
+        Font font18  = new Font(Font.SANS_SERIF, Font.PLAIN, 18);
+
+        lblTitle = new JLabel("Dan's Paycheck Calculator");
+            lblTitle.setFont(font36B);
+            lblTitle.setBounds(12+insets.left, 4+insets.top, 434, 38);
+            pane.add(lblTitle);
+        
+        lblHours = new JLabel("Hours");
+            lblHours.setFont(font18);
+            lblHours.setBounds(24+insets.left, 57+insets.top, 91, 25);
+            pane.add(lblHours);
+            
+        txtHours = new JTextField();
+            txtHours.setFont(font18);
+            txtHours.setBounds(123+insets.left, 57+insets.top, 119, 30);
+            pane.add(txtHours);
+            
+        lblPayRate = new JLabel("Pay Rate");
+            lblPayRate.setFont(font18);
+            lblPayRate.setBounds(24+insets.left, 101+insets.top, 91, 25);
+            pane.add(lblPayRate);
+            
+        txtPayRate = new JTextField();
+            txtPayRate.setFont(font18);
+            txtPayRate.setBounds(123+insets.left, 95+insets.top, 119, 30);
+            pane.add(txtPayRate);
+            
+        btnCompute = new JButton("Compute");
+            btnCompute.setFont(font18);
+            btnCompute.setBounds(40+insets.left, 148+insets.top, 119, 30);
+            btnCompute.setSize(110,40);     // make the buttons the same size
+            // provide a link to the event handler for the Compute button
+            btnCompute.addMouseListener(new MouseHandler());
+            pane.add(btnCompute);
+            
+       // Alan: To configure the Clear Button      
+       btnClear = new JButton("Clear");     
+       		btnClear.setFont(font18);
+       		btnClear.setBounds(40+insets.left, 305+insets.top, 119, 30);       
+       		btnClear.setSize(110,40);     // make the buttons the same size		
+            // provide a link to the event handler for the Compute button
+       		btnClear.addMouseListener(new MouseHandler());
+            pane.add(btnClear);       		
+       
+       // Alan: To configure the Exit Button       
+       btnExit = new JButton("Exit");     
+       		btnExit.setFont(font18);
+       		btnExit.setBounds(300+insets.left, 305+insets.top, 119, 30);       
+       		btnExit.setSize(110,40);     // make the buttons the same size		
+            // provide a link to the event handler for the Compute button
+       		btnExit.addMouseListener(new MouseHandler());
+            pane.add(btnExit);               
+                       
+        txtPaycheck = new JTextArea();
+            txtPaycheck.setFont(font18);
+            txtPaycheck.setBounds(40+insets.left, 205+insets.top, 400, 80);
+            txtPaycheck.setEditable(false);
+            pane.add(txtPaycheck);
+    } // end of createControls()
+    
+    /**
+     * An object belonging to class MouseHandler listens for mouse events
+     * on the panel.  (Listening is set up in the constructor for the
+     * SimpleTrackMousePanel class.
+     */
+    public static class MouseHandler implements MouseListener, MouseMotionListener {
+        @Override
+        public void mousePressed(MouseEvent evt) {
+        }
+        @Override
+        public void mouseReleased(MouseEvent evt) {
+        }
+        @Override
+        public void mouseClicked(MouseEvent evt) {
+            if (evt.getComponent() == btnCompute)
+                btnComputeClick();
+            // ALan: to add event handler for btnClear & btnExit
+            else if (evt.getComponent() == btnClear)
+            	btnClearClick();
+            else if (evt.getComponent() == btnExit)
+            	btnExitClick();
+            
+        }
+       
+        @Override
+        public void mouseEntered(MouseEvent evt) {
+        }
+        @Override
+        public void mouseExited(MouseEvent evt) {
+        }
+        @Override
+        public void mouseMoved(MouseEvent evt) {
+        }
+        @Override
+        public void mouseDragged(MouseEvent evt) {
+        }
+    }  // end nested class MouseHandler    
+
+} // end of class JavaPaycheckSwing

@@ -1,0 +1,13 @@
+#
+# Copyright (c) 2009 Sun Microsystems, Inc. All rights reserved.
+# Use is subject to license terms.
+#
+
+.class: com.sun.jme.toolkit.ui.actions.LocaleAction
+
+actionNameProperty: APPLICATION.CHANGE_LOCALE
+mnemonicCharProperty: APPLICATION.CHANGE_LOCALE_SHORTCUT
+tooltipStringProperty: APPLICATION.CHANGE_LOCALE_TOOLTIP
+
+frame: DeviceFrame
+eventBridge: EventBridge

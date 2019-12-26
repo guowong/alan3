@@ -1,0 +1,4 @@
+.class: com.sun.jme.toolkit.aut.proxy.AppleSystemPropertiesProxyDiscovery
+
+.parent: UpdateCenter
+.parent-add-method: addProxyDiscovery

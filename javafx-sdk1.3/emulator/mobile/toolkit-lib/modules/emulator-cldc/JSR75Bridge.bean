@@ -1,0 +1,11 @@
+#
+# Copyright (c) 2009 Sun Microsystems, Inc. All rights reserved.
+# Use is subject to license terms.
+#
+
+.class: com.sun.kvem.midp.FileConnEventGenPanel
+.dependencies: EventBridge
+eventBridge: EventBridge
+inherentRoot: root1
+fileSystemDirectory: ${user.dir}/appdb/filesystem
+unmountedFileSystemDirectory: ${user.dir}/appdb/filesystem_unmounted

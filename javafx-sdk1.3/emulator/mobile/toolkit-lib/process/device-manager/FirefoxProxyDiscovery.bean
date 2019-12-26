@@ -1,0 +1,5 @@
+.class: com.sun.jme.toolkit.aut.proxy.FirefoxProxyDiscovery
+
+.parent: UpdateCenter
+.parent-add-method: addProxyDiscovery
+SettingsDir: Library/Application Support/Firefox

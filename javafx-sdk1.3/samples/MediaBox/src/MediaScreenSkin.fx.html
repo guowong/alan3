@@ -1,0 +1,253 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+
+<head>
+	
+	<title>JavaFX Sample</title>
+	
+	<!--METAS-->
+	
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="description" content="JavaFX" />
+	<meta name="keywords" content="JavaFX Oracle" />
+	<meta name="author" content="Oracle" />
+	
+	<!--STYLESHEETS-->
+	<link rel="stylesheet" type="text/css" media="screen, projection" href="../../shared/new_style/css/reset.css" />
+	<link rel="stylesheet" type="text/css" media="screen, projection" href="../../shared/new_style/css/javafx.css" />
+	<link rel="stylesheet" type="text/css" media="screen, projection" href="../../shared/new_style/css/code.css" />
+	
+	<!-- CONDITIONAL STYLESHEETS -->
+	<!--[if IE]>
+	  <link rel="stylesheet" type="text/css" href="../../shared/new_style/css/ie.css" />
+	<![endif]-->
+	
+	<!--ADDRESS BAR ICON-->
+	<link rel="shortcut icon" type="image/ico" href="../../shared/new_style/images/favicon.ico" />
+	
+	<link rel="stylesheet" type="text/css" media="screen, projection" href="../../shared/new_style/css/samples.css" />
+    <style type="text/css">
+.code .string-literal, .code .number-literal {
+	font-style: italic;
+	color: #4b494d;
+}
+    </style>
+</head>
+<!--
+	The ID here is required to indicate the page type.
+	Changing this will affect the layout of the page.
+-->
+<body id="tutorials">
+	
+	<div id="body">
+		<!--
+			The header in the source code view doesn't have any buttons.
+			So just the <h1> tag for the site logo is included.
+			
+			The header also doesn't have an A tag with an "href" since you shouldn't be able to navigate to the
+			index pgae inside the popup.
+		-->
+        
+        
+		<ul id="popheader">
+			<li class="first">
+				<h1><a><span>FX</span></a></h1>
+			
+				<!-- Close button -->
+				<a class="close-button" title="Close"><span>Close</span></a>
+			</li>
+		</ul>
+<div class="source">
+  <div class="code-header">License text </div>
+    <pre>
+
+/*
+ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER 
+ * Copyright  2008, 2010 Oracle and/or its affiliates.  All rights reserved. 
+ * Use is subject to license terms.
+ * 
+ * This file is available and licensed under the following license:
+ * 
+ * Redistribution and use in source and binary forms, with or without 
+ * modification, are permitted provided that the following conditions are met: 
+ * 
+ *   * Redistributions of source code must retain the above copyright notice, 
+ *     this list of conditions and the following disclaimer. 
+ *
+ *   * Redistributions in binary form must reproduce the above copyright notice,
+ *     this list of conditions and the following disclaimer in the documentation
+ *     and/or other materials provided with the distribution.
+ *
+ *   * Neither the name of Oracle Corporation nor the names of its contributors 
+ *     may be used to endorse or promote products derived from this software 
+ *     without specific prior written permission. 
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS 
+ * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT 
+ * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR 
+ * A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT 
+ * OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, 
+ * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, 
+ * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; 
+ * OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, 
+ * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR 
+ * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF 
+ * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. 
+ */
+
+    </pre>
+  </div>
+<div class="code"><pre><code>
+<b>package</b> com.sun.mediabox.controls.skin.paranara;
+
+<b>import</b> javafx.scene.shape.Rectangle;
+<b>import</b> javafx.scene.paint.Color;
+<b>import</b> javafx.scene.Group;
+<b>import</b> javafx.scene.media.MediaView;
+<b>import</b> javafx.scene.media.MediaPlayer;
+<b>import</b> javafx.scene.input.MouseEvent;
+<b>import</b> com.sun.mediabox.controls.MediaScreenBehavior;
+<b>import</b> com.sun.javafx.mediabox.controls.*;
+
+<i class='comment'>/**
+ * @author baechul
+ */</i>
+
+public class MediaScreenSkin extends com.sun.mediabox.controls.skin.AbstractSkin {
+    <i class='comment'>// control</i>
+    <b class='keyword'>var</b> mediaScreen = bind control as MediaScreen;
+
+    <i class='comment'>// behavior link</i>
+    override <b class='keyword'>var</b> behavior = MediaScreenBehavior {}
+    <b class='keyword'>var</b> screenBehavior = bind behavior as MediaScreenBehavior;
+
+    protected override function getMinWidth():Number { mediaScreen.width }
+    protected override function getMinHeight():Number { mediaScreen.height }
+
+    <b class='keyword'>var</b> status = bind mediaScreen.mediaPlayer.status on replace {
+        if(status == MediaPlayer.PLAYING) {
+            mediaScreen.mediaError = null;
+        }
+    }
+
+    <i class='comment'>// skin node ///////////////////////////////////////////////////////////////</i>
+    <i class='comment'>// a black screen at the bottom.</i>
+    protected override <b class='keyword'>var</b> frame = Rectangle {
+        <b>x</b>: bind mediaScreen.x
+        <b>y</b>: bind mediaScreen.y
+        <b>width</b>: bind mediaScreen.width
+        <b>height</b>: bind mediaScreen.height
+        <b>fill</b>: Color.BLACK
+
+        <b>onMouseEntered</b>: function(<b>me</b>:MouseEvent) {
+            if(mediaScreen.showMediaInfo) {
+                <i class='comment'>//println(<span class='string-literal'>"show media info"</span>);</i>
+                mediaInfo.show = true;
+            }
+        }
+        <b>onMouseExited</b>: function(<b>me</b>:MouseEvent) {
+            if(mediaScreen.showMediaInfo) {
+                <i class='comment'>//println(<span class='string-literal'>"hide media info"</span>);</i>
+                mediaInfo.show = false;
+            }
+        }
+    }
+
+    <i class='comment'>/**
+     * Putting bind to MediaView would be worse.
+     * <b class='keyword'>var</b> <b>mediaView</b>: MediaView = bind MediaView {
+     */</i>
+    <b class='keyword'>var</b> <b>mediaView</b>: MediaView = MediaView {
+        <b>mediaPlayer</b>: bind mediaScreen.mediaPlayer
+        <b>preserveRatio</b>: bind mediaScreen.preserveRatio
+
+        <i class='comment'>/**
+         * Please see next section for performance tunning. A lot of bindings
+         * could be a cause of slow rendering.
+         */</i>
+        <i class='comment'>//<b>translateX</b>: bind mediaScreen.x</i>
+        <i class='comment'>//<b>translateY</b>: bind mediaScreen.y+(mediaScreen.height-mediaView.layoutBounds.height)*<span class='number-literal'>0</span>.<span class='number-literal'>5</span></i>
+
+        <i class='comment'>/**
+         * Binding both width/height will make mediaView resizing really slow.
+         */</i>
+        <i class='comment'>//<b>fitWidth</b>: bind mediaScreen.width</i>
+        <i class='comment'>//<b>fitHeight</b>: mediaScreen.height</i>
+    } on replace {
+        screenBehavior.mediaView = mediaView;
+    }
+
+
+    <b class='keyword'>var</b> wh = bind mediaScreen.width+mediaScreen.height on replace {
+        FX.deferAction(function() {
+            mediaView.fitWidth = mediaScreen.width;
+            mediaView.layoutX = mediaScreen.x+(mediaScreen.width-mediaView.layoutBounds.width)/<span class='number-literal'>2</span>;
+            mediaView.layoutY = mediaScreen.y+(mediaScreen.height-mediaView.layoutBounds.height)/<span class='number-literal'>2</span>;
+            return;
+        })
+    }
+
+    <b class='keyword'>var</b> <b>mediaInfo</b>: MediaInfo = bind MediaInfo {
+        <b>x</b>: bind mediaScreen.x
+        <b>y</b>: bind mediaScreen.y
+        <b>width</b>: bind mediaScreen.width
+        <b>height</b>: <span class='number-literal'>80</span>
+
+        <b>show</b>: false
+        <b>mediaTitle</b>: bind mediaScreen.mediaTitle
+        <b>mediaDescription</b>: bind mediaScreen.mediaDescription
+        <b>mediaDurationStr</b>: bind toMinSec(mediaScreen.mediaPlayer.media.duration)
+    } on replace {
+        screenBehavior.mediaInfo = mediaInfo;
+    }
+
+    <b class='keyword'>var</b> errorInfo = bind ErrorInfo {
+        <b>x</b>: bind mediaScreen.x
+        <b>y</b>: bind mediaScreen.y
+        <b>width</b>: bind mediaScreen.width
+        <b>height</b>: bind mediaScreen.height
+
+        <b>blocksMouse</b>: true
+        <b>mediaError</b>: bind mediaScreen.mediaError
+    } on replace {
+        screenBehavior.errorInfo = errorInfo;
+    }
+
+    function toMinSec(<b>dur</b>: Duration): String {
+        <span class='string-literal'>"{%<span class='number-literal'>02</span>d (dur.toMinutes() mod <span class='number-literal'>60</span>) as Integer}:{%<span class='number-literal'>02</span>d (dur.toSeconds() mod <span class='number-literal'>60</span>) as Integer}"</span>;
+    }
+
+    init {
+        node = Group {
+            <b>content</b>: bind [
+                frame,
+                mediaView,
+                mediaInfo,
+                errorInfo
+            ]
+        }
+    }
+}
+</code></pre></div>
+<div id="footer">
+			<span class="copy">&copy; 2010, Oracle Corporation and/or its affiliates.</span>
+			
+		</div>
+<!--
+	JAVASCRIPT
+	At the bottom of the page so that we download and render all the visual elements, before we start handling the javascript. This provides for a faster perceived loading time.
+-->
+
+<script src="../../shared/new_style/js/omi/s_code_remote.js" type="text/javascript"></script>
+ 
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js"></script>
+<!--[if lte IE 6]>
+	<script type="text/javascript" src="../../shared/new_style/js/jquery.ifixpng.js"></script>
+<![endif]-->
+<script type="text/javascript" src="../../shared/new_style/js/jquery.history.js"></script>
+<script type="text/javascript" src="../../shared/new_style/js/javafx.js"></script>
+
+
+
+
+

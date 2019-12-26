@@ -1,0 +1,95 @@
+<!--
+    Copyright (c) 2009 Sun Microsystems, Inc. All rights reserved.
+    Use is subject to license terms.
+-->
+
+<device-state
+    inputStateCount="3"
+    name="Default"
+    defaultSkin="skin-normal.png"
+    pressedSkin="skin-pressed.png"
+    highlightedSkin="skin-highlighted.png">
+
+    <button vmKeyCode="-6" activators="VK_F1"
+                       x="67" y="322" width="47" height="45"/>
+    <multi-code-button vmKeyCodes="0x71 0x51 0x40" keyChars="qQ@"
+                       x="115" y="322" width="47" height="45"/>
+    <multi-code-button vmKeyCodes="0x77 0x57 0x5F" keyChars="wW_"
+                       x="163" y="322" width="47" height="45"/>
+    <multi-code-button vmKeyCodes="0x65 0x45 0x24" keyChars="eE$"
+                       x="211" y="322" width="47" height="45"/>
+    <multi-code-button vmKeyCodes="0x72 0x52 0x2B" keyChars="rR+"
+                       x="259" y="322" width="47" height="45"/>
+    <multi-code-button vmKeyCodes="0x74 0x54 0x2D" keyChars="tT-"
+                       x="307" y="322" width="47" height="45"/>
+    <multi-code-button vmKeyCodes="0x79 0x59 0x23" keyChars="yY#"
+                       x="355" y="322" width="47" height="45"/>
+    <multi-code-button vmKeyCodes="0x75 0x55 0x31" keyChars="uU1"
+                       x="403" y="322" width="47" height="45"/>
+    <multi-code-button vmKeyCodes="0x79 0x49 0x32" keyChars="iI2"
+                       x="451" y="322" width="47" height="45"/>
+    <multi-code-button vmKeyCodes="0x6F 0x4F 0x33" keyChars="oO3"
+                       x="499" y="322" width="47" height="45"/>
+    <multi-code-button vmKeyCodes="0x70 0x50 0x2C" keyChars="pP,"
+                       x="547" y="322" width="47" height="45"/>
+    <button vmKeyCode="-7" activators="VK_F2"
+                       x="595" y="322" width="47" height="45"/>
+
+    <!-- SHIFT -->
+    <sticky-modifier-button inputState="1" x="67" y="371" width="47" height="45"/>
+
+    <multi-code-button vmKeyCodes="0x61 0x41 0x3A" keyChars="aA:"
+                       x="115" y="371" width="47" height="45"/>
+    <multi-code-button vmKeyCodes="0x73 0x53 0x3B" keyChars="sS;"
+                       x="163" y="371" width="47" height="45"/>
+    <multi-code-button vmKeyCodes="0x64 0x44 0x27" keyChars="dD'"
+                       x="211" y="371" width="47" height="45"/>
+    <multi-code-button vmKeyCodes="0x66 0x46 0x2A" keyChars="fF*"
+                       x="259" y="371" width="47" height="45"/>
+    <multi-code-button vmKeyCodes="0x67 0x47 0x2F" keyChars="gG/"
+                       x="307" y="371" width="47" height="45"/>
+    <multi-code-button vmKeyCodes="0x68 0x48 0x3D" keyChars="hH="
+                       x="355" y="371" width="47" height="45"/>
+    <multi-code-button vmKeyCodes="0x6A 0x4A 0x34" keyChars="jJ4"
+                       x="403" y="371" width="47" height="45"/>
+    <multi-code-button vmKeyCodes="0x6B 0x4B 0x35" keyChars="kK5"
+                       x="451" y="371" width="47" height="45"/>
+    <multi-code-button vmKeyCodes="0x6C 0x4C 0x36" keyChars="lL6"
+                       x="499" y="371" width="47" height="45"/>
+    <button vmKeyCode="-8"
+            x="547" y="371" width="47" height="45"/>
+    <button vmKeyCode="-5" activators="VK_ENTER"
+            x="595" y="371" width="47" height="45"/>
+
+    <!-- FN -->
+    <sticky-modifier-button inputState="2" x="67" y="420" width="47" height="45"/>
+
+    <multi-code-button vmKeyCodes="0x7A 0x5A 0x28" keyChars="zZ("
+                       x="115" y="420" width="47" height="45"/>
+    <multi-code-button vmKeyCodes="0x78 0x58 0x29" keyChars="xX)"
+                       x="163" y="420" width="47" height="45"/>
+    <multi-code-button vmKeyCodes="0x63 0x43 0x21" keyChars="cC!"
+                       x="211" y="420" width="47" height="45"/>
+    <multi-code-button vmKeyCodes="0x76 0x56 0x3F" keyChars="vV?"
+                       x="259" y="420" width="47" height="45"/>
+    <multi-code-button vmKeyCodes="0x32 0x32 0x32" keyChars="   " activators="VK_SPACE"
+                       x="307" y="420" width="97" height="45"/>
+    <multi-code-button vmKeyCodes="0x62 0x42 0x37" keyChars="bB7"
+                       x="403" y="420" width="47" height="45"/>
+    <multi-code-button vmKeyCodes="0x6E 0x4E 0x38" keyChars="nN8"
+                       x="451" y="420" width="47" height="45"/>
+    <multi-code-button vmKeyCodes="0x6D 0x4D 0x39" keyChars="mM9"
+                       x="499" y="420" width="47" height="45"/>
+    <multi-code-button vmKeyCodes="0x6D 0x4D 0x30" keyChars="..0"
+                       x="547" y="420" width="47" height="45"/>
+    <button vmKeyCode="-9"
+            x="595" y="420" width="47" height="45"/>
+
+    <button activators="VK_HOME" vmKeyCode="-10" deviceKey="true"/>
+    <button activators="VK_LEFT" vmKeyCode="-3" />
+    <button activators="VK_UP" vmKeyCode="-1" />
+    <button activators="VK_RIGHT" vmKeyCode="-4"/>
+    <button activators="VK_DOWN" vmKeyCode="-2"/>
+
+
+</device-state>

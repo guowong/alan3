@@ -1,0 +1,333 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+
+<head>
+	
+	<title>JavaFX Example Code | MediaBox | JavaFX Demo</title>
+	
+	<!--METAS-->
+	
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="description" content="JavaFX" />
+	<meta name="keywords" content="JavaFX Oracle [...]" />
+	<meta name="author" content="Oracle" />
+	
+	<!--STYLESHEETS-->
+	<link rel="stylesheet" type="text/css" media="screen, projection" href="../shared/new_style/css/reset.css" />
+	<link rel="stylesheet" type="text/css" media="screen, projection" href="../shared/new_style/css/javafx.css" />
+	<link rel="stylesheet" type="text/css" media="screen, projection" href="../shared/new_style/css/samples.css" />
+	
+	<!-- CONDITIONAL STYLESHEETS -->
+	<!--[if IE]>
+		<link rel="stylesheet" type="text/css" href="../shared/new_style/css/ie.css" />
+	<![endif]-->
+	
+	<!--[if IE 6]>
+		<link rel="stylesheet" type="text/css" href="../shared/new_style/css/ie6.css" />
+	<![endif]-->
+	
+	<!--[if IE 7]>
+		<link rel="stylesheet" type="text/css" href="../shared/new_style/css/ie7.css" />
+	<![endif]-->
+	
+	<!--ADDRESS BAR ICON-->
+
+	<link rel="shortcut icon" type="image/ico" href="../shared/new_style/images/favicon.ico" />
+    
+	
+</head>
+<!--
+	The ID here is required to indicate the page type.
+	Changing this will affect the layout of the page.
+-->
+<body id="tutorials">
+	
+	<div id="body">
+		<!--
+			Header is the main navigation.
+			We are using CSS Sprites to apply images across the site, namely the header and subnav.
+			
+			This has a few implications for you guys, if you want to change the image for selected or hover states,
+			you'll find the images embedded next to the header image in the same file. This makes it slightly harder to edit, and
+			a lot more difficult to change in the styles, but allows for 1 file and download request which makes it much more performant.
+			
+			This also means some of the elements that use the sprites have id's that allow us to modify the sprite image based on each element.
+			So in header and subnav, we have an id on each LI, these can't be changed or else the image styling will be ruined.
+		-->
+		<ul id="header" class="see">
+			<li id="fx" class="first">
+				<h1><a href="http://www.javafx.com/"><span>FX</span></a></h1>
+			</li>
+			<li id="explore">
+				<a href="http://www.javafx.com/about/"><span>Explore</span></a>
+			</li>
+			<li id="see">
+				<a href="http://www.javafx.com/samples/"><span>See</span></a>
+			</li>
+			<li id="learn">
+				<a href="http://www.javafx.com/learn/"><span>Learn</span></a>
+			</li>
+			<li id="start" class="last">
+				<a href="http://www.javafx.com/downloads/"><span>Start</span></a>
+			</li>
+		</ul>
+	
+
+<script src="http://jfx.sfbay.sun.com/hudson//job/1.3.1/label=macosx-universal-soma/101/artifact/artifacts/rt-deployed/dtfx.js"></script><div id="main">
+<div class="sidebar">
+<a href="../index.html" class="back"><span>Return to See main Page</span></a>
+<div class="profile">
+<strong>Key Features</strong><em>Multimedia </em><strong>Skill Level</strong><em>beginner</em><strong>Last Updated</strong><em>April 13, 2009</em>
+</div>
+<dl class="icon-list">
+<dt>Share</dt>
+<dd>
+<a href="http://buzz.yahoo.com/article/http://javafx.com/samples/MediaBox/"><img src="../shared/new_style/images/yahoo_buzz_icon.png" width="20" height="19" alt="Yahoo Buzz"></a>
+</dd>
+<dd>
+<a href="http://www.facebook.com/share.php?u=http://javafx.com/samples/MediaBox/"><img src="../shared/new_style/images/facebook_icon.png" width="20" height="17" alt="Facebook"></a>
+</dd>
+<dd>
+<a href="http://www.myspace.com/index.cfm?u=http://javafx.com/samples/MediaBox/"><img src="../shared/new_style/images/myspace_icon.png" width="20" height="18" alt="Myspace"></a>
+</dd>
+<dd>
+<a href="http://digg.com/submit?phase=3&url=http://javafx.com/samples/MediaBox/"><img src="../shared/new_style/images/digg_icon.png" width="20" height="18" alt="Digg"></a>
+</dd>
+<dd>
+<a href="http://www.reddit.com/submit?url=http://javafx.com/samples/MediaBox/"><img src="../shared/new_style/images/reddit_icon.png" width="20" height="18" alt="Reddit"></a>
+</dd>
+<dd>
+<a href="http://del.icio.us/post?url=http://javafx.com/samples/MediaBox/"><img src="../shared/new_style/images/delicious_icon.png" width="20" height="18" alt="Delicious"></a>
+</dd>
+<dd>
+<a href="http://www.newsvine.com/_tools/seed?popoff=0&u=http://javafx.com/samples/MediaBox/"><img src="../shared/new_style/images/newsvine_icon.png" width="20" height="18" alt="Newsvine"></a>
+</dd>
+</dl>
+<dl class="links-list">
+<dt>View Source Code</dt><dd><a href='src/BufferIndicator.fx.html' target='_blank'>BufferIndicator.fx</a></dd>
+<dd><a href='src/ErrorInfo.fx.html' target='_blank'>ErrorInfo.fx</a></dd>
+<dd><a href='src/FullScreenControl.fx.html' target='_blank'>FullScreenControl.fx</a></dd>
+<dd><a href='src/MediaControlBar.fx.html' target='_blank'>MediaControlBar.fx</a></dd>
+<dd><a href='src/MediaControlType.java.html' target='_blank'>MediaControlType.java</a></dd>
+<dd><a href='src/MediaInfo.fx.html' target='_blank'>MediaInfo.fx</a></dd>
+<dd><a href='src/MediaScreen.fx.html' target='_blank'>MediaScreen.fx</a></dd>
+<dd><a href='src/MediaSlider.fx.html' target='_blank'>MediaSlider.fx</a></dd>
+<dd><a href='src/MediaTime.fx.html' target='_blank'>MediaTime.fx</a></dd>
+<dd><a href='src/MediaTimeType.java.html' target='_blank'>MediaTimeType.java</a></dd>
+<dd><a href='src/PlayControl.fx.html' target='_blank'>PlayControl.fx</a></dd>
+<dd><a href='src/SpeakerControl.fx.html' target='_blank'>SpeakerControl.fx</a></dd>
+<dd><a href='src/VolumeControl.fx.html' target='_blank'>VolumeControl.fx</a></dd>
+<dd><a href='src/Main.fx.html' target='_blank'>Main.fx</a></dd>
+<dd><a href='src/MediaBox.fx.html' target='_blank'>MediaBox.fx</a></dd>
+<dd><a href='src/BufferIndicatorBehavior.fx.html' target='_blank'>BufferIndicatorBehavior.fx</a></dd>
+<dd><a href='src/FullScreenControlBehavior.fx.html' target='_blank'>FullScreenControlBehavior.fx</a></dd>
+<dd><a href='src/MediaScreenBehavior.fx.html' target='_blank'>MediaScreenBehavior.fx</a></dd>
+<dd><a href='src/MediaSliderBehavior.fx.html' target='_blank'>MediaSliderBehavior.fx</a></dd>
+<dd><a href='src/MediaTimeBehavior.fx.html' target='_blank'>MediaTimeBehavior.fx</a></dd>
+<dd><a href='src/PlayControlBehavior.fx.html' target='_blank'>PlayControlBehavior.fx</a></dd>
+<dd><a href='src/AbstractSkin.fx.html' target='_blank'>AbstractSkin.fx</a></dd>
+<dd><a href='src/BufferIndicatorSkin.fx.html' target='_blank'>BufferIndicatorSkin.fx</a></dd>
+<dd><a href='src/ErrorInfoSkin.fx.html' target='_blank'>ErrorInfoSkin.fx</a></dd>
+<dd><a href='src/FullScreenControlSkin.fx.html' target='_blank'>FullScreenControlSkin.fx</a></dd>
+<dd><a href='src/MediaControlBarSkin.fx.html' target='_blank'>MediaControlBarSkin.fx</a></dd>
+<dd><a href='src/MediaInfoSkin.fx.html' target='_blank'>MediaInfoSkin.fx</a></dd>
+<dd><a href='src/MediaScreenSkin.fx.html' target='_blank'>MediaScreenSkin.fx</a></dd>
+<dd><a href='src/MediaSliderSkin.fx.html' target='_blank'>MediaSliderSkin.fx</a></dd>
+<dd><a href='src/MediaTimeSkin.fx.html' target='_blank'>MediaTimeSkin.fx</a></dd>
+<dd><a href='src/ParanaraTheme.fx.html' target='_blank'>ParanaraTheme.fx</a></dd>
+<dd><a href='src/PlayControlSkin.fx.html' target='_blank'>PlayControlSkin.fx</a></dd>
+<dd><a href='src/SpeakerControlSkin.fx.html' target='_blank'>SpeakerControlSkin.fx</a></dd>
+<dd><a href='src/VolumeControlSkin.fx.html' target='_blank'>VolumeControlSkin.fx</a></dd>
+<dd><a href='src/Theme.fx.html' target='_blank'>Theme.fx</a></dd>
+<dd><a href='src/SpeakerControlBehavior.fx.html' target='_blank'>SpeakerControlBehavior.fx</a></dd>
+<dd><a href='src/VolumeControlBehavior.fx.html' target='_blank'>VolumeControlBehavior.fx</a></dd>
+<dd class="button">
+<a class="download-button" href="MediaBox.zip"><span>Download Source Code</span></a>
+</dd>
+</dl>
+<div class="profile no-image">
+<h4>Profile</h4>
+<strong>Baechul Kim</strong>
+</div>
+<div id="tv" class="sidebox">
+<img src="../shared/tv_badge.png"></div>
+</div>
+<div id="content">
+<div class="content-head">
+<h2>JavaFX MediaBox Player For Streaming Video</h2>
+<div class="meta">
+                       By <a class="author">Baechul Kim</a>,
+                       <span class="date">April 13, 2009</span>
+</div>
+</div>
+<p>JavaFX software has a media API that enables you to fully control playback of
+video. This API is in the <var class="code-attribute">javafx.scene.media</var> package. The media API
+is fairly low level, however. It doesn't provide a player with buttons, a
+slider, and the other features you expect from a typical video player. You could
+build your own more elaborate video player, but you have another option. You
+could use the JavaFX MediaBox Component, a prefabricated video player in the
+<var class="code-attribute">com.sun.javafx.mediabox</var> package.</p>
+<script>
+var u10only = '';
+var webstartAllowed = '';
+
+if(u10only=='true' && !deployJava.isPlugin2()) {
+    document.write("<p class='u10warning'>");
+    document.write("This sample needs Java SE 6 Update 10 or higher with Internet Explorer 7+ or FireFox 3+");
+    document.write("");
+    if(webstartAllowed=='true') {
+        document.write(" Please <a href='webstart/MediaBox.jnlp'>run this example with Java Webstart<a> instead");
+    }
+    document.write("</p>");
+} else {
+
+    javafx(
+        {
+            archive: "webstart/MediaBox.jar,",
+            width: 640,
+            height: 360,
+            code: "com.sun.javafx.mediabox.Main",
+            
+            name: "appl"
+        } 
+    );
+}
+</script>
+<p>
+<i>video from <a href="http://www.bigbuckbunny.org/">Big Buck Bunny</a></i>
+</p>
+<h3>Understanding the Code</h3>
+<p>The JavaFX MediaBox Component is a visual component that provides the standard
+video player controls. It has a play/pause button, a
+slider to scrub through the video, a time indicator, and hidden mode,
+where the controls are hidden until you
+move the mouse. Soon it will have fullscreen mode as well.
+Using the JavaFX MediaBox Component couldn't be any simpler. Just
+create an instance of the component with a link to your video, set a few
+variables, then put it in a Stage, as shown in Figure 1. </p>
+<div class="source">
+<div class="code-header">Source Code</div>
+<pre>
+<b>import</b> javafx.stage.Stage;
+<b>import</b> javafx.scene.Scene;
+<b>import</b> com.sun.javafx.mediabox.*;
+
+<b class='keyword'>var</b> media = <span class='string-literal'>"<b>http</b>:<i class='comment'>//sun.edgeboss.net/download/sun/media/<span class='number-literal'>1460825906</span>/<span class='number-literal'>1460825906</span>_<span class='number-literal'>11810873001</span>_<span class='number-literal'>09</span>c<span class='number-literal'>01923</span>-<span class='number-literal'>00</span>.flv"</span>;</i>
+
+<b class='keyword'>var</b> mediaBox = MediaBox {
+    <i class='comment'>// your media(video/audio) source and information</i>
+    <i class='comment'>// Only mediaSource is the required <b class='keyword'>var</b>iable. All others are optional.</i>
+    <b>mediaSource</b>: media
+    <b>mediaTitle</b>: <span class='string-literal'>"Big Buck Bunny"</span>
+    <b>mediaDescription</b>: <span class='string-literal'>"A well-tempered rabbit finds his day..."</span>
+
+    <i class='comment'>// controls the visibility of mediaTitle/mediaDescription</i>
+    <b>showMediaInfo</b>: true
+
+    <i class='comment'>// the position and size of the media on screen</i>
+    <b>translateX</b>: <span class='number-literal'>0</span>
+    <b>translateY</b>: <span class='number-literal'>0</span>
+    <b>width</b>: <span class='number-literal'>640</span>
+    <b>height</b>: <span class='number-literal'>360</span>
+
+    <i class='comment'>// make the movie play as soon as it's loaded</i>
+    <b>autoPlay</b>: true
+
+    <i class='comment'>// media controlbar height at the bottom of the media view</i>
+    <b>mediaControlBarHeight</b>: <span class='number-literal'>25</span>
+
+    <i class='comment'>// some examples of function <b class='keyword'>var</b>iables to interact with outside</i>
+    <b>onEndOfMedia</b>: function() {
+    }
+    <b>onMouseClicked</b>: function(me) {
+    }
+}
+
+Stage {
+    <b>title</b>: <span class='string-literal'>"MediaBox Player"</span>
+    <b>resizable</b>: true
+    <b>scene</b>: Scene {
+        <b>content</b>: mediaBox
+    }
+}
+</pre>
+</div>
+<p>
+<i>Figure 1: Using the <var class="code-attribute">MediaBox Component</var></i>
+</p>
+<p>The most important variables in the previous code are the first few. You must
+set the <var class="code-attribute">mediaSource</var> to actually play video. You can choose the
+size and position of the video with <var class="code-attribute">translateX</var>,
+<var class="code-attribute">translateY</var>, <var class="code-attribute">width</var> and <var class="code-attribute">height</var>.
+The <var class="code-attribute">autoPlay</var> variable do exactly what you might expect: determine
+if the media should start playing as soon as it can.</p>
+<p>You can set the height of the control bar by initializing <var class="code-attribute">mediaControlBarHeight</var> with
+the desired pixel size. The default is 25 pixels.</p>
+<p>Another set of variables specify the text displayed at the top of the video when the
+mouse is moved over the video. There are two strings, <var class="code-attribute">mediaDescription</var>,
+and <var class="code-attribute">mediaTitle</var>.</p>
+<p>If you change <var class="code-attribute">mediaSource</var> the component will attempt to play media
+from the new URL. Internally the component uses a trigger on this variable, and this will
+only be fired if the value of the variable is changed.</p>
+<p>Finally, if you want to know when the media has finished playing, there is a function
+variable <var class="code-attribute">onEndOfMedia():Void</var> you can assign your own function to.</p>
+<h3>Using MediaBox in Hello World Example</h3>
+<p>The JavaFX MediaBox sample can be used as a library. When it is built,
+<var class="code-attribute">MediaBox.jar</var> will be generated. Simply add it to your FX project as
+a library. Copy and paste the following code to your main FX class.</p>
+<div class="source">
+<div class="code-header">Source Code</div>
+<pre>
+<b>package</b> hellomediabox;
+
+<b>import</b> javafx.stage.Stage;
+<b>import</b> javafx.scene.Scene;
+<b>import</b> com.sun.javafx.mediabox.*;
+
+<b class='keyword'>var</b> media = <span class='string-literal'>"<b>http</b>:<i class='comment'>//sun.edgeboss.net/download/sun/media/<span class='number-literal'>1460825906</span>/<span class='number-literal'>1460825906</span>_<span class='number-literal'>11810873001</span>_<span class='number-literal'>09</span>c<span class='number-literal'>01923</span>-<span class='number-literal'>00</span>.flv"</span>;</i>
+
+Stage {
+    <b>title</b>: <span class='string-literal'>"MediaBox Player"</span>
+    <b>resizable</b>: true
+    <b>scene</b>: Scene {
+        <b>content</b>: MediaBox { media }
+    }
+}
+</pre>
+</div>
+<p>
+<i>Figure 2: Hello MediaBox Example</i>
+</p>
+</div>
+</div>		<div id="footer">
+			<span class="copy">&copy; 2010, Oracle Corporation and/or its affiliates.</span>
+            <ul>
+				<li class="first"><a href="http://javafx.com/" target="_blank">English</a></li>
+				<li><a href="http://www.sun.com/privacy/index.html" target="_blank">Privacy</a></li>
+                <li><a href="http://www.sun.com/termsofuse.jsp" target="_blank">Terms of Use</a></li>
+                <li><a href="https://openjfx.dev.java.net/legal/trademarks.txt" target="_blank">Trademarks</a></li>
+                <li><a href="http://www.sun.com/software/licensingcenter/" target="_blank">Licensing</a></li>
+            </ul>
+            <a href="http://www.sun.com/" id="footer_link"><span>Sun.com</span></a>
+		</div>
+	</div>
+    
+<!-- BEGIN G9 VARIATION 0 -->
+<script language="javascript" type="text/javascript" charset="UTF-8" src="http://www.sun.com/share/op/oo_engine.js"></script>
+<script language="javascript" type="text/javascript" charset="UTF-8" src="http://www.sun.com/share/op/oo_conf_en-US.js"></script>
+<!-- END G9 VARIATION 0 -->
+	
+<script src="../shared/new_style/js/omi/s_code_remote.js" type="text/javascript"></script>
+</body>
+
+</html>
+
+<!--
+	JAVASCRIPT
+	At the bottom of the page so that we download and render all the visual elements, before we start handling the javascript. This provides for a faster perceived loading time.
+-->
+
+<script type="text/javascript" src="../shared/new_style/js/javafx.js"></script>
+
+
+

@@ -1,0 +1,2516 @@
+
+            <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+        <html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="../general.css" rel="stylesheet">
+<style type="text/css"></style>
+<link href="../sdk.css" rel="stylesheet">
+<script type="text/javascript" src="../mootools-1.2.1-yui.js"></script><script type="text/javascript" src="../sessvars.js"></script><script type="text/javascript" src="../sdk.js"></script>
+<meta name="collection" content="api">
+<meta name="keywords" content="JavaFX, Java FX">
+<title>JavaFX 1.3.1 API | javafx.scene.paint.Color | Java FX</title>
+</head>
+<body>
+<div id="top-header">
+<h1>
+<a href="../index.html">Java<b>FX</b>: <i>Bringing Rich Experiences To All the Screens Of Your Life</i></a>
+</h1>
+<h3 id="master-index-link">
+<a href="../master-index.html">master index</a>
+</h3>
+<h3 id="collapse-expand-switcher">
+<a href="#" id="collapse-expand-link">expand all</a>
+</h3>
+<h3 id="profile-switcher">Profile: <a href="#" id="select-desktop-profile">desktop</a>, <a href="#" id="select-common-profile">common</a>
+</h3>
+</div>
+<ul id="classes-toc">
+<li>
+<h4 class="header">
+<a href="#">com.javafx.preview.control</a>
+</h4>
+<ul class="content">
+<li class="profile-common ">
+<a href="../com.javafx.preview.control/com.javafx.preview.control.CheckMenuItem.html">CheckMenuItem</a>
+</li>
+<li class="profile-common ">
+<a href="../com.javafx.preview.control/com.javafx.preview.control.CustomMenuItem.html">CustomMenuItem</a>
+</li>
+<li class="profile-common ">
+<a href="../com.javafx.preview.control/com.javafx.preview.control.Menu.html">Menu</a>
+</li>
+<li class="profile-common ">
+<a href="../com.javafx.preview.control/com.javafx.preview.control.MenuBar.html">MenuBar</a>
+</li>
+<li class="profile-common ">
+<a href="../com.javafx.preview.control/com.javafx.preview.control.MenuButton.html">MenuButton</a>
+</li>
+<li class="profile-common ">
+<a href="../com.javafx.preview.control/com.javafx.preview.control.MenuItem.html">MenuItem</a>
+</li>
+<li class="profile-common ">
+<a href="../com.javafx.preview.control/com.javafx.preview.control.MenuItemBase.html">MenuItemBase</a>
+</li>
+<li class="profile-common ">
+<a href="../com.javafx.preview.control/com.javafx.preview.control.PopupMenu.html">PopupMenu</a>
+</li>
+<li class="profile-common ">
+<a href="../com.javafx.preview.control/com.javafx.preview.control.RadioMenuItem.html">RadioMenuItem</a>
+</li>
+<li class="profile-common ">
+<a href="../com.javafx.preview.control/com.javafx.preview.control.SplitMenuButton.html">SplitMenuButton</a>
+</li>
+<li class="profile-common ">
+<a href="../com.javafx.preview.control/com.javafx.preview.control.ToolBar.html">ToolBar</a>
+</li>
+<li class="profile-common ">
+<a href="../com.javafx.preview.control/com.javafx.preview.control.TreeCell.html">TreeCell</a>
+</li>
+<li class="profile-common ">
+<a href="../com.javafx.preview.control/com.javafx.preview.control.TreeItem.html">TreeItem</a>
+</li>
+<li class="profile-common ">
+<a href="../com.javafx.preview.control/com.javafx.preview.control.TreeItemBase.html">TreeItemBase</a>
+</li>
+<li class="profile-common ">
+<a href="../com.javafx.preview.control/com.javafx.preview.control.TreeView.html">TreeView</a>
+</li>
+</ul>
+</li>
+<li>
+<h4 class="header">
+<a href="#">com.javafx.preview.layout</a>
+</h4>
+<ul class="content">
+<li class="profile-common ">
+<a href="../com.javafx.preview.layout/com.javafx.preview.layout.Grid.html">Grid</a>
+</li>
+<li class="profile-common ">
+<a href="../com.javafx.preview.layout/com.javafx.preview.layout.GridLayoutInfo.html">GridLayoutInfo</a>
+</li>
+<li class="profile-common ">
+<a href="../com.javafx.preview.layout/com.javafx.preview.layout.GridRow.html">GridRow</a>
+</li>
+</ul>
+</li>
+<li>
+<h4 class="header">
+<a href="#">javafx.animation</a>
+</h4>
+<ul class="content">
+<li class="profile-common ">
+<a href="../javafx.animation/javafx.animation.Interpolatable.html">Interpolatable</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.animation/javafx.animation.Interpolator.html">Interpolator</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.animation/javafx.animation.KeyFrame.html">KeyFrame</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.animation/javafx.animation.KeyValue.html">KeyValue</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.animation/javafx.animation.KeyValueTarget.html">KeyValueTarget</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.animation/javafx.animation.KeyValueTarget.Type.html">KeyValueTarget.Type</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.animation/javafx.animation.SimpleInterpolator.html">SimpleInterpolator</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.animation/javafx.animation.Timeline.html">Timeline</a>
+</li>
+</ul>
+</li>
+<li>
+<h4 class="header">
+<a href="#">javafx.animation.transition</a>
+</h4>
+<ul class="content">
+<li class="profile-common ">
+<a href="../javafx.animation.transition/javafx.animation.transition.AnimationPath.html">AnimationPath</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.animation.transition/javafx.animation.transition.FadeTransition.html">FadeTransition</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.animation.transition/javafx.animation.transition.OrientationType.html">OrientationType</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.animation.transition/javafx.animation.transition.ParallelTransition.html">ParallelTransition</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.animation.transition/javafx.animation.transition.PathTransition.html">PathTransition</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.animation.transition/javafx.animation.transition.PauseTransition.html">PauseTransition</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.animation.transition/javafx.animation.transition.RotateTransition.html">RotateTransition</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.animation.transition/javafx.animation.transition.ScaleTransition.html">ScaleTransition</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.animation.transition/javafx.animation.transition.SequentialTransition.html">SequentialTransition</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.animation.transition/javafx.animation.transition.Transition.html">Transition</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.animation.transition/javafx.animation.transition.TranslateTransition.html">TranslateTransition</a>
+</li>
+</ul>
+</li>
+<li>
+<h4 class="header">
+<a href="#">javafx.async</a>
+</h4>
+<ul class="content">
+<li class="profile-common ">
+<a href="../javafx.async/javafx.async.JavaTaskBase.html">JavaTaskBase</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.async/javafx.async.RunnableFuture.html">RunnableFuture</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.async/javafx.async.Task.html">Task</a>
+</li>
+</ul>
+</li>
+<li>
+<h4 class="header">
+<a href="#">javafx.data</a>
+</h4>
+<ul class="content">
+<li class="">
+<a href="../javafx.data/javafx.data.Converter.html">Converter</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.data/javafx.data.Pair.html">Pair</a>
+</li>
+</ul>
+</li>
+<li>
+<h4 class="header">
+<a href="#">javafx.data.feed</a>
+</h4>
+<ul class="content">
+<li class="profile-common ">
+<a href="../javafx.data.feed/javafx.data.feed.Base.html">Base</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.data.feed/javafx.data.feed.FeedTask.html">FeedTask</a>
+</li>
+</ul>
+</li>
+<li>
+<h4 class="header">
+<a href="#">javafx.data.feed.atom</a>
+</h4>
+<ul class="content">
+<li class="profile-common ">
+<a href="../javafx.data.feed.atom/javafx.data.feed.atom.Atom.html">Atom</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.data.feed.atom/javafx.data.feed.atom.AtomTask.html">AtomTask</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.data.feed.atom/javafx.data.feed.atom.Category.html">Category</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.data.feed.atom/javafx.data.feed.atom.Content.html">Content</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.data.feed.atom/javafx.data.feed.atom.Date.html">Date</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.data.feed.atom/javafx.data.feed.atom.Entry.html">Entry</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.data.feed.atom/javafx.data.feed.atom.Factory.html">Factory</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.data.feed.atom/javafx.data.feed.atom.Feed.html">Feed</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.data.feed.atom/javafx.data.feed.atom.Generator.html">Generator</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.data.feed.atom/javafx.data.feed.atom.Id.html">Id</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.data.feed.atom/javafx.data.feed.atom.Link.html">Link</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.data.feed.atom/javafx.data.feed.atom.Person.html">Person</a>
+</li>
+</ul>
+</li>
+<li>
+<h4 class="header">
+<a href="#">javafx.data.feed.rss</a>
+</h4>
+<ul class="content">
+<li class="profile-common ">
+<a href="../javafx.data.feed.rss/javafx.data.feed.rss.Category.html">Category</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.data.feed.rss/javafx.data.feed.rss.Channel.html">Channel</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.data.feed.rss/javafx.data.feed.rss.Enclosure.html">Enclosure</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.data.feed.rss/javafx.data.feed.rss.Factory.html">Factory</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.data.feed.rss/javafx.data.feed.rss.Guid.html">Guid</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.data.feed.rss/javafx.data.feed.rss.Image.html">Image</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.data.feed.rss/javafx.data.feed.rss.Item.html">Item</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.data.feed.rss/javafx.data.feed.rss.RSS.html">RSS</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.data.feed.rss/javafx.data.feed.rss.RssTask.html">RssTask</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.data.feed.rss/javafx.data.feed.rss.Source.html">Source</a>
+</li>
+</ul>
+</li>
+<li>
+<h4 class="header">
+<a href="#">javafx.data.pull</a>
+</h4>
+<ul class="content">
+<li class="profile-common ">
+<a href="../javafx.data.pull/javafx.data.pull.Event.html">Event</a>
+</li>
+<li class="">
+<a href="../javafx.data.pull/javafx.data.pull.ParserTask.html">ParserTask</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.data.pull/javafx.data.pull.PullParser.html">PullParser</a>
+</li>
+</ul>
+</li>
+<li>
+<h4 class="header">
+<a href="#">javafx.data.xml</a>
+</h4>
+<ul class="content">
+<li class="profile-common ">
+<a href="../javafx.data.xml/javafx.data.xml.QName.html">QName</a>
+</li>
+<li class="">
+<a href="../javafx.data.xml/javafx.data.xml.XMLConstants.html">XMLConstants</a>
+</li>
+</ul>
+</li>
+<li>
+<h4 class="header">
+<a href="#">javafx.date</a>
+</h4>
+<ul class="content">
+<li class="profile-common ">
+<a href="../javafx.date/javafx.date.DateTime.html">DateTime</a>
+</li>
+</ul>
+</li>
+<li>
+<h4 class="header">
+<a href="#">javafx.ext.swing</a>
+</h4>
+<ul class="content">
+<li class="private">
+<a href="../javafx.ext.swing/javafx.ext.swing.JTextFieldImpl.html">JTextFieldImpl</a>
+</li>
+<li class="profile-desktop conditional swing ">
+<a href="../javafx.ext.swing/javafx.ext.swing.SwingAbstractButton.html">SwingAbstractButton</a>
+</li>
+<li class="profile-desktop conditional swing ">
+<a href="../javafx.ext.swing/javafx.ext.swing.SwingButton.html">SwingButton</a>
+</li>
+<li class="profile-desktop conditional swing ">
+<a href="../javafx.ext.swing/javafx.ext.swing.SwingCheckBox.html">SwingCheckBox</a>
+</li>
+<li class="profile-desktop conditional swing ">
+<a href="../javafx.ext.swing/javafx.ext.swing.SwingComboBox.html">SwingComboBox</a>
+</li>
+<li class="profile-desktop conditional swing ">
+<a href="../javafx.ext.swing/javafx.ext.swing.SwingComboBoxItem.html">SwingComboBoxItem</a>
+</li>
+<li class="profile-desktop conditional swing ">
+<a href="../javafx.ext.swing/javafx.ext.swing.SwingComponent.html">SwingComponent</a>
+</li>
+<li class="profile-desktop conditional swing ">
+<a href="../javafx.ext.swing/javafx.ext.swing.SwingHorizontalAlignment.html">SwingHorizontalAlignment</a>
+</li>
+<li class="profile-desktop conditional swing ">
+<a href="../javafx.ext.swing/javafx.ext.swing.SwingIcon.html">SwingIcon</a>
+</li>
+<li class="profile-desktop conditional swing ">
+<a href="../javafx.ext.swing/javafx.ext.swing.SwingLabel.html">SwingLabel</a>
+</li>
+<li class="profile-desktop conditional swing ">
+<a href="../javafx.ext.swing/javafx.ext.swing.SwingList.html">SwingList</a>
+</li>
+<li class="profile-desktop conditional swing ">
+<a href="../javafx.ext.swing/javafx.ext.swing.SwingListItem.html">SwingListItem</a>
+</li>
+<li class="profile-desktop conditional swing ">
+<a href="../javafx.ext.swing/javafx.ext.swing.SwingRadioButton.html">SwingRadioButton</a>
+</li>
+<li class="profile-desktop conditional swing ">
+<a href="../javafx.ext.swing/javafx.ext.swing.SwingScrollableComponent.html">SwingScrollableComponent</a>
+</li>
+<li class="profile-desktop conditional swing ">
+<a href="../javafx.ext.swing/javafx.ext.swing.SwingScrollPane.html">SwingScrollPane</a>
+</li>
+<li class="profile-desktop conditional swing ">
+<a href="../javafx.ext.swing/javafx.ext.swing.SwingSlider.html">SwingSlider</a>
+</li>
+<li class="profile-desktop conditional swing ">
+<a href="../javafx.ext.swing/javafx.ext.swing.SwingTextField.html">SwingTextField</a>
+</li>
+<li class="profile-desktop conditional swing ">
+<a href="../javafx.ext.swing/javafx.ext.swing.SwingToggleButton.html">SwingToggleButton</a>
+</li>
+<li class="profile-desktop conditional swing ">
+<a href="../javafx.ext.swing/javafx.ext.swing.SwingToggleGroup.html">SwingToggleGroup</a>
+</li>
+<li class="profile-desktop conditional swing ">
+<a href="../javafx.ext.swing/javafx.ext.swing.SwingUtils.html">SwingUtils</a>
+</li>
+<li class="profile-desktop conditional swing ">
+<a href="../javafx.ext.swing/javafx.ext.swing.SwingVerticalAlignment.html">SwingVerticalAlignment</a>
+</li>
+</ul>
+</li>
+<li>
+<h4 class="header">
+<a href="#">javafx.fxd</a>
+</h4>
+<ul class="content">
+<li class="profile-common ">
+<a href="../javafx.fxd/javafx.fxd.Duplicator.html">Duplicator</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.fxd/javafx.fxd.FXDContent.html">FXDContent</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.fxd/javafx.fxd.FXDLoader.html">FXDLoader</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.fxd/javafx.fxd.FXDNode.html">FXDNode</a>
+</li>
+</ul>
+</li>
+<li>
+<h4 class="header">
+<a href="#">javafx.geometry</a>
+</h4>
+<ul class="content">
+<li class="profile-common ">
+<a href="../javafx.geometry/javafx.geometry.BoundingBox.html">BoundingBox</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.geometry/javafx.geometry.Bounds.html">Bounds</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.geometry/javafx.geometry.Dimension2D.html">Dimension2D</a>
+</li>
+<li class="">
+<a href="../javafx.geometry/javafx.geometry.HPos.html">HPos</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.geometry/javafx.geometry.Insets.html">Insets</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.geometry/javafx.geometry.Point2D.html">Point2D</a>
+</li>
+<li class="profile-common conditional scene3d ">
+<a href="../javafx.geometry/javafx.geometry.Point3D.html">Point3D</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.geometry/javafx.geometry.Rectangle2D.html">Rectangle2D</a>
+</li>
+<li class="">
+<a href="../javafx.geometry/javafx.geometry.VPos.html">VPos</a>
+</li>
+</ul>
+</li>
+<li>
+<h4 class="header">
+<a href="#">javafx.io</a>
+</h4>
+<ul class="content">
+<li class="profile-common ">
+<a href="../javafx.io/javafx.io.Resource.html">Resource</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.io/javafx.io.Storage.html">Storage</a>
+</li>
+</ul>
+</li>
+<li>
+<h4 class="header">
+<a href="#">javafx.io.http</a>
+</h4>
+<ul class="content">
+<li class="profile-common ">
+<a href="../javafx.io.http/javafx.io.http.HttpHeader.html">HttpHeader</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.io.http/javafx.io.http.HttpRequest.html">HttpRequest</a>
+</li>
+<li class="">
+<a href="../javafx.io.http/javafx.io.http.HttpStatus.html">HttpStatus</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.io.http/javafx.io.http.URLConverter.html">URLConverter</a>
+</li>
+</ul>
+</li>
+<li>
+<h4 class="header">
+<a href="#">javafx.lang</a>
+</h4>
+<ul class="content">
+<li class="profile-common ">
+<a href="../javafx.lang/javafx.lang.Builtins.html">Builtins</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.lang/javafx.lang.Duration.html">Duration</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.lang/javafx.lang.FX.html">FX</a>
+</li>
+</ul>
+</li>
+<li>
+<h4 class="header">
+<a href="#">javafx.reflect</a>
+</h4>
+<ul class="content">
+<li class="profile-desktop ">
+<a href="../javafx.reflect/javafx.reflect.FXBooleanValue.html">FXBooleanValue</a>
+</li>
+<li class="profile-desktop ">
+<a href="../javafx.reflect/javafx.reflect.FXChangeListener.html">FXChangeListener</a>
+</li>
+<li class="profile-desktop ">
+<a href="../javafx.reflect/javafx.reflect.FXChangeListenerID.html">FXChangeListenerID</a>
+</li>
+<li class="profile-desktop ">
+<a href="../javafx.reflect/javafx.reflect.FXClassType.html">FXClassType</a>
+</li>
+<li class="profile-desktop ">
+<a href="../javafx.reflect/javafx.reflect.FXContext.html">FXContext</a>
+</li>
+<li class="profile-desktop ">
+<a href="../javafx.reflect/javafx.reflect.FXDoubleValue.html">FXDoubleValue</a>
+</li>
+<li class="profile-desktop ">
+<a href="../javafx.reflect/javafx.reflect.FXFloatValue.html">FXFloatValue</a>
+</li>
+<li class="profile-desktop ">
+<a href="../javafx.reflect/javafx.reflect.FXFunctionMember.html">FXFunctionMember</a>
+</li>
+<li class="profile-desktop ">
+<a href="../javafx.reflect/javafx.reflect.FXFunctionType.html">FXFunctionType</a>
+</li>
+<li class="profile-desktop ">
+<a href="../javafx.reflect/javafx.reflect.FXFunctionValue.html">FXFunctionValue</a>
+</li>
+<li class="profile-desktop ">
+<a href="../javafx.reflect/javafx.reflect.FXIntegerValue.html">FXIntegerValue</a>
+</li>
+<li class="profile-desktop ">
+<a href="../javafx.reflect/javafx.reflect.FXJavaArrayType.html">FXJavaArrayType</a>
+</li>
+<li class="profile-desktop ">
+<a href="../javafx.reflect/javafx.reflect.FXLocal.html">FXLocal</a>
+</li>
+<li class="profile-desktop ">
+<a href="../javafx.reflect/javafx.reflect.FXLocal.ClassType.html">FXLocal.ClassType</a>
+</li>
+<li class="profile-desktop ">
+<a href="../javafx.reflect/javafx.reflect.FXLocal.Context.html">FXLocal.Context</a>
+</li>
+<li class="profile-desktop ">
+<a href="../javafx.reflect/javafx.reflect.FXLocal.FunctionValue.html">FXLocal.FunctionValue</a>
+</li>
+<li class="profile-desktop ">
+<a href="../javafx.reflect/javafx.reflect.FXLocal.ObjectValue.html">FXLocal.ObjectValue</a>
+</li>
+<li class="profile-desktop ">
+<a href="../javafx.reflect/javafx.reflect.FXLocal.Value.html">FXLocal.Value</a>
+</li>
+<li class="profile-desktop ">
+<a href="../javafx.reflect/javafx.reflect.FXLocal.VarMemberLocation.html">FXLocal.VarMemberLocation</a>
+</li>
+<li class="profile-desktop ">
+<a href="../javafx.reflect/javafx.reflect.FXLocation.html">FXLocation</a>
+</li>
+<li class="profile-desktop ">
+<a href="../javafx.reflect/javafx.reflect.FXLongValue.html">FXLongValue</a>
+</li>
+<li class="profile-desktop ">
+<a href="../javafx.reflect/javafx.reflect.FXMember.html">FXMember</a>
+</li>
+<li class="profile-desktop ">
+<a href="../javafx.reflect/javafx.reflect.FXMemberFilter.html">FXMemberFilter</a>
+</li>
+<li class="profile-desktop ">
+<a href="../javafx.reflect/javafx.reflect.FXObjectValue.html">FXObjectValue</a>
+</li>
+<li class="profile-desktop ">
+<a href="../javafx.reflect/javafx.reflect.FXPrimitiveType.html">FXPrimitiveType</a>
+</li>
+<li class="profile-desktop ">
+<a href="../javafx.reflect/javafx.reflect.FXPrimitiveValue.html">FXPrimitiveValue</a>
+</li>
+<li class="profile-desktop ">
+<a href="../javafx.reflect/javafx.reflect.FXSequenceBuilder.html">FXSequenceBuilder</a>
+</li>
+<li class="profile-desktop ">
+<a href="../javafx.reflect/javafx.reflect.FXSequenceType.html">FXSequenceType</a>
+</li>
+<li class="profile-desktop ">
+<a href="../javafx.reflect/javafx.reflect.FXSequenceValue.html">FXSequenceValue</a>
+</li>
+<li class="profile-desktop ">
+<a href="../javafx.reflect/javafx.reflect.FXType.html">FXType</a>
+</li>
+<li class="profile-desktop ">
+<a href="../javafx.reflect/javafx.reflect.FXValue.html">FXValue</a>
+</li>
+<li class="profile-desktop ">
+<a href="../javafx.reflect/javafx.reflect.FXVarMember.html">FXVarMember</a>
+</li>
+<li class="profile-desktop ">
+<a href="../javafx.reflect/javafx.reflect.FXVarMemberLocation.html">FXVarMemberLocation</a>
+</li>
+</ul>
+</li>
+<li>
+<h4 class="header">
+<a href="#">javafx.runtime</a>
+</h4>
+<ul class="content">
+<li class="profile-common ">
+<a href="../javafx.runtime/javafx.runtime.ConditionalFeature.html">ConditionalFeature</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.runtime/javafx.runtime.Platform.html">Platform</a>
+</li>
+</ul>
+</li>
+<li>
+<h4 class="header">
+<a href="#">javafx.scene</a>
+</h4>
+<ul class="content">
+<li class="profile-common ">
+<a href="../javafx.scene/javafx.scene.CacheHint.html">CacheHint</a>
+</li>
+<li class="profile-common conditional scene3d ">
+<a href="../javafx.scene/javafx.scene.Camera.html">Camera</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene/javafx.scene.Cursor.html">Cursor</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene/javafx.scene.CustomNode.html">CustomNode</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene/javafx.scene.Group.html">Group</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene/javafx.scene.ImageCursor.html">ImageCursor</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene/javafx.scene.Node.html">Node</a>
+</li>
+<li class="profile-common conditional scene3d ">
+<a href="../javafx.scene/javafx.scene.ParallelCamera.html">ParallelCamera</a>
+</li>
+<li class="">
+<a href="../javafx.scene/javafx.scene.Parent.html">Parent</a>
+</li>
+<li class="profile-common conditional scene3d ">
+<a href="../javafx.scene/javafx.scene.PerspectiveCamera.html">PerspectiveCamera</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene/javafx.scene.Scene.html">Scene</a>
+</li>
+</ul>
+</li>
+<li>
+<h4 class="header">
+<a href="#">javafx.scene.chart</a>
+</h4>
+<ul class="content">
+<li class="profile-common ">
+<a href="../javafx.scene.chart/javafx.scene.chart.AreaChart.html">AreaChart</a>
+</li>
+<li class="">
+<a href="../javafx.scene.chart/javafx.scene.chart.AreaChart.Data.html">AreaChart.Data</a>
+</li>
+<li class="">
+<a href="../javafx.scene.chart/javafx.scene.chart.AreaChart.Series.html">AreaChart.Series</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.chart/javafx.scene.chart.BarChart.html">BarChart</a>
+</li>
+<li class="">
+<a href="../javafx.scene.chart/javafx.scene.chart.BarChart.Data.html">BarChart.Data</a>
+</li>
+<li class="">
+<a href="../javafx.scene.chart/javafx.scene.chart.BarChart.Series.html">BarChart.Series</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.chart/javafx.scene.chart.BarChart3D.html">BarChart3D</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.chart/javafx.scene.chart.BubbleChart.html">BubbleChart</a>
+</li>
+<li class="">
+<a href="../javafx.scene.chart/javafx.scene.chart.BubbleChart.Data.html">BubbleChart.Data</a>
+</li>
+<li class="">
+<a href="../javafx.scene.chart/javafx.scene.chart.BubbleChart.Series.html">BubbleChart.Series</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.chart/javafx.scene.chart.Chart.html">Chart</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.chart/javafx.scene.chart.LineChart.html">LineChart</a>
+</li>
+<li class="">
+<a href="../javafx.scene.chart/javafx.scene.chart.LineChart.Data.html">LineChart.Data</a>
+</li>
+<li class="">
+<a href="../javafx.scene.chart/javafx.scene.chart.LineChart.Series.html">LineChart.Series</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.chart/javafx.scene.chart.PieChart.html">PieChart</a>
+</li>
+<li class="">
+<a href="../javafx.scene.chart/javafx.scene.chart.PieChart.Data.html">PieChart.Data</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.chart/javafx.scene.chart.PieChart3D.html">PieChart3D</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.chart/javafx.scene.chart.ScatterChart.html">ScatterChart</a>
+</li>
+<li class="">
+<a href="../javafx.scene.chart/javafx.scene.chart.ScatterChart.Data.html">ScatterChart.Data</a>
+</li>
+<li class="">
+<a href="../javafx.scene.chart/javafx.scene.chart.ScatterChart.Series.html">ScatterChart.Series</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.chart/javafx.scene.chart.XYChart.html">XYChart</a>
+</li>
+</ul>
+</li>
+<li>
+<h4 class="header">
+<a href="#">javafx.scene.chart.data</a>
+</h4>
+<ul class="content">
+<li class="profile-common ">
+<a href="../javafx.scene.chart.data/javafx.scene.chart.data.Data.html">Data</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.chart.data/javafx.scene.chart.data.Series.html">Series</a>
+</li>
+</ul>
+</li>
+<li>
+<h4 class="header">
+<a href="#">javafx.scene.chart.part</a>
+</h4>
+<ul class="content">
+<li class="profile-common ">
+<a href="../javafx.scene.chart.part/javafx.scene.chart.part.Axis.html">Axis</a>
+</li>
+<li class="">
+<a href="../javafx.scene.chart.part/javafx.scene.chart.part.Axis.TickMark.html">Axis.TickMark</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.chart.part/javafx.scene.chart.part.CategoryAxis.html">CategoryAxis</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.chart.part/javafx.scene.chart.part.Legend.html">Legend</a>
+</li>
+<li class="">
+<a href="../javafx.scene.chart.part/javafx.scene.chart.part.Legend.LegendItem.html">Legend.LegendItem</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.chart.part/javafx.scene.chart.part.NumberAxis.html">NumberAxis</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.chart.part/javafx.scene.chart.part.PlotSymbol.html">PlotSymbol</a>
+</li>
+<li class="">
+<a href="../javafx.scene.chart.part/javafx.scene.chart.part.PlotSymbol.Circle.html">PlotSymbol.Circle</a>
+</li>
+<li class="">
+<a href="../javafx.scene.chart.part/javafx.scene.chart.part.PlotSymbol.Cross.html">PlotSymbol.Cross</a>
+</li>
+<li class="">
+<a href="../javafx.scene.chart.part/javafx.scene.chart.part.PlotSymbol.HollowDiamond.html">PlotSymbol.HollowDiamond</a>
+</li>
+<li class="">
+<a href="../javafx.scene.chart.part/javafx.scene.chart.part.PlotSymbol.HollowTriangle.html">PlotSymbol.HollowTriangle</a>
+</li>
+<li class="">
+<a href="../javafx.scene.chart.part/javafx.scene.chart.part.PlotSymbol.Square.html">PlotSymbol.Square</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.chart.part/javafx.scene.chart.part.Side.html">Side</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.chart.part/javafx.scene.chart.part.ValueAxis.html">ValueAxis</a>
+</li>
+</ul>
+</li>
+<li>
+<h4 class="header">
+<a href="#">javafx.scene.control</a>
+</h4>
+<ul class="content">
+<li class="">
+<a href="../javafx.scene.control/javafx.scene.control.Behavior.html">Behavior</a>
+</li>
+<li class="">
+<a href="../javafx.scene.control/javafx.scene.control.Button.html">Button</a>
+</li>
+<li class="">
+<a href="../javafx.scene.control/javafx.scene.control.ButtonBase.html">ButtonBase</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.control/javafx.scene.control.Cell.html">Cell</a>
+</li>
+<li class="">
+<a href="../javafx.scene.control/javafx.scene.control.CheckBox.html">CheckBox</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.control/javafx.scene.control.ChoiceBox.html">ChoiceBox</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.control/javafx.scene.control.Control.html">Control</a>
+</li>
+<li class="">
+<a href="../javafx.scene.control/javafx.scene.control.Hyperlink.html">Hyperlink</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.control/javafx.scene.control.IndexedCell.html">IndexedCell</a>
+</li>
+<li class="">
+<a href="../javafx.scene.control/javafx.scene.control.Keystroke.html">Keystroke</a>
+</li>
+<li class="">
+<a href="../javafx.scene.control/javafx.scene.control.Label.html">Label</a>
+</li>
+<li class="">
+<a href="../javafx.scene.control/javafx.scene.control.Labeled.html">Labeled</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.control/javafx.scene.control.ListCell.html">ListCell</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.control/javafx.scene.control.ListView.html">ListView</a>
+</li>
+<li class="">
+<a href="../javafx.scene.control/javafx.scene.control.OverrunStyle.html">OverrunStyle</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.control/javafx.scene.control.PasswordBox.html">PasswordBox</a>
+</li>
+<li class="">
+<a href="../javafx.scene.control/javafx.scene.control.ProgressBar.html">ProgressBar</a>
+</li>
+<li class="">
+<a href="../javafx.scene.control/javafx.scene.control.ProgressIndicator.html">ProgressIndicator</a>
+</li>
+<li class="">
+<a href="../javafx.scene.control/javafx.scene.control.RadioButton.html">RadioButton</a>
+</li>
+<li class="">
+<a href="../javafx.scene.control/javafx.scene.control.ScrollBar.html">ScrollBar</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.control/javafx.scene.control.ScrollBarPolicy.html">ScrollBarPolicy</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.control/javafx.scene.control.ScrollView.html">ScrollView</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.control/javafx.scene.control.Separator.html">Separator</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.control/javafx.scene.control.Skin.html">Skin</a>
+</li>
+<li class="">
+<a href="../javafx.scene.control/javafx.scene.control.Slider.html">Slider</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.control/javafx.scene.control.TextBox.html">TextBox</a>
+</li>
+<li class="">
+<a href="../javafx.scene.control/javafx.scene.control.TextInputControl.html">TextInputControl</a>
+</li>
+<li class="">
+<a href="../javafx.scene.control/javafx.scene.control.Toggle.html">Toggle</a>
+</li>
+<li class="">
+<a href="../javafx.scene.control/javafx.scene.control.ToggleButton.html">ToggleButton</a>
+</li>
+<li class="">
+<a href="../javafx.scene.control/javafx.scene.control.ToggleGroup.html">ToggleGroup</a>
+</li>
+<li class="">
+<a href="../javafx.scene.control/javafx.scene.control.Tooltip.html">Tooltip</a>
+</li>
+</ul>
+</li>
+<li>
+<h4 class="header">
+<a href="#">javafx.scene.effect</a>
+</h4>
+<ul class="content">
+<li class="profile-common conditional effect ">
+<a href="../javafx.scene.effect/javafx.scene.effect.Blend.html">Blend</a>
+</li>
+<li class="profile-common conditional effect ">
+<a href="../javafx.scene.effect/javafx.scene.effect.BlendMode.html">BlendMode</a>
+</li>
+<li class="profile-common conditional effect ">
+<a href="../javafx.scene.effect/javafx.scene.effect.Bloom.html">Bloom</a>
+</li>
+<li class="profile-common conditional effect ">
+<a href="../javafx.scene.effect/javafx.scene.effect.BlurType.html">BlurType</a>
+</li>
+<li class="profile-common conditional effect ">
+<a href="../javafx.scene.effect/javafx.scene.effect.BoxBlur.html">BoxBlur</a>
+</li>
+<li class="profile-common conditional effect ">
+<a href="../javafx.scene.effect/javafx.scene.effect.ColorAdjust.html">ColorAdjust</a>
+</li>
+<li class="profile-common conditional effect ">
+<a href="../javafx.scene.effect/javafx.scene.effect.DisplacementMap.html">DisplacementMap</a>
+</li>
+<li class="profile-common conditional effect ">
+<a href="../javafx.scene.effect/javafx.scene.effect.DropShadow.html">DropShadow</a>
+</li>
+<li class="profile-common conditional effect ">
+<a href="../javafx.scene.effect/javafx.scene.effect.Effect.html">Effect</a>
+</li>
+<li class="profile-common conditional effect ">
+<a href="../javafx.scene.effect/javafx.scene.effect.FloatMap.html">FloatMap</a>
+</li>
+<li class="profile-common conditional effect ">
+<a href="../javafx.scene.effect/javafx.scene.effect.Flood.html">Flood</a>
+</li>
+<li class="profile-common conditional effect ">
+<a href="../javafx.scene.effect/javafx.scene.effect.GaussianBlur.html">GaussianBlur</a>
+</li>
+<li class="profile-common conditional effect ">
+<a href="../javafx.scene.effect/javafx.scene.effect.Glow.html">Glow</a>
+</li>
+<li class="profile-common conditional effect ">
+<a href="../javafx.scene.effect/javafx.scene.effect.Identity.html">Identity</a>
+</li>
+<li class="profile-common conditional effect ">
+<a href="../javafx.scene.effect/javafx.scene.effect.InnerShadow.html">InnerShadow</a>
+</li>
+<li class="profile-common conditional effect ">
+<a href="../javafx.scene.effect/javafx.scene.effect.InvertMask.html">InvertMask</a>
+</li>
+<li class="profile-common conditional effect ">
+<a href="../javafx.scene.effect/javafx.scene.effect.Lighting.html">Lighting</a>
+</li>
+<li class="profile-common conditional effect ">
+<a href="../javafx.scene.effect/javafx.scene.effect.MotionBlur.html">MotionBlur</a>
+</li>
+<li class="profile-common conditional effect ">
+<a href="../javafx.scene.effect/javafx.scene.effect.PerspectiveTransform.html">PerspectiveTransform</a>
+</li>
+<li class="profile-common conditional effect ">
+<a href="../javafx.scene.effect/javafx.scene.effect.Reflection.html">Reflection</a>
+</li>
+<li class="profile-common conditional effect ">
+<a href="../javafx.scene.effect/javafx.scene.effect.SepiaTone.html">SepiaTone</a>
+</li>
+<li class="profile-common conditional effect ">
+<a href="../javafx.scene.effect/javafx.scene.effect.Shadow.html">Shadow</a>
+</li>
+</ul>
+</li>
+<li>
+<h4 class="header">
+<a href="#">javafx.scene.effect.light</a>
+</h4>
+<ul class="content">
+<li class="profile-common conditional effect ">
+<a href="../javafx.scene.effect.light/javafx.scene.effect.light.DistantLight.html">DistantLight</a>
+</li>
+<li class="profile-common conditional effect ">
+<a href="../javafx.scene.effect.light/javafx.scene.effect.light.Light.html">Light</a>
+</li>
+<li class="profile-common conditional effect ">
+<a href="../javafx.scene.effect.light/javafx.scene.effect.light.PointLight.html">PointLight</a>
+</li>
+<li class="profile-common conditional effect ">
+<a href="../javafx.scene.effect.light/javafx.scene.effect.light.SpotLight.html">SpotLight</a>
+</li>
+</ul>
+</li>
+<li>
+<h4 class="header">
+<a href="#">javafx.scene.image</a>
+</h4>
+<ul class="content">
+<li class="profile-common ">
+<a href="../javafx.scene.image/javafx.scene.image.Image.html">Image</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.image/javafx.scene.image.ImageView.html">ImageView</a>
+</li>
+</ul>
+</li>
+<li>
+<h4 class="header">
+<a href="#">javafx.scene.input</a>
+</h4>
+<ul class="content">
+<li class="profile-common conditional input_method ">
+<a href="../javafx.scene.input/javafx.scene.input.InputMethodEvent.html">InputMethodEvent</a>
+</li>
+<li class="profile-common conditional input_method ">
+<a href="../javafx.scene.input/javafx.scene.input.InputMethodHighlight.html">InputMethodHighlight</a>
+</li>
+<li class="profile-common conditional input_method ">
+<a href="../javafx.scene.input/javafx.scene.input.InputMethodTextRun.html">InputMethodTextRun</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.input/javafx.scene.input.KeyCode.html">KeyCode</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.input/javafx.scene.input.KeyEvent.html">KeyEvent</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.input/javafx.scene.input.KeyEventID.html">KeyEventID</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.input/javafx.scene.input.MouseButton.html">MouseButton</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.input/javafx.scene.input.MouseEvent.html">MouseEvent</a>
+</li>
+<li class="profile-common private">
+<a href="../javafx.scene.input/javafx.scene.input.MouseEventID.html">MouseEventID</a>
+</li>
+<li class="profile-common conditional input_method ">
+<a href="../javafx.scene.input/javafx.scene.input.TextInput.html">TextInput</a>
+</li>
+<li class="private">
+<a href="../javafx.scene.input/javafx.scene.input.TextInput.impl_InputMethodEventHandler.html">TextInput.impl_InputMethodEventHandler</a>
+</li>
+</ul>
+</li>
+<li>
+<h4 class="header">
+<a href="#">javafx.scene.layout</a>
+</h4>
+<ul class="content">
+<li class="">
+<a href="../javafx.scene.layout/javafx.scene.layout.ClipView.html">ClipView</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.layout/javafx.scene.layout.Container.html">Container</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.layout/javafx.scene.layout.Flow.html">Flow</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.layout/javafx.scene.layout.HBox.html">HBox</a>
+</li>
+<li class="">
+<a href="../javafx.scene.layout/javafx.scene.layout.LayoutInfo.html">LayoutInfo</a>
+</li>
+<li class="">
+<a href="../javafx.scene.layout/javafx.scene.layout.LayoutInfoBase.html">LayoutInfoBase</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.layout/javafx.scene.layout.Panel.html">Panel</a>
+</li>
+<li class="">
+<a href="../javafx.scene.layout/javafx.scene.layout.Priority.html">Priority</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.layout/javafx.scene.layout.Resizable.html">Resizable</a>
+</li>
+<li class="">
+<a href="../javafx.scene.layout/javafx.scene.layout.Stack.html">Stack</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.layout/javafx.scene.layout.Tile.html">Tile</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.layout/javafx.scene.layout.VBox.html">VBox</a>
+</li>
+</ul>
+</li>
+<li>
+<h4 class="header">
+<a href="#">javafx.scene.media</a>
+</h4>
+<ul class="content">
+<li class="">
+<a href="../javafx.scene.media/javafx.scene.media.AudioTrack.html">AudioTrack</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.media/javafx.scene.media.Media.html">Media</a>
+</li>
+<li class="">
+<a href="../javafx.scene.media/javafx.scene.media.Media.Metadata.html">Media.Metadata</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.media/javafx.scene.media.MediaError.html">MediaError</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.media/javafx.scene.media.MediaPlayer.html">MediaPlayer</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.media/javafx.scene.media.MediaTimer.html">MediaTimer</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.media/javafx.scene.media.MediaView.html">MediaView</a>
+</li>
+<li class="">
+<a href="../javafx.scene.media/javafx.scene.media.SubtitleTrack.html">SubtitleTrack</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.media/javafx.scene.media.Track.html">Track</a>
+</li>
+<li class="">
+<a href="../javafx.scene.media/javafx.scene.media.TrackType.html">TrackType</a>
+</li>
+<li class="">
+<a href="../javafx.scene.media/javafx.scene.media.VideoTrack.html">VideoTrack</a>
+</li>
+</ul>
+</li>
+<li>
+<h4 class="header">
+<a href="#">javafx.scene.paint</a>
+</h4>
+<ul class="content">
+<li class="profile-common  selected-class">
+<a href="../javafx.scene.paint/javafx.scene.paint.Color.html">Color</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.paint/javafx.scene.paint.CycleMethod.html">CycleMethod</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.paint/javafx.scene.paint.LinearGradient.html">LinearGradient</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.paint/javafx.scene.paint.Paint.html">Paint</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.paint/javafx.scene.paint.RadialGradient.html">RadialGradient</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.paint/javafx.scene.paint.Stop.html">Stop</a>
+</li>
+</ul>
+</li>
+<li>
+<h4 class="header">
+<a href="#">javafx.scene.shape</a>
+</h4>
+<ul class="content">
+<li class="profile-common ">
+<a href="../javafx.scene.shape/javafx.scene.shape.Arc.html">Arc</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.shape/javafx.scene.shape.ArcTo.html">ArcTo</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.shape/javafx.scene.shape.ArcType.html">ArcType</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.shape/javafx.scene.shape.Circle.html">Circle</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.shape/javafx.scene.shape.ClosePath.html">ClosePath</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.shape/javafx.scene.shape.CubicCurve.html">CubicCurve</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.shape/javafx.scene.shape.CubicCurveTo.html">CubicCurveTo</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.shape/javafx.scene.shape.DelegateShape.html">DelegateShape</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.shape/javafx.scene.shape.Ellipse.html">Ellipse</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.shape/javafx.scene.shape.FillRule.html">FillRule</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.shape/javafx.scene.shape.HLineTo.html">HLineTo</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.shape/javafx.scene.shape.Line.html">Line</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.shape/javafx.scene.shape.LineTo.html">LineTo</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.shape/javafx.scene.shape.MoveTo.html">MoveTo</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.shape/javafx.scene.shape.Path.html">Path</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.shape/javafx.scene.shape.PathElement.html">PathElement</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.shape/javafx.scene.shape.Polygon.html">Polygon</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.shape/javafx.scene.shape.Polyline.html">Polyline</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.shape/javafx.scene.shape.QuadCurve.html">QuadCurve</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.shape/javafx.scene.shape.QuadCurveTo.html">QuadCurveTo</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.shape/javafx.scene.shape.Rectangle.html">Rectangle</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.shape/javafx.scene.shape.Shape.html">Shape</a>
+</li>
+<li class="profile-desktop ">
+<a href="../javafx.scene.shape/javafx.scene.shape.ShapeIntersect.html">ShapeIntersect</a>
+</li>
+<li class="profile-desktop ">
+<a href="../javafx.scene.shape/javafx.scene.shape.ShapeSubtract.html">ShapeSubtract</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.shape/javafx.scene.shape.StrokeLineCap.html">StrokeLineCap</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.shape/javafx.scene.shape.StrokeLineJoin.html">StrokeLineJoin</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.shape/javafx.scene.shape.SVGPath.html">SVGPath</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.shape/javafx.scene.shape.VLineTo.html">VLineTo</a>
+</li>
+</ul>
+</li>
+<li>
+<h4 class="header">
+<a href="#">javafx.scene.text</a>
+</h4>
+<ul class="content">
+<li class="profile-common ">
+<a href="../javafx.scene.text/javafx.scene.text.Font.html">Font</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.text/javafx.scene.text.FontPosition.html">FontPosition</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.text/javafx.scene.text.FontPosture.html">FontPosture</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.text/javafx.scene.text.FontWeight.html">FontWeight</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.text/javafx.scene.text.Text.html">Text</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.text/javafx.scene.text.TextAlignment.html">TextAlignment</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.text/javafx.scene.text.TextBoundsType.html">TextBoundsType</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.text/javafx.scene.text.TextOffsets.html">TextOffsets</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.text/javafx.scene.text.TextOrigin.html">TextOrigin</a>
+</li>
+</ul>
+</li>
+<li>
+<h4 class="header">
+<a href="#">javafx.scene.transform</a>
+</h4>
+<ul class="content">
+<li class="profile-common ">
+<a href="../javafx.scene.transform/javafx.scene.transform.Affine.html">Affine</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.transform/javafx.scene.transform.Rotate.html">Rotate</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.transform/javafx.scene.transform.Scale.html">Scale</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.transform/javafx.scene.transform.Shear.html">Shear</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.transform/javafx.scene.transform.Transform.html">Transform</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.scene.transform/javafx.scene.transform.Translate.html">Translate</a>
+</li>
+</ul>
+</li>
+<li>
+<h4 class="header">
+<a href="#">javafx.stage</a>
+</h4>
+<ul class="content">
+<li class="profile-common ">
+<a href="../javafx.stage/javafx.stage.Alert.html">Alert</a>
+</li>
+<li class="profile-desktop ">
+<a href="../javafx.stage/javafx.stage.AppletStageExtension.html">AppletStageExtension</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.stage/javafx.stage.Screen.html">Screen</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.stage/javafx.stage.Stage.html">Stage</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.stage/javafx.stage.StageExtension.html">StageExtension</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.stage/javafx.stage.StageStyle.html">StageStyle</a>
+</li>
+</ul>
+</li>
+<li>
+<h4 class="header">
+<a href="#">javafx.util</a>
+</h4>
+<ul class="content">
+<li class="profile-common ">
+<a href="../javafx.util/javafx.util.Bits.html">Bits</a>
+</li>
+<li class="profile-desktop ">
+<a href="../javafx.util/javafx.util.FXEvaluator.html">FXEvaluator</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.util/javafx.util.Math.html">Math</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.util/javafx.util.Properties.html">Properties</a>
+</li>
+<li class="profile-common ">
+<a href="../javafx.util/javafx.util.Sequences.html">Sequences</a>
+</li>
+<li class="profile-desktop ">
+<a href="../javafx.util/javafx.util.StringLocalizer.html">StringLocalizer</a>
+</li>
+</ul>
+</li>
+<li id="copyright">
+<i>Copyright (c) 2008, 2010,</i>
+<br>
+<i>Oracle and/or its affiliates.</i>
+<br>
+<i>All rights reserved.</i>
+<br>
+<i>Use is subject to <a href="http://java.sun.com/javafx/1.3/docs/api/license.html">license terms</a>.</i>
+<br>
+</li>
+</ul>
+<div id="content">
+<div id="nav">
+<h1 class="classname">
+<i class="modifiers">public</i>
+                class
+                <a class="classname"><strong>javafx.scene.paint.</strong><b>Color</b></a>
+</h1>
+<h2>
+<span class="descriptive">Inherits from: </span><a title="com.sun.javafx.runtime.FXBase"><strong>com.sun.javafx.runtime.</strong><b>FXBase</b></a>
+            &gt;
+            <a title="javafx.scene.paint.Paint" href="../javafx.scene.paint/javafx.scene.paint.Paint.html"><strong>javafx.scene.paint.</strong><b>Paint</b></a> 
+            &gt;
+            <a title="javafx.scene.paint.Color" href="../javafx.scene.paint/javafx.scene.paint.Color.html"><strong>javafx.scene.paint.</strong><b>Color</b></a> <a title="javafx.scene.paint.Paint" href="../javafx.scene.paint/javafx.scene.paint.Paint.html"><strong>javafx.scene.paint.</strong><b>Paint</b></a>, <a title="javafx.animation.Interpolatable" href="../javafx.animation/javafx.animation.Interpolatable.html"><strong>javafx.animation.</strong><b>Interpolatable</b></a>, </h2>
+<h2>
+<span class="descriptive">Known subclasses: </span>
+</h2>
+<ul id="tabs">
+<li>Jump to Section:</li>
+<li>
+<a href="#overview">overview</a>
+</li>
+<li>
+<a href="#fields-summary">variables</a>
+</li>
+<li>
+<a href="#methods-summary">functions</a>
+</li>
+</ul>
+</div>
+<a id="overview">
+<h3>Overview</h3>
+</a>
+<div class="overview">
+<p class="comment">The Color class is used to encapsulate colors in the default sRGB color space. 
+ Every color has an implicit alpha value of 1.0 or an explicit one provided 
+ in the constructor. The alpha value defines the transparency of a color 
+ and can be  represented by a float value in the range 0.0-1.0 or 0-255. 
+ An alpha value of 1.0 or 255 means that the color is completely opaque 
+ and an alpha value of 0 or 0.0 means that the color is completely transparent. 
+ When constructing a <code>Color</code> with an explicit alpha or getting 
+ the color/alpha components of a Color, 
+ the color components are never premultiplied by the alpha component.
+ </p>
+ 
+ <p><code>Color</code>s can be created with the constructor or with one of several
+ utility methods.  The following lines of code all create the same
+ blue color:</p>
+
+ <pre><code>
+ var c = Color.BLUE;   //use the blue constant
+ var c = Color { red: 0 green: 0 blue: 1.0 }; // standard constructor
+
+ var c = Color.color(0,0,1.0); //use 0->1.0 values. implicit alpha of 1.0
+ var c = Color.color(0,0,1.0,1.0); //use 0->1.0 values, explicit alpha of 1.0
+
+ var c = Color.rgb(0,0,255); //use 0->255 integers, implict alpha of 1.0
+ var c = Color.rgb(0,0,255,1.0); //use 0->255 integers, explict alpha of 1.0
+
+ var c = Color.hsb(270,1.0,1.0); //hue = 270, saturation & value = 1.0. inplict alpha of 1.0
+ var c = Color.hsb(270,1.0,1.0,1.0); //hue = 270, saturation & value = 1.0, explict alpha of 1.0
+
+ var c = Color.web("0x0000FF",1.0);// blue as a hex web value, explict alpha
+ var c = Color.web("0x0000FF");// blue as a hex web value, implict alpha
+ var c = Color.web("#0000FF",1.0);// blue as a hex web value, explict alpha
+ var c = Color.web("#0000FF");// blue as a hex web value, implict alpha
+ var c = Color.web("0000FF",1.0);// blue as a hex web value, explict alpha
+ var c = Color.web("0000FF");// blue as a hex web value, implict alpha
+ </code></pre>
+
+ <p>
+ The creation of a <code>Color</code> will throw <code>IllegalArgumentException</code> if any
+ of the values are out of range.
+ </p></p><p>the code:</p><pre class='example-code'><code><b>import</b> javafx.scene.*;
+<b>import</b> javafx.scene.shape.*;
+<b>import</b> javafx.scene.paint.*;
+
+Group {
+    <b>content</b>: [
+        Rectangle {
+            <b>x</b>: <span class='number-literal'>5</span>, <b>y</b>: <span class='number-literal'>5</span>, <b>width</b>: <span class='number-literal'>50</span>, <b>height</b>: <span class='number-literal'>40</span>
+            <b>fill</b>: Color.RED
+            <b>stroke</b>: Color.GREEN
+            <b>strokeWidth</b>: <span class='number-literal'>3</span>
+        },
+        Rectangle {
+            <b>x</b>: <span class='number-literal'>65</span>, <b>y</b>: <span class='number-literal'>5</span>, <b>width</b>: <span class='number-literal'>50</span>, <b>height</b>: <span class='number-literal'>40</span>
+            <b>fill</b>: Color.rgb(<span class='number-literal'>91</span>, <span class='number-literal'>127</span>, <span class='number-literal'>255</span>)
+            <b>stroke</b>: Color.hsb(<span class='number-literal'>40</span>, <span class='number-literal'>0</span>.<span class='number-literal'>7</span>, <span class='number-literal'>0</span>.<span class='number-literal'>8</span>)
+            <b>strokeWidth</b>: <span class='number-literal'>3</span>
+        }]
+}</code></pre><p>produces:</p><p><img class='example-screenshot' src='Color0.png'/></p><p class="profile">Profile: <b>common</b>
+</p>
+</div>
+<div id="toc">
+<a id="fields-summary">
+<h3>Script Variable Summary</h3>
+</a>
+<table class="fields-summary fields">
+<tr>
+<th class="access">access</th><th class="name">name</th><th class="type">type</th><th><a class="tooltip" title="Indicates the variable can be read">Can Read</a></th><th><a title="Indicates the variable can only be set in the Object initializer. Any further changes will be ignored." class="tooltip">Can Init</a></th><th><a title="Indicates the varible can set at any time." class="tooltip">Can Write</a></th><th><a title="Indicates the default value of this variable" class="tooltip">Default Value</a></th><th class="description">description</th>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="ALICEBLUE"></a><b class="name">ALICEBLUE</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="ANTIQUEWHITE"></a><b class="name">ANTIQUEWHITE</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="AQUA"></a><b class="name">AQUA</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="AQUAMARINE"></a><b class="name">AQUAMARINE</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="AZURE"></a><b class="name">AZURE</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="BEIGE"></a><b class="name">BEIGE</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="BISQUE"></a><b class="name">BISQUE</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="BLACK"></a><b class="name">BLACK</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="BLANCHEDALMOND"></a><b class="name">BLANCHEDALMOND</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="BLUE"></a><b class="name">BLUE</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="BLUEVIOLET"></a><b class="name">BLUEVIOLET</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="BROWN"></a><b class="name">BROWN</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="BURLYWOOD"></a><b class="name">BURLYWOOD</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="CADETBLUE"></a><b class="name">CADETBLUE</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="CHARTREUSE"></a><b class="name">CHARTREUSE</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="CHOCOLATE"></a><b class="name">CHOCOLATE</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="CORAL"></a><b class="name">CORAL</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="CORNFLOWERBLUE"></a><b class="name">CORNFLOWERBLUE</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="CORNSILK"></a><b class="name">CORNSILK</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="CRIMSON"></a><b class="name">CRIMSON</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="CYAN"></a><b class="name">CYAN</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="DARKBLUE"></a><b class="name">DARKBLUE</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="DARKCYAN"></a><b class="name">DARKCYAN</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="DARKGOLDENROD"></a><b class="name">DARKGOLDENROD</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="DARKGRAY"></a><b class="name">DARKGRAY</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="DARKGREEN"></a><b class="name">DARKGREEN</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="DARKGREY"></a><b class="name">DARKGREY</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="DARKKHAKI"></a><b class="name">DARKKHAKI</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="DARKMAGENTA"></a><b class="name">DARKMAGENTA</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="DARKOLIVEGREEN"></a><b class="name">DARKOLIVEGREEN</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="DARKORANGE"></a><b class="name">DARKORANGE</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="DARKORCHID"></a><b class="name">DARKORCHID</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="DARKRED"></a><b class="name">DARKRED</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="DARKSALMON"></a><b class="name">DARKSALMON</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="DARKSEAGREEN"></a><b class="name">DARKSEAGREEN</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="DARKSLATEBLUE"></a><b class="name">DARKSLATEBLUE</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="DARKSLATEGRAY"></a><b class="name">DARKSLATEGRAY</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="DARKSLATEGREY"></a><b class="name">DARKSLATEGREY</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="DARKTURQUOISE"></a><b class="name">DARKTURQUOISE</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="DARKVIOLET"></a><b class="name">DARKVIOLET</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="DEEPPINK"></a><b class="name">DEEPPINK</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="DEEPSKYBLUE"></a><b class="name">DEEPSKYBLUE</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="DIMGRAY"></a><b class="name">DIMGRAY</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="DIMGREY"></a><b class="name">DIMGREY</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="DODGERBLUE"></a><b class="name">DODGERBLUE</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="FIREBRICK"></a><b class="name">FIREBRICK</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="FLORALWHITE"></a><b class="name">FLORALWHITE</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="FORESTGREEN"></a><b class="name">FORESTGREEN</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="FUCHSIA"></a><b class="name">FUCHSIA</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="GAINSBORO"></a><b class="name">GAINSBORO</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="GHOSTWHITE"></a><b class="name">GHOSTWHITE</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="GOLD"></a><b class="name">GOLD</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="GOLDENROD"></a><b class="name">GOLDENROD</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="GRAY"></a><b class="name">GRAY</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="GREEN"></a><b class="name">GREEN</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="GREENYELLOW"></a><b class="name">GREENYELLOW</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="GREY"></a><b class="name">GREY</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="HONEYDEW"></a><b class="name">HONEYDEW</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="HOTPINK"></a><b class="name">HOTPINK</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="INDIANRED"></a><b class="name">INDIANRED</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="INDIGO"></a><b class="name">INDIGO</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="IVORY"></a><b class="name">IVORY</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="KHAKI"></a><b class="name">KHAKI</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="LAVENDER"></a><b class="name">LAVENDER</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="LAVENDERBLUSH"></a><b class="name">LAVENDERBLUSH</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="LAWNGREEN"></a><b class="name">LAWNGREEN</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="LEMONCHIFFON"></a><b class="name">LEMONCHIFFON</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="LIGHTBLUE"></a><b class="name">LIGHTBLUE</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="LIGHTCORAL"></a><b class="name">LIGHTCORAL</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="LIGHTCYAN"></a><b class="name">LIGHTCYAN</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="LIGHTGOLDENRODYELLOW"></a><b class="name">LIGHTGOLDENRODYELLOW</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="LIGHTGRAY"></a><b class="name">LIGHTGRAY</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="LIGHTGREEN"></a><b class="name">LIGHTGREEN</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="LIGHTGREY"></a><b class="name">LIGHTGREY</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="LIGHTPINK"></a><b class="name">LIGHTPINK</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="LIGHTSALMON"></a><b class="name">LIGHTSALMON</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="LIGHTSEAGREEN"></a><b class="name">LIGHTSEAGREEN</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="LIGHTSKYBLUE"></a><b class="name">LIGHTSKYBLUE</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="LIGHTSLATEGRAY"></a><b class="name">LIGHTSLATEGRAY</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="LIGHTSLATEGREY"></a><b class="name">LIGHTSLATEGREY</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="LIGHTSTEELBLUE"></a><b class="name">LIGHTSTEELBLUE</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="LIGHTYELLOW"></a><b class="name">LIGHTYELLOW</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="LIME"></a><b class="name">LIME</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="LIMEGREEN"></a><b class="name">LIMEGREEN</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="LINEN"></a><b class="name">LINEN</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="MAGENTA"></a><b class="name">MAGENTA</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="MAROON"></a><b class="name">MAROON</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="MEDIUMAQUAMARINE"></a><b class="name">MEDIUMAQUAMARINE</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="MEDIUMBLUE"></a><b class="name">MEDIUMBLUE</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="MEDIUMORCHID"></a><b class="name">MEDIUMORCHID</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="MEDIUMPURPLE"></a><b class="name">MEDIUMPURPLE</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="MEDIUMSEAGREEN"></a><b class="name">MEDIUMSEAGREEN</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="MEDIUMSLATEBLUE"></a><b class="name">MEDIUMSLATEBLUE</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="MEDIUMSPRINGGREEN"></a><b class="name">MEDIUMSPRINGGREEN</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="MEDIUMTURQUOISE"></a><b class="name">MEDIUMTURQUOISE</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="MEDIUMVIOLETRED"></a><b class="name">MEDIUMVIOLETRED</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="MIDNIGHTBLUE"></a><b class="name">MIDNIGHTBLUE</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="MINTCREAM"></a><b class="name">MINTCREAM</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="MISTYROSE"></a><b class="name">MISTYROSE</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="MOCCASIN"></a><b class="name">MOCCASIN</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="NAVAJOWHITE"></a><b class="name">NAVAJOWHITE</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="NAVY"></a><b class="name">NAVY</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="OLDLACE"></a><b class="name">OLDLACE</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="OLIVE"></a><b class="name">OLIVE</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="OLIVEDRAB"></a><b class="name">OLIVEDRAB</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="ORANGE"></a><b class="name">ORANGE</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="ORANGERED"></a><b class="name">ORANGERED</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="ORCHID"></a><b class="name">ORCHID</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="PALEGOLDENROD"></a><b class="name">PALEGOLDENROD</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="PALEGREEN"></a><b class="name">PALEGREEN</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="PALETURQUOISE"></a><b class="name">PALETURQUOISE</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="PALEVIOLETRED"></a><b class="name">PALEVIOLETRED</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="PAPAYAWHIP"></a><b class="name">PAPAYAWHIP</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="PEACHPUFF"></a><b class="name">PEACHPUFF</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="PERU"></a><b class="name">PERU</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="PINK"></a><b class="name">PINK</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="PLUM"></a><b class="name">PLUM</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="POWDERBLUE"></a><b class="name">POWDERBLUE</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="PURPLE"></a><b class="name">PURPLE</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="RED"></a><b class="name">RED</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="ROSYBROWN"></a><b class="name">ROSYBROWN</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="ROYALBLUE"></a><b class="name">ROYALBLUE</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="SADDLEBROWN"></a><b class="name">SADDLEBROWN</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="SALMON"></a><b class="name">SALMON</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="SANDYBROWN"></a><b class="name">SANDYBROWN</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="SEAGREEN"></a><b class="name">SEAGREEN</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="SEASHELL"></a><b class="name">SEASHELL</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="SIENNA"></a><b class="name">SIENNA</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="SILVER"></a><b class="name">SILVER</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="SKYBLUE"></a><b class="name">SKYBLUE</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="SLATEBLUE"></a><b class="name">SLATEBLUE</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="SLATEGRAY"></a><b class="name">SLATEGRAY</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="SLATEGREY"></a><b class="name">SLATEGREY</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="SNOW"></a><b class="name">SNOW</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="SPRINGGREEN"></a><b class="name">SPRINGGREEN</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="STEELBLUE"></a><b class="name">STEELBLUE</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="TAN"></a><b class="name">TAN</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="TEAL"></a><b class="name">TEAL</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="THISTLE"></a><b class="name">THISTLE</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="TOMATO"></a><b class="name">TOMATO</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="TRANSPARENT"></a><b class="name">TRANSPARENT</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description">
+<p class="comment">A fully transparent color.</p>
+</td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="TURQUOISE"></a><b class="name">TURQUOISE</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="VIOLET"></a><b class="name">VIOLET</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="WHEAT"></a><b class="name">WHEAT</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="WHITE"></a><b class="name">WHITE</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="WHITESMOKE"></a><b class="name">WHITESMOKE</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="YELLOW"></a><b class="name">YELLOW</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public</td><td class="name"><a name="YELLOWGREEN"></a><b class="name">YELLOWGREEN</b></td><td class="type"><a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i class="type">Color</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"></td><td class="canwrite"></td><td class="defaultvalue"></td><td class="description"></td>
+</tr>
+</table>
+<a id="fields-summary">
+<h3>Variable Summary</h3>
+</a>
+<table class="fields-summary fields">
+<tr>
+<th class="access">access</th><th class="name">name</th><th class="type">type</th><th><a class="tooltip" title="Indicates the variable can be read">Can Read</a></th><th><a title="Indicates the variable can only be set in the Object initializer. Any further changes will be ignored." class="tooltip">Can Init</a></th><th><a title="Indicates the varible can set at any time." class="tooltip">Can Write</a></th><th><a title="Indicates the default value of this variable" class="tooltip">Default Value</a></th><th class="description">description</th>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public-init</td><td class="name"><a name="blue"></a><b class="name">blue</b></td><td class="type"><a><i class="type">Number</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"><img src="..//images/JFX_highlight_dot.png"></td><td class="canwrite"></td><td class="defaultvalue">0.0</td><td class="description">
+<p class="comment">The blue component of the <code>Color</code>, in the range <code>0.0-1.0</code>.</p>
+</td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public-init</td><td class="name"><a name="green"></a><b class="name">green</b></td><td class="type"><a><i class="type">Number</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"><img src="..//images/JFX_highlight_dot.png"></td><td class="canwrite"></td><td class="defaultvalue">0.0</td><td class="description">
+<p class="comment">The green component of the <code>Color</code>, in the range <code>0.0-1.0</code>.</p>
+</td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public-init</td><td class="name"><a name="opacity"></a><b class="name">opacity</b></td><td class="type"><a><i class="type">Number</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"><img src="..//images/JFX_highlight_dot.png"></td><td class="canwrite"></td><td class="defaultvalue">1.0</td><td class="description">
+<p class="comment">The opacity of the <code>Color</code>, in the range <code>0.0-1.0</code>.</p>
+</td>
+</tr>
+<tr class="var profile-common ">
+<td class="access">public-init</td><td class="name"><a name="red"></a><b class="name">red</b></td><td class="type"><a><i class="type">Number</i></a></td><td class="canread"><img src="..//images/JFX_highlight_dot.png"></td><td class="caninit"><img src="..//images/JFX_highlight_dot.png"></td><td class="canwrite"></td><td class="defaultvalue">0.0</td><td class="description">
+<p class="comment">The red component of the <code>Color</code>, in the range <code>0.0-1.0</code>.</p>
+</td>
+</tr>
+</table>
+<h3>Inherited Variables</h3>
+<a id="methods-summary">
+<h3>Script Function Summary</h3>
+</a>
+<dl class="methods-summary">
+<a id="color(Number,Number,Number,Number)"></a>
+<dt class="method profile-common ">
+<i class="modifiers">public</i> <b>color</b>(<i class="parameters"><b>red</b>:
+                    
+                    <a><i>Number</i></a>, <b>green</b>:
+                    
+                    <a><i>Number</i></a>, <b>blue</b>:
+                    
+                    <a><i>Number</i></a>, <b>opacity</b>:
+                    
+                    <a><i>Number</i></a></i>)
+            :
+            
+            <a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i>Color</i></a>
+</dt>
+<dd class="method profile-common ">
+<div>
+<p class="comment">Creates an sRGB color with the specified red, green and blue values
+ in the range <code>0.0-1.0</code>, and a given opacity.</p>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<p class="comment">Creates an sRGB color with the specified red, green and blue values
+ in the range <code>0.0-1.0</code>, and a given opacity.</p>
+<dl class="parameters">
+                    Parameters
+                    <dt>red</dt>
+<dd>
+                     
+<p class="comment">the red component, in the range <code>0.0-1.0</code>
+</p>
+                  
+</dd>
+<dt>green</dt>
+<dd>
+                     
+<p class="comment">the green component, in the range <code>0.0-1.0</code>
+</p>
+                  
+</dd>
+<dt>blue</dt>
+<dd>
+                     
+<p class="comment">the blue component, in the range <code>0.0-1.0</code>
+</p>
+                  
+</dd>
+<dt>opacity</dt>
+<dd>
+                     
+<p class="comment">the opacity component, in the range <code>0.0-1.0</code>
+</p>
+                  
+</dd>
+</dl>
+<dl class="returns">
+                    Returns
+                    <dt>Color</dt>
+<dd>
+                     
+                        the 
+                        <code>Color</code>
+                     
+                  
+</dd>
+</dl>
+<dl class="returns">
+                    Throws
+                    <dd>
+<a><i>java.lang.IllegalArgumentException</i></a> if any value is out of range</dd>
+</dl>
+<p class="profile">Profile: <b>common</b>
+</p>
+                            &nbsp;
+                        </div>
+</div>
+</dd>
+<a id="color(Number,Number,Number)"></a>
+<dt class="method profile-common ">
+<i class="modifiers">public</i> <b>color</b>(<i class="parameters"><b>red</b>:
+                    
+                    <a><i>Number</i></a>, <b>green</b>:
+                    
+                    <a><i>Number</i></a>, <b>blue</b>:
+                    
+                    <a><i>Number</i></a></i>)
+            :
+            
+            <a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i>Color</i></a>
+</dt>
+<dd class="method profile-common ">
+<div>
+<p class="comment">Creates an opaque sRGB color with the specified red, green and blue values
+ in the range <code>0.0-1.0</code>.</p>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<p class="comment">Creates an opaque sRGB color with the specified red, green and blue values
+ in the range <code>0.0-1.0</code>.</p>
+<dl class="parameters">
+                    Parameters
+                    <dt>red</dt>
+<dd>
+                     
+<p class="comment">the red component, in the range <code>0.0-1.0</code>
+</p>
+                  
+</dd>
+<dt>green</dt>
+<dd>
+                     
+<p class="comment">the green component, in the range <code>0.0-1.0</code>
+</p>
+                  
+</dd>
+<dt>blue</dt>
+<dd>
+                     
+<p class="comment">the blue component, in the range <code>0.0-1.0</code>
+</p>
+                  
+</dd>
+</dl>
+<dl class="returns">
+                    Returns
+                    <dt>Color</dt>
+<dd>
+                     
+                        the 
+                        <code>Color</code>
+                     
+                  
+</dd>
+</dl>
+<dl class="returns">
+                    Throws
+                    <dd>
+<a><i>java.lang.IllegalArgumentException</i></a> if any value is out of range</dd>
+</dl>
+<p class="profile">Profile: <b>common</b>
+</p>
+                            &nbsp;
+                        </div>
+</div>
+</dd>
+<a id="hsb(Integer,Number,Number,Number)"></a>
+<dt class="method profile-common ">
+<i class="modifiers">public</i> <b>hsb</b>(<i class="parameters"><b>hue</b>:
+                    
+                    <a><i>Integer</i></a>, <b>saturation</b>:
+                    
+                    <a><i>Number</i></a>, <b>brightness</b>:
+                    
+                    <a><i>Number</i></a>, <b>opacity</b>:
+                    
+                    <a><i>Number</i></a></i>)
+            :
+            
+            <a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i>Color</i></a>
+</dt>
+<dd class="method profile-common ">
+<div>
+<p class="comment">Creates a <code>Color</code> based on the specified values in the HSB color model,
+ and a given opacity.</p>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<p class="comment">Creates a <code>Color</code> based on the specified values in the HSB color model,
+ and a given opacity.</p>
+<dl class="parameters">
+                    Parameters
+                    <dt>hue</dt>
+<dd> the hue, in degrees</dd>
+<dt>saturation</dt>
+<dd>
+                     
+<p class="comment">the saturation, <code>0.0 to 1.0</code>
+</p>
+                  
+</dd>
+<dt>brightness</dt>
+<dd>
+                     
+<p class="comment">the brightness, <code>0.0 to 1.0</code>
+</p>
+                  
+</dd>
+<dt>opacity</dt>
+<dd>
+                     
+<p class="comment">the opacity, <code>0.0 to 1.0</code>
+</p>
+                  
+</dd>
+</dl>
+<dl class="returns">
+                    Returns
+                    <dt>Color</dt>
+<dd>
+                     
+                        the 
+                        <code>Color</code>
+                     
+                  
+</dd>
+</dl>
+<dl class="returns">
+                    Throws
+                    <dd>
+<a><i>java.lang.IllegalArgumentException</i></a> if {@code saturation}, {@code brightness} or
+         {@code opacity} are out of range</dd>
+</dl>
+<p class="profile">Profile: <b>common</b>
+</p>
+                            &nbsp;
+                        </div>
+</div>
+</dd>
+<a id="hsb(Integer,Number,Number)"></a>
+<dt class="method profile-common ">
+<i class="modifiers">public</i> <b>hsb</b>(<i class="parameters"><b>hue</b>:
+                    
+                    <a><i>Integer</i></a>, <b>saturation</b>:
+                    
+                    <a><i>Number</i></a>, <b>brightness</b>:
+                    
+                    <a><i>Number</i></a></i>)
+            :
+            
+            <a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i>Color</i></a>
+</dt>
+<dd class="method profile-common ">
+<div>
+<p class="comment">Creates an opaque <code>Color</code> based on the specified values in the HSB color model.</p>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<p class="comment">Creates an opaque <code>Color</code> based on the specified values in the HSB color model.</p>
+<dl class="parameters">
+                    Parameters
+                    <dt>hue</dt>
+<dd> the hue, in degrees</dd>
+<dt>saturation</dt>
+<dd>
+                     
+<p class="comment">the saturation, <code>0.0 to 1.0</code>
+</p>
+                  
+</dd>
+<dt>brightness</dt>
+<dd>
+                     
+<p class="comment">the brightness, <code>0.0 to 1.0</code>
+</p>
+                  
+</dd>
+</dl>
+<dl class="returns">
+                    Returns
+                    <dt>Color</dt>
+<dd>
+                     
+                        the 
+                        <code>Color</code>
+                     
+                  
+</dd>
+</dl>
+<dl class="returns">
+                    Throws
+                    <dd>
+<a><i>java.lang.IllegalArgumentException</i></a> if {@code saturation} or {@code brightness} are
+         out of range</dd>
+</dl>
+<p class="profile">Profile: <b>common</b>
+</p>
+                            &nbsp;
+                        </div>
+</div>
+</dd>
+<a id="rgb(Integer,Integer,Integer,Number)"></a>
+<dt class="method profile-common ">
+<i class="modifiers">public</i> <b>rgb</b>(<i class="parameters"><b>red</b>:
+                    
+                    <a><i>Integer</i></a>, <b>green</b>:
+                    
+                    <a><i>Integer</i></a>, <b>blue</b>:
+                    
+                    <a><i>Integer</i></a>, <b>opacity</b>:
+                    
+                    <a><i>Number</i></a></i>)
+            :
+            
+            <a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i>Color</i></a>
+</dt>
+<dd class="method profile-common ">
+<div>
+<p class="comment">Creates an sRGB color with the specified RGB values in the range <code>0-255</code>,
+ and a given opacity.</p>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<p class="comment">Creates an sRGB color with the specified RGB values in the range <code>0-255</code>,
+ and a given opacity.</p>
+<dl class="parameters">
+                    Parameters
+                    <dt>red</dt>
+<dd>
+                     
+<p class="comment">the red component, in the range <code>0-255</code>
+</p>
+                  
+</dd>
+<dt>green</dt>
+<dd>
+                     
+<p class="comment">the green component, in the range <code>0-255</code>
+</p>
+                  
+</dd>
+<dt>blue</dt>
+<dd>
+                     
+<p class="comment">the blue component, in the range <code>0-255</code>
+</p>
+                  
+</dd>
+<dt>opacity</dt>
+<dd>
+                     
+<p class="comment">the opacity component, in the range <code>0.0-1.0</code>
+</p>
+                  
+</dd>
+</dl>
+<dl class="returns">
+                    Returns
+                    <dt>Color</dt>
+<dd>
+                     
+                        the 
+                        <code>Color</code>
+                     
+                  
+</dd>
+</dl>
+<dl class="returns">
+                    Throws
+                    <dd>
+<a><i>java.lang.IllegalArgumentException</i></a> if any value is out of range</dd>
+</dl>
+<p class="profile">Profile: <b>common</b>
+</p>
+                            &nbsp;
+                        </div>
+</div>
+</dd>
+<a id="rgb(Integer,Integer,Integer)"></a>
+<dt class="method profile-common ">
+<i class="modifiers">public</i> <b>rgb</b>(<i class="parameters"><b>red</b>:
+                    
+                    <a><i>Integer</i></a>, <b>green</b>:
+                    
+                    <a><i>Integer</i></a>, <b>blue</b>:
+                    
+                    <a><i>Integer</i></a></i>)
+            :
+            
+            <a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i>Color</i></a>
+</dt>
+<dd class="method profile-common ">
+<div>
+<p class="comment">Creates an opaque sRGB color with the specified RGB values in the range <code>0-255</code>.</p>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<p class="comment">Creates an opaque sRGB color with the specified RGB values in the range <code>0-255</code>.</p>
+<dl class="parameters">
+                    Parameters
+                    <dt>red</dt>
+<dd>
+                     
+<p class="comment">the red component, in the range <code>0-255</code>
+</p>
+                  
+</dd>
+<dt>green</dt>
+<dd>
+                     
+<p class="comment">the green component, in the range <code>0-255</code>
+</p>
+                  
+</dd>
+<dt>blue</dt>
+<dd>
+                     
+<p class="comment">the blue component, in the range <code>0-255</code>
+</p>
+                  
+</dd>
+</dl>
+<dl class="returns">
+                    Returns
+                    <dt>Color</dt>
+<dd>
+                     
+                        the 
+                        <code>Color</code>
+                     
+                  
+</dd>
+</dl>
+<dl class="returns">
+                    Throws
+                    <dd>
+<a><i>java.lang.IllegalArgumentException</i></a> if any value is out of range</dd>
+</dl>
+<p class="profile">Profile: <b>common</b>
+</p>
+                            &nbsp;
+                        </div>
+</div>
+</dd>
+<a id="web(java.lang.String,Number)"></a>
+<dt class="method profile-common ">
+<i class="modifiers">public</i> <b>web</b>(<i class="parameters"><b>colorRawName</b>:
+                    
+                    <a><i>java.lang.String</i></a>, <b>opacity</b>:
+                    
+                    <a><i>Number</i></a></i>)
+            :
+            
+            <a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i>Color</i></a>
+</dt>
+<dd class="method profile-common ">
+<div>
+<p class="comment">Creates an RGB color specified with hexadecimal notation.</p>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<p class="comment">Creates an RGB color specified with hexadecimal notation. 
+ Opacity is in the range 0.0-1.0. ex:
+ 
+ <pre><code>
+ var c = Color.web("0xff6688",1.0);
+ var c = Color.web("#ff6688",1.0);
+ var c = Color.web("ff6688",1.0);
+ </code></pre></p>
+<dl class="parameters">
+                    Parameters
+                    <dt>colorRawName</dt>
+<dd> the hexadecimal string to identify the RGB color</dd>
+<dt>opacity</dt>
+<dd> the opacity component</dd>
+</dl>
+<dl class="returns">
+                    Returns
+                    <dt>Color</dt>
+<dd></dd>
+</dl>
+<p class="profile">Profile: <b>common</b>
+</p>
+                            &nbsp;
+                        </div>
+</div>
+</dd>
+<a id="web(java.lang.String)"></a>
+<dt class="method profile-common ">
+<i class="modifiers">public</i> <b>web</b>(<i class="parameters"><b>color</b>:
+                    
+                    <a><i>java.lang.String</i></a></i>)
+            :
+            
+            <a href="../javafx.scene.paint/javafx.scene.paint.Color.html"><i>Color</i></a>
+</dt>
+<dd class="method profile-common ">
+<div>
+<p class="comment">Creates an RGB color specified with hexadecimal notation.</p>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<p class="comment">Creates an RGB color specified with hexadecimal notation. 
+ Opacity is set to <code>1.0</code>. ex:
+ <pre><code>
+ var c = Color.web("0xff6688");
+ var c = Color.web("#ff6688");
+ var c = Color.web("ff6688");
+ </code></pre></p>
+<dl class="parameters">
+                    Parameters
+                    <dt>color</dt>
+<dd> the hexadecimal string to identify the RGB color</dd>
+</dl>
+<dl class="returns">
+                    Returns
+                    <dt>Color</dt>
+<dd></dd>
+</dl>
+<p class="profile">Profile: <b>common</b>
+</p>
+                            &nbsp;
+                        </div>
+</div>
+</dd>
+</dl>
+<a id="methods-summary">
+<h3>Function Summary</h3>
+</a>
+<dl class="methods-summary">
+<a id="toString()"></a>
+<dt class="method profile-common ">
+<i class="modifiers">public</i> <b>toString</b>(<i class="parameters"></i>)
+            :
+            
+            <a><i>java.lang.String</i></a>
+</dt>
+<dd class="method profile-common ">
+<div>
+<p class="comment">Returns a string representation of this <code>Color</code>.</p>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<p class="comment">Returns a string representation of this <code>Color</code>. 
+ This method is intended to be used only for informational purposes. 
+ The content and format of the returned string might vary between implementations. 
+ The returned string might be empty but cannot be <code>null</code>.</p>
+<dl class="returns">
+                    Returns
+                    <dt>String</dt>
+<dd>the string representation</dd>
+</dl>
+<p class="profile">Profile: <b>common</b>
+</p>
+                            &nbsp;
+                        </div>
+</div>
+</dd>
+</dl>
+<h3>Inherited Functions</h3>
+<h4>javafx.scene.paint.Paint</h4>
+<dl class="inherited-method"></dl>
+<h4>javafx.animation.Interpolatable</h4>
+<dl class="inherited-method">
+<a id="ofTheWay(java.lang.Object,Number)"></a>
+<dt class="method profile-common ">
+<i class="modifiers">public abstract</i> <b>ofTheWay</b>(<i class="parameters"><b>endVal</b>:
+                    
+                    <a><i>java.lang.Object</i></a>, <b>t</b>:
+                    
+                    <a><i>Number</i></a></i>)
+            :
+            
+            <a><i>java.lang.Object</i></a>
+</dt>
+<dd class="method profile-common ">
+<div>
+<p class="comment">The function calcuates an interpolated value along the <code>t</code> between
+ <code>0.0</code> and <code>1.0</code>.</p>
+<a href="#" class="long-desc-open"><img src="../images/JFX_arrow_right.png"></a>
+<div class="long-desc">
+<p class="comment">The function calcuates an interpolated value along the <code>t</code> between
+ <code>0.0</code> and <code>1.0</code>. When <code>t</code> = 1.0, <code>endVal</code> is returned.</p>
+<dl class="parameters">
+                    Parameters
+                    <dt>endVal</dt>
+<dd>  target value</dd>
+<dt>t</dt>
+<dd>
+                     
+<p class="comment">fraction between <code>0.0</code> and <code>1.0</code>
+</p>
+                  
+</dd>
+</dl>
+<dl class="returns">
+                    Returns
+                    <dt>Object</dt>
+<dd>interpolated value</dd>
+</dl>
+<p class="profile">Profile: <b>common</b>
+</p>
+                            &nbsp;
+                        </div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,22 @@
+#
+# Copyright (c) 2009 Sun Microsystems, Inc. All rights reserved.
+# Use is subject to license terms.
+#
+
+.class: com.sun.kvem.sensor.impl.DefaultGuiSensorProxy
+.parent-add-method: addSensorProxy
+
+description: Sample Gui Acceleration Sensor
+quantity: acceleration
+context: device
+connection: embedded
+model: acc01
+maxBuffer: 512
+
+scriptPlayerStrings :\
+    fileName -> Script file name:;\
+    browse -> Browse...;\
+    start -> Start;\
+    stop -> Stop;\
+    pause -> Pause;\
+    failure -> Failed to parse script file.\nWrong file format.

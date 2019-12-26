@@ -1,0 +1,207 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+
+<head>
+	
+	<title>JavaFX Sample</title>
+	
+	<!--METAS-->
+	
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="description" content="JavaFX" />
+	<meta name="keywords" content="JavaFX Oracle" />
+	<meta name="author" content="Oracle" />
+	
+	<!--STYLESHEETS-->
+	<link rel="stylesheet" type="text/css" media="screen, projection" href="../../shared/new_style/css/reset.css" />
+	<link rel="stylesheet" type="text/css" media="screen, projection" href="../../shared/new_style/css/javafx.css" />
+	<link rel="stylesheet" type="text/css" media="screen, projection" href="../../shared/new_style/css/code.css" />
+	
+	<!-- CONDITIONAL STYLESHEETS -->
+	<!--[if IE]>
+	  <link rel="stylesheet" type="text/css" href="../../shared/new_style/css/ie.css" />
+	<![endif]-->
+	
+	<!--ADDRESS BAR ICON-->
+	<link rel="shortcut icon" type="image/ico" href="../../shared/new_style/images/favicon.ico" />
+	
+	<link rel="stylesheet" type="text/css" media="screen, projection" href="../../shared/new_style/css/samples.css" />
+    <style type="text/css">
+.code .string-literal, .code .number-literal {
+	font-style: italic;
+	color: #4b494d;
+}
+    </style>
+</head>
+<!--
+	The ID here is required to indicate the page type.
+	Changing this will affect the layout of the page.
+-->
+<body id="tutorials">
+	
+	<div id="body">
+		<!--
+			The header in the source code view doesn't have any buttons.
+			So just the <h1> tag for the site logo is included.
+			
+			The header also doesn't have an A tag with an "href" since you shouldn't be able to navigate to the
+			index pgae inside the popup.
+		-->
+        
+        
+		<ul id="popheader">
+			<li class="first">
+				<h1><a><span>FX</span></a></h1>
+			
+				<!-- Close button -->
+				<a class="close-button" title="Close"><span>Close</span></a>
+			</li>
+		</ul>
+<div class="source">
+  <div class="code-header">License text </div>
+    <pre>
+
+/*
+ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER 
+ * Copyright  2008, 2010 Oracle and/or its affiliates.  All rights reserved. 
+ * Use is subject to license terms.
+ * 
+ * This file is available and licensed under the following license:
+ * 
+ * Redistribution and use in source and binary forms, with or without 
+ * modification, are permitted provided that the following conditions are met: 
+ * 
+ *   * Redistributions of source code must retain the above copyright notice, 
+ *     this list of conditions and the following disclaimer. 
+ *
+ *   * Redistributions in binary form must reproduce the above copyright notice,
+ *     this list of conditions and the following disclaimer in the documentation
+ *     and/or other materials provided with the distribution.
+ *
+ *   * Neither the name of Oracle Corporation nor the names of its contributors 
+ *     may be used to endorse or promote products derived from this software 
+ *     without specific prior written permission. 
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS 
+ * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT 
+ * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR 
+ * A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT 
+ * OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, 
+ * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, 
+ * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; 
+ * OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, 
+ * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR 
+ * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF 
+ * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. 
+ */
+
+    </pre>
+  </div>
+<div class="code"><pre><code>
+<b>package</b> pathanimation;
+
+<b>import</b> javafx.animation.*;
+<b>import</b> javafx.animation.transition.*;
+<b>import</b> javafx.scene.*;
+<b>import</b> javafx.scene.image.*;
+<b>import</b> javafx.scene.paint.Color;
+<b>import</b> javafx.scene.shape.*;
+
+def S = Main.S;
+def PADDING = <span class='number-literal'>2</span>;
+def track_strokeWidth = <span class='number-literal'>20</span> * S;
+def line_strokewidth = <span class='number-literal'>2</span>;
+<b>package</b> def THUMB_ICON = Main.makeImage(<span class='string-literal'>"car.png"</span>);
+
+<b>package</b> class CarScenario extends Scenario {
+    def car = ImageView {
+        <b>smooth</b>: true
+        <b>image</b>: THUMB_ICON  <i class='comment'>// thumb image is reused here</i>
+        <b>translateX</b>: <span class='number-literal'>16</span>*S - THUMB_ICON.width / PADDING
+        <b>translateY</b>: <span class='number-literal'>89</span>*S - THUMB_ICON.height / PADDING
+        <b>rotate</b>: -<span class='number-literal'>70</span>
+    };
+    def path = [
+        MoveTo       {         <b>x</b>:  <span class='number-literal'>16</span>*S         <b>y</b>:  <span class='number-literal'>89</span>*S },
+        LineTo       {         <b>x</b>:  <span class='number-literal'>46</span>*S         <b>y</b>:   <span class='number-literal'>5</span>*S },
+        QuadCurveTo  {  <b>controlX</b>:  <span class='number-literal'>48</span>*S  <b>controlY</b>:   <span class='number-literal'>0</span>
+                               <b>x</b>:  <span class='number-literal'>64</span>*S         <b>y</b>:   <span class='number-literal'>1</span>*S },
+        LineTo       {         <b>x</b>:  <span class='number-literal'>73</span>*S         <b>y</b>:   <span class='number-literal'>4</span>*S },
+        CubicCurveTo { <b>controlX<span class='number-literal'>1</span></b>: <span class='number-literal'>114</span>*S <b>controlY<span class='number-literal'>1</span></b>:  <span class='number-literal'>24</span>*S
+                       <b>controlX<span class='number-literal'>2</span></b>:  <span class='number-literal'>22</span>*S <b>controlY<span class='number-literal'>2</span></b>: <span class='number-literal'>102</span>*S
+                               <b>x</b>:  <span class='number-literal'>84</span>*S         <b>y</b>: <span class='number-literal'>131</span>*S },
+        LineTo       {         <b>x</b>: <span class='number-literal'>107</span>*S         <b>y</b>: <span class='number-literal'>144</span>*S },
+        CubicCurveTo { <b>controlX<span class='number-literal'>1</span></b>: <span class='number-literal'>120</span>*S <b>controlY<span class='number-literal'>1</span></b>: <span class='number-literal'>154</span>*S
+                       <b>controlX<span class='number-literal'>2</span></b>: <span class='number-literal'>109</span>*S <b>controlY<span class='number-literal'>2</span></b>: <span class='number-literal'>177</span>*S
+                               <b>x</b>:  <span class='number-literal'>97</span>*S         <b>y</b>: <span class='number-literal'>172</span>*S },
+        LineTo       {         <b>x</b>:  <span class='number-literal'>50</span>*S         <b>y</b>: <span class='number-literal'>155</span>*S },
+        QuadCurveTo  {  <b>controlX</b>:   <span class='number-literal'>0</span>    <b>controlY</b>: <span class='number-literal'>132</span>*S
+                               <b>x</b>:   <span class='number-literal'>9</span>*S         <b>y</b>: <span class='number-literal'>108</span>*S },
+        LineTo       {         <b>x</b>:  <span class='number-literal'>16</span>*S         <b>y</b>:  <span class='number-literal'>89</span>*S },
+        ClosePath {},
+    ];
+    def track = Path {
+        <b>stroke</b>: Color.rgb(<span class='number-literal'>51</span>,<span class='number-literal'>51</span>,<span class='number-literal'>51</span>)
+        <b>strokeWidth</b>: track_strokeWidth
+        <b>elements</b>: path
+    };
+
+    def line = Path {
+        <b>stroke</b>: Color.WHITE
+        <b>strokeWidth</b>: line_strokewidth
+        <b>strokeDashArray</b>: [ <span class='number-literal'>20</span>, <span class='number-literal'>15</span> ]
+        <b>elements</b>: path
+    };
+
+    def anim = PathTransition {
+        <b>node</b>: car
+        <b>path</b>: AnimationPath.createFromPath(track)
+        <b>orientation</b>: OrientationType.ORTHOGONAL_TO_TANGENT
+        <b>interpolator</b>: Interpolator.LINEAR
+        <b>duration</b>: <span class='number-literal'>6</span>s
+        <b>repeatCount</b>: Timeline.INDEFINITE
+    };
+
+    init{
+        children = [
+            ImageView { <b>image</b>: Main.makeImage(<span class='string-literal'>"car-bg.jpg"</span>) },
+            Group {
+                <b class='keyword'>var</b> capH = bind if (Main.S == <span class='number-literal'>1</span>.<span class='number-literal'>0</span>) then <span class='number-literal'>90</span> else <span class='number-literal'>220</span>;
+                <b>content</b>: [track, line, car]
+                <b>layoutX</b>: bind (Main.scene.width - track.boundsInLocal.width) / PADDING
+                <b>layoutY</b>: bind (capH + Main.scene.height - track.boundsInLocal.height) / PADDING
+            }
+        ]
+    }
+
+    public override function play() {
+        anim.play();
+    }
+
+    public override function pause() {
+        anim.pause();
+    }
+}
+</code></pre></div>
+<div id="footer">
+			<span class="copy">&copy; 2010, Oracle Corporation and/or its affiliates.</span>
+			
+		</div>
+<!--
+	JAVASCRIPT
+	At the bottom of the page so that we download and render all the visual elements, before we start handling the javascript. This provides for a faster perceived loading time.
+-->
+
+<script src="../../shared/new_style/js/omi/s_code_remote.js" type="text/javascript"></script>
+ 
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js"></script>
+<!--[if lte IE 6]>
+	<script type="text/javascript" src="../../shared/new_style/js/jquery.ifixpng.js"></script>
+<![endif]-->
+<script type="text/javascript" src="../../shared/new_style/js/jquery.history.js"></script>
+<script type="text/javascript" src="../../shared/new_style/js/javafx.js"></script>
+
+
+
+
+

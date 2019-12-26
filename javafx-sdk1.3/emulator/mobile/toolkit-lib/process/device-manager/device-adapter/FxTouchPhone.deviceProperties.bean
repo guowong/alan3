@@ -1,0 +1,21 @@
+#
+# Copyright (c) 2009 Sun Microsystems, Inc. All rights reserved.
+# Use is subject to license terms.
+#
+
+.class: com.sun.jme.toolkit.deviceadapter.api.DevicePropertiesHolder
+
+description: FX Emulator
+screenWidth: 480
+screenHeight: 640
+isTouch: true
+isColor: true
+bitDepth: 16
+securityDomains: minimum,maximum,unidentified_third_party,identified_third_party,operator,manufacturer
+
+configuration: CLDC-1.1
+profile: MIDP-2.1
+arguments: Xdescriptor,Xjam,Xrunjdwp,Xquery,Xdebug,Xautotest,Xdomain
+bootClassPath: cldc_1.1.jar,midp_2.1.jar,jsr75_1.0.jar,jsr082_1.1.jar,jsr120_1.1.jar,jsr135_1.1.jar,jsr172_1.0.jar,jsr177_1.0.jar,jsr179_1.0.jar,jsr180_1.1.jar,jsr184_1.1.jar,jsr205_2.0.jar,jsr211_1.0.jar,jsr226_1.0.jar,jsr234_1.0.jar,jsr238_1.0.jar,jsr256_1.1.jar
+
+skin: FxTouchPhone

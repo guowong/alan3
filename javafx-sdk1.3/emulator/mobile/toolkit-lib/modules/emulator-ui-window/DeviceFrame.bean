@@ -1,0 +1,17 @@
+#
+# Copyright (c) 2009 Sun Microsystems, Inc. All rights reserved.
+# Use is subject to license terms.
+#
+
+.class: com.sun.jme.emulator.ui.frame.DeviceFrame
+.dependencies: EMDevice,ui-menu
+
+title: ${device.name} (ID: ${device.id})
+resizable: false
+iconImage: images/phone.gif
+jMenuBar: ui-menu
+contentPane: ui-frame-ContentPane
+keyListener: EMDevice
+
+lime: Lime
+argumentsParser: ArgumentsParser

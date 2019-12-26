@@ -1,0 +1,493 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+
+<head>
+	
+	<title>JavaFX Sample</title>
+	
+	<!--METAS-->
+	
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="description" content="JavaFX" />
+	<meta name="keywords" content="JavaFX Oracle" />
+	<meta name="author" content="Oracle" />
+	
+	<!--STYLESHEETS-->
+	<link rel="stylesheet" type="text/css" media="screen, projection" href="../../shared/new_style/css/reset.css" />
+	<link rel="stylesheet" type="text/css" media="screen, projection" href="../../shared/new_style/css/javafx.css" />
+	<link rel="stylesheet" type="text/css" media="screen, projection" href="../../shared/new_style/css/code.css" />
+	
+	<!-- CONDITIONAL STYLESHEETS -->
+	<!--[if IE]>
+	  <link rel="stylesheet" type="text/css" href="../../shared/new_style/css/ie.css" />
+	<![endif]-->
+	
+	<!--ADDRESS BAR ICON-->
+	<link rel="shortcut icon" type="image/ico" href="../../shared/new_style/images/favicon.ico" />
+	
+	<link rel="stylesheet" type="text/css" media="screen, projection" href="../../shared/new_style/css/samples.css" />
+    <style type="text/css">
+.code .string-literal, .code .number-literal {
+	font-style: italic;
+	color: #4b494d;
+}
+    </style>
+</head>
+<!--
+	The ID here is required to indicate the page type.
+	Changing this will affect the layout of the page.
+-->
+<body id="tutorials">
+	
+	<div id="body">
+		<!--
+			The header in the source code view doesn't have any buttons.
+			So just the <h1> tag for the site logo is included.
+			
+			The header also doesn't have an A tag with an "href" since you shouldn't be able to navigate to the
+			index pgae inside the popup.
+		-->
+        
+        
+		<ul id="popheader">
+			<li class="first">
+				<h1><a><span>FX</span></a></h1>
+			
+				<!-- Close button -->
+				<a class="close-button" title="Close"><span>Close</span></a>
+			</li>
+		</ul>
+<div class="source">
+  <div class="code-header">License text </div>
+    <pre>
+
+/*
+ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER 
+ * Copyright  2008, 2010 Oracle and/or its affiliates.  All rights reserved. 
+ * Use is subject to license terms.
+ * 
+ * This file is available and licensed under the following license:
+ * 
+ * Redistribution and use in source and binary forms, with or without 
+ * modification, are permitted provided that the following conditions are met: 
+ * 
+ *   * Redistributions of source code must retain the above copyright notice, 
+ *     this list of conditions and the following disclaimer. 
+ *
+ *   * Redistributions in binary form must reproduce the above copyright notice,
+ *     this list of conditions and the following disclaimer in the documentation
+ *     and/or other materials provided with the distribution.
+ *
+ *   * Neither the name of Oracle Corporation nor the names of its contributors 
+ *     may be used to endorse or promote products derived from this software 
+ *     without specific prior written permission. 
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS 
+ * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT 
+ * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR 
+ * A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT 
+ * OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, 
+ * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, 
+ * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; 
+ * OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, 
+ * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR 
+ * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF 
+ * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. 
+ */
+
+    </pre>
+  </div>
+<div class="code"><pre><code>
+<b>package</b> com.sun.javafx.mediabox;
+
+<b>import</b> javafx.animation.*;
+<b>import</b> javafx.scene.*;
+<b>import</b> javafx.scene.input.MouseEvent;
+<b>import</b> javafx.scene.media.*;
+<b>import</b> javafx.scene.paint.*;
+<b>import</b> javafx.scene.shape.Rectangle;
+<b>import</b> javafx.geometry.BoundingBox;
+<b>import</b> javafx.scene.layout.Resizable;
+<b>import</b> com.sun.javafx.mediabox.controls.MediaControlBar;
+<b>import</b> com.sun.javafx.mediabox.controls.MediaScreen;
+
+<i class='comment'>/**
+ * @author baechul
+ */</i>
+
+<i class='comment'>/**
+ * A theme of the MediaBox. The default theme is <span class='string-literal'>"paranara"</span>.
+ */</i>
+public-read <b class='keyword'>var</b> <b>theme</b>:String = <span class='string-literal'>"paranara"</span>;
+
+<i class='comment'>/**
+ * This function will release media native resources. It should be called
+ * before playing new media and before exiting from playing a media.
+ * @treatasprivate implementation detail
+ */</i>
+public function impl_clearMediaPlayer(<b>mp</b>: MediaPlayer) {
+    if(mp.media != null) {
+        mp.media = null;
+    }
+}
+
+<i class='comment'>/**
+ * A scene graph node that can display a media with a media control bar, buffer
+ * indicator, etc. Only {@link mediaSource} is required. The MediaBox has
+ * embedded MediaPlayer and MediaView.
+ * &lt;p&gt;
+ * Usage <b>Example</b>:
+ @example
+
+ <b class='keyword'>var</b> <b>mediaBox</b>: MediaBox = MediaBox {
+    <b>themeStr</b>: theme             <i class='comment'>// <b>default</b>: <span class='string-literal'>"paranara"</span></i>
+    <b>autoPlay</b>: true              <i class='comment'>// <b>default</b>: true</i>
+
+    <b>mediaSource</b>: <span class='string-literal'>"a media url"</span>
+
+    <b>width</b>: <span class='number-literal'>640</span>         <i class='comment'>// <b>default</b>: <span class='number-literal'>640</span></i>
+    <b>height</b>: <span class='number-literal'>360</span>        <i class='comment'>// <b>default</b>: <span class='number-literal'>360</span></i>
+
+    <b>showMediaInfo</b>: true         <i class='comment'>// <b>default</b>: false</i>
+    <b>mediaControlBarHeight</b>: <span class='number-literal'>25</span>   <i class='comment'>// <b>default</b>: <span class='number-literal'>25</span>, possible <b>values</b>: <span class='number-literal'>20</span>~<span class='number-literal'>50</span></i>
+
+    <b>onEndOfMedia</b>: function() {
+        <i class='comment'>//mediaBox.mediaSource = <span class='string-literal'>"<span class='number-literal'>2</span>nd media url"</span></i>
+    }
+}
+
+Stage {
+    <b>title</b>: <span class='string-literal'>"MediaBox Player"</span>
+    <b>scene</b>: Scene {
+        <b>content</b>: mediaBox
+    }
+}
+
+@endexample
+ *
+ */</i>
+public class MediaBox extends CustomNode, Resizable {
+
+    <b class='keyword'>var</b> <b>mediaPlayer</b>:MediaPlayer = MediaPlayer {
+        <b>onEndOfMedia</b>: function(): Void {
+            if(onEndOfMedia != null) onEndOfMedia();
+        }
+    }
+
+    <i class='comment'>/**
+     * Defines the String which specifies the URI of the media. It must be
+     * an absolute URI, such as <span class='string-literal'>"&lt;code&gt;<b>file</b>:<i class='comment'>///media.fxm&lt;/code&gt;"</span>.</i>
+     * If it is relative to the codebase the &lt;code&gt;__DIR__&lt;/code&gt; may be used,
+     * as in <span class='string-literal'>"&lt;code&gt;{__DIR__}/media.fxm&lt;/code&gt;"</span>. Supported protocols include
+     * <span class='string-literal'>"<b>file</b>:", "<b>http</b>:", and "<b>jar</b>:"</span>. Currently, only audio in MP<span class='number-literal'>3</span>, AU, and WAV
+     * containers are supported from within jar files.
+     */</i>
+    public <b class='keyword'>var</b> <b>mediaSource</b>:String on replace {
+        impl_clearMediaPlayer(mediaPlayer);
+        mediaScreen.toInitStatus();
+        mediaControlBar.toInitStatus();
+
+        mediaScreen.mediaInfo.show = false;
+        mediaTitle = null;
+        mediaDescription = null;
+
+        mediaPlayer.media = Media {
+            <b>source</b>: mediaSource
+            <b>onError</b>: function(<b>me</b>: MediaError) {
+                if(mediaPlayer.status == MediaPlayer.PAUSED) {
+                    mediaPlayer.stop();
+                    if(mediaControlBar == null or mediaScreen == null) {
+                        FX.deferAction(
+                            function () {
+                                mediaControlBar.mediaError = me;
+                                mediaScreen.mediaError = me;
+                                return;
+                            }
+                        );
+                    } else {
+                        mediaControlBar.mediaError = me;
+                        mediaScreen.mediaError = me;
+                    }
+                } else {
+                    <i class='comment'>// if PLAYING/STALLED/BUFFERING status, just ignore.</i>
+                }
+            }
+        }
+
+        if(autoPlay) {
+            mediaControlBar.play();
+        }
+    }
+
+    <i class='comment'>/**
+     * A media title that can be seen from a media infomation panel. The media
+     * infomation panel can be turned on or off by {@showMediaInfo}. If it is
+     * on, the panel will be displayed when a mouse enters {@link MediaView}.
+     *
+     * @defaultvalue empty string
+     */</i>
+    public <b class='keyword'>var</b> <b>mediaTitle</b>:String;
+
+    <i class='comment'>/**
+     * A media description that can be seen from a media information panel.
+     * The media infomation panel can be turned on or off by {@showMediaInfo}.
+     * If it is turned on, the panel will be displayed when a mouse enters
+     * {@link MediaView}.
+     *
+     * @defaultvalue empty string
+     */</i>
+    public <b class='keyword'>var</b> <b>mediaDescription</b>:String;
+
+    <i class='comment'>/**
+     * Invoked when the player reaches the end of media.
+     */</i>
+    public-init <b class='keyword'>var</b> <b>onEndOfMedia</b>: function():Void;
+
+    <i class='comment'>/**
+     * To set the theme of MediaBox.
+     */</i>
+    public <b class='keyword'>var</b> <b>themeStr</b>:String on replace {
+        theme = themeStr;
+    }
+
+    <i class='comment'>/**
+     * It conrols the visiability of media information panel that has {@link mediaTitle}
+     * and {@mediaDescription}. If it is on, the panel will be displayed when
+     * a mouse enters {@link MediaView} usually scrolling down from the top.
+     *
+     * @defaultvalue false
+     */</i>
+    public <b class='keyword'>var</b> <b>showMediaInfo</b>:Boolean = false on replace {
+        mediaScreen.mediaInfo.disable = not showMediaInfo;
+    }
+
+    <i class='comment'>/**
+     * A width of {@link MediaBox}. Default value is <span class='number-literal'>640</span>.
+     *
+     * @defaultvalue <span class='number-literal'>640</span>
+     */</i>
+    override public <b class='keyword'>var</b> width = <span class='number-literal'>640</span>;
+
+    <i class='comment'>/**
+     * A height of {@link MediaBox}. Default value is <span class='number-literal'>360</span>.
+     *
+     * @defaultvalue <span class='number-literal'>360</span>
+     */</i>
+    override public <b class='keyword'>var</b> height= <span class='number-literal'>360</span>;
+
+    <i class='comment'>/**
+     * If {@code preserveRatio} is {@code true}, the media is scaled to
+     * fit the node, but its aspect is preserved. Otherwise, the media is
+     * scaled, but will be stretched or sheared in both dimension to fit its
+     * node's dimensions.
+     */</i>
+    public <b class='keyword'>var</b> <b>preserveRatio</b>:Boolean = true;
+
+    <i class='comment'>/**
+     * A preferred height of media control bar. Default value is <span class='number-literal'>25</span> pixels. The
+     * possible value range is from <span class='number-literal'>20</span> to <span class='number-literal'>50</span> pixels.
+     *
+     * @defaultvalue <span class='number-literal'>25</span>
+     */</i>
+    public <b class='keyword'>var</b> mediaControlBarHeight = <span class='number-literal'>25</span> on replace {
+        if(mediaControlBarHeight &lt; <span class='number-literal'>20</span>) {
+            mediaControlBarHeight = <span class='number-literal'>20</span>;
+        } else if(mediaControlBarHeight &gt; <span class='number-literal'>50</span>) {
+            mediaControlBarHeight = <span class='number-literal'>50</span>;
+        }
+    }
+
+    <i class='comment'>/**
+     * If autoPlay is true, playing will start as soon as possible.
+     *
+     * @defaultvalue true
+     */</i>
+    public <b class='keyword'>var</b> <b>autoPlay</b>:Boolean = true;
+
+    
+
+    <b class='keyword'>var</b> <b>mediaScreen</b>:MediaScreen = MediaScreen {
+        <b>mediaPlayer</b>: bind mediaPlayer
+        <b>mediaTitle</b>: bind mediaTitle
+        <b>mediaDescription</b>: bind mediaDescription
+        <b>showMediaInfo</b>: bind showMediaInfo
+        <b>preserveRatio</b>: bind preserveRatio
+
+        <b>x</b>: <span class='number-literal'>0</span><i class='comment'>//bind translateX</i>
+        <b>y</b>: <span class='number-literal'>0</span><i class='comment'>//translateY</i>
+        <b>width</b>: bind width
+        <b>height</b>: bind height
+    }
+
+    public <b class='keyword'>var</b> <b>mediaControlBar</b>:MediaControlBar = MediaControlBar {
+        <b>mediaPlayer</b>: bind mediaPlayer
+        <b>mediaView</b>: bind mediaScreen.mediaView
+        <b>mediaBounds</b>: bind BoundingBox {
+            <b>minX</b>: <span class='number-literal'>0</span>
+            <b>minY</b>: <span class='number-literal'>0</span>
+            <b>width</b>: width
+            <b>height</b>: height
+        }
+        <b>show</b>: false
+        <b>blocksMouse</b>: true
+
+        <b>x</b>: <span class='number-literal'>1</span>
+        <b>y</b>: bind (height - mediaControlBarHeight)
+        <b>width</b>: bind width - <span class='number-literal'>3</span>
+        <b>height</b>: mediaControlBarHeight - <span class='number-literal'>2</span>
+    }
+
+    <i class='comment'>/**
+     * Play the associated media.
+     */</i>
+    public function play(): Void {
+        mediaControlBar.play();
+    }
+
+    <i class='comment'>/**
+     * Pause the associated media playing.
+     */</i>
+    public function pause(): Void {
+        mediaControlBar.pause();
+    }
+
+    <i class='comment'>/**
+     * Reflects the current status of underlaying MediaPlayer.
+     * The status is one of &lt;code&gt;PAUSED, PLAYING, BUFFERING, STALLED&lt;/code&gt;.
+     * The values are defined at {@link javafx.media.MediaPlayer}.
+     */</i>
+    public-read <b class='keyword'>var</b> <b>status</b>:Integer = bind mediaPlayer.status;
+
+    <i class='comment'>// to capture user-defined input events</i>
+    <b class='keyword'>var</b> <b>glassPane<span class='number-literal'>1</span></b>:Rectangle = Rectangle {
+        <b>width</b>: bind width
+        <b>height</b>: bind height
+        <b>fill</b>: Color.TRANSPARENT
+
+        <b>onKeyPressed</b>: bind onKeyPressed
+        <b>onKeyReleased</b>: bind onKeyReleased
+        <b>onKeyTyped</b>: bind onKeyTyped
+
+        <b>onMouseClicked</b>: bind onMouseClicked
+        <b>onMouseDragged</b>: bind onMouseDragged
+        <b>onMouseEntered</b>: bind onMouseEntered
+        <b>onMouseExited</b>: bind onMouseExited
+        <b>onMouseMoved</b>: bind onMouseMoved
+        <b>onMousePressed</b>: bind onMousePressed
+        <b>onMouseReleased</b>: bind onMouseReleased
+        <b>onMouseWheelMoved</b>: bind onMouseWheelMoved
+    }
+
+    <i class='comment'>/**
+     * a private glassPane to handle the default behavior of controlbar visibility.
+     */</i>
+    <b class='keyword'>var</b> <b>glassPane<span class='number-literal'>2</span></b>: Rectangle = Rectangle {
+        <b>width</b>: bind width
+        <b>height</b>: bind height
+        <b>fill</b>: Color.TRANSPARENT
+
+        <b>onMouseEntered</b>:function(<b>me</b>:MouseEvent) {
+            <i class='comment'>//println(<span class='string-literal'>"mouse entered"</span>);</i>
+            mediaControlBar.show = true;
+        }
+        <b>onMouseExited</b>:function(<b>me</b>:MouseEvent) {
+            <i class='comment'>//println(<span class='string-literal'>"mouse exited"</span>);</i>
+            mediaControlBar.show = false;
+        }
+
+    }
+
+    override function create(): Group {
+        Group {
+            <b>content</b>: bind [
+                mediaScreen,
+                glassPane<span class='number-literal'>1</span>,
+                mediaControlBar,
+                glassPane<span class='number-literal'>2</span>
+            ]
+        }
+    }
+
+    postinit {
+        <i class='comment'>/**
+         * Temporary workaround to make buffer update(windows):
+         * buffer progress time is not updated while playing until the
+         * current time hits the buffer time. A workaround was to setting
+         * any other attributes of Player. Then the buffer progress time will
+         * be updated. This work around works only for windows.
+         */</i>
+        Timeline {
+            <b>repeatCount</b>: Timeline.INDEFINITE
+            <b>keyFrames</b>:KeyFrame {
+                <b>time</b>: <span class='number-literal'>100</span>ms
+                <b>action</b>: function() {
+                    <b class='keyword'>var</b> saved = mediaPlayer.balance;
+                    mediaPlayer.balance = <span class='number-literal'>0</span>.<span class='number-literal'>1</span>;
+                    mediaPlayer.balance = saved;
+                }
+            }
+        }.play();
+
+        if(autoPlay == true and mediaSource != null) {
+            mediaControlBar.play();
+        }
+
+        <i class='comment'>// cleanup when the app is closed.</i>
+        scene.stage.onClose = function() {
+            impl_clearMediaPlayer(mediaPlayer);
+        }
+
+        glassPane<span class='number-literal'>2</span>.requestFocus();
+    }
+
+    <b class='keyword'>var</b> minWidth = <span class='number-literal'>80</span>;
+    <b class='keyword'>var</b> minHeight= <span class='number-literal'>50</span>;
+
+    override function getPrefWidth(<b>fitHeight</b>: Float) {
+        if ( (mediaPlayer != null) and (mediaPlayer.media != null) and (mediaPlayer.media.width &gt; minWidth) ) {
+            if (preserveRatio and (mediaPlayer.media.height &gt; <span class='number-literal'>0</span> )) {
+                return fitHeight * (mediaPlayer.media.width / mediaPlayer.media.height);
+            } else {
+                return mediaPlayer.media.width;
+            }
+        } else {
+            return minWidth;
+        }
+
+    }
+
+    override function getPrefHeight(<b>fitWidth</b>: Float) {
+        if ( (mediaPlayer != null) and (mediaPlayer.media != null) and (mediaPlayer.media.height &gt; minHeight) ) {
+            if (preserveRatio and (mediaPlayer.media.width &gt; <span class='number-literal'>0</span> )) {
+                return fitWidth * (mediaPlayer.media.height / mediaPlayer.media.width);
+            } else {
+                return mediaPlayer.media.height;
+            }
+        } else {
+            return minHeight;
+        }
+    }
+}
+</code></pre></div>
+<div id="footer">
+			<span class="copy">&copy; 2010, Oracle Corporation and/or its affiliates.</span>
+			
+		</div>
+<!--
+	JAVASCRIPT
+	At the bottom of the page so that we download and render all the visual elements, before we start handling the javascript. This provides for a faster perceived loading time.
+-->
+
+<script src="../../shared/new_style/js/omi/s_code_remote.js" type="text/javascript"></script>
+ 
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js"></script>
+<!--[if lte IE 6]>
+	<script type="text/javascript" src="../../shared/new_style/js/jquery.ifixpng.js"></script>
+<![endif]-->
+<script type="text/javascript" src="../../shared/new_style/js/jquery.history.js"></script>
+<script type="text/javascript" src="../../shared/new_style/js/javafx.js"></script>
+
+
+
+
+

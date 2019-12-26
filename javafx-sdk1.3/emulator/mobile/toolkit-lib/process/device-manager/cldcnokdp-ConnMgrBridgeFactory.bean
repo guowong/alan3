@@ -1,0 +1,11 @@
+#
+# Copyright (c) 2009 Sun Microsystems, Inc. All rights reserved.
+# Use is subject to license terms.
+#
+
+.class=com.sun.jme.toolkit.remoting.bridge.JavameServiceBridgeFactory
+
+jmeServicesBridgeFactory=cldcnokdp-JavameServicesBridgeFactory
+jmeServiceName=ConnectionManager
+jseServiceName=ConnectionManager
+bridgeClassName=com.sun.jme.toolkit.bridge.connmanager.ConnectionManagerBridge

@@ -1,0 +1,13 @@
+#
+# Copyright (c) 2009 Sun Microsystems, Inc. All rights reserved.
+# Use is subject to license terms.
+#
+
+.class: com.sun.jme.toolkit.jsr120.server.WmaServer
+.dependencies: DeviceConnectionManager,DeviceRegistrationManager
+
+port: ${jsr120.server.port}
+bufferSize: 1500
+
+deviceConnectionManager: DeviceConnectionManager
+deviceRegistrationManager: DeviceRegistrationManager

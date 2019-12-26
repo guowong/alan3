@@ -1,0 +1,17 @@
+#
+# Copyright (c) 2009 Sun Microsystems, Inc. All rights reserved.
+# Use is subject to license terms.
+#
+
+.class: com.sun.kvem.midp.LocationEventGenPanel
+.parent: EventDataProviderManager
+.parent-add-method: addEventDataProvider
+
+eventManager: EventBridge
+externalEventManager: ExternalEventManager
+
+stopIcon: images/Stop_Btn.png
+pauseIcon: images/Pause_Btn.png
+startIcon: images/Play_Btn.png
+prevWaypointIcon: images/Rewind_Btn.png
+nextWaypointIcon: images/Forward_Btn.png

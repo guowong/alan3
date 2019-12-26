@@ -1,0 +1,69 @@
+body {
+	margin: 50px;
+}
+
+#body {
+	position: relative;
+	border: 2px solid #AAA;
+	width: 800px;
+	height: 500px;
+	
+}
+
+#anim-test ul.items {
+	width: 680px;
+	margin-top: 50px;
+	overflow: hidden;
+}
+
+#anim-test ul.items li.item {
+	position: absolute;
+	width: 150px;
+	height: 113px;
+}
+
+#anim-test ul.items li.item a {
+	z-index: 1;
+}
+
+#anim-test ul.items li.item.last {
+	margin-right: 0px;
+}
+
+#anim-test ul.items li.item img {
+	position: absolute;
+	z-index: 1;
+}
+
+.inactive {
+	z-index: 1;
+}
+
+.active {
+	z-index: 500;
+}
+
+.p1 {
+	top: 10px;
+	left: 10px;
+}
+
+.p2 {
+	top: 10px;
+	left: 171px;
+}
+
+.p3 {
+	top: 10px;
+	left: 331px;
+}
+
+.p4 {
+	top: 10px;
+	left: 483px;
+}
+
+.p5 {
+	top: 10px;
+	left: 644px;
+}

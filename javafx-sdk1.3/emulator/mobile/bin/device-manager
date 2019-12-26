@@ -1,0 +1,17 @@
+#!/bin/bash
+cd `dirname "$0"`
+if [ -f "../.org.opensolaris,pkg/nextInstall" ]
+then
+   last_known_reboot=`cat "../.org.opensolaris,pkg/lastBoot"`
+   last_reboot=`who -b`
+   if [[ "$last_reboot" != "$last_known_reboot" ]] 
+   then
+      open -W "../Updater.app" 
+      if [ -f "../.org.opensolaris,pkg/nextInstall" ]
+          then 
+           #installation failed
+          exit 1
+      fi
+   fi
+fi
+../device-manager.app/Contents/MacOS/JavaApplicationStub $@

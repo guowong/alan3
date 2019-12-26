@@ -1,0 +1,13 @@
+#
+# Copyright (c) 2009 Sun Microsystems, Inc. All rights reserved.
+# Use is subject to license terms.
+#
+
+.class: com.sun.jme.toolkit.remoting.client.rmiimpl.ObjectServerConnectionImpl
+
+rmiRegistryHost: ${device-manager.object-registry.host}
+rmiRegistryPort: ${device-manager.object-registry.port}
+name: ${device-manager.object-registry.name}
+
+connectionAttemptCount: 10
+connectionAttemptDelay: 1000

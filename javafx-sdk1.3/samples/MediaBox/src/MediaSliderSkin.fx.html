@@ -1,0 +1,320 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+
+<head>
+	
+	<title>JavaFX Sample</title>
+	
+	<!--METAS-->
+	
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="description" content="JavaFX" />
+	<meta name="keywords" content="JavaFX Oracle" />
+	<meta name="author" content="Oracle" />
+	
+	<!--STYLESHEETS-->
+	<link rel="stylesheet" type="text/css" media="screen, projection" href="../../shared/new_style/css/reset.css" />
+	<link rel="stylesheet" type="text/css" media="screen, projection" href="../../shared/new_style/css/javafx.css" />
+	<link rel="stylesheet" type="text/css" media="screen, projection" href="../../shared/new_style/css/code.css" />
+	
+	<!-- CONDITIONAL STYLESHEETS -->
+	<!--[if IE]>
+	  <link rel="stylesheet" type="text/css" href="../../shared/new_style/css/ie.css" />
+	<![endif]-->
+	
+	<!--ADDRESS BAR ICON-->
+	<link rel="shortcut icon" type="image/ico" href="../../shared/new_style/images/favicon.ico" />
+	
+	<link rel="stylesheet" type="text/css" media="screen, projection" href="../../shared/new_style/css/samples.css" />
+    <style type="text/css">
+.code .string-literal, .code .number-literal {
+	font-style: italic;
+	color: #4b494d;
+}
+    </style>
+</head>
+<!--
+	The ID here is required to indicate the page type.
+	Changing this will affect the layout of the page.
+-->
+<body id="tutorials">
+	
+	<div id="body">
+		<!--
+			The header in the source code view doesn't have any buttons.
+			So just the <h1> tag for the site logo is included.
+			
+			The header also doesn't have an A tag with an "href" since you shouldn't be able to navigate to the
+			index pgae inside the popup.
+		-->
+        
+        
+		<ul id="popheader">
+			<li class="first">
+				<h1><a><span>FX</span></a></h1>
+			
+				<!-- Close button -->
+				<a class="close-button" title="Close"><span>Close</span></a>
+			</li>
+		</ul>
+<div class="source">
+  <div class="code-header">License text </div>
+    <pre>
+
+/*
+ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER 
+ * Copyright  2008, 2010 Oracle and/or its affiliates.  All rights reserved. 
+ * Use is subject to license terms.
+ * 
+ * This file is available and licensed under the following license:
+ * 
+ * Redistribution and use in source and binary forms, with or without 
+ * modification, are permitted provided that the following conditions are met: 
+ * 
+ *   * Redistributions of source code must retain the above copyright notice, 
+ *     this list of conditions and the following disclaimer. 
+ *
+ *   * Redistributions in binary form must reproduce the above copyright notice,
+ *     this list of conditions and the following disclaimer in the documentation
+ *     and/or other materials provided with the distribution.
+ *
+ *   * Neither the name of Oracle Corporation nor the names of its contributors 
+ *     may be used to endorse or promote products derived from this software 
+ *     without specific prior written permission. 
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS 
+ * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT 
+ * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR 
+ * A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT 
+ * OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, 
+ * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, 
+ * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; 
+ * OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, 
+ * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR 
+ * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF 
+ * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. 
+ */
+
+    </pre>
+  </div>
+<div class="code"><pre><code>
+<b>package</b> com.sun.mediabox.controls.skin.paranara;
+
+<b>import</b> javafx.scene.control.*;
+<b>import</b> javafx.scene.Cursor;
+<b>import</b> javafx.scene.Group;
+<b>import</b> javafx.scene.image.Image;
+<b>import</b> javafx.scene.image.ImageView;
+<b>import</b> javafx.scene.input.MouseEvent;
+<b>import</b> javafx.scene.Node;
+<b>import</b> javafx.scene.paint.Color;
+<b>import</b> javafx.scene.paint.LinearGradient;
+<b>import</b> javafx.scene.paint.Paint;
+<b>import</b> javafx.scene.paint.Stop;
+<b>import</b> javafx.scene.shape.Rectangle;
+<b>import</b> com.sun.mediabox.controls.*;
+<b>import</b> com.sun.javafx.mediabox.controls.*;
+
+<i class='comment'>/**
+ * @author baechul
+ */</i>
+
+public class MediaSliderSkin extends com.sun.mediabox.controls.skin.AbstractSkin {
+    <i class='comment'>// control</i>
+    <b class='keyword'>var</b> slider = bind control as MediaSlider;
+
+    <i class='comment'>// misc <b class='keyword'>var</b>iables</i>
+    <b class='keyword'>var</b> buttonImageOff = Image{ <b>url</b>: <span class='string-literal'>"{__DIR__}resources/ThumbMouseOff.png"</span> }
+    <b class='keyword'>var</b> buttonImageOver = Image{ <b>url</b>: <span class='string-literal'>"{__DIR__}resources/ThumbMouseOver.png"</span> }
+    <b class='keyword'>var</b> buttonImage = buttonImageOff;
+
+    protected override function getMinWidth():Number { slider.width }
+    protected override function getMinHeight():Number { slider.height }
+
+    <i class='comment'>// behavior link</i>
+    override <b class='keyword'>var</b> behavior = MediaSliderBehavior {}
+    <b class='keyword'>var</b> sliderBehavior = bind behavior as MediaSliderBehavior;
+
+    <i class='comment'>// skin update based on the control status.</i>
+
+    <i class='comment'>// skin node ///////////////////////////////////////////////////////////////</i>
+    protected override <b class='keyword'>var</b> frame = Rectangle {
+        <b>x</b>: bind slider.x
+        <b>y</b>: bind slider.y
+        <b>width</b>: bind slider.width
+        <b>height</b>: bind slider.height
+        
+        <b>fill</b>: Color.TRANSPARENT
+        <b>smooth</b>: false
+        <b>opacity</b>: <span class='number-literal'>0</span>.<span class='number-literal'>5</span>
+    }
+
+    public <b class='keyword'>var</b> <b>buttonHeight</b>: Number = <span class='number-literal'>24</span>;
+    public <b class='keyword'>var</b> <b>buttonWidth</b>: Number = <span class='number-literal'>16</span> on replace { 
+        if(buttonHeight == <span class='number-literal'>0</span>)
+        buttonHeight = buttonWidth;
+    }
+
+    <b class='keyword'>var</b> <b>barThick</b>: Number = <span class='number-literal'>8</span>;
+    <b class='keyword'>var</b> <b>barLength</b>: Number = bind slider.width;
+    <b class='keyword'>var</b> <b>barStartOffset</b>: Number = <span class='number-literal'>2</span>;
+    <b class='keyword'>var</b> <b>startPoint</b>: Number = bind slider.x + barStartOffset;
+    <b class='keyword'>var</b> <b>endPoint</b>: Number = bind startPoint + barLength;
+
+    <b class='keyword'>var</b> <b>bar</b>: Rectangle = Rectangle {
+        <b>smooth</b>: false
+        <b>x</b>: bind startPoint
+        <b>y</b>: bind slider.y+(slider.height-barThick)*<span class='number-literal'>0</span>.<span class='number-literal'>5</span>
+        <b>width</b>: bind barLength
+        <b>height</b>: bind barThick
+
+        <b>stroke</b>: bind LinearGradient {
+            <b>startX</b>: <span class='number-literal'>0</span>.<span class='number-literal'>0</span>
+            <b>startY</b>: slider.y+(slider.height-barThick)*<span class='number-literal'>0</span>.<span class='number-literal'>5</span>
+            <b>endX</b>: <span class='number-literal'>0</span>.<span class='number-literal'>0</span>
+            <b>endY</b>: slider.y+(slider.height-barThick)*<span class='number-literal'>0</span>.<span class='number-literal'>5</span>+barThick
+            <b>proportional</b>: false
+            <b>stops</b>: [
+                Stop { <b>offset</b>: <span class='number-literal'>0</span>.<span class='number-literal'>0</span> <b>color</b>: Color.rgb(<span class='number-literal'>27</span>, <span class='number-literal'>26</span>, <span class='number-literal'>25</span>) },
+                Stop { <b>offset</b>: <span class='number-literal'>1</span>.<span class='number-literal'>0</span> <b>color</b>: Color.rgb(<span class='number-literal'>125</span>, <span class='number-literal'>124</span>, <span class='number-literal'>123</span>) }
+            ]
+        }
+        <b>strokeWidth</b>: <span class='number-literal'>1</span>
+        <i class='comment'>// <b>proportional</b>: true didn't work when y doesn't start from <span class='number-literal'>0</span></i>
+        <b>fill</b>: bind LinearGradient {
+            <b>startX</b>: <span class='number-literal'>0</span>.<span class='number-literal'>0</span>
+            <b>startY</b>: slider.y+(slider.height-barThick)*<span class='number-literal'>0</span>.<span class='number-literal'>5</span>
+            <b>endX</b>: <span class='number-literal'>0</span>.<span class='number-literal'>0</span>
+            <b>endY</b>: slider.y+(slider.height-barThick)*<span class='number-literal'>0</span>.<span class='number-literal'>5</span>+barThick
+            <b>proportional</b>: false
+            <b>stops</b>: [
+                Stop { <b>offset</b>: <span class='number-literal'>0</span>.<span class='number-literal'>0</span> <b>color</b>: Color.rgb(<span class='number-literal'>124</span>, <span class='number-literal'>124</span>, <span class='number-literal'>124</span>) },
+                Stop { <b>offset</b>: <span class='number-literal'>0</span>.<span class='number-literal'>4</span> <b>color</b>: Color.rgb(<span class='number-literal'>5</span>, <span class='number-literal'>5</span>, <span class='number-literal'>5</span>) },
+                Stop { <b>offset</b>: <span class='number-literal'>0</span>.<span class='number-literal'>6</span> <b>color</b>: Color.rgb(<span class='number-literal'>5</span>, <span class='number-literal'>5</span>, <span class='number-literal'>5</span>) },
+                Stop { <b>offset</b>: <span class='number-literal'>1</span>.<span class='number-literal'>0</span> <b>color</b>: Color.rgb(<span class='number-literal'>124</span>, <span class='number-literal'>124</span>, <span class='number-literal'>124</span>) }
+            ]
+        }
+
+        <b>onMouseClicked</b>: function(me : MouseEvent) {
+            if(me.x &gt; startPoint and me.x &lt; endPoint) {
+                slider.progress = (me.x - startPoint) / barLength;
+            }
+        }
+
+        <b>onMouseEntered</b>: function(me : MouseEvent) {
+            if(not slider.disabled)
+                bar.cursor = Cursor.HAND;
+        }
+
+        <b>onMouseExited</b>: function(me : MouseEvent) {
+            bar.cursor = Cursor.DEFAULT;
+        }
+    }
+
+    <b class='keyword'>var</b> <b>progressBar</b>: Rectangle = Rectangle {
+        <b>smooth</b>: false
+        <b>x</b>: bind startPoint
+        <b>y</b>: bind slider.y+(slider.height-barThick)*<span class='number-literal'>0</span>.<span class='number-literal'>5</span>+<span class='number-literal'>2</span>
+        <b>width</b>: bind barLength*slider.bufferProgress
+        <b>height</b>: bind barThick-<span class='number-literal'>3</span>
+        <b>fill</b>: bind LinearGradient {
+            <b>startX</b>: <span class='number-literal'>0</span>.<span class='number-literal'>0</span>
+            <b>startY</b>: slider.y+(slider.height-barThick)*<span class='number-literal'>0</span>.<span class='number-literal'>5</span>+<span class='number-literal'>2</span>
+            <b>endX</b>: <span class='number-literal'>0</span>.<span class='number-literal'>0</span>
+            <b>endY</b>: slider.y+(slider.height-barThick)*<span class='number-literal'>0</span>.<span class='number-literal'>5</span>+<span class='number-literal'>1</span>+(barThick-<span class='number-literal'>3</span>)
+            <b>proportional</b>: false
+            <b>stops</b>: [
+                Stop {
+                    <b>offset</b>: <span class='number-literal'>0</span>.<span class='number-literal'>0</span>
+                    <b>color</b>: Color.rgb(<span class='number-literal'>183</span>, <span class='number-literal'>181</span>, <span class='number-literal'>181</span>)
+                },
+                Stop {
+                    <b>offset</b>: <span class='number-literal'>1</span>.<span class='number-literal'>0</span>
+                    <b>color</b>: Color.rgb(<span class='number-literal'>68</span>, <span class='number-literal'>68</span>, <span class='number-literal'>68</span>)
+                }
+            ]
+        }
+        <b>visible</b>: bind not slider.disabled
+    }
+
+    <b class='keyword'>var</b> <b>currentBar</b>: Rectangle = Rectangle {
+        <b>smooth</b>: false
+        <b>x</b>: bind startPoint
+        <b>y</b>: bind slider.y+(slider.height-barThick)*<span class='number-literal'>0</span>.<span class='number-literal'>5</span>+<span class='number-literal'>1</span>
+        <b>width</b>: bind barLength*slider.progress
+        <b>height</b>: bind barThick
+
+        <b>strokeWidth</b>: <span class='number-literal'>1</span>
+        <b>fill</b>: bind LinearGradient {
+            <b>startX</b>: <span class='number-literal'>0</span>.<span class='number-literal'>0</span>
+            <b>startY</b>: <span class='number-literal'>0</span>.<span class='number-literal'>0</span>
+            <b>endX</b>: <span class='number-literal'>1</span>.<span class='number-literal'>0</span>
+            <b>endY</b>: <span class='number-literal'>0</span>.<span class='number-literal'>0</span>
+            <b>stops</b>: [
+                Stop { <b>offset</b>: <span class='number-literal'>0</span>.<span class='number-literal'>0</span> <b>color</b>: Color.rgb(<span class='number-literal'>7</span>, <span class='number-literal'>96</span>, <span class='number-literal'>255</span>) },
+                Stop { <b>offset</b>: <span class='number-literal'>1</span>.<span class='number-literal'>0</span> <b>color</b>: Color.rgb(<span class='number-literal'>45</span>, <span class='number-literal'>240</span>, <span class='number-literal'>141</span>) }
+            ]
+        }
+    }
+
+    <b class='keyword'>var</b> <b>button</b>: Node = ImageView {
+        <b>image</b>: bind buttonImage
+        <b>translateX</b>: bind (startPoint+barLength*slider.progress)-buttonWidth*<span class='number-literal'>0</span>.<span class='number-literal'>5</span>
+        <b>translateY</b>: bind {
+            <b class='keyword'>var</b> bh = if(buttonHeight &gt;= slider.height) slider.height else buttonHeight;
+            slider.y+(slider.height-bh)*<span class='number-literal'>0</span>.<span class='number-literal'>5</span>+<span class='number-literal'>1</span>;
+        }
+        <b>fitWidth</b>: bind buttonWidth
+        <b>fitHeight</b>: bind if(buttonHeight &gt;= slider.height) slider.height else buttonHeight
+
+        <b>onMouseDragged</b>: function(<b>me</b>:MouseEvent) {
+            if( button.localToParent(me.x, me.y).x &gt; startPoint and
+            button.localToParent(me.x, me.y).x &lt; endPoint) {
+                slider.progress = (button.localToParent(me.x, me.y).x - startPoint)/barLength;
+            }
+        }
+        <b>onMouseEntered</b>: function(<b>me</b>:MouseEvent) {
+            buttonImage = buttonImageOver;
+        }
+        <b>onMouseExited</b>: function(<b>me</b>:MouseEvent) {
+            buttonImage = buttonImageOff;
+        }
+
+        <b>visible</b>: bind not slider.disabled
+    }
+
+    init {
+        node = Group {
+            <b>content</b>: bind [ 
+                frame,
+                bar,
+                progressBar,
+                currentBar,
+                button
+            ]
+        }
+    }
+}
+</code></pre></div>
+<div id="footer">
+			<span class="copy">&copy; 2010, Oracle Corporation and/or its affiliates.</span>
+			
+		</div>
+<!--
+	JAVASCRIPT
+	At the bottom of the page so that we download and render all the visual elements, before we start handling the javascript. This provides for a faster perceived loading time.
+-->
+
+<script src="../../shared/new_style/js/omi/s_code_remote.js" type="text/javascript"></script>
+ 
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js"></script>
+<!--[if lte IE 6]>
+	<script type="text/javascript" src="../../shared/new_style/js/jquery.ifixpng.js"></script>
+<![endif]-->
+<script type="text/javascript" src="../../shared/new_style/js/jquery.history.js"></script>
+<script type="text/javascript" src="../../shared/new_style/js/javafx.js"></script>
+
+
+
+
+

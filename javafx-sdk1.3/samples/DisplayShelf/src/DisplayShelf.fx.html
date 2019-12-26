@@ -1,0 +1,278 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+
+<head>
+	
+	<title>JavaFX Sample</title>
+	
+	<!--METAS-->
+	
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="description" content="JavaFX" />
+	<meta name="keywords" content="JavaFX Oracle" />
+	<meta name="author" content="Oracle" />
+	
+	<!--STYLESHEETS-->
+	<link rel="stylesheet" type="text/css" media="screen, projection" href="../../shared/new_style/css/reset.css" />
+	<link rel="stylesheet" type="text/css" media="screen, projection" href="../../shared/new_style/css/javafx.css" />
+	<link rel="stylesheet" type="text/css" media="screen, projection" href="../../shared/new_style/css/code.css" />
+	
+	<!-- CONDITIONAL STYLESHEETS -->
+	<!--[if IE]>
+	  <link rel="stylesheet" type="text/css" href="../../shared/new_style/css/ie.css" />
+	<![endif]-->
+	
+	<!--ADDRESS BAR ICON-->
+	<link rel="shortcut icon" type="image/ico" href="../../shared/new_style/images/favicon.ico" />
+	
+	<link rel="stylesheet" type="text/css" media="screen, projection" href="../../shared/new_style/css/samples.css" />
+    <style type="text/css">
+.code .string-literal, .code .number-literal {
+	font-style: italic;
+	color: #4b494d;
+}
+    </style>
+</head>
+<!--
+	The ID here is required to indicate the page type.
+	Changing this will affect the layout of the page.
+-->
+<body id="tutorials">
+	
+	<div id="body">
+		<!--
+			The header in the source code view doesn't have any buttons.
+			So just the <h1> tag for the site logo is included.
+			
+			The header also doesn't have an A tag with an "href" since you shouldn't be able to navigate to the
+			index pgae inside the popup.
+		-->
+        
+        
+		<ul id="popheader">
+			<li class="first">
+				<h1><a><span>FX</span></a></h1>
+			
+				<!-- Close button -->
+				<a class="close-button" title="Close"><span>Close</span></a>
+			</li>
+		</ul>
+<div class="source">
+  <div class="code-header">License text </div>
+    <pre>
+
+/*
+ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER 
+ * Copyright  2008, 2010 Oracle and/or its affiliates.  All rights reserved. 
+ * Use is subject to license terms.
+ * 
+ * This file is available and licensed under the following license:
+ * 
+ * Redistribution and use in source and binary forms, with or without 
+ * modification, are permitted provided that the following conditions are met: 
+ * 
+ *   * Redistributions of source code must retain the above copyright notice, 
+ *     this list of conditions and the following disclaimer. 
+ *
+ *   * Redistributions in binary form must reproduce the above copyright notice,
+ *     this list of conditions and the following disclaimer in the documentation
+ *     and/or other materials provided with the distribution.
+ *
+ *   * Neither the name of Oracle Corporation nor the names of its contributors 
+ *     may be used to endorse or promote products derived from this software 
+ *     without specific prior written permission. 
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS 
+ * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT 
+ * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR 
+ * A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT 
+ * OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, 
+ * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, 
+ * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; 
+ * OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, 
+ * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR 
+ * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF 
+ * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. 
+ */
+
+    </pre>
+  </div>
+<div class="code"><pre><code>
+<b>package</b> displayshelf;
+
+<b>import</b> javafx.animation.*;
+<b>import</b> javafx.scene.*;
+<b>import</b> javafx.util.*;
+<b>import</b> javafx.scene.effect.DropShadow;
+
+public class DisplayShelf extends CustomNode {
+    public <b class='keyword'>var</b> <b>content</b>:Node[];
+    public-init <b class='keyword'>var</b> spacing = <span class='number-literal'>110</span>;
+    public-init <b class='keyword'>var</b> leftOffset = -<span class='number-literal'>50</span>;
+    public-init <b class='keyword'>var</b> rightOffset = <span class='number-literal'>50</span>;
+    public-init <b class='keyword'>var</b> perspective = false;
+    public-init <b class='keyword'>var</b> scaleSmall = <span class='number-literal'>0</span>.<span class='number-literal'>5</span>;
+
+    <b class='keyword'>var</b> <b>left</b>:Group = Group { };
+    <b class='keyword'>var</b> <b>center</b>:Group = Group { };
+    <b class='keyword'>var</b> <b>right</b>:Group = Group { };
+    public <b class='keyword'>var</b> centerIndex = <span class='number-literal'>0</span>;
+
+    override public function create():Node {
+        <b class='keyword'>var</b> half = content.size()/<span class='number-literal'>2</span>-<span class='number-literal'>1</span>;
+        left.content = content[<span class='number-literal'>0</span>..half-<span class='number-literal'>2</span>];
+        center.content = content[half-<span class='number-literal'>1</span>];
+        center.effect = DropShadow {};
+        right.content = content[half..content.size()-<span class='number-literal'>1</span>];
+        right.content = Sequences.&lt;&lt;reverse&gt;&gt;(right.content) as Node[];
+        centerIndex = half-<span class='number-literal'>1</span>;
+        myLayout();
+        return Group {
+            <b>content</b>: [
+                left,
+                right,
+                center
+            ]
+        }
+    }
+
+    <i class='comment'>/**
+     * <span class='string-literal'>"Reparents"</span> the node sequence newContent to its new parent Group
+     * newParent, replacing any previous content,
+     * after first removing them from their previous parent Group.
+     */</i>
+    public function reparent(<b>newContent</b>:Node[], <b>newParent</b>:Group):Void {
+        for (n in newContent) {
+            if (n.parent instanceof Group) {
+                delete n from (n.parent as Group).content;
+            }
+        }
+        newParent.content = newContent;
+    }
+
+    public function shift(<b>offset</b>:Integer):Void {
+        if(centerIndex &lt;= <span class='number-literal'>0</span> and offset &gt; <span class='number-literal'>0</span> ) {
+            return;
+        }
+        if(centerIndex &gt;= content.size()-<span class='number-literal'>1</span> and offset &lt; <span class='number-literal'>0</span>) {
+            return;
+        }
+
+        centerIndex -= offset;
+        reparent(content[<span class='number-literal'>0</span>..centerIndex-<span class='number-literal'>1</span>], left);
+        reparent([content[centerIndex]], center);
+        reparent(Sequences.&lt;&lt;reverse&gt;&gt;(content[centerIndex+<span class='number-literal'>1</span>..content.size()-<span class='number-literal'>1</span>]) as Node[], right);
+        myLayout();
+    }
+
+    function myLayout() {
+        <b class='keyword'>var</b> <b>startKeyframes</b>:KeyFrame[];
+        <b class='keyword'>var</b> <b>endKeyframes</b>:KeyFrame[];
+        <b class='keyword'>var</b> duration = <span class='number-literal'>0</span>.<span class='number-literal'>5</span>s;
+
+        for(n in content) {
+            def it = n as Item;
+            insert KeyFrame {
+                <b>time</b>: <span class='number-literal'>0</span>s <b>values</b>: [
+                    it.translateX =&gt; it.translateX,
+                    it.scaleX =&gt; it.scaleX,
+                    it.scaleY =&gt; it.scaleY,
+                    it.angle =&gt; it.angle
+                ]
+            } into startKeyframes;
+        }
+
+        for(n in left.content) {
+            def it = n as Item;
+            <b class='keyword'>var</b> newX = -left.content.size()*spacing +  spacing*indexof n + leftOffset;
+            insert KeyFrame {
+                <b>time</b>: duration <b>values</b>: [
+                    it.translateX =&gt; newX,
+                    it.scaleX =&gt; scaleSmall,
+                    it.scaleY =&gt; scaleSmall,
+                    it.angle =&gt; <span class='number-literal'>45</span>
+                ]
+            } into endKeyframes;
+        }
+
+        for(n in center.content) {
+            def it = n as Item;
+            insert KeyFrame {
+                <b>time</b>: duration <b>values</b>: [
+                    it.translateX =&gt; <span class='number-literal'>0</span>,
+                    it.scaleX =&gt; <span class='number-literal'>1</span>.<span class='number-literal'>0</span>,
+                    it.scaleY =&gt; <span class='number-literal'>1</span>.<span class='number-literal'>0</span>,
+                    it.angle =&gt; <span class='number-literal'>90</span>
+                ]
+            } into endKeyframes;
+        }
+
+        for(n in right.content) {
+            def it = n as Item;
+            <b class='keyword'>var</b> newX = right.content.size()*spacing -spacing*indexof n + rightOffset;
+            insert KeyFrame {
+                <b>time</b>: duration <b>values</b>: [
+                    it.translateX =&gt; newX,
+                    it.scaleX =&gt; scaleSmall,
+                    it.scaleY =&gt; scaleSmall,
+                    it.angle =&gt; <span class='number-literal'>135</span>
+                ]
+            } into endKeyframes;
+        }
+
+        <b class='keyword'>var</b> anim = Timeline {
+            <b>keyFrames</b>: [
+                startKeyframes,
+                endKeyframes
+            ]
+        };
+        anim.play();
+    }
+
+    public function shiftToCenter(<b>item</b>:Item):Void {
+        for(n in left.content) {
+            if(n == item) {
+                <b class='keyword'>var</b> index = indexof n;
+                <b class='keyword'>var</b> shiftAmount = left.content.size() - index;
+                shift(shiftAmount);
+                return;
+            }
+        }
+        for(n in center.content) {
+            if(n == item) {
+                return;
+            }
+        }
+        for(n in right.content) {
+            if(n == item) {
+                <b class='keyword'>var</b> index = indexof n;
+                <b class='keyword'>var</b> shiftAmount = -(right.content.size() - index);
+                shift(shiftAmount);
+                return;
+            }
+        }
+    }
+}
+</code></pre></div>
+<div id="footer">
+			<span class="copy">&copy; 2010, Oracle Corporation and/or its affiliates.</span>
+			
+		</div>
+<!--
+	JAVASCRIPT
+	At the bottom of the page so that we download and render all the visual elements, before we start handling the javascript. This provides for a faster perceived loading time.
+-->
+
+<script src="../../shared/new_style/js/omi/s_code_remote.js" type="text/javascript"></script>
+ 
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js"></script>
+<!--[if lte IE 6]>
+	<script type="text/javascript" src="../../shared/new_style/js/jquery.ifixpng.js"></script>
+<![endif]-->
+<script type="text/javascript" src="../../shared/new_style/js/jquery.history.js"></script>
+<script type="text/javascript" src="../../shared/new_style/js/javafx.js"></script>
+
+
+
+
+

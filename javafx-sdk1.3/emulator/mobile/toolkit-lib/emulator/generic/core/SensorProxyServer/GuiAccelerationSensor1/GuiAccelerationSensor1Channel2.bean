@@ -1,0 +1,20 @@
+#
+# Copyright (c) 2009 Sun Microsystems, Inc. All rights reserved.
+# Use is subject to license terms.
+#
+
+# common start
+.class=com.sun.kvem.sensor.impl.DefaultGuiChannelProxy
+.dependents=SensorProxyServer.GuiAccelerationSensor1
+.parent-add-method=addChannel
+
+unit=m/s^2
+initValue=0
+dataType=1
+accuracy=0
+smallest=-1
+largest=1
+resolution=0.01
+# common end
+
+name=axisZ

@@ -1,0 +1,15 @@
+#
+# Copyright (c) 2009 Sun Microsystems, Inc. All rights reserved.
+# Use is subject to license terms.
+#
+
+.class: com.sun.jme.toolkit.remoting.server.rmiimpl.RemotingConnectorImpl
+.dependencies: ObjectServer
+
+objectServerImpl: ObjectServer
+rmiRegistryHost: ${device-manager.object-registry.host}
+rmiRegistryPort: ${device-manager.object-registry.port}
+name: ${object-server.name}
+
+serverSocketFactory: SocketFactory
+clientSocketFactory: SocketFactory

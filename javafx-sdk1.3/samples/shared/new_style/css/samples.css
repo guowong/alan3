@@ -1,0 +1,49 @@
+/* rest some of the stuff that method did */
+.source pre {
+    font-size: 12px; line-height:14px;
+}
+
+pre b {
+	color: #7f0055;
+}
+
+pre .comment {
+	color: #3f7f5f;
+}
+
+pre .string-literal, pre .number-literal {
+	font-style: italic;
+	color: #2a00ff;
+}
+
+p.note {
+    display: none;
+    border: 10px solid red;
+	background-color: white;
+}
+
+/*
+
+.screenshot {
+	padding: 0px;
+}
+.screenshot img {
+	border-color: black;
+	border-style: solid;
+	border-width: 1px;
+	margin-bottom: 5px;
+}
+.code {
+    white-space: pre;
+	margin: 1em;
+}
+
+.comment {
+	color: #f26a27;
+}
+
+.string-literal, .number-literal {
+	font-style: italic;
+	color: #4b494d;
+}
+*/

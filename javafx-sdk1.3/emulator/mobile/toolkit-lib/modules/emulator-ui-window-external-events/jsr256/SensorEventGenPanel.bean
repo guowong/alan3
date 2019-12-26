@@ -1,0 +1,14 @@
+#
+# Copyright (c) 2009 Sun Microsystems, Inc. All rights reserved.
+# Use is subject to license terms.
+#
+
+.class=com.sun.kvem.sensor.SensorsEventGenPanel
+
+externalEventManager=ExternalEventManager
+sensorProxyServer=SensorProxyServer
+
+title=Sensors
+tableHeader1=Id
+tableHeader2=Sensor name
+tableHeader3=Available

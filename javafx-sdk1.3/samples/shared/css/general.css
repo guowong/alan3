@@ -1,0 +1,55 @@
+body {
+	font-family: Helvetica, Verdana, Arial, sans-serif;
+	margin: 0px;
+	background-color: white;
+}
+
+#top-header {
+	background-color: #2E292A;
+	border: none;
+	padding: 0px;
+	margin: 0px;
+			/* Create a visible border to work around a Safari bug. */
+	border: 1px solid #2e292a;
+	border-color: black;
+	border-style: solid;
+	border-width: 1px;
+	padding: .5em;
+	margin: 0px;
+	color: white;
+	background-color: black;
+	padding: 0px;
+	border-color: black;
+	border-style: solid;
+	border-width: 0px;
+}
+
+#top-header h1 {
+	margin: 0px;
+	padding: .2em;
+}
+#top-header h1 a {
+	color: white;
+	text-decoration: none
+}
+#top-header h1 a:hover {
+	text-decoration: underline
+}
+#top-header h1 b {
+	color: #ff7707;
+}
+#top-header h1 i {
+	font-style: normal;
+	font-weight: normal;
+	display: inline;
+	font-size: 30%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+

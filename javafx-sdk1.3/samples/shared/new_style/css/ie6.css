@@ -1,0 +1,46 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*
+
+This file will apply to Internet Explorer 6 ONLY
+
+*/
+
+#homepage #pre_download .dropshadow,
+#homepage #post_download .dropshadow {
+	/*height: 480px;*/
+	margin-left: 3px;
+	padding-left: 1px;
+	/*background: transparent url('../images/home_dl_grey_bg2.png') bottom right no-repeat;*/
+	margin: -10px 0 0 1px;
+	width: 322px;
+}
+
+#homepage #pre_download .options,
+#homepage #post_download .options {
+	width: 305px;
+	/*height: 472px;*/
+	margin: 0 0 0 0;
+	padding: 0 0 0 10px;
+	color: #757779;
+	font-size: 11px;
+	overflow: hidden;
+	background-color: #E9EAEC;
+	background-image: none;
+}
+
+#homepage #pre_download .options h4,
+#homepage #post_download .options h4 { margin-top: 30px; margin-bottom: 5px; }
+#homepage #pre_download ol.download-options li.first { margin-bottom: 15px; }
+
+p.slider {
+	margin-left: -5px;
+	margin-top: -3px;
+	padding: 5px 3px 3px 5px;
+}
+
+#homepage div.btnwrap #download_button,
+#homepage div.btnwrap #submit_button {
+	margin-bottom: 12px;
+}

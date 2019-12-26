@@ -1,0 +1,14 @@
+#
+# Copyright (c) 2009 Sun Microsystems, Inc. All rights reserved.
+# Use is subject to license terms.
+#
+
+.class: com.sun.jme.toolkit.deviceadapter.cldcdevice.CldcProductParams
+.parent-add-method: addProductParams
+
+productDescriptor: VID_0430&PID_2110&VER_0300
+productName: CldcWinceEmu
+productStdoutPort: 51235
+productStderrPort: 51236
+productJdwpPort: 2800
+runtimeClasses: ${emulator.home}/toolkit-lib/process/device-manager/conf/classes-CldcWinceEmu.zip

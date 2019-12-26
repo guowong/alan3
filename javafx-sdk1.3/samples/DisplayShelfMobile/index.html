@@ -1,0 +1,300 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+
+<head>
+	
+	<title>JavaFX Example Code | DisplayShelfMobile | JavaFX Demo</title>
+	
+	<!--METAS-->
+	
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="description" content="JavaFX" />
+	<meta name="keywords" content="JavaFX Oracle [...]" />
+	<meta name="author" content="Oracle" />
+	
+	<!--STYLESHEETS-->
+	<link rel="stylesheet" type="text/css" media="screen, projection" href="../shared/new_style/css/reset.css" />
+	<link rel="stylesheet" type="text/css" media="screen, projection" href="../shared/new_style/css/javafx.css" />
+	<link rel="stylesheet" type="text/css" media="screen, projection" href="../shared/new_style/css/samples.css" />
+	
+	<!-- CONDITIONAL STYLESHEETS -->
+	<!--[if IE]>
+		<link rel="stylesheet" type="text/css" href="../shared/new_style/css/ie.css" />
+	<![endif]-->
+	
+	<!--[if IE 6]>
+		<link rel="stylesheet" type="text/css" href="../shared/new_style/css/ie6.css" />
+	<![endif]-->
+	
+	<!--[if IE 7]>
+		<link rel="stylesheet" type="text/css" href="../shared/new_style/css/ie7.css" />
+	<![endif]-->
+	
+	<!--ADDRESS BAR ICON-->
+
+	<link rel="shortcut icon" type="image/ico" href="../shared/new_style/images/favicon.ico" />
+    
+	
+</head>
+<!--
+	The ID here is required to indicate the page type.
+	Changing this will affect the layout of the page.
+-->
+<body id="tutorials">
+	
+	<div id="body">
+		<!--
+			Header is the main navigation.
+			We are using CSS Sprites to apply images across the site, namely the header and subnav.
+			
+			This has a few implications for you guys, if you want to change the image for selected or hover states,
+			you'll find the images embedded next to the header image in the same file. This makes it slightly harder to edit, and
+			a lot more difficult to change in the styles, but allows for 1 file and download request which makes it much more performant.
+			
+			This also means some of the elements that use the sprites have id's that allow us to modify the sprite image based on each element.
+			So in header and subnav, we have an id on each LI, these can't be changed or else the image styling will be ruined.
+		-->
+		<ul id="header" class="see">
+			<li id="fx" class="first">
+				<h1><a href="http://www.javafx.com/"><span>FX</span></a></h1>
+			</li>
+			<li id="explore">
+				<a href="http://www.javafx.com/about/"><span>Explore</span></a>
+			</li>
+			<li id="see">
+				<a href="http://www.javafx.com/samples/"><span>See</span></a>
+			</li>
+			<li id="learn">
+				<a href="http://www.javafx.com/learn/"><span>Learn</span></a>
+			</li>
+			<li id="start" class="last">
+				<a href="http://www.javafx.com/downloads/"><span>Start</span></a>
+			</li>
+		</ul>
+	
+
+<script src="http://jfx.sfbay.sun.com/hudson//job/1.3.1/label=macosx-universal-soma/101/artifact/artifacts/rt-deployed/dtfx.js"></script><div id="main">
+<div class="sidebar">
+<a href="../index.html" class="back"><span>Return to See main Page</span></a>
+<div class="profile">
+<strong>Key Features</strong><em>Animation Graphics API </em><strong>Skill Level</strong><em>intermediate</em><strong>Last Updated</strong><em>October 20th, 2008</em>
+</div>
+<dl class="icon-list">
+<dt>Share</dt>
+<dd>
+<a href="http://buzz.yahoo.com/article/http://javafx.com/samples/DisplayShelfMobile/"><img src="../shared/new_style/images/yahoo_buzz_icon.png" width="20" height="19" alt="Yahoo Buzz"></a>
+</dd>
+<dd>
+<a href="http://www.facebook.com/share.php?u=http://javafx.com/samples/DisplayShelfMobile/"><img src="../shared/new_style/images/facebook_icon.png" width="20" height="17" alt="Facebook"></a>
+</dd>
+<dd>
+<a href="http://www.myspace.com/index.cfm?u=http://javafx.com/samples/DisplayShelfMobile/"><img src="../shared/new_style/images/myspace_icon.png" width="20" height="18" alt="Myspace"></a>
+</dd>
+<dd>
+<a href="http://digg.com/submit?phase=3&url=http://javafx.com/samples/DisplayShelfMobile/"><img src="../shared/new_style/images/digg_icon.png" width="20" height="18" alt="Digg"></a>
+</dd>
+<dd>
+<a href="http://www.reddit.com/submit?url=http://javafx.com/samples/DisplayShelfMobile/"><img src="../shared/new_style/images/reddit_icon.png" width="20" height="18" alt="Reddit"></a>
+</dd>
+<dd>
+<a href="http://del.icio.us/post?url=http://javafx.com/samples/DisplayShelfMobile/"><img src="../shared/new_style/images/delicious_icon.png" width="20" height="18" alt="Delicious"></a>
+</dd>
+<dd>
+<a href="http://www.newsvine.com/_tools/seed?popoff=0&u=http://javafx.com/samples/DisplayShelfMobile/"><img src="../shared/new_style/images/newsvine_icon.png" width="20" height="18" alt="Newsvine"></a>
+</dd>
+</dl>
+<dl class="links-list">
+<dt>View Source Code</dt><dd><a href='src/DisplayShelf.fx.html' target='_blank'>DisplayShelf.fx</a></dd>
+<dd><a href='src/Item.fx.html' target='_blank'>Item.fx</a></dd>
+<dd><a href='src/Main.fx.html' target='_blank'>Main.fx</a></dd>
+<dd class="button">
+<a class="download-button" href="DisplayShelfMobile.zip"><span>Download Source Code</span></a>
+</dd>
+</dl>
+<div class="profile">
+<h4>Profile</h4>
+<img src="http://weblogs.java.net/images/people/joshua_marinacci.jpg"><strong>Josh Marinacci</strong>
+</div>
+<div id="mobile" class="sidebox">
+<img src="../shared/mobile_badge.png"></div>
+<div id="tv" class="sidebox">
+<img src="../shared/tv_badge.png"></div>
+</div>
+<div id="content">
+<div class="content-head">
+<h2>Modifying Display Shelf for Mobile Devices</h2>
+<div class="meta">
+                       By <a class="author">Josh Marinacci</a>,
+                       <span class="date">October 20th, 2008</span>
+</div>
+</div>
+<p>The original Display Shelf example uses the
+<var class="code-attribute">PerspectiveTransform</var>. This effect is not available on mobile
+devices but a display shelf like navigation system is still useful to have on
+smaller screens. This example shows how to modify the <a href="../DisplayShelf/index.html">DisplayShelf</a> to work on a mobile
+device.</p>
+<script>
+var u10only = '';
+var webstartAllowed = '';
+
+if(u10only=='true' && !deployJava.isPlugin2()) {
+    document.write("<p class='u10warning'>");
+    document.write("This sample needs Java SE 6 Update 10 or higher with Internet Explorer 7+ or FireFox 3+");
+    document.write("");
+    if(webstartAllowed=='true') {
+        document.write(" Please <a href='webstart/DisplayShelfMobile.jnlp'>run this example with Java Webstart<a> instead");
+    }
+    document.write("</p>");
+} else {
+
+    javafx(
+        {
+            archive: "webstart/DisplayShelfMobile.jar,",
+            width: 320,
+            height: 240,
+            code: "displayshelf.Main",
+            
+            name: "appl"
+        } 
+    );
+}
+</script>
+<h3>Exploring the Code</h3>
+<p>The mobile version of the display shelf is the same as the desktop version
+with just three changes: adjusting for a smaller screen, using a scale effect to
+replace the PerspectiveTransform, and changing the background for higher
+visibility.</p>
+<p>Changing the screensize is easy. You just have to put smaller content on the
+screen. The stage will resize automatically. The <var class="code-attribute">DisplayShelf</var> class was written
+with size control in mind. It has several variables you can tweak to adjust the
+size and placement of photos on screen: <var class="code-attribute">spacing</var>,
+<var class="code-attribute">smallScale</var>, <var class="code-attribute">leftOffset</var> and
+<var class="code-attribute">rightOffset</var>. By adjusting these variables
+you can move the photos closer together on each side, move them closer to the center photo,
+and change the size of non-center photos. The values you see in Figure 1 create
+a smaller stage with the photos more tightly packed.</p>
+<div class="source">
+<div class="code-header">Source Code</div>
+<pre><b class='keyword'>var</b> <b>shelf</b>:DisplayShelf;
+shelf = DisplayShelf {
+    <b>imageWidth</b>: bind imageWidth
+    <b>spacing</b>: <span class='number-literal'>30</span>
+    <b>scaleSmall</b>: <span class='number-literal'>0</span>.<span class='number-literal'>6</span>
+    <b>leftOffset</b>: -<span class='number-literal'>55</span>
+    <b>rightOffset</b>: <span class='number-literal'>55</span>
+    <b>items</b>: bind for(i in images) {
+        <b class='keyword'>var</b> <b>item</b>:Item = Item {
+            <b>imageWidth</b>: bind imageWidth
+            <b>angle</b>: <span class='number-literal'>45</span>
+            <b>blocksMouse</b>: true
+            <b>position</b>: indexof i - half
+            <b>image</b>:Image { <b>url</b>: <span class='string-literal'>"{__DIR__}photos/{i}"</span> }
+            <b>shelf</b>: bind shelf
+            <b>translateY</b>: bind (height-imageWidth)/<span class='number-literal'>2</span>;
+        };
+        item;
+    }
+
+    
+</pre>
+</div>
+<p>
+<i>Figure 1: Configuring a <var class="code-attribute">DisplayShelf</var> for the Mobile profile</i>
+</p>
+<p>In the original DisplayShelf example the <var class="code-attribute">PerspectiveTransform</var> is applied
+inside of the Item class.  For the mobile version I have removed the <var class="code-attribute">PerspectiveTransform</var> code
+completely, as show in Figure 2. The scaling happens automatically inside the DisplayShelf when you set it's
+smallScale variable (which is 1.0 by default for no-scale).</p>
+<div class="source">
+<div class="code-header">Source Code</div>
+<pre>public class Item extends CustomNode {
+    public <b class='keyword'>var</b> <b>position</b>:Integer = <span class='number-literal'>0</span>;
+    public <b class='keyword'>var</b> angle = <span class='number-literal'>45</span>.<span class='number-literal'>0</span>;
+    public <b class='keyword'>var</b> <b>shelf</b>:DisplayShelf;
+    public-init <b class='keyword'>var</b> <b>image</b>:Image;
+    public <b class='keyword'>var</b> <b>imageWidth</b>: Number;
+
+    override <b class='keyword'>var</b> onMousePressed = function(<b>e</b>:MouseEvent) {
+        shelf.shiftToCenter(this);
+    };
+
+    override public function create():Node {
+        return Group {
+            <b>content</b>: [
+                ImageView {
+                    <b>image</b>: image <b>fitWidth</b>: bind imageWidth <b>fitHeight</b>: bind imageWidth
+                },
+                Rectangle { <b>width</b>: bind imageWidth <b>height</b>: bind imageWidth
+                    <b>stroke</b>: Color.BLACK <b>strokeWidth</b>: <span class='number-literal'>3</span>
+                    <b>fill</b>: null }
+            ]
+        }
+    }
+
+}</pre>
+</div>
+<p>
+<i>Figure 2: <var class="code-attribute">Item.fx</var> updated for Mobile</i>
+</p>
+<p>These two changes make the DisplayShelf example run on a mobile device, but the photos are still a bit
+hard to see. In the original version photos would be seen at an angle unless they are in the center. Now they
+are all seen face on, which makes the edges of the photos hard to see. This problem is further compounded
+by shrinking the screen to mobile size. To make the photos more visible I added a 3 pixel wide black border
+around each photo in the Item class (Figure 2, above). I also changed the background gradient to be darker. The
+black borders combined with the darker gradient make the photos themselves easier to see.</p>
+<div class="source">
+<div class="code-header">Source Code</div>
+<pre><b class='keyword'>var</b> <b>scene</b>:Scene = Scene {
+
+    <b>fill</b>: LinearGradient {
+        <b>startX</b>: <span class='number-literal'>0</span> <b>startY</b>: <span class='number-literal'>0</span>
+        <b>endX</b>: <span class='number-literal'>0</span> <b>endY</b>: <span class='number-literal'>1</span>
+        <b>proportional</b>: true
+        <b>stops</b>: [
+            Stop { <b>offset</b>: <span class='number-literal'>0</span>.<span class='number-literal'>0</span> <b>color</b>: Color.rgb(<span class='number-literal'>150</span>,<span class='number-literal'>150</span>,<span class='number-literal'>150</span>) },
+            Stop { <b>offset</b>: <span class='number-literal'>0</span>.<span class='number-literal'>3</span> <b>color</b>: Color.rgb(<span class='number-literal'>0</span>,<span class='number-literal'>0</span>,<span class='number-literal'>0</span>)},
+            Stop { <b>offset</b>: <span class='number-literal'>0</span>.<span class='number-literal'>7</span> <b>color</b>: Color.rgb(<span class='number-literal'>0</span>,<span class='number-literal'>0</span>,<span class='number-literal'>0</span>)},
+            Stop { <b>offset</b>: <span class='number-literal'>1</span>.<span class='number-literal'>0</span> <b>color</b>: Color.rgb(<span class='number-literal'>150</span>,<span class='number-literal'>150</span>,<span class='number-literal'>150</span>)},
+        ]
+    }
+    <b>content</b>: [
+        shelf
+    ]
+};</pre>
+</div>
+<p>
+<i>Figure 3: a new gradient background</i>
+</p>
+</div>
+</div>		<div id="footer">
+			<span class="copy">&copy; 2010, Oracle Corporation and/or its affiliates.</span>
+            <ul>
+				<li class="first"><a href="http://javafx.com/" target="_blank">English</a></li>
+				<li><a href="http://www.sun.com/privacy/index.html" target="_blank">Privacy</a></li>
+                <li><a href="http://www.sun.com/termsofuse.jsp" target="_blank">Terms of Use</a></li>
+                <li><a href="https://openjfx.dev.java.net/legal/trademarks.txt" target="_blank">Trademarks</a></li>
+                <li><a href="http://www.sun.com/software/licensingcenter/" target="_blank">Licensing</a></li>
+            </ul>
+            <a href="http://www.sun.com/" id="footer_link"><span>Sun.com</span></a>
+		</div>
+	</div>
+    
+<!-- BEGIN G9 VARIATION 0 -->
+<script language="javascript" type="text/javascript" charset="UTF-8" src="http://www.sun.com/share/op/oo_engine.js"></script>
+<script language="javascript" type="text/javascript" charset="UTF-8" src="http://www.sun.com/share/op/oo_conf_en-US.js"></script>
+<!-- END G9 VARIATION 0 -->
+	
+<script src="../shared/new_style/js/omi/s_code_remote.js" type="text/javascript"></script>
+</body>
+
+</html>
+
+<!--
+	JAVASCRIPT
+	At the bottom of the page so that we download and render all the visual elements, before we start handling the javascript. This provides for a faster perceived loading time.
+-->
+
+<script type="text/javascript" src="../shared/new_style/js/javafx.js"></script>
+
+
+

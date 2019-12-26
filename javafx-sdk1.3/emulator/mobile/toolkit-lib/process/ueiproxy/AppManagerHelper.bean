@@ -1,0 +1,9 @@
+#
+# Copyright (c) 2009 Sun Microsystems, Inc. All rights reserved.
+# Use is subject to license terms.
+#
+
+.class: com.sun.jme.toolkit.ueiproxy.AppManagerHelper
+.dependencies: TaskManager
+
+taskManager: TaskManager

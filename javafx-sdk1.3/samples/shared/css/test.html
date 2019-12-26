@@ -1,0 +1,74 @@
+<xhtml>
+<head>
+<link href="example.css" rel="stylesheet" type="text/css"/>
+<style type="text/css">
+
+body {
+	margin: 0px;
+	background-color: white;
+}
+
+h1 {
+	background-color: black;
+}
+
+</style>
+<title>Title of the Example</title></head>
+<body>
+
+<div class="article">
+<h1>Title of the Example</h1>
+
+<p>This is an introductory paragraph which briefly summarizes what the reader
+will see in this example and what is the major thing the reader should learn.  
+</p>
+
+<h3>Example</h3>
+
+<p>This is where you introduce the snippet of example code, saying briefly what it does. If you use a classname or other code inline, be sure to put it in &lt;code&gt; &lt;/code&gt; tags, like this:  Here is how to use the <code>Number</code> class and it's <code>doStuff();</code> method.
+Be sure to properly escape the code in the snippet(s) below as well.</p>
+
+<p>The title of the XML code snippet below.</p>
+
+<pre><code>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;metadata xmlns=&quot;http://musicbrainz.org/ns/mmd-1.0#&quot;
+          xmlns:ext=&quot;http://musicbrainz.org/ns/ext-1.0#&quot;&gt;
+    &lt;release-list count=&quot;12&quot; offset=&quot;0&quot;&gt;
+        ...
+</code></pre>
+
+<p>The title of the JavaFX Script code snippet below</p>
+
+<pre><code>import javafx.xml.*;
+
+public class Album {
+    attribute id:String;
+    attribute title:String;
+    attribute releaseDate:String;
+}
+
+var builder = DocumentBuilder { };
+var uri = "http://musicbrainz.org/ws/1/release/?type=xml&amp;artist=Tori+Amos&amp;releasetypes=Album";
+var doc = builder.parseURI(uri);
+</code></pre>
+
+<p>A more detailed description of the code above, going into detail where necessary. Be sure to highlight the important things and mention any gotchas.</p>
+
+
+<h3>References</h3>
+<ul class="references">
+<!-- always include this first line -->
+<li><a href="@nbproject@">Source code and NetBeans Project File</a></li>
+<li><a href="#">a link to something discussed above.</a></li>
+<li><a href="#">a link to something discussed above.</a></li>
+<li><a href="#">a link to something discussed above.</a></li>
+</ul>
+
+
+</div>
+</body>
+</xhtml>
+
+
+

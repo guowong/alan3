@@ -1,0 +1,9 @@
+#
+# Copyright (c) 2009 Sun Microsystems, Inc. All rights reserved.
+# Use is subject to license terms.
+#
+
+.class: com.sun.jme.toolkit.remoting.client.rmiimpl.DeviceConnectionManagerImpl
+
+rmiRegistryHost: ${device-manager.object-registry.host}
+rmiRegistryPort: ${device-manager.object-registry.port}

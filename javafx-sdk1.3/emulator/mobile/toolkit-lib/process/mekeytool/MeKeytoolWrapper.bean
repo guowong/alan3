@@ -1,0 +1,12 @@
+#
+# Copyright (c) 2009 Sun Microsystems, Inc. All rights reserved.
+# Use is subject to license terms.
+#
+
+.class: com.sun.jme.toolkit.mekeytool.MeKeyToolWrapper
+
+Arguments: args
+MeKeytoolImpl: MeKeyTool
+DefaultMeKeystore: ${user.home}/${application.data.dir}/${toolkits.dir}/${release.dir}/${work.dir}/2/appdb/_main.ks
+DefaultKeystore: ${user.home}/.keystore.ks
+shutdownLatch: shutdown-latch

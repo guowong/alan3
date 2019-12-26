@@ -1,0 +1,217 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+
+<head>
+	
+	<title>JavaFX Sample</title>
+	
+	<!--METAS-->
+	
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="description" content="JavaFX" />
+	<meta name="keywords" content="JavaFX Oracle" />
+	<meta name="author" content="Oracle" />
+	
+	<!--STYLESHEETS-->
+	<link rel="stylesheet" type="text/css" media="screen, projection" href="../../shared/new_style/css/reset.css" />
+	<link rel="stylesheet" type="text/css" media="screen, projection" href="../../shared/new_style/css/javafx.css" />
+	<link rel="stylesheet" type="text/css" media="screen, projection" href="../../shared/new_style/css/code.css" />
+	
+	<!-- CONDITIONAL STYLESHEETS -->
+	<!--[if IE]>
+	  <link rel="stylesheet" type="text/css" href="../../shared/new_style/css/ie.css" />
+	<![endif]-->
+	
+	<!--ADDRESS BAR ICON-->
+	<link rel="shortcut icon" type="image/ico" href="../../shared/new_style/images/favicon.ico" />
+	
+	<link rel="stylesheet" type="text/css" media="screen, projection" href="../../shared/new_style/css/samples.css" />
+    <style type="text/css">
+.code .string-literal, .code .number-literal {
+	font-style: italic;
+	color: #4b494d;
+}
+    </style>
+</head>
+<!--
+	The ID here is required to indicate the page type.
+	Changing this will affect the layout of the page.
+-->
+<body id="tutorials">
+	
+	<div id="body">
+		<!--
+			The header in the source code view doesn't have any buttons.
+			So just the <h1> tag for the site logo is included.
+			
+			The header also doesn't have an A tag with an "href" since you shouldn't be able to navigate to the
+			index pgae inside the popup.
+		-->
+        
+        
+		<ul id="popheader">
+			<li class="first">
+				<h1><a><span>FX</span></a></h1>
+			
+				<!-- Close button -->
+				<a class="close-button" title="Close"><span>Close</span></a>
+			</li>
+		</ul>
+<div class="source">
+  <div class="code-header">License text </div>
+    <pre>
+
+/*
+ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER 
+ * Copyright  2008, 2010 Oracle and/or its affiliates.  All rights reserved. 
+ * Use is subject to license terms.
+ * 
+ * This file is available and licensed under the following license:
+ * 
+ * Redistribution and use in source and binary forms, with or without 
+ * modification, are permitted provided that the following conditions are met: 
+ * 
+ *   * Redistributions of source code must retain the above copyright notice, 
+ *     this list of conditions and the following disclaimer. 
+ *
+ *   * Redistributions in binary form must reproduce the above copyright notice,
+ *     this list of conditions and the following disclaimer in the documentation
+ *     and/or other materials provided with the distribution.
+ *
+ *   * Neither the name of Oracle Corporation nor the names of its contributors 
+ *     may be used to endorse or promote products derived from this software 
+ *     without specific prior written permission. 
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS 
+ * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT 
+ * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR 
+ * A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT 
+ * OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, 
+ * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, 
+ * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; 
+ * OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, 
+ * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR 
+ * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF 
+ * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. 
+ */
+
+    </pre>
+  </div>
+<div class="code"><pre><code>
+<b>package</b> localsearch.parser;
+
+<b>import</b> java.io.InputStream;
+<b>import</b> javafx.data.pull.Event;
+<b>import</b> javafx.data.pull.PullParser;
+
+<b>import</b> localsearch.model.Category;
+<b>import</b> localsearch.model.Rating;
+<b>import</b> localsearch.model.Restaurant;
+<b>import</b> localsearch.Main;
+
+<i class='comment'>/**
+ * Sample FX Script Application for Yahoo!'s Local Search Service
+ * This version uses the PullParser API to parse results in JSON.
+ */</i>
+public function processResults(<b>is</b>:InputStream):Void {
+    def parser = PullParser {
+        <b>documentType</b>: PullParser.JSON;
+        <b>input</b>: is;
+        <b>onEvent</b>: parseEventCallback;
+    };
+    parser.parse();
+    is.close();
+}
+
+<i class='comment'>// temporary <b class='keyword'>var</b>iables needed during processing</i>
+<b class='keyword'>var</b> <b>result</b>: Restaurant;
+<b class='keyword'>var</b> <b>category</b>: Category;
+
+def parseEventCallback = function(<b>event</b>: Event) {
+    
+    if (event.type == PullParser.START_VALUE) {
+        if (event.name == <span class='string-literal'>"Rating"</span> and event.level == <span class='number-literal'>2</span>) {
+            result.rating = Rating {}
+        } else if (event.name == <span class='string-literal'>"Category"</span> and event.level == <span class='number-literal'>3</span>) {
+            category = Category {}
+        }
+        } else if (event.type == PullParser.END_VALUE) {
+        if (event.name == <span class='string-literal'>"id"</span> and event.level == <span class='number-literal'>2</span>) {                
+            result.id = event.text;
+        } else if (event.name == <span class='string-literal'>"Title"</span> and event.level == <span class='number-literal'>2</span>) {
+            result.title = event.text;
+        } else if (event.name == <span class='string-literal'>"Address"</span> and event.level == <span class='number-literal'>2</span>) {
+            result.address = event.text;
+        } else if (event.name == <span class='string-literal'>"City"</span> and event.level == <span class='number-literal'>2</span>) {
+            result.city = event.text;
+        } else if (event.name == <span class='string-literal'>"State"</span> and event.level == <span class='number-literal'>2</span>) {
+            result.state = event.text;
+        } else if (event.name == <span class='string-literal'>"Phone"</span> and event.level == <span class='number-literal'>2</span>) {
+            result.phone = event.text;
+        } else if (event.name == <span class='string-literal'>"Latitude"</span> and event.level == <span class='number-literal'>2</span>) {
+            result.latitude = event.text;
+        } else if (event.name == <span class='string-literal'>"Longitude"</span> and event.level == <span class='number-literal'>2</span>) {
+            result.longitude = event.text;
+        } else if (event.name == <span class='string-literal'>"AverageRating"</span> and event.level == <span class='number-literal'>3</span>) {
+            result.rating.averageRating = event.text;
+        } else if (event.name == <span class='string-literal'>"TotalRatings"</span> and event.level == <span class='number-literal'>3</span>) {
+            result.rating.totalRatings = event.text;
+        } else if (event.name == <span class='string-literal'>"TotalReviews"</span> and event.level == <span class='number-literal'>3</span>) {
+            result.rating.totalReviews = event.text
+        } else if (event.name == <span class='string-literal'>"LastReviewDate"</span> and event.level == <span class='number-literal'>3</span>) {
+            result.rating.lastReviewDate = event.text
+        } else if (event.name == <span class='string-literal'>"LastReviewIntro"</span> and event.level == <span class='number-literal'>3</span>) {
+            result.rating.lastReviewIntro = event.text
+        } else if (event.name == <span class='string-literal'>"Distance"</span> and event.level == <span class='number-literal'>2</span>) {
+            result.distance = event.text
+        } else if (event.name == <span class='string-literal'>"Url"</span> and event.level == <span class='number-literal'>2</span>) {
+            result.url = event.text
+        } else if (event.name == <span class='string-literal'>"ClickUrl"</span> and event.level == <span class='number-literal'>2</span>) {
+            result.clickUrl = event.text
+        } else if (event.name == <span class='string-literal'>"MapUrl"</span> and event.level == <span class='number-literal'>2</span>) {
+            result.mapUrl = event.text
+        } else if (event.name == <span class='string-literal'>"BusinessUrl"</span> and event.level == <span class='number-literal'>2</span>) {
+            result.businessUrl = event.text
+        } else if (event.name == <span class='string-literal'>"BusinessClickUrl"</span> and event.level == <span class='number-literal'>2</span>) {            
+            result.businessClickUrl = event.text
+        } else if (event.name == <span class='string-literal'>"id"</span> and event.level == <span class='number-literal'>4</span>) {
+            category.id = event.text;
+        } else if (event.name == <span class='string-literal'>"content"</span> and event.level == <span class='number-literal'>4</span>) {        
+            category.value = event.text;
+        } else if (event.name == <span class='string-literal'>"Category"</span> and event.level == <span class='number-literal'>3</span>) {
+            insert category into result.categories;
+        }
+    } else if (event.type == PullParser.START_ARRAY_ELEMENT) {
+        if (event.level == <span class='number-literal'>1</span>) {
+            result = Restaurant{}
+        }
+    } else if (event.type == PullParser.END_ARRAY_ELEMENT) {
+        if (event.level == <span class='number-literal'>1</span>) {
+            insert result into Main.restaurants;
+            Main.showRestaurantDetails(<span class='number-literal'>0</span>, true);
+        }
+    }
+}
+</code></pre></div>
+<div id="footer">
+			<span class="copy">&copy; 2010, Oracle Corporation and/or its affiliates.</span>
+			
+		</div>
+<!--
+	JAVASCRIPT
+	At the bottom of the page so that we download and render all the visual elements, before we start handling the javascript. This provides for a faster perceived loading time.
+-->
+
+<script src="../../shared/new_style/js/omi/s_code_remote.js" type="text/javascript"></script>
+ 
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js"></script>
+<!--[if lte IE 6]>
+	<script type="text/javascript" src="../../shared/new_style/js/jquery.ifixpng.js"></script>
+<![endif]-->
+<script type="text/javascript" src="../../shared/new_style/js/jquery.history.js"></script>
+<script type="text/javascript" src="../../shared/new_style/js/javafx.js"></script>
+
+
+
+
+

@@ -1,0 +1,233 @@
+.example-header {
+	padding: 0.5em;
+	margin: 0px;
+	background-color: #3e3c3f;
+	color: white;
+	background-image: url(../example_header_bg1.png);
+	background-color: black;
+	padding: 10px;
+}
+
+
+.example-header a {
+	text-shadow: 1px 1px 2px black;
+	color: white;
+}
+
+.example-header li {
+	display: inline;
+	padding: 10px;
+}
+
+
+
+.example-header .run {
+	background-repeat: repeat-x;
+	background-color: #5c3b0a;
+	background-image: url(../example_header_bg2.png);
+}
+
+
+
+
+.article {
+	font-size: 95%;
+	margin: 1em;
+}
+
+
+.article h2 {
+	font-weight: normal;
+	font-style: normal;
+	font-size: 20pt;
+}
+
+
+.article h3 {
+	font-style: normal;
+	font-weight: normal;
+	border-color: #767676;
+	border-style: solid;
+	border-left-width: 0px;
+	border-bottom-width: 1px;
+	border-right-width: 0px;
+	border-top-width: 0px;
+	clear: both;
+}
+
+
+
+
+
+
+/* ==================== sidebars ====================== */
+
+.sidebox {
+	clear: both;
+	float: right;
+	width: 8em;
+	border-color: #8d8d8d;
+	border-style: solid;
+	border-width: 1px;
+	margin: 1em;
+	margin-right: 15px;
+	padding: 1em;
+	background-color: #e0d9e6;
+}
+
+
+#keywords h3 {
+	font-size: 90%;
+	border-width: 0px;
+	padding: 0px;
+	margin: 0px;
+	font-style: normal;
+	font-weight: normal;
+}
+
+#keywords ul {
+	font-size: 90%;
+	margin-left: 1.5em;
+	margin-bottom: 0px;
+	margin-right: 0px;
+	margin-top: 0px;
+	list-style-type: disc;
+	padding: 0px;
+}
+
+
+#authorship h4 {
+	padding: 0px;
+	margin: 0px;
+	font-style: normal;
+	font-weight: normal;
+}
+
+#authorship h5 {
+	padding: 0px;
+	margin: 0px;
+	font-size: 70%;
+	font-style: normal;
+	font-weight: normal;
+}
+
+#authorship img {
+	background-color: white;
+	padding: 2px;
+	border-color: #606060;
+	border-style: solid;
+	border-width: 1px;
+	margin: 5px;
+}
+
+#authorship p {
+	font-size: 80%;
+}
+
+
+#srcfiles h3 {
+	padding: 0px;
+	padding-bottom: 1em;
+	margin: 0px;
+	border-width: 0px;
+}
+
+#srcfiles ul {
+	padding: 0em;
+	margin: 0px;
+	list-style-type: none;
+}
+
+#srcfiles a {
+	color: #3f3e40;
+}
+
+
+
+
+
+
+
+
+/* === inline code examples and screenshots === */
+
+pre, .screenshot {
+	margin: 10px;
+}
+pre {
+	background-color: white;
+	border-color: #9a9a9a;
+	border-style: solid;
+	border-width: 1px;
+	padding: 1em;
+}
+.example-code b {
+	color: #f26a27;
+}
+
+.screenshot {
+	padding: 0px;
+}
+.screenshot img {
+	border-color: black;
+	border-style: solid;
+	border-width: 1px;
+	margin-bottom: 5px;
+}
+
+
+
+
+/* === references at the bottom of the page (necessary still?) === */
+ul.references {
+	margin-left: 10px;
+	margin-bottom: 10px;
+	margin-right: 10px;
+	margin-top: 10px;
+	padding: 0px;
+	border-color: #2e2e2e;
+	border-style: solid;
+	border-width: 1px;
+}
+
+ul.references li {
+	background-color: white;
+	padding: 0px;
+	margin-left: 0px;
+	border-color: #929292;
+	border-left-width: 0px;
+	border-bottom-width: 1px;
+	border-right-width: 0px;
+	border-top-width: 0px;
+	border-style: solid;
+	list-style-position: inside;
+	list-style-type: none;
+}
+
+ul.references li a {
+	padding: 3px;
+	margin: 0px;
+	display: block;
+	color: #333333;
+}
+
+ul.references li a:hover {
+	background-color: #aaaaaa;
+}
+
+
+p.note {
+    border: 3px solid red;
+	background-color: white;
+}
+
+
+
+
+#date-updated {
+	padding-top: 0px;
+	margin-top: 0px;
+	font-size: 70%;
+}
+
+

@@ -27,8 +27,7 @@ import javax.swing.JOptionPane;
  * static methods, and none of the methods throw exceptions that would require try...catch statements.
  * Also for this reason, all exceptions are converted into IllegalArgumentExceptions, even when this
  * exception type doesn't really make sense.
- * <p>This class requires Java 5.0 or higher. (A previous version of TextIO required only Java 1.1;
- * this version should work with any source code that used the previous version, but it has some new
+ * <p>This class requires Java 5.0 or higher. (A previous version of TextIO required only Java 1.1al * this version should work with any source code that used the previous version, but it has some new
  * features, including the type of formatted output that was introduced in Java 5 and the ability to
  * use files and streams.)
  * <p>TextIO must be imported from package textio to be used.  (Previous versions were in the

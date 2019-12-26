@@ -1,4 +1,28 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
 <fullyQualifiedTypeName name="java.util.Scanner"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="javafx.scene.layout.BorderPane"/>
+<fullyQualifiedTypeName name="javafx.stage.Stage"/>
+<fullyQualifiedTypeName name="javafx.scene.text.Font"/>
+<fullyQualifiedTypeName name="java.awt.Label"/>
+<fullyQualifiedTypeName name="javafx.scene.layout.HBox"/>
+<fullyQualifiedTypeName name="javafx.scene.control.Button"/>
+<fullyQualifiedTypeName name="javafx.application.Application"/>
+<fullyQualifiedTypeName name="javafx.scene.Scene"/>
+<fullyQualifiedTypeName name="javafx.scene.text.FontWeight"/>
+<fullyQualifiedTypeName name="javafx.geometry.Pos"/>
+<fullyQualifiedTypeName name="javafx.geometry.Insets"/>
+<fullyQualifiedTypeName name="java.text.NumberFormat"/>
+<fullyQualifiedTypeName name="java.text.ParsePosition"/>
+<fullyQualifiedTypeName name="java.io.File"/>
+<fullyQualifiedTypeName name="java.io.FileWriter"/>
+<fullyQualifiedTypeName name="java.io.BufferedWriter"/>
+<fullyQualifiedTypeName name="java.io.IOException"/>
+<fullyQualifiedTypeName name="javafx.scene.control.ToggleGroup"/>
+<fullyQualifiedTypeName name="javafx.scene.control.RadioButton"/>
+<fullyQualifiedTypeName name="javafx.scene.layout.TilePane"/>
+<fullyQualifiedTypeName name="java.awt.TextArea"/>
+<fullyQualifiedTypeName name="javafx.scene.layout.VBox"/>
+<fullyQualifiedTypeName name="javafx.scene.control.TextField"/>
 </qualifiedTypeNameHistroy>

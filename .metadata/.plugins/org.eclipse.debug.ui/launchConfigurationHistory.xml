@@ -10,23 +10,31 @@
 </launchGroup>
 <launchGroup id="org.eclipse.debug.ui.launchGroup.debug">
 <mruHistory>
-<launch memento="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#10;&lt;launchConfiguration local=&quot;true&quot; path=&quot;RockPaperScissor&quot;/&gt;&#10;"/>
+<launch memento="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#10;&lt;launchConfiguration local=&quot;true&quot; path=&quot;JavaCellPhoneBill&quot;/&gt;&#10;"/>
+<launch memento="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#10;&lt;launchConfiguration local=&quot;true&quot; path=&quot;JavaLengthOfLine&quot;/&gt;&#10;"/>
+<launch memento="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#10;&lt;launchConfiguration local=&quot;true&quot; path=&quot;RollingTwoDice&quot;/&gt;&#10;"/>
+<launch memento="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#10;&lt;launchConfiguration local=&quot;true&quot; path=&quot;SentinelValueControlledLoop&quot;/&gt;&#10;"/>
+<launch memento="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#10;&lt;launchConfiguration local=&quot;true&quot; path=&quot;TheaterSeating&quot;/&gt;&#10;"/>
+<launch memento="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#10;&lt;launchConfiguration local=&quot;true&quot; path=&quot;SumAvgRange&quot;/&gt;&#10;"/>
 <launch memento="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#10;&lt;launchConfiguration local=&quot;true&quot; path=&quot;ElectricBill&quot;/&gt;&#10;"/>
 <launch memento="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#10;&lt;launchConfiguration local=&quot;true&quot; path=&quot;CountChanges&quot;/&gt;&#10;"/>
-<launch memento="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#10;&lt;launchConfiguration local=&quot;true&quot; path=&quot;Paycheck&quot;/&gt;&#10;"/>
-<launch memento="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#10;&lt;launchConfiguration local=&quot;true&quot; path=&quot;JavaPlayersOnTeam&quot;/&gt;&#10;"/>
-<launch memento="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#10;&lt;launchConfiguration local=&quot;true&quot; path=&quot;Lab1&quot;/&gt;&#10;"/>
+<launch memento="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#10;&lt;launchConfiguration local=&quot;true&quot; path=&quot;FinalFXStudentGrades&quot;/&gt;&#10;"/>
+<launch memento="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#10;&lt;launchConfiguration local=&quot;true&quot; path=&quot;Hello&quot;/&gt;&#10;"/>
 </mruHistory>
 <favorites/>
 </launchGroup>
 <launchGroup id="org.eclipse.debug.ui.launchGroup.run">
 <mruHistory>
-<launch memento="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#10;&lt;launchConfiguration local=&quot;true&quot; path=&quot;RockPaperScissor&quot;/&gt;&#10;"/>
+<launch memento="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#10;&lt;launchConfiguration local=&quot;true&quot; path=&quot;JavaCellPhoneBill&quot;/&gt;&#10;"/>
+<launch memento="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#10;&lt;launchConfiguration local=&quot;true&quot; path=&quot;JavaLengthOfLine&quot;/&gt;&#10;"/>
+<launch memento="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#10;&lt;launchConfiguration local=&quot;true&quot; path=&quot;RollingTwoDice&quot;/&gt;&#10;"/>
+<launch memento="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#10;&lt;launchConfiguration local=&quot;true&quot; path=&quot;SentinelValueControlledLoop&quot;/&gt;&#10;"/>
+<launch memento="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#10;&lt;launchConfiguration local=&quot;true&quot; path=&quot;TheaterSeating&quot;/&gt;&#10;"/>
+<launch memento="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#10;&lt;launchConfiguration local=&quot;true&quot; path=&quot;SumAvgRange&quot;/&gt;&#10;"/>
 <launch memento="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#10;&lt;launchConfiguration local=&quot;true&quot; path=&quot;ElectricBill&quot;/&gt;&#10;"/>
 <launch memento="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#10;&lt;launchConfiguration local=&quot;true&quot; path=&quot;CountChanges&quot;/&gt;&#10;"/>
-<launch memento="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#10;&lt;launchConfiguration local=&quot;true&quot; path=&quot;Paycheck&quot;/&gt;&#10;"/>
-<launch memento="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#10;&lt;launchConfiguration local=&quot;true&quot; path=&quot;JavaPlayersOnTeam&quot;/&gt;&#10;"/>
-<launch memento="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#10;&lt;launchConfiguration local=&quot;true&quot; path=&quot;Lab1&quot;/&gt;&#10;"/>
+<launch memento="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#10;&lt;launchConfiguration local=&quot;true&quot; path=&quot;FinalFXStudentGrades&quot;/&gt;&#10;"/>
+<launch memento="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#10;&lt;launchConfiguration local=&quot;true&quot; path=&quot;Hello&quot;/&gt;&#10;"/>
 </mruHistory>
 <favorites/>
 </launchGroup>
